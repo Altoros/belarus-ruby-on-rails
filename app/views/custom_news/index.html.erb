@@ -1,4 +1,6 @@
-<h1>Listing custom_news</h1>
+<h1>Listing custom news</h1>
+
+<p id="notice"><%= notice %></p>
 
 <table>
   <tr>
@@ -15,7 +17,7 @@
     <td><%= custom_news.content %></td>
     <td><%= link_to 'Show', custom_news %></td>
     <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
-    <td><%= link_to 'Destroy', custom_news, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', custom_news, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

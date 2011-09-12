@@ -21,11 +21,13 @@
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= select("custom_news", "status", options_for_select([['unpublished', 0], ['published', 1]], @custom_news.status)) %>
+    <% statuses = [['published', 0], ['unpublished', 1]] %>
+    <%= select("custom_news", "status", options_for_select(statuses, @custom_news.status)) %>
   </div>
   <div class="actions">
     <% if params[:id] != nil %>
       <%= submit_tag 'Update' %>
+      <%= submit_tag 'Delete', :onclick=>'update_edit_custom_news_action();' %>
     <% else %>
       <%= submit_tag 'Create' %>
     <% end %>

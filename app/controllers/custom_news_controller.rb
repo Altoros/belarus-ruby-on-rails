@@ -3,7 +3,7 @@ class CustomNewsController < ApplicationController
   # GET /custom_news.json
   def index
     @custom_news = CustomNews.paginate :per_page => 5, :page => params[:page],
-				       :order => 'id'
+				       :order => 'created_at desc'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -77,7 +77,7 @@ class CustomNewsController < ApplicationController
     @custom_news.destroy
 
     respond_to do |format|
-      format.html { redirect_to custom_news_index_url }
+      format.html { redirect_to custom_news_index_url, notice: 'Custom news was successfully deleted.' }
       format.json { head :ok }
     end
   end
