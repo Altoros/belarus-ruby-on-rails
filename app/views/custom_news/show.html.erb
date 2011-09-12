@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @custom_news.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @custom_news.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @custom_news.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_custom_news_path(@custom_news) %> |
+<%= link_to 'Back', custom_news_index_path %>

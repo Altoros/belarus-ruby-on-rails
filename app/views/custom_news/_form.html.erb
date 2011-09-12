@@ -1,0 +1,34 @@
+<%= form_for(@custom_news) do |f| %>
+  <% if @custom_news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom_news.errors.count, "error") %> prohibited this custom_news from being saved:</h2>
+
+      <ul>
+      <% @custom_news.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= select("custom_news", "status", options_for_select([['unpublished', 0], ['published', 1]], @custom_news.status)) %>
+  </div>
+<%= YAML::dump(@custom_news) %>
+  <div class="actions">
+    <% if params[:id] != nil %>
+      <%= submit_tag 'Update' %>
+    <% else %>
+      <%= submit_tag 'Create' %>
+    <% end %>
+  </div>
+<% end %>

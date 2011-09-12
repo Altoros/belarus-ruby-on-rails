@@ -1,4 +1,6 @@
 BelarusRubyOnRails::Application.routes.draw do
+  resources :custom_news
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

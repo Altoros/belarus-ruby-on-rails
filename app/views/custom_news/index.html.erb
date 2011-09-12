@@ -1,0 +1,27 @@
+<h1>Listing custom_news</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @custom_news.each do |custom_news| %>
+  <tr>
+    <td><%= custom_news.name %></td>
+    <td><%= custom_news.title %></td>
+    <td><%= custom_news.content %></td>
+    <td><%= link_to 'Show', custom_news %></td>
+    <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
+    <td><%= link_to 'Destroy', custom_news, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom news', new_custom_news_path %>
