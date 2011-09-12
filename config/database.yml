@@ -15,7 +15,7 @@ development:
   database: BelarusRubyOnRails_development
   pool: 5
   username: root
-  password: msql_root
+  password: 
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
