@@ -2,7 +2,8 @@ class CustomNewsController < ApplicationController
   # GET /custom_news
   # GET /custom_news.json
   def index
-    @custom_news = CustomNews.all
+    @custom_news = CustomNews.paginate :per_page => 5, :page => params[:page],
+				       :order => 'id'
 
     respond_to do |format|
       format.html # index.html.erb
