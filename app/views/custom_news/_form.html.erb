@@ -23,7 +23,6 @@
     <%= f.label :status %><br />
     <%= select("custom_news", "status", options_for_select([['unpublished', 0], ['published', 1]], @custom_news.status)) %>
   </div>
-<%= YAML::dump(@custom_news) %>
   <div class="actions">
     <% if params[:id] != nil %>
       <%= submit_tag 'Update' %>

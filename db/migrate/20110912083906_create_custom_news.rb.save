@@ -9,8 +9,4 @@ class CreateCustomNews < ActiveRecord::Migration
       t.timestamps
     end
   end
-
-  def down
-    drop_table :custom_news
-  end
 end
