@@ -24,7 +24,11 @@ describe CustomNewsController do
   # CustomNews. As you add validations to CustomNews, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => "Some title",
+      :content => "Some content",
+      :status => 1
+    }
   end
 
   describe "GET index" do
