@@ -2,25 +2,33 @@
 
 <p id="notice"><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @custom_news.empty? %>
 
-<% @custom_news.each do |custom_news| %>
-  <tr>
-    <td><%= custom_news.title %></td>
-    <td><%= raw custom_news.content %></td>
-    <td><%= link_to 'Show', custom_news %></td>
-    <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
-    <td><%= link_to 'Delete', custom_news, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+   There is no news at the moment.
+      
+<% else %>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @custom_news.each do |custom_news| %>
+    <tr>
+      <td><%= custom_news.title %></td>
+      <td><%= raw custom_news.content %></td>
+      <td><%= link_to 'Show', custom_news %></td>
+      <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
+      <td><%= link_to 'Delete', custom_news, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
 <% end %>
-</table>
 
 <br />
 
