@@ -1,7 +1,7 @@
 Feature: Custom news management
 
   Scenario: Visitor can see custom news list
-    Given I have custom news titled Ruby, Rails
+    Given custom news exists with title: Ruby with content Rails
 #    As a Visitor
     When I am on the custom_news page
     Then I should see "Ruby"

@@ -1,9 +1,3 @@
-Given /^I have custom news titled (.+)$/ do |titles|
-  titles.split(', ').each do |title|
-    CustomNews.create!(:title => title)
-  end
-end
-
 Given /^custom news exists with title: (.+) with content (.+)$/ do |title, content|
   CustomNews.create!(:title => title, :content => content)
 end
