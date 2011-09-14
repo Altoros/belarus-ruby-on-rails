@@ -22,8 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <% statuses = [['published', 0], ['unpublished', 1]] %>
-    <%= select("custom_news", "status", options_for_select(statuses, @custom_news.status)) %>
+    <%= f.select(:status, [['published', 0], ['unpublished', 1]]) %>
   </div>
   <div class="actions">
     <% if params[:id] != nil %>
