@@ -24,6 +24,9 @@ gem 'will_paginate'
 
 gem 'jquery-rails'
 
+gem 'ckeditor'
+gem 'paperclip'
+
 gem 'rspec-rails', :groups => [:development, :test]
 
 group :test do

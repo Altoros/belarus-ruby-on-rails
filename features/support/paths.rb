@@ -10,7 +10,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+      
+    when /^the custom_news page$/
+      '/custom_news'
+    
+    when /^new custom news path/
+      '/custom_news/new'
+      
+    when /^edit custom news path/
+      '/custom_news/id/edit'
+      
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
