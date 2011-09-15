@@ -58,3 +58,35 @@ module BelarusRubyOnRails
     end
   end
 end
+
+module ActiveRecord::Validations::ClassMethods
+  # Overrides validates associates.
+  # We do this to allow more better error messages to bubble up
+  def validates_associated(*associations)
+
+    # These configuration lines are required if your going to use any conditionals with the validates
+    # associated - Rails 2.2.2 safe!
+    configuration = { :message => I18n.translate('activerecord.errors.messages'), :on => :save }
+    configuration.update(associations.extract_options!)
+
+    associations.each do |association|
+      class_eval do
+        validates_each(associations,configuration) do |record, associate_name, value|
+          associates = record.send(associate_name)
+          associates = [associates] unless associates.respond_to?('each')
+          associates.each do |associate|
+            if associate && !associate.valid?
+              # Delete generic error message
+              record.errors.delete_errors_on(associate_name)
+              # raise associate.errors.inspect
+              associate.errors.each do |key, value2|
+                # Add gooder error message
+                record.errors.add("", "#{value2}")
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
