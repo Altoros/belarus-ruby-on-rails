@@ -16,8 +16,8 @@ class Devise::RegistrationsController < ApplicationController
     if resource.save
       #make new profile
       profile = Profile.new({
-          first_name: params[:user][:first_name],
-          last_name: params[:user][:last_name],
+          first_name: params[:profile][:first_name],
+          last_name: params[:profile][:last_name],
           user_id: resource.id
       })
       profile.save
