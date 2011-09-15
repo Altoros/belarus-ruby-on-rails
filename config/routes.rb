@@ -1,4 +1,6 @@
 BelarusRubyOnRails::Application.routes.draw do
+  resources :profiles
+
   resources :custom_news
   resources :comments
 
