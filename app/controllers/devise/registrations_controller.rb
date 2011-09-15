@@ -60,6 +60,10 @@ class Devise::RegistrationsController < ApplicationController
 
   # DELETE /resource
   def destroy
+    #destroy profile
+    profile = Profile.find(resource.id)
+    profile.destroy
+
     resource.destroy
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed if is_navigational_format?
