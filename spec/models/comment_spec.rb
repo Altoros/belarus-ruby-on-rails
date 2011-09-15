@@ -8,7 +8,6 @@ describe Comment do
   it "comment's body should not be nil" do
     @comment.body = nil
     @comment.should_not be_valid
-    @comment.error_on(:body).should_not be_nil
   end
 
   it "length of comment's body should be valid" do
@@ -18,6 +17,20 @@ describe Comment do
 
   it "parent custom news should be" do
     @comment.custom_news = nil
+    @comment.user = Factory :user
     @comment.should_not be_valid
+  end
+
+  it "should have user" do
+    @comment.user = nil
+    @comment.custom_news = Factory :custom_news
+    @comment.should_not be_valid
+  end
+
+  it "should be ok on valid properties" do
+    @comment.body = "I'm a comment"
+    @comment.user = Factory :user
+    @comment.custom_news = Factory :custom_news
+    @comment.should be_valid
   end
 end

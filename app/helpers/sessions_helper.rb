@@ -5,6 +5,10 @@ module SessionsHelper
     redirect_to new_user_session_path
   end
 
+  def deny_access_ajax
+    render js: "window.location='#{new_user_session_path}'"
+  end
+
   private
 
     def store_location
