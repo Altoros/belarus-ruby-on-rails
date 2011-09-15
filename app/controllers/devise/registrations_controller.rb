@@ -14,6 +14,10 @@ class Devise::RegistrationsController < ApplicationController
     build_resource
 
     if resource.save
+      #make new profile
+      @profile = Profile.new(params[:profile])
+      @profile.save
+
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)
