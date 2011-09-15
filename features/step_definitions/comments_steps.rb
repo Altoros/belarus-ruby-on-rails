@@ -1,4 +1,17 @@
 Given /^I am logged in$/ do
+  Given %{I am on the home page}
+  And %{I go to the sign up page}
+  And %{I fill in "Email" with "user@test.com"}
+  And %{I fill in "First name" with "Testy"}
+  And %{I fill in "Last name" with "McUserton"}
+  And %{I fill in "Password" with "please"}
+  And %{I fill in "Password confirmation" with "please"}
+  And %{I press "Sign up"}
+  Then %{I should see "You have signed up successfully."}
+  When %{I go to the sign in page}
+  And %{I fill in "Email" with "user@test.com"}
+  And %{I fill in "Password" with "please"}
+  And %{I press "Sign in"}
 end
 
 Given /^I have (\d+) custom news article$/ do |arg1|
@@ -16,12 +29,11 @@ Given /^I have no comments$/ do
 end
 
 Given /^I have (\d+) comment for custom news article "([^"]*)"$/ do |arg1, arg2|
-  CustomNews.delete_all
   CustomNews.new({ title: arg2, content: "current_news body" }).save
   @custom_news = CustomNews.find_by_title arg2
   @custom_news.comments.delete_all
   arg1.to_i.times do
-    Comment.new({ body: "I'm a test comment", custom_news: (CustomNews.find @custom_news.id)}).save
+    Comment.new({ body: "I'm a test comment", custom_news: (CustomNews.find @custom_news.id), user: @user}).save
   end
 end
 
@@ -34,7 +46,7 @@ When /^(?:|I )push "Delete comment"$/ do
 end
 
 When /^(?:|I )push "Add comment"$/ do
-  Comment.new({ body: "I'm a test comment", custom_news: @custom_news}).save
+  Comment.new({ body: "I'm a test comment", custom_news: @custom_news, user: @user }).save
 end
 
 When /^(?:|I )type "([^"]*)" in "Message" textarea$/ do |value|
