@@ -4,6 +4,6 @@ class RemoveAuthorFromComments < ActiveRecord::Migration
   end
 
   def down
-    add_column :commenxts, :author
+    add_column :comments, :author
   end
 end

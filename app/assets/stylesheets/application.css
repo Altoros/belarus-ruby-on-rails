@@ -20,3 +20,12 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
+
+#post_comment_form {
+    text-align: center;
+}
+
+#commentnotice {
+    text-align: center;
+    color: #006400;
+}
