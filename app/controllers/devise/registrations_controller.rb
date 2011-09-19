@@ -13,7 +13,7 @@ class Devise::RegistrationsController < ApplicationController
   def create
     build_resource
 
-    profile = Profile.new(params[:profile])
+    profile = Profile.new({first_name: params[:user][:first_name], last_name: params[:user][:last_name]})
     resource.profile = profile
     profile.save
 
