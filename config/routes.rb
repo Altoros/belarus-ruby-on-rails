@@ -2,14 +2,19 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :custom_news
   resources :comments
 
-  get "welcome/index"
-
-  devise_for :users do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     get '/users/sign_in', :to => "devise/sessions#new", :as => 'login'
     post '/users/sign_in', :to => "devise/sessions#create", :as => 'login'
     delete '/users/sign_out', :to => "devise/sessions#destroy", :as => 'logout'
   end
+  scope "/users" do
+    get '/auth/:provider', :to => 'omniauth#passthru'
+    get '/reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
+  end
+
   resources :users, :only => :show
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -66,4 +71,5 @@ BelarusRubyOnRails::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   match ':controller(/:action(/:id(.:format)))'
+
 end
