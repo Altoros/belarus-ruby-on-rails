@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def store_location
-    session[:user_return_to] = request.fullpath
-  end
-
   def errors_for(object, message = nil)
     html = ""
     unless object.errors.blank?
