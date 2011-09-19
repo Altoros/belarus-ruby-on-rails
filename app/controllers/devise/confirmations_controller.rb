@@ -41,7 +41,8 @@ class Devise::ConfirmationsController < ApplicationController
 
     # The path used after confirmation.
     def after_confirmation_path_for(resource_name, resource)
-      redirect_location(resource_name, resource)
+      #redirect_location(resource_name, resource)
+      "/profiles/#{resource.profile.id}/edit"
     end
 
 end
