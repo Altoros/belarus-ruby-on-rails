@@ -1,11 +1,18 @@
 BelarusRubyOnRails::Application.routes.draw do
+  resources :authentications
+
   resources :custom_news
   resources :comments
 
   get "welcome/index"
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  match 'users/auth/:provider' => 'omniauth#passthru'
+  match 'users/forgot_password_for_signed_user' => 'users#forgot_password_for_signed_user', :as => 'signed_user_forgot_pass'
+
   resources :users, :only => :show
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,4 +69,5 @@ BelarusRubyOnRails::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   match ':controller(/:action(/:id(.:format)))'
+
 end

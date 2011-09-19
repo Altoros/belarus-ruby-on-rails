@@ -7,12 +7,18 @@ module SessionsHelper
 
   private
 
-    def store_location
-      session[:return_to] = request.fullpath
-    end
+  def store_location(path = nil)
+    session[:return_to] = path || request.fullpath
+  end
 
-    def clear_stored_location
-      session[:return_to] = nil
-    end
+  def get_stored_location
+    stored_location = session[:return_to]
+    clear_stored_location
+    (stored_location.nil?) ? root_path : stored_location.to_s
+  end
+
+  def clear_stored_location
+    session[:return_to] = nil
+  end
 
 end
