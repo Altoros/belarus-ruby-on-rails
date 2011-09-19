@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :custom_news do
-      title "MyString"
-      content "MyText"
-    end
+    title "MyString"
+    content "MyText"
+  end
 end
