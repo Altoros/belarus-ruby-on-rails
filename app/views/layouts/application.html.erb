@@ -4,18 +4,24 @@
   <title>BelarusRubyOnRails</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+/*      if (window.location.hash == '#_=_') {
+          window.location.hash = '';
+          window.location.href = window.location.href.slice(0, -1);
+      }*/
+  </script>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-
     <ul class="hmenu">
       <%= render 'devise/menu/registration_items' %>
       <%= render 'devise/menu/login_items' %>
     </ul>
 
-    <%- flash.each do |name, msg| -%>
+    <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-    <%- end -%>
+    <% end %>
 
 <%= yield %>
 
