@@ -18,6 +18,7 @@ end
 # Authorization and permissions
 gem 'devise'
 gem 'cancan'
+gem "oa-oauth", :require => "omniauth/oauth"
 
 gem 'will_paginate'
 
@@ -44,4 +45,3 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
