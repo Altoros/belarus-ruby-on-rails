@@ -12,9 +12,12 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+<% if resource.encrypted_password.present? %>
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
-
+<% else %>
+  <%= link_to "Reset my password",  signed_user_reset_pass_url %><br />
+<% end %>
   <div><%= f.submit "Update" %></div>
 <% end %>
 
