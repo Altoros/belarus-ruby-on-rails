@@ -1,8 +1,14 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <% if resource.encrypted_password.present? %>
+<<<<<<< HEAD
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
         <%= devise_error_messages! %>
+=======
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+>>>>>>> 08733b9... Registration via Facebook connect
 
         <div><%= f.label :email %><br />
         <%= f.email_field :email %></div>

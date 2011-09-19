@@ -1,0 +1,21 @@
+class UsersController < ApplicationController
+  before_filter :authenticate_user!
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+<<<<<<< HEAD
+  def reset_password
+=======
+  def reset_password_for_signed_user
+>>>>>>> 08733b9... Registration via Facebook connect
+    if user_signed_in?
+      current_user.send_reset_password_instructions
+      flash[:notice] = I18n.t('devise.passwords.send_instructions')
+    end
+
+    redirect_to root_path
+  end
+
+end

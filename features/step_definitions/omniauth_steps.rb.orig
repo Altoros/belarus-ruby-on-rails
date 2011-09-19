@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+Given /^I come to custom news page with name "([^"]*)"$/ do |title|
+  cn=CustomNews.create!(:title => title, :content => "Some interesting news")
+  visit('/custom_news/'+cn.id.to_s)
+end
+=======
+Given /^A user successfully signs in with Facebook$/ do
+  Given %{I sign out}
+  visit "/users/auth/facebook"
+end
+
+Given /^A user unsuccessfully signs in with Facebook$/ do
+  Given %{I sign out}
+  visit "/users/auth/facebook"
+end
+>>>>>>> 08733b9... Registration via Facebook connect

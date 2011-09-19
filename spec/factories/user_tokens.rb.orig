@@ -1,0 +1,16 @@
+# Read about factories at http://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :user_token do
+<<<<<<< HEAD
+    user_id 1
+    provider "MyString"
+    uid "MyString"
+  end
+=======
+      user_id 1
+      provider "MyString"
+      uid "MyString"
+    end
+>>>>>>> 08733b9... Registration via Facebook connect
+end
