@@ -6,6 +6,15 @@ def create_profile
   user
 end
 
+Given /^I am a user named "([^"]*)" and surnamed "([^"]*)" with an email "([^"]*)" and password "([^"]*)"$/ do |first_name, last_name, email, password|
+  User.new(:first_name => first_name,
+            :last_name => last_name,
+            :email => email,
+            :password => password,
+            :password_confirmation => password).confirm!
+end
+
+
 Given /^no user exists with an email of "(.*)"$/ do |email|
   User.find(:first, :conditions => { :email => email }).should be_nil
 end
