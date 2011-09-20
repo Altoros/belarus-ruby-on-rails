@@ -9,9 +9,9 @@ BelarusRubyOnRails::Application.routes.draw do
   end
   match 'users/auth/:provider' => 'omniauth#passthru'
   match 'users/reset_password_for_signed_user' => 'users#reset_password_for_signed_user', :as => 'signed_user_reset_pass'
-
+  match 'users/new_based_omniuth' => 'users#new_with_empty_email', :as => 'new_user_registration_based_omniauth', :via => 'get'
+  match 'users/create_based_on_omniauth_session' => 'users#create_based_on_omniauth_session', :via => 'post'
   resources :users, :only => :show
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

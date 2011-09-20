@@ -32,9 +32,9 @@ class User < ActiveRecord::Base
 
   def self.create_based_omniauth(omniauth)
     if omniauth['user_info']['email'].present?
-      user = User.new
-    else
       user = User.find_or_initialize_by_email(:email => omniauth['user_info']['email'])
+    else
+	  user = User.new
     end
 
     user.apply_omniauth(omniauth)

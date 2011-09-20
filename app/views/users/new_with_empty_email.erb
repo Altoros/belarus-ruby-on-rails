@@ -1,0 +1,21 @@
+<h2>Enter your email</h2>
+
+<%= form_tag(:controller => "users", :action => "create_based_on_omniauth_session", :method => "post") do  %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div><%= label_tag :user_email, "Email" %><br />
+    <%= email_field :user, :email %></div>
+    <div><%= submit_tag "Update" %></div>
+
+<% end %>
