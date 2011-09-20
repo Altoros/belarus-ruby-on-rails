@@ -36,7 +36,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         user_sign_in_and_redirect user, get_stored_location
       else
         session[:omniauth] = omniauth.except('extra')
-        redirect_to new_user_registration_based_omniauth_url
+        redirect_to onmiauth_signup_url
       end
     end
   end
