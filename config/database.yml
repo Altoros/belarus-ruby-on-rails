@@ -15,7 +15,7 @@ development:
   database: BelarusRubyOnRails_development
   pool: 5
   username: root
-  password: 
+  password: qwerty
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test: &test
   database: BelarusRubyOnRails_test
   pool: 5
   username: root
-  password:
+  password: qwerty
   host: localhost
 
 production:
@@ -38,7 +38,7 @@ production:
   database: BelarusRubyOnRails_production
   pool: 5
   username: root
-  password:
+  password: qwerty
   host: localhost
 
 cucumber:

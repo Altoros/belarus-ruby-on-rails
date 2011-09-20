@@ -17,6 +17,7 @@ class CustomNewsController < ApplicationController
   # GET /custom_news/1
   # GET /custom_news/1.json
   def show
+    store_location
     @custom_news = CustomNews.find(params[:id])
 
     respond_to do |format|

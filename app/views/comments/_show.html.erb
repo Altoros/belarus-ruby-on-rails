@@ -1,10 +1,12 @@
 <div id=<%= 'comment' + show.id.to_s %>>
   <hr/>
   <div>
-    <b><%= h(show.author) %></b> <%= distance_of_time_in_words_to_now(show.created_at) %> ago write:
-    <%= link_to_if true, "Delete", show, method: :delete ,  confirm: 'Are you sure?', :remote => true %>
+    <b><%= link_to "#{ show.user.profile.first_name } #{ show.user.profile.last_name }", "mailto:#{ show.user.email }" %></b> <%= distance_of_time_in_words_to_now(show.created_at) %> ago write:
+    <% if can(:remove_comment, show) %>
+    <%= link_to "Delete", show, method: :delete ,  confirm: 'Are you sure?', :remote => true %>
+    <% end %>
   </div>
   <div>
-    <%= link_to_if true, show.body, edit_comment_path(show), remote: true, title: "click for edit" %>
+    <%= link_to_if can(:change_comment, show), show.body, edit_comment_path(show), remote: true, title: "click for edit" %>
   </div>
 </div>

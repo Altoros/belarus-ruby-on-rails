@@ -154,7 +154,7 @@ CKEDITOR.lang['sv'] =
 		type		: 'Länktyp',
 		toUrl		: 'URL',
 		toAnchor	: 'Ankare i sidan',
-		toEmail		: 'E-current_news',
+		toEmail		: 'E-post',
 		targetFrame		: '<ram>',
 		targetPopup		: '<popup-fönster>',
 		targetFrameName	: 'Målets ramnamn',
