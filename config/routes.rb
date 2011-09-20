@@ -6,12 +6,14 @@ BelarusRubyOnRails::Application.routes.draw do
     get '/users/sign_in', :to => "devise/sessions#new", :as => 'login'
     post '/users/sign_in', :to => "devise/sessions#create", :as => 'login'
     delete '/users/sign_out', :to => "devise/sessions#destroy", :as => 'logout'
+    get '/users/omiauth', :to => 'users#omniauth_new', :as => 'onmiauth_signup'
+    post '/users/omiauth', :to => 'users#omniauth_create', :as => 'onmiauth_signup'
   end
+
   match 'users/auth/:provider' => 'omniauth#passthru'
   match 'users/reset_password_for_signed_user' => 'users#reset_password_for_signed_user', :as => 'signed_user_reset_pass'
 
   resources :users, :only => :show
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
