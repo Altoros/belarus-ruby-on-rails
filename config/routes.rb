@@ -8,6 +8,8 @@ BelarusRubyOnRails::Application.routes.draw do
     delete '/users/sign_out', :to => "devise/sessions#destroy", :as => 'logout'
     get '/users/auth/:provider', :to => 'omniauth#passthru'
     get '/users/reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
+    get '/users/omiauth', :to => 'users#omniauth_new', :as => 'onmiauth_signup'
+    post '/users/omiauth', :to => 'users#omniauth_create', :as => 'onmiauth_signup'
   end
 
   resources :users, :only => :show
