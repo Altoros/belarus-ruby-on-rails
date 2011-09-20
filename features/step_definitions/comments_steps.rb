@@ -1,17 +1,16 @@
 Given /^I am logged in$/ do
-  Given %{I am on the home page}
-  And %{I go to the sign up page}
-  And %{I fill in "Email" with "user@test.com"}
-  And %{I fill in "First name" with "Testy"}
-  And %{I fill in "Last name" with "McUserton"}
-  And %{I fill in "Password" with "please"}
-  And %{I fill in "Password confirmation" with "please"}
-  And %{I press "Sign up"}
-  Then %{I should see "You have signed up successfully."}
+  (user = User.new(email: "admin@example.com",
+                  password: "password",
+                  password_confirmation: "password")).confirm!
+  Profile.new(first_name: "Admin",
+              last_name: "Admin",
+              user: user).save
+
   When %{I go to the sign in page}
-  And %{I fill in "Email" with "user@test.com"}
-  And %{I fill in "Password" with "please"}
+  And %{I fill in "admin@example.com" for "Email"}
+  And %{I fill in "password" for "Password"}
   And %{I press "Sign in"}
+  Then %{I should see "Signed in successfully."}
 end
 
 Given /^I have (\d+) custom news article$/ do |arg1|

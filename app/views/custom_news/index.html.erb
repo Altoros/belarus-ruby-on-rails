@@ -33,3 +33,6 @@
 <%= link_to 'New Custom news', new_custom_news_path %>
 
 <%= will_paginate @custom_news %>
+<% if user_signed_in? and current_user.is_admin? %>
+    <%= link_to "UserManagement", { controller: :user_manager } %>
+<% end %>

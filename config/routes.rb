@@ -1,6 +1,7 @@
 BelarusRubyOnRails::Application.routes.draw do
-  resources :profiles
+  get "user_manager/index"
 
+  resources :profiles
   resources :custom_news
   resources :comments
 

@@ -5,7 +5,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 /**
  * @fileOverview Defines the {@link CKEDITOR.lang} object, for the
- * Norwegian Bokmål language.
+ * Estonian language.
  */
 
 /**#@+
@@ -17,7 +17,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
  * Constains the dictionary of language entries.
  * @namespace
  */
-CKEDITOR.lang['nb'] =
+CKEDITOR.lang['et'] =
 {
 	/**
 	 * The language reading direction. Possible values are "rtl" for
@@ -31,723 +31,723 @@ CKEDITOR.lang['nb'] =
 	 * Screenreader titles. Please note that screenreaders are not always capable
 	 * of reading non-English words. So be careful while translating it.
 	 */
-	editorTitle : 'Rikteksteditor, %1, trykk ALT 0 for hjelp.',
+	editorTitle : 'Rich text editor, %1, press ALT 0 for help.', // MISSING
 
 	// ARIA descriptions.
 	toolbars	: 'Editor toolbars', // MISSING
-	editor		: 'Rikteksteditor',
+	editor		: 'Rich Text Editor', // MISSING
 
 	// Toolbar buttons without dialogs.
-	source			: 'Kilde',
-	newPage			: 'Ny side',
-	save			: 'Lagre',
-	preview			: 'Forhåndsvis',
-	cut				: 'Klipp ut',
-	copy			: 'Kopier',
-	paste			: 'Lim inn',
-	print			: 'Skriv ut',
-	underline		: 'Understreking',
-	bold			: 'Fet',
-	italic			: 'Kursiv',
-	selectAll		: 'Merk alt',
-	removeFormat	: 'Fjern formatering',
-	strike			: 'Gjennomstreking',
-	subscript		: 'Senket skrift',
-	superscript		: 'Hevet skrift',
-	horizontalrule	: 'Sett inn horisontal linje',
-	pagebreak		: 'Sett inn sideskift for utskrift',
-	pagebreakAlt		: 'Sideskift',
-	unlink			: 'Fjern lenke',
-	undo			: 'Angre',
-	redo			: 'Gjør om',
+	source			: 'Lähtekood',
+	newPage			: 'Uus leht',
+	save			: 'Salvesta',
+	preview			: 'Eelvaade',
+	cut				: 'Lõika',
+	copy			: 'Kopeeri',
+	paste			: 'Kleebi',
+	print			: 'Prindi',
+	underline		: 'Allajoonitud',
+	bold			: 'Paks',
+	italic			: 'Kursiiv',
+	selectAll		: 'Vali kõik',
+	removeFormat	: 'Eemalda vorming',
+	strike			: 'Läbijoonitud',
+	subscript		: 'Allindeks',
+	superscript		: 'Ülaindeks',
+	horizontalrule	: 'Sisesta horisontaaljoon',
+	pagebreak		: 'Sisesta lehevahetuskoht',
+	pagebreakAlt		: 'Page Break', // MISSING
+	unlink			: 'Eemalda link',
+	undo			: 'Võta tagasi',
+	redo			: 'Korda toimingut',
 
 	// Common messages and labels.
 	common :
 	{
-		browseServer	: 'Bla igjennom server',
+		browseServer	: 'Sirvi serverit',
 		url				: 'URL',
 		protocol		: 'Protokoll',
-		upload			: 'Last opp',
-		uploadSubmit	: 'Send det til serveren',
-		image			: 'Bilde',
+		upload			: 'Lae üles',
+		uploadSubmit	: 'Saada serverissee',
+		image			: 'Pilt',
 		flash			: 'Flash',
-		form			: 'Skjema',
-		checkbox		: 'Avmerkingsboks',
-		radio			: 'Alternativknapp',
-		textField		: 'Tekstboks',
-		textarea		: 'Tekstområde',
-		hiddenField		: 'Skjult felt',
-		button			: 'Knapp',
-		select			: 'Rullegardinliste',
-		imageButton		: 'Bildeknapp',
-		notSet			: '<ikke satt>',
+		form			: 'Vorm',
+		checkbox		: 'Märkeruut',
+		radio			: 'Raadionupp',
+		textField		: 'Tekstilahter',
+		textarea		: 'Tekstiala',
+		hiddenField		: 'Varjatud lahter',
+		button			: 'Nupp',
+		select			: 'Valiklahter',
+		imageButton		: 'Piltnupp',
+		notSet			: '<määramata>',
 		id				: 'Id',
-		name			: 'Navn',
-		langDir			: 'Språkretning',
-		langDirLtr		: 'Venstre til høyre (VTH)',
-		langDirRtl		: 'Høyre til venstre (HTV)',
-		langCode		: 'Språkkode',
-		longDescr		: 'Utvidet beskrivelse',
-		cssClass		: 'Stilarkklasser',
-		advisoryTitle	: 'Tittel',
-		cssStyle		: 'Stil',
+		name			: 'Nimi',
+		langDir			: 'Keele suund',
+		langDirLtr		: 'Vasakult paremale (LTR)',
+		langDirRtl		: 'Paremalt vasakule (RTL)',
+		langCode		: 'Keele kood',
+		longDescr		: 'Pikk kirjeldus URL',
+		cssClass		: 'Stiilistiku klassid',
+		advisoryTitle	: 'Juhendav tiitel',
+		cssStyle		: 'Laad',
 		ok				: 'OK',
-		cancel			: 'Avbryt',
-		close			: 'Lukk',
-		preview			: 'Forhåndsvis',
-		generalTab		: 'Generelt',
-		advancedTab		: 'Avansert',
-		validateNumberFailed : 'Denne verdien er ikke et tall.',
-		confirmNewPage	: 'Alle ulagrede endringer som er gjort i dette innholdet vil bli tapt. Er du sikker på at du vil laste en ny side?',
-		confirmCancel	: 'Noen av valgene har blitt endret. Er du sikker på at du vil lukke dialogen?',
-		options			: 'Valg',
-		target			: 'Mål',
-		targetNew		: 'Nytt vindu (_blank)',
-		targetTop		: 'Hele vindu (_top)',
-		targetSelf		: 'Samme vindu (_self)',
-		targetParent	: 'Foreldrevindu (_parent)',
-		langDirLTR		: 'Venstre til høyre (VTH)',
-		langDirRTL		: 'Høyre til venstre (HTV)',
-		styles			: 'Stil',
-		cssClasses		: 'Stilarkklasser',
-		width			: 'Bredde',
-		height			: 'Høyde',
-		align			: 'Juster',
-		alignLeft		: 'Venstre',
-		alignRight		: 'Høyre',
-		alignCenter		: 'Midtjuster',
-		alignTop		: 'Topp',
-		alignMiddle		: 'Midten',
-		alignBottom		: 'Bunn',
-		invalidHeight	: 'Høyde må være et tall.',
-		invalidWidth	: 'Bredde må være et tall.',
+		cancel			: 'Loobu',
+		close			: 'Close', // MISSING
+		preview			: 'Preview', // MISSING
+		generalTab		: 'General', // MISSING
+		advancedTab		: 'Täpsemalt',
+		validateNumberFailed : 'This value is not a number.', // MISSING
+		confirmNewPage	: 'Any unsaved changes to this content will be lost. Are you sure you want to load new page?', // MISSING
+		confirmCancel	: 'Some of the options have been changed. Are you sure to close the dialog?', // MISSING
+		options			: 'Options', // MISSING
+		target			: 'Target', // MISSING
+		targetNew		: 'New Window (_blank)', // MISSING
+		targetTop		: 'Topmost Window (_top)', // MISSING
+		targetSelf		: 'Same Window (_self)', // MISSING
+		targetParent	: 'Parent Window (_parent)', // MISSING
+		langDirLTR		: 'Left to Right (LTR)', // MISSING
+		langDirRTL		: 'Right to Left (RTL)', // MISSING
+		styles			: 'Style', // MISSING
+		cssClasses		: 'Stylesheet Classes', // MISSING
+		width			: 'Laius',
+		height			: 'Kõrgus',
+		align			: 'Joondus',
+		alignLeft		: 'Vasak',
+		alignRight		: 'Paremale',
+		alignCenter		: 'Kesk',
+		alignTop		: 'Üles',
+		alignMiddle		: 'Keskele',
+		alignBottom		: 'Alla',
+		invalidHeight	: 'Height must be a number.', // MISSING
+		invalidWidth	: 'Width must be a number.', // MISSING
 		invalidCssLength	: 'Value specified for the "%1" field must be a positive number with or without a valid CSS measurement unit (px, %, in, cm, mm, em, ex, pt, or pc).', // MISSING
 		invalidHtmlLength	: 'Value specified for the "%1" field must be a positive number with or without a valid HTML measurement unit (px or %).', // MISSING
 
 		// Put the voice-only part of the label in the span.
-		unavailable		: '%1<span class="cke_accessibility">, utilgjenglig</span>'
+		unavailable		: '%1<span class="cke_accessibility">, unavailable</span>' // MISSING
 	},
 
 	contextmenu :
 	{
-		options : 'Alternativer for høyreklikkmeny'
+		options : 'Context Menu Options' // MISSING
 	},
 
 	// Special char dialog.
 	specialChar		:
 	{
-		toolbar		: 'Sett inn spesialtegn',
-		title		: 'Velg spesialtegn',
-		options : 'Alternativer for spesialtegn'
+		toolbar		: 'Sisesta erimärk',
+		title		: 'Vali erimärk',
+		options : 'Special Character Options' // MISSING
 	},
 
 	// Link dialog.
 	link :
 	{
-		toolbar		: 'Sett inn/Rediger lenke',
-		other 		: '<annen>',
-		menu		: 'Rediger lenke',
-		title		: 'Lenke',
-		info		: 'Lenkeinfo',
-		target		: 'Mål',
-		upload		: 'Last opp',
-		advanced	: 'Avansert',
-		type		: 'Lenketype',
-		toUrl		: 'URL',
-		toAnchor	: 'Lenke til anker i teksten',
+		toolbar		: 'Sisesta link / Muuda linki',
+		other 		: '<muu>',
+		menu		: 'Muuda linki',
+		title		: 'Link',
+		info		: 'Lingi info',
+		target		: 'Sihtkoht',
+		upload		: 'Lae üles',
+		advanced	: 'Täpsemalt',
+		type		: 'Lingi tüüp',
+		toUrl		: 'URL', // MISSING
+		toAnchor	: 'Ankur sellel lehel',
 		toEmail		: 'E-post',
-		targetFrame		: '<ramme>',
-		targetPopup		: '<popup-vindu>',
-		targetFrameName	: 'Målramme',
-		targetPopupName	: 'Navn på popup-vindu',
-		popupFeatures	: 'Egenskaper for popup-vindu',
-		popupResizable	: 'Skalerbar',
-		popupStatusBar	: 'Statuslinje',
-		popupLocationBar: 'Adresselinje',
-		popupToolbar	: 'Verktøylinje',
-		popupMenuBar	: 'Menylinje',
-		popupFullScreen	: 'Fullskjerm (IE)',
-		popupScrollBars	: 'Scrollbar',
-		popupDependent	: 'Avhenging (Netscape)',
-		popupLeft		: 'Venstre posisjon',
-		popupTop		: 'Topp-posisjon',
-		id				: 'Id',
-		langDir			: 'Språkretning',
-		langDirLTR		: 'Venstre til høyre (VTH)',
-		langDirRTL		: 'Høyre til venstre (HTV)',
-		acccessKey		: 'Aksessknapp',
-		name			: 'Navn',
-		langCode			: 'Språkkode',
-		tabIndex			: 'Tabindeks',
-		advisoryTitle		: 'Tittel',
-		advisoryContentType	: 'Type',
-		cssClasses		: 'Stilarkklasser',
-		charset			: 'Lenket tegnsett',
-		styles			: 'Stil',
+		targetFrame		: '<raam>',
+		targetPopup		: '<hüpikaken>',
+		targetFrameName	: 'Sihtmärk raami nimi',
+		targetPopupName	: 'Hüpikakna nimi',
+		popupFeatures	: 'Hüpikakna omadused',
+		popupResizable	: 'Resizable', // MISSING
+		popupStatusBar	: 'Olekuriba',
+		popupLocationBar: 'Aadressiriba',
+		popupToolbar	: 'Tööriistariba',
+		popupMenuBar	: 'Menüüriba',
+		popupFullScreen	: 'Täisekraan (IE)',
+		popupScrollBars	: 'Kerimisribad',
+		popupDependent	: 'Sõltuv (Netscape)',
+		popupLeft		: 'Vasak asukoht',
+		popupTop		: 'Ülemine asukoht',
+		id				: 'Id', // MISSING
+		langDir			: 'Keele suund',
+		langDirLTR		: 'Vasakult paremale (LTR)',
+		langDirRTL		: 'Paremalt vasakule (RTL)',
+		acccessKey		: 'Juurdepääsu võti',
+		name			: 'Nimi',
+		langCode			: 'Keele suund',
+		tabIndex			: 'Tab indeks',
+		advisoryTitle		: 'Juhendav tiitel',
+		advisoryContentType	: 'Juhendava sisu tüüp',
+		cssClasses		: 'Stiilistiku klassid',
+		charset			: 'Lingitud ressurssi märgistik',
+		styles			: 'Laad',
 		rel			: 'Relationship', // MISSING
-		selectAnchor		: 'Velg et anker',
-		anchorName		: 'Anker etter navn',
-		anchorId			: 'Element etter ID',
-		emailAddress		: 'E-postadresse',
-		emailSubject		: 'Meldingsemne',
-		emailBody		: 'Melding',
-		noAnchors		: '(Ingen anker i dokumentet)',
-		noUrl			: 'Vennligst skriv inn lenkens URL',
-		noEmail			: 'Vennligst skriv inn e-postadressen'
+		selectAnchor		: 'Vali ankur',
+		anchorName		: 'Ankru nime järgi',
+		anchorId			: 'Elemendi id järgi',
+		emailAddress		: 'E-posti aadress',
+		emailSubject		: 'Sõnumi teema',
+		emailBody		: 'Sõnumi tekst',
+		noAnchors		: '(Selles dokumendis ei ole ankruid)',
+		noUrl			: 'Palun kirjuta lingi URL',
+		noEmail			: 'Palun kirjuta E-Posti aadress'
 	},
 
 	// Anchor dialog
 	anchor :
 	{
-		toolbar		: 'Sett inn/Rediger anker',
-		menu		: 'Egenskaper for anker',
-		title		: 'Egenskaper for anker',
-		name		: 'Ankernavn',
-		errorName	: 'Vennligst skriv inn ankernavnet',
+		toolbar		: 'Sisesta ankur / Muuda ankrut',
+		menu		: 'Ankru omadused',
+		title		: 'Ankru omadused',
+		name		: 'Ankru nimi',
+		errorName	: 'Palun sisest ankru nimi',
 		remove		: 'Remove Anchor' // MISSING
 	},
 
 	// List style dialog
 	list:
 	{
-		numberedTitle		: 'Egenskaper for nummerert liste',
-		bulletedTitle		: 'Egenskaper for punktmerket liste',
-		type				: 'Type',
-		start				: 'Start',
-		validateStartNumber				:'Starten på listen må være et heltall.',
-		circle				: 'Sirkel',
-		disc				: 'Disk',
-		square				: 'Firkant',
-		none				: 'Ingen',
-		notset				: '<ikke satt>',
-		armenian			: 'Armensk nummerering',
-		georgian			: 'Georgisk nummerering (an, ban, gan, osv.)',
-		lowerRoman			: 'Romertall, små (i, ii, iii, iv, v, osv.)',
-		upperRoman			: 'Romertall, store (I, II, III, IV, V, osv.)',
-		lowerAlpha			: 'Alfabetisk, små (a, b, c, d, e, osv.)',
-		upperAlpha			: 'Alfabetisk, store (A, B, C, D, E, osv.)',
-		lowerGreek			: 'Gresk, små (alpha, beta, gamma, osv.)',
-		decimal				: 'Tall (1, 2, 3, osv.)',
-		decimalLeadingZero	: 'Tall, med førstesiffer null (01, 02, 03, osv.)'
+		numberedTitle		: 'Numbered List Properties', // MISSING
+		bulletedTitle		: 'Bulleted List Properties', // MISSING
+		type				: 'Type', // MISSING
+		start				: 'Start', // MISSING
+		validateStartNumber				:'List start number must be a whole number.', // MISSING
+		circle				: 'Circle', // MISSING
+		disc				: 'Disc', // MISSING
+		square				: 'Square', // MISSING
+		none				: 'None', // MISSING
+		notset				: '<not set>', // MISSING
+		armenian			: 'Armenian numbering', // MISSING
+		georgian			: 'Georgian numbering (an, ban, gan, etc.)', // MISSING
+		lowerRoman			: 'Lower Roman (i, ii, iii, iv, v, etc.)', // MISSING
+		upperRoman			: 'Upper Roman (I, II, III, IV, V, etc.)', // MISSING
+		lowerAlpha			: 'Lower Alpha (a, b, c, d, e, etc.)', // MISSING
+		upperAlpha			: 'Upper Alpha (A, B, C, D, E, etc.)', // MISSING
+		lowerGreek			: 'Lower Greek (alpha, beta, gamma, etc.)', // MISSING
+		decimal				: 'Decimal (1, 2, 3, etc.)', // MISSING
+		decimalLeadingZero	: 'Decimal leading zero (01, 02, 03, etc.)' // MISSING
 	},
 
 	// Find And Replace Dialog
 	findAndReplace :
 	{
-		title				: 'Søk og erstatt',
-		find				: 'Søk',
-		replace				: 'Erstatt',
-		findWhat			: 'Søk etter:',
-		replaceWith			: 'Erstatt med:',
-		notFoundMsg			: 'Fant ikke søketeksten.',
-		matchCase			: 'Skill mellom store og små bokstaver',
-		matchWord			: 'Bare hele ord',
-		matchCyclic			: 'Søk i hele dokumentet',
-		replaceAll			: 'Erstatt alle',
-		replaceSuccessMsg	: '%1 tilfelle(r) erstattet.'
+		title				: 'Otsi ja asenda',
+		find				: 'Otsi',
+		replace				: 'Asenda',
+		findWhat			: 'Leia mida:',
+		replaceWith			: 'Asenda millega:',
+		notFoundMsg			: 'Valitud teksti ei leitud.',
+		matchCase			: 'Erista suur- ja väiketähti',
+		matchWord			: 'Otsi terviklike sõnu',
+		matchCyclic			: 'Match cyclic', // MISSING
+		replaceAll			: 'Asenda kõik',
+		replaceSuccessMsg	: '%1 occurrence(s) replaced.' // MISSING
 	},
 
 	// Table Dialog
 	table :
 	{
-		toolbar		: 'Tabell',
-		title		: 'Egenskaper for tabell',
-		menu		: 'Egenskaper for tabell',
-		deleteTable	: 'Slett tabell',
-		rows		: 'Rader',
-		columns		: 'Kolonner',
-		border		: 'Rammestørrelse',
-		widthPx		: 'piksler',
-		widthPc		: 'prosent',
-		widthUnit	: 'Bredde-enhet',
-		cellSpace	: 'Cellemarg',
-		cellPad		: 'Cellepolstring',
-		caption		: 'Tittel',
-		summary		: 'Sammendrag',
-		headers		: 'Overskrifter',
-		headersNone		: 'Ingen',
-		headersColumn	: 'Første kolonne',
-		headersRow		: 'Første rad',
-		headersBoth		: 'Begge',
-		invalidRows		: 'Antall rader må være et tall større enn 0.',
-		invalidCols		: 'Antall kolonner må være et tall større enn 0.',
-		invalidBorder	: 'Rammestørrelse må være et tall.',
-		invalidWidth	: 'Tabellbredde må være et tall.',
-		invalidHeight	: 'Tabellhøyde må være et tall.',
-		invalidCellSpacing	: 'Cellemarg må være et tall.',
-		invalidCellPadding	: 'Cellepolstring må være et tall.',
+		toolbar		: 'Tabel',
+		title		: 'Tabeli atribuudid',
+		menu		: 'Tabeli atribuudid',
+		deleteTable	: 'Kustuta tabel',
+		rows		: 'Read',
+		columns		: 'Veerud',
+		border		: 'Joone suurus',
+		widthPx		: 'pikslit',
+		widthPc		: 'protsenti',
+		widthUnit	: 'width unit', // MISSING
+		cellSpace	: 'Lahtri vahe',
+		cellPad		: 'Lahtri täidis',
+		caption		: 'Tabeli tiitel',
+		summary		: 'Kokkuvõte',
+		headers		: 'Headers', // MISSING
+		headersNone		: 'None', // MISSING
+		headersColumn	: 'First column', // MISSING
+		headersRow		: 'First Row', // MISSING
+		headersBoth		: 'Both', // MISSING
+		invalidRows		: 'Number of rows must be a number greater than 0.', // MISSING
+		invalidCols		: 'Number of columns must be a number greater than 0.', // MISSING
+		invalidBorder	: 'Border size must be a number.', // MISSING
+		invalidWidth	: 'Table width must be a number.', // MISSING
+		invalidHeight	: 'Table height must be a number.', // MISSING
+		invalidCellSpacing	: 'Cell spacing must be a positive number.', // MISSING
+		invalidCellPadding	: 'Cell padding must be a positive number.', // MISSING
 
 		cell :
 		{
-			menu			: 'Celle',
-			insertBefore	: 'Sett inn celle før',
-			insertAfter		: 'Sett inn celle etter',
-			deleteCell		: 'Slett celler',
-			merge			: 'Slå sammen celler',
-			mergeRight		: 'Slå sammen høyre',
-			mergeDown		: 'Slå sammen ned',
-			splitHorizontal	: 'Del celle horisontalt',
-			splitVertical	: 'Del celle vertikalt',
-			title			: 'Celleegenskaper',
-			cellType		: 'Celletype',
-			rowSpan			: 'Radspenn',
-			colSpan			: 'Kolonnespenn',
-			wordWrap		: 'Tekstbrytning',
-			hAlign			: 'Horisontal justering',
-			vAlign			: 'Vertikal justering',
-			alignBaseline	: 'Grunnlinje',
-			bgColor			: 'Bakgrunnsfarge',
-			borderColor		: 'Rammefarge',
-			data			: 'Data',
-			header			: 'Overskrift',
-			yes				: 'Ja',
-			no				: 'Nei',
-			invalidWidth	: 'Cellebredde må være et tall.',
-			invalidHeight	: 'Cellehøyde må være et tall.',
-			invalidRowSpan	: 'Radspenn må være et heltall.',
-			invalidColSpan	: 'Kolonnespenn må være et heltall.',
-			chooseColor		: 'Velg'
+			menu			: 'Lahter',
+			insertBefore	: 'Sisesta lahter enne',
+			insertAfter		: 'Sisesta lahter peale',
+			deleteCell		: 'Eemalda lahtrid',
+			merge			: 'Ühenda lahtrid',
+			mergeRight		: 'Ühenda paremale',
+			mergeDown		: 'Ühenda alla',
+			splitHorizontal	: 'Poolita lahter horisontaalselt',
+			splitVertical	: 'Poolita lahter vertikaalselt',
+			title			: 'Cell Properties', // MISSING
+			cellType		: 'Cell Type', // MISSING
+			rowSpan			: 'Rows Span', // MISSING
+			colSpan			: 'Columns Span', // MISSING
+			wordWrap		: 'Word Wrap', // MISSING
+			hAlign			: 'Horizontal Alignment', // MISSING
+			vAlign			: 'Vertical Alignment', // MISSING
+			alignBaseline	: 'Baseline', // MISSING
+			bgColor			: 'Background Color', // MISSING
+			borderColor		: 'Border Color', // MISSING
+			data			: 'Data', // MISSING
+			header			: 'Header', // MISSING
+			yes				: 'Yes', // MISSING
+			no				: 'No', // MISSING
+			invalidWidth	: 'Cell width must be a number.', // MISSING
+			invalidHeight	: 'Cell height must be a number.', // MISSING
+			invalidRowSpan	: 'Rows span must be a whole number.', // MISSING
+			invalidColSpan	: 'Columns span must be a whole number.', // MISSING
+			chooseColor		: 'Choose' // MISSING
 		},
 
 		row :
 		{
-			menu			: 'Rader',
-			insertBefore	: 'Sett inn rad før',
-			insertAfter		: 'Sett inn rad etter',
-			deleteRow		: 'Slett rader'
+			menu			: 'Rida',
+			insertBefore	: 'Sisesta rida enne',
+			insertAfter		: 'Sisesta rida peale',
+			deleteRow		: 'Eemalda read'
 		},
 
 		column :
 		{
-			menu			: 'Kolonne',
-			insertBefore	: 'Sett inn kolonne før',
-			insertAfter		: 'Sett inn kolonne etter',
-			deleteColumn	: 'Slett kolonner'
+			menu			: 'Veerg',
+			insertBefore	: 'Sisesta veerg enne',
+			insertAfter		: 'Sisesta veerg peale',
+			deleteColumn	: 'Eemalda veerud'
 		}
 	},
 
 	// Button Dialog.
 	button :
 	{
-		title		: 'Egenskaper for knapp',
-		text		: 'Tekst (verdi)',
-		type		: 'Type',
-		typeBtn		: 'Knapp',
-		typeSbm		: 'Send',
-		typeRst		: 'Nullstill'
+		title		: 'Nupu omadused',
+		text		: 'Tekst (väärtus)',
+		type		: 'Tüüp',
+		typeBtn		: 'Nupp',
+		typeSbm		: 'Saada',
+		typeRst		: 'Lähtesta'
 	},
 
 	// Checkbox and Radio Button Dialogs.
 	checkboxAndRadio :
 	{
-		checkboxTitle : 'Egenskaper for avmerkingsboks',
-		radioTitle	: 'Egenskaper for alternativknapp',
-		value		: 'Verdi',
-		selected	: 'Valgt'
+		checkboxTitle : 'Märkeruudu omadused',
+		radioTitle	: 'Raadionupu omadused',
+		value		: 'Väärtus',
+		selected	: 'Valitud'
 	},
 
 	// Form Dialog.
 	form :
 	{
-		title		: 'Egenskaper for skjema',
-		menu		: 'Egenskaper for skjema',
-		action		: 'Handling',
-		method		: 'Metode',
-		encoding	: 'Encoding'
+		title		: 'Vormi omadused',
+		menu		: 'Vormi omadused',
+		action		: 'Toiming',
+		method		: 'Meetod',
+		encoding	: 'Encoding' // MISSING
 	},
 
 	// Select Field Dialog.
 	select :
 	{
-		title		: 'Egenskaper for rullegardinliste',
+		title		: 'Valiklahtri omadused',
 		selectInfo	: 'Info',
-		opAvail		: 'Tilgjenglige alternativer',
-		value		: 'Verdi',
-		size		: 'Størrelse',
-		lines		: 'Linjer',
-		chkMulti	: 'Tillat flervalg',
+		opAvail		: 'Võimalikud valikud',
+		value		: 'Väärtus',
+		size		: 'Suurus',
+		lines		: 'ridu',
+		chkMulti	: 'Võimalda mitu valikut',
 		opText		: 'Tekst',
-		opValue		: 'Verdi',
-		btnAdd		: 'Legg til',
-		btnModify	: 'Endre',
-		btnUp		: 'Opp',
-		btnDown		: 'Ned',
-		btnSetValue : 'Sett som valgt',
-		btnDelete	: 'Slett'
+		opValue		: 'Väärtus',
+		btnAdd		: 'Lisa',
+		btnModify	: 'Muuda',
+		btnUp		: 'Üles',
+		btnDown		: 'Alla',
+		btnSetValue : 'Sea valitud olekuna',
+		btnDelete	: 'Kustuta'
 	},
 
 	// Textarea Dialog.
 	textarea :
 	{
-		title		: 'Egenskaper for tekstområde',
-		cols		: 'Kolonner',
-		rows		: 'Rader'
+		title		: 'Tekstiala omadused',
+		cols		: 'Veerge',
+		rows		: 'Ridu'
 	},
 
 	// Text Field Dialog.
 	textfield :
 	{
-		title		: 'Egenskaper for tekstfelt',
-		name		: 'Navn',
-		value		: 'Verdi',
-		charWidth	: 'Tegnbredde',
-		maxChars	: 'Maks antall tegn',
-		type		: 'Type',
+		title		: 'Tekstilahtri omadused',
+		name		: 'Nimi',
+		value		: 'Väärtus',
+		charWidth	: 'Laius (tähemärkides)',
+		maxChars	: 'Maksimaalselt tähemärke',
+		type		: 'Tüüp',
 		typeText	: 'Tekst',
-		typePass	: 'Passord'
+		typePass	: 'Parool'
 	},
 
 	// Hidden Field Dialog.
 	hidden :
 	{
-		title	: 'Egenskaper for skjult felt',
-		name	: 'Navn',
-		value	: 'Verdi'
+		title	: 'Varjatud lahtri omadused',
+		name	: 'Nimi',
+		value	: 'Väärtus'
 	},
 
 	// Image Dialog.
 	image :
 	{
-		title		: 'Bildeegenskaper',
-		titleButton	: 'Egenskaper for bildeknapp',
-		menu		: 'Bildeegenskaper',
-		infoTab		: 'Bildeinformasjon',
-		btnUpload	: 'Send det til serveren',
-		upload		: 'Last opp',
-		alt			: 'Alternativ tekst',
-		lockRatio	: 'Lås forhold',
-		resetSize	: 'Tilbakestill størrelse',
-		border		: 'Ramme',
-		hSpace		: 'HMarg',
-		vSpace		: 'VMarg',
-		alertUrl	: 'Vennligst skriv bilde-urlen',
-		linkTab		: 'Lenke',
-		button2Img	: 'Vil du endre den valgte bildeknappen til et vanlig bilde?',
-		img2Button	: 'Vil du endre det valgte bildet til en bildeknapp?',
-		urlMissing	: 'Bildets adresse mangler.',
-		validateBorder	: 'Ramme må være et heltall.',
-		validateHSpace	: 'HMarg må være et heltall.',
-		validateVSpace	: 'VMarg må være et heltall.'
+		title		: 'Pildi atribuudid',
+		titleButton	: 'Piltnupu omadused',
+		menu		: 'Pildi atribuudid',
+		infoTab		: 'Pildi info',
+		btnUpload	: 'Saada serverissee',
+		upload		: 'Lae üles',
+		alt			: 'Alternatiivne tekst',
+		lockRatio	: 'Lukusta kuvasuhe',
+		resetSize	: 'Lähtesta suurus',
+		border		: 'Joon',
+		hSpace		: 'H. vaheruum',
+		vSpace		: 'V. vaheruum',
+		alertUrl	: 'Palun kirjuta pildi URL',
+		linkTab		: 'Link',
+		button2Img	: 'Do you want to transform the selected image button on a simple image?', // MISSING
+		img2Button	: 'Do you want to transform the selected image on a image button?', // MISSING
+		urlMissing	: 'Image source URL is missing.', // MISSING
+		validateBorder	: 'Border must be a whole number.', // MISSING
+		validateHSpace	: 'HSpace must be a whole number.', // MISSING
+		validateVSpace	: 'VSpace must be a whole number.' // MISSING
 	},
 
 	// Flash Dialog
 	flash :
 	{
-		properties		: 'Egenskaper for Flash-objekt',
-		propertiesTab	: 'Egenskaper',
-		title			: 'Flash-egenskaper',
-		chkPlay			: 'Autospill',
-		chkLoop			: 'Loop',
-		chkMenu			: 'Slå på Flash-meny',
-		chkFull			: 'Tillat fullskjerm',
- 		scale			: 'Skaler',
-		scaleAll		: 'Vis alt',
-		scaleNoBorder	: 'Ingen ramme',
-		scaleFit		: 'Skaler til å passe',
-		access			: 'Scripttilgang',
-		accessAlways	: 'Alltid',
-		accessSameDomain: 'Samme domene',
-		accessNever		: 'Aldri',
-		alignAbsBottom	: 'Abs bunn',
-		alignAbsMiddle	: 'Abs midten',
-		alignBaseline	: 'Bunnlinje',
-		alignTextTop	: 'Tekst topp',
-		quality			: 'Kvalitet',
-		qualityBest		: 'Best',
-		qualityHigh		: 'Høy',
-		qualityAutoHigh	: 'Auto høy',
-		qualityMedium	: 'Medium',
-		qualityAutoLow	: 'Auto lav',
-		qualityLow		: 'Lav',
-		windowModeWindow: 'Vindu',
-		windowModeOpaque: 'Opaque',
-		windowModeTransparent : 'Gjennomsiktig',
-		windowMode		: 'Vindumodus',
-		flashvars		: 'Variabler for flash',
-		bgcolor			: 'Bakgrunnsfarge',
-		hSpace			: 'HMarg',
-		vSpace			: 'VMarg',
-		validateSrc		: 'Vennligst skriv inn lenkens url.',
-		validateHSpace	: 'HMarg må være et tall.',
-		validateVSpace	: 'VMarg må være et tall.'
+		properties		: 'Flash omadused',
+		propertiesTab	: 'Properties', // MISSING
+		title			: 'Flash omadused',
+		chkPlay			: 'Automaatne start ',
+		chkLoop			: 'Korduv',
+		chkMenu			: 'Võimalda flash menüü',
+		chkFull			: 'Allow Fullscreen', // MISSING
+ 		scale			: 'Mastaap',
+		scaleAll		: 'Näita kõike',
+		scaleNoBorder	: 'Äärist ei ole',
+		scaleFit		: 'Täpne sobivus',
+		access			: 'Script Access', // MISSING
+		accessAlways	: 'Always', // MISSING
+		accessSameDomain: 'Same domain', // MISSING
+		accessNever		: 'Never', // MISSING
+		alignAbsBottom	: 'Abs alla',
+		alignAbsMiddle	: 'Abs keskele',
+		alignBaseline	: 'Baasjoonele',
+		alignTextTop	: 'Tekstit üles',
+		quality			: 'Quality', // MISSING
+		qualityBest		: 'Best', // MISSING
+		qualityHigh		: 'High', // MISSING
+		qualityAutoHigh	: 'Auto High', // MISSING
+		qualityMedium	: 'Medium', // MISSING
+		qualityAutoLow	: 'Auto Low', // MISSING
+		qualityLow		: 'Low', // MISSING
+		windowModeWindow: 'Window', // MISSING
+		windowModeOpaque: 'Opaque', // MISSING
+		windowModeTransparent : 'Transparent', // MISSING
+		windowMode		: 'Window mode', // MISSING
+		flashvars		: 'Variables for Flash', // MISSING
+		bgcolor			: 'Tausta värv',
+		hSpace			: 'H. vaheruum',
+		vSpace			: 'V. vaheruum',
+		validateSrc		: 'Palun kirjuta lingi URL',
+		validateHSpace	: 'HSpace must be a number.', // MISSING
+		validateVSpace	: 'VSpace must be a number.' // MISSING
 	},
 
 	// Speller Pages Dialog
 	spellCheck :
 	{
-		toolbar			: 'Stavekontroll',
-		title			: 'Stavekontroll',
-		notAvailable	: 'Beklager, tjenesten er utilgjenglig nå.',
-		errorLoading	: 'Feil under lasting av applikasjonstjenestetjener: %s.',
-		notInDic		: 'Ikke i ordboken',
-		changeTo		: 'Endre til',
-		btnIgnore		: 'Ignorer',
-		btnIgnoreAll	: 'Ignorer alle',
-		btnReplace		: 'Erstatt',
-		btnReplaceAll	: 'Erstatt alle',
-		btnUndo			: 'Angre',
-		noSuggestions	: '- Ingen forslag -',
-		progress		: 'Stavekontroll pågår...',
-		noMispell		: 'Stavekontroll fullført: ingen feilstavinger funnet',
-		noChanges		: 'Stavekontroll fullført: ingen ord endret',
-		oneChange		: 'Stavekontroll fullført: Ett ord endret',
-		manyChanges		: 'Stavekontroll fullført: %1 ord endret',
-		ieSpellDownload	: 'Stavekontroll er ikke installert. Vil du laste den ned nå?'
+		toolbar			: 'Kontrolli õigekirja',
+		title			: 'Spell Check', // MISSING
+		notAvailable	: 'Sorry, but service is unavailable now.', // MISSING
+		errorLoading	: 'Error loading application service host: %s.', // MISSING
+		notInDic		: 'Puudub sõnastikust',
+		changeTo		: 'Muuda',
+		btnIgnore		: 'Ignoreeri',
+		btnIgnoreAll	: 'Ignoreeri kõiki',
+		btnReplace		: 'Asenda',
+		btnReplaceAll	: 'Asenda kõik',
+		btnUndo			: 'Võta tagasi',
+		noSuggestions	: '- Soovitused puuduvad -',
+		progress		: 'Toimub õigekirja kontroll...',
+		noMispell		: 'Õigekirja kontroll sooritatud: õigekirjuvigu ei leitud',
+		noChanges		: 'Õigekirja kontroll sooritatud: ühtegi sõna ei muudetud',
+		oneChange		: 'Õigekirja kontroll sooritatud: üks sõna muudeti',
+		manyChanges		: 'Õigekirja kontroll sooritatud: %1 sõna muudetud',
+		ieSpellDownload	: 'Õigekirja kontrollija ei ole installeeritud. Soovid sa selle alla laadida?'
 	},
 
 	smiley :
 	{
-		toolbar	: 'Smil',
-		title	: 'Sett inn smil',
-		options : 'Alternativer for smil'
+		toolbar	: 'Emotikon',
+		title	: 'Sisesta emotikon',
+		options : 'Smiley Options' // MISSING
 	},
 
 	elementsPath :
 	{
-		eleLabel : 'Element-sti',
-		eleTitle : '%1 element'
+		eleLabel : 'Elements path', // MISSING
+		eleTitle : '%1 element' // MISSING
 	},
 
-	numberedlist	: 'Legg til/Fjern nummerert liste',
-	bulletedlist	: 'Legg til/Fjern punktmerket liste',
-	indent			: 'Øk innrykk',
-	outdent			: 'Reduser innrykk',
+	numberedlist	: 'Nummerdatud loetelu',
+	bulletedlist	: 'Punktiseeritud loetelu',
+	indent			: 'Suurenda taanet',
+	outdent			: 'Vähenda taanet',
 
 	justify :
 	{
-		left	: 'Venstrejuster',
-		center	: 'Midtstill',
-		right	: 'Høyrejuster',
-		block	: 'Blokkjuster'
+		left	: 'Vasakjoondus',
+		center	: 'Keskjoondus',
+		right	: 'Paremjoondus',
+		block	: 'Rööpjoondus'
 	},
 
-	blockquote : 'Sitatblokk',
+	blockquote : 'Blokktsitaat',
 
 	clipboard :
 	{
-		title		: 'Lim inn',
-		cutError	: 'Din nettlesers sikkerhetsinstillinger tillater ikke automatisk klipping av tekst. Vennligst bruk snareveien (Ctrl/Cmd+X).',
-		copyError	: 'Din nettlesers sikkerhetsinstillinger tillater ikke automatisk kopiering av tekst. Vennligst bruk snareveien (Ctrl/Cmd+C).',
-		pasteMsg	: 'Vennligst lim inn i følgende boks med tastaturet (<STRONG>Ctrl/Cmd+V</STRONG>) og trykk <STRONG>OK</STRONG>.',
-		securityMsg	: 'Din nettlesers sikkerhetsinstillinger gir ikke redigeringsverktøyet direkte tilgang til utklippstavlen. Du må derfor lime det inn på nytt i dette vinduet.',
-		pasteArea	: 'Innlimingsområde'
+		title		: 'Kleebi',
+		cutError	: 'Sinu veebisirvija turvaseaded ei luba redaktoril automaatselt lõigata. Palun kasutage selleks klaviatuuri klahvikombinatsiooni (Ctrl/Cmd+X).',
+		copyError	: 'Sinu veebisirvija turvaseaded ei luba redaktoril automaatselt kopeerida. Palun kasutage selleks klaviatuuri klahvikombinatsiooni (Ctrl/Cmd+C).',
+		pasteMsg	: 'Palun kleebi järgnevasse kasti kasutades klaviatuuri klahvikombinatsiooni (<STRONG>Ctrl/Cmd+V</STRONG>) ja vajuta seejärel <STRONG>OK</STRONG>.',
+		securityMsg	: 'Sinu veebisirvija turvaseadete tõttu, ei oma redaktor otsest ligipääsu lõikelaua andmetele. Sa pead kleepima need uuesti siia aknasse.',
+		pasteArea	: 'Paste Area' // MISSING
 	},
 
 	pastefromword :
 	{
-		confirmCleanup	: 'Teksten du limer inn ser ut til å være kopiert fra Word. Vil du renske den før du limer den inn?',
-		toolbar			: 'Lim inn fra Word',
-		title			: 'Lim inn fra Word',
-		error			: 'Det var ikke mulig å renske den innlimte teksten på grunn av en intern feil'
+		confirmCleanup	: 'The text you want to paste seems to be copied from Word. Do you want to clean it before pasting?', // MISSING
+		toolbar			: 'Kleebi Wordist',
+		title			: 'Kleebi Wordist',
+		error			: 'It was not possible to clean up the pasted data due to an internal error' // MISSING
 	},
 
 	pasteText :
 	{
-		button	: 'Lim inn som ren tekst',
-		title	: 'Lim inn som ren tekst'
+		button	: 'Kleebi tavalise tekstina',
+		title	: 'Kleebi tavalise tekstina'
 	},
 
 	templates :
 	{
-		button			: 'Maler',
-		title			: 'Innholdsmaler',
-		options : 'Alternativer for mal',
-		insertOption	: 'Erstatt gjeldende innhold',
-		selectPromptMsg	: 'Velg malen du vil åpne i redigeringsverktøyet:',
-		emptyListMsg	: '(Ingen maler definert)'
+		button			: 'Šabloon',
+		title			: 'Sisu šabloonid',
+		options : 'Template Options', // MISSING
+		insertOption	: 'Asenda tegelik sisu',
+		selectPromptMsg	: 'Palun vali šabloon, et avada see redaktoris<br />(praegune sisu läheb kaotsi):',
+		emptyListMsg	: '(Ühtegi šablooni ei ole defineeritud)'
 	},
 
-	showBlocks : 'Vis blokker',
+	showBlocks : 'Näita blokke',
 
 	stylesCombo :
 	{
-		label		: 'Stil',
-		panelTitle	: 'Stilformater',
-		panelTitle1	: 'Blokkstiler',
-		panelTitle2	: 'Inlinestiler',
-		panelTitle3	: 'Objektstiler'
+		label		: 'Laad',
+		panelTitle	: 'Formatting Styles', // MISSING
+		panelTitle1	: 'Block Styles', // MISSING
+		panelTitle2	: 'Inline Styles', // MISSING
+		panelTitle3	: 'Object Styles' // MISSING
 	},
 
 	format :
 	{
-		label		: 'Format',
-		panelTitle	: 'Avsnittsformat',
+		label		: 'Vorming',
+		panelTitle	: 'Vorming',
 
-		tag_p		: 'Normal',
-		tag_pre		: 'Formatert',
-		tag_address	: 'Adresse',
-		tag_h1		: 'Overskrift 1',
-		tag_h2		: 'Overskrift 2',
-		tag_h3		: 'Overskrift 3',
-		tag_h4		: 'Overskrift 4',
-		tag_h5		: 'Overskrift 5',
-		tag_h6		: 'Overskrift 6',
-		tag_div		: 'Normal (DIV)'
+		tag_p		: 'Tavaline',
+		tag_pre		: 'Vormindatud',
+		tag_address	: 'Aadress',
+		tag_h1		: 'Pealkiri 1',
+		tag_h2		: 'Pealkiri 2',
+		tag_h3		: 'Pealkiri 3',
+		tag_h4		: 'Pealkiri 4',
+		tag_h5		: 'Pealkiri 5',
+		tag_h6		: 'Pealkiri 6',
+		tag_div		: 'Tavaline (DIV)'
 	},
 
 	div :
 	{
-		title				: 'Sett inn Div Container',
-		toolbar				: 'Sett inn Div Container',
-		cssClassInputLabel	: 'Stilark-klasser',
-		styleSelectLabel	: 'Stil',
-		IdInputLabel		: 'Id',
-		languageCodeInputLabel	: ' Språkkode',
-		inlineStyleInputLabel	: 'Inlinestiler',
-		advisoryTitleInputLabel	: 'Tittel',
-		langDirLabel		: 'Språkretning',
-		langDirLTRLabel		: 'Venstre til høyre (VTH)',
-		langDirRTLLabel		: 'Høyre til venstre (HTV)',
-		edit				: 'Rediger Div',
-		remove				: 'Fjern Div'
+		title				: 'Create Div Container', // MISSING
+		toolbar				: 'Create Div Container', // MISSING
+		cssClassInputLabel	: 'Stylesheet Classes', // MISSING
+		styleSelectLabel	: 'Style', // MISSING
+		IdInputLabel		: 'Id', // MISSING
+		languageCodeInputLabel	: ' Language Code', // MISSING
+		inlineStyleInputLabel	: 'Inline Style', // MISSING
+		advisoryTitleInputLabel	: 'Advisory Title', // MISSING
+		langDirLabel		: 'Language Direction', // MISSING
+		langDirLTRLabel		: 'Left to Right (LTR)', // MISSING
+		langDirRTLLabel		: 'Right to Left (RTL)', // MISSING
+		edit				: 'Edit Div', // MISSING
+		remove				: 'Remove Div' // MISSING
   	},
 
 	iframe :
 	{
-		title		: 'Egenskaper for IFrame',
-		toolbar		: 'IFrame',
-		noUrl		: 'Vennligst skriv inn URL for iframe',
-		scrolling	: 'Aktiver scrollefelt',
-		border		: 'Viss ramme rundt iframe'
+		title		: 'IFrame Properties', // MISSING
+		toolbar		: 'IFrame', // MISSING
+		noUrl		: 'Please type the iframe URL', // MISSING
+		scrolling	: 'Enable scrollbars', // MISSING
+		border		: 'Show frame border' // MISSING
 	},
 
 	font :
 	{
-		label		: 'Skrift',
-		voiceLabel	: 'Font',
-		panelTitle	: 'Skrift'
+		label		: 'Kiri',
+		voiceLabel	: 'Font', // MISSING
+		panelTitle	: 'Kiri'
 	},
 
 	fontSize :
 	{
-		label		: 'Størrelse',
-		voiceLabel	: 'Font Størrelse',
-		panelTitle	: 'Størrelse'
+		label		: 'Suurus',
+		voiceLabel	: 'Font Size', // MISSING
+		panelTitle	: 'Suurus'
 	},
 
 	colorButton :
 	{
-		textColorTitle	: 'Tekstfarge',
-		bgColorTitle	: 'Bakgrunnsfarge',
-		panelTitle		: 'Farger',
-		auto			: 'Automatisk',
-		more			: 'Flere farger...'
+		textColorTitle	: 'Teksti värv',
+		bgColorTitle	: 'Tausta värv',
+		panelTitle		: 'Colors', // MISSING
+		auto			: 'Automaatne',
+		more			: 'Rohkem värve...'
 	},
 
 	colors :
 	{
-		'000' : 'Svart',
-		'800000' : 'Rødbrun',
-		'8B4513' : 'Salbrun',
-		'2F4F4F' : 'Grønnsvart',
-		'008080' : 'Blågrønn',
-		'000080' : 'Marineblått',
-		'4B0082' : 'Indigo',
-		'696969' : 'Mørk grå',
-		'B22222' : 'Mørkerød',
-		'A52A2A' : 'Brun',
-		'DAA520' : 'Lys brun',
-		'006400' : 'Mørk grønn',
-		'40E0D0' : 'Turkis',
-		'0000CD' : 'Medium blå',
-		'800080' : 'Purpur',
-		'808080' : 'Grå',
-		'F00' : 'Rød',
-		'FF8C00' : 'Mørk oransje',
-		'FFD700' : 'Gull',
-		'008000' : 'Grønn',
-		'0FF' : 'Cyan',
-		'00F' : 'Blå',
-		'EE82EE' : 'Fiolett',
-		'A9A9A9' : 'Svak grå',
-		'FFA07A' : 'Rosa-oransje',
-		'FFA500' : 'Oransje',
-		'FFFF00' : 'Gul',
-		'00FF00' : 'Lime',
-		'AFEEEE' : 'Svak turkis',
-		'ADD8E6' : 'Lys Blå',
-		'DDA0DD' : 'Plomme',
-		'D3D3D3' : 'Lys grå',
-		'FFF0F5' : 'Svak lavendelrosa',
-		'FAEBD7' : 'Antikk-hvit',
-		'FFFFE0' : 'Lys gul',
-		'F0FFF0' : 'Honningmelon',
-		'F0FFFF' : 'Svakt asurblått',
-		'F0F8FF' : 'Svak cyan',
-		'E6E6FA' : 'Lavendel',
-		'FFF' : 'Hvit'
+		'000' : 'Black', // MISSING
+		'800000' : 'Maroon', // MISSING
+		'8B4513' : 'Saddle Brown', // MISSING
+		'2F4F4F' : 'Dark Slate Gray', // MISSING
+		'008080' : 'Teal', // MISSING
+		'000080' : 'Navy', // MISSING
+		'4B0082' : 'Indigo', // MISSING
+		'696969' : 'Dark Gray', // MISSING
+		'B22222' : 'Fire Brick', // MISSING
+		'A52A2A' : 'Brown', // MISSING
+		'DAA520' : 'Golden Rod', // MISSING
+		'006400' : 'Dark Green', // MISSING
+		'40E0D0' : 'Turquoise', // MISSING
+		'0000CD' : 'Medium Blue', // MISSING
+		'800080' : 'Purple', // MISSING
+		'808080' : 'Gray', // MISSING
+		'F00' : 'Red', // MISSING
+		'FF8C00' : 'Dark Orange', // MISSING
+		'FFD700' : 'Gold', // MISSING
+		'008000' : 'Green', // MISSING
+		'0FF' : 'Cyan', // MISSING
+		'00F' : 'Blue', // MISSING
+		'EE82EE' : 'Violet', // MISSING
+		'A9A9A9' : 'Dim Gray', // MISSING
+		'FFA07A' : 'Light Salmon', // MISSING
+		'FFA500' : 'Orange', // MISSING
+		'FFFF00' : 'Yellow', // MISSING
+		'00FF00' : 'Lime', // MISSING
+		'AFEEEE' : 'Pale Turquoise', // MISSING
+		'ADD8E6' : 'Light Blue', // MISSING
+		'DDA0DD' : 'Plum', // MISSING
+		'D3D3D3' : 'Light Grey', // MISSING
+		'FFF0F5' : 'Lavender Blush', // MISSING
+		'FAEBD7' : 'Antique White', // MISSING
+		'FFFFE0' : 'Light Yellow', // MISSING
+		'F0FFF0' : 'Honeydew', // MISSING
+		'F0FFFF' : 'Azure', // MISSING
+		'F0F8FF' : 'Alice Blue', // MISSING
+		'E6E6FA' : 'Lavender', // MISSING
+		'FFF' : 'White' // MISSING
 	},
 
 	scayt :
 	{
-		title			: 'Stavekontroll mens du skriver',
-		opera_title		: 'Ikke støttet av Opera',
-		enable			: 'Slå på SCAYT',
-		disable			: 'Slå av SCAYT',
-		about			: 'Om SCAYT',
-		toggle			: 'Veksle SCAYT',
-		options			: 'Valg',
-		langs			: 'Språk',
-		moreSuggestions	: 'Flere forslag',
-		ignore			: 'Ignorer',
-		ignoreAll		: 'Ignorer Alle',
-		addWord			: 'Legg til ord',
-		emptyDic		: 'Ordboknavn bør ikke være tom.',
+		title			: 'Spell Check As You Type', // MISSING
+		opera_title		: 'Not supported by Opera', // MISSING
+		enable			: 'Enable SCAYT', // MISSING
+		disable			: 'Disable SCAYT', // MISSING
+		about			: 'About SCAYT', // MISSING
+		toggle			: 'Toggle SCAYT', // MISSING
+		options			: 'Options', // MISSING
+		langs			: 'Languages', // MISSING
+		moreSuggestions	: 'More suggestions', // MISSING
+		ignore			: 'Ignore', // MISSING
+		ignoreAll		: 'Ignore All', // MISSING
+		addWord			: 'Add Word', // MISSING
+		emptyDic		: 'Dictionary name should not be empty.', // MISSING
 
-		optionsTab		: 'Valg',
-		allCaps			: 'Ikke kontroller ord med kun store bokstaver',
-		ignoreDomainNames : 'Ikke kontroller domenenavn',
-		mixedCase		: 'Ikke kontroller ord med blandet små og store bokstaver',
-		mixedWithDigits	: 'Ikke kontroller ord som inneholder tall',
+		optionsTab		: 'Options', // MISSING
+		allCaps			: 'Ignore All-Caps Words', // MISSING
+		ignoreDomainNames : 'Ignore Domain Names', // MISSING
+		mixedCase		: 'Ignore Words with Mixed Case', // MISSING
+		mixedWithDigits	: 'Ignore Words with Numbers', // MISSING
 
-		languagesTab	: 'Språk',
+		languagesTab	: 'Languages', // MISSING
 
-		dictionariesTab	: 'Ordbøker',
-		dic_field_name	: 'Ordboknavn',
-		dic_create		: 'Opprett',
-		dic_restore		: 'Gjenopprett',
-		dic_delete		: 'Slett',
-		dic_rename		: 'Gi nytt navn',
-		dic_info		: 'Brukerordboken lagres først i en informasjonskapsel på din maskin, men det er en begrensning på hvor mye som kan lagres her. Når ordboken blir for stor til å lagres i en informasjonskapsel, vil vi i stedet lagre ordboken på vår server. For å lagre din personlige ordbok på vår server, burde du velge et navn for ordboken din. Hvis du allerede har lagret en ordbok, vennligst skriv inn ordbokens navn og klikk på Gjenopprett-knappen.',
+		dictionariesTab	: 'Dictionaries', // MISSING
+		dic_field_name	: 'Dictionary name', // MISSING
+		dic_create		: 'Create', // MISSING
+		dic_restore		: 'Restore', // MISSING
+		dic_delete		: 'Delete', // MISSING
+		dic_rename		: 'Rename', // MISSING
+		dic_info		: 'Initially the User Dictionary is stored in a Cookie. However, Cookies are limited in size. When the User Dictionary grows to a point where it cannot be stored in a Cookie, then the dictionary may be stored on our server. To store your personal dictionary on our server you should specify a name for your dictionary. If you already have a stored dictionary, please type its name and click the Restore button.', // MISSING
 
-		aboutTab		: 'Om'
+		aboutTab		: 'About' // MISSING
 	},
 
 	about :
 	{
-		title		: 'Om CKEditor',
-		dlgTitle	: 'Om CKEditor',
+		title		: 'About CKEditor', // MISSING
+		dlgTitle	: 'About CKEditor', // MISSING
 		help	: 'Check $1 for help.', // MISSING
 		userGuide : 'CKEditor User\'s Guide', // MISSING
-		moreInfo	: 'For lisensieringsinformasjon, vennligst besøk vårt nettsted:',
-		copy		: 'Copyright &copy; $1. Alle rettigheter reservert.'
+		moreInfo	: 'For licensing information please visit our web site:', // MISSING
+		copy		: 'Copyright &copy; $1. All rights reserved.' // MISSING
 	},
 
-	maximize : 'Maksimer',
-	minimize : 'Minimer',
+	maximize : 'Maximize', // MISSING
+	minimize : 'Minimize', // MISSING
 
 	fakeobjects :
 	{
-		anchor		: 'Anker',
-		flash		: 'Flash-animasjon',
-		iframe		: 'IFrame',
-		hiddenfield	: 'Skjult felt',
-		unknown		: 'Ukjent objekt'
+		anchor		: 'Anchor', // MISSING
+		flash		: 'Flash Animation', // MISSING
+		iframe		: 'IFrame', // MISSING
+		hiddenfield	: 'Hidden Field', // MISSING
+		unknown		: 'Unknown Object' // MISSING
 	},
 
-	resize : 'Dra for å skalere',
+	resize : 'Drag to resize', // MISSING
 
 	colordialog :
 	{
-		title		: 'Velg farge',
-		options	:	'Alternativer for farge',
-		highlight	: 'Merk',
-		selected	: 'Valgt',
-		clear		: 'Tøm'
+		title		: 'Select color', // MISSING
+		options	:	'Color Options', // MISSING
+		highlight	: 'Highlight', // MISSING
+		selected	: 'Selected Color', // MISSING
+		clear		: 'Clear' // MISSING
 	},
 
-	toolbarCollapse	: 'Skjul verktøylinje',
-	toolbarExpand	: 'Vis verktøylinje',
+	toolbarCollapse	: 'Collapse Toolbar', // MISSING
+	toolbarExpand	: 'Expand Toolbar', // MISSING
 
 	toolbarGroups :
 	{
@@ -766,47 +766,47 @@ CKEDITOR.lang['nb'] =
 
 	bidi :
 	{
-		ltr : 'Tekstretning fra venstre til høyre',
-		rtl : 'Tekstretning fra høyre til venstre'
+		ltr : 'Text direction from left to right', // MISSING
+		rtl : 'Text direction from right to left' // MISSING
 	},
 
 	docprops :
 	{
-		label : 'Dokumentegenskaper',
-		title : 'Dokumentegenskaper',
+		label : 'Dokumendi omadused',
+		title : 'Dokumendi omadused',
 		design : 'Design', // MISSING
-		meta : 'Meta-data',
-		chooseColor : 'Velg',
-		other : '<annen>',
-		docTitle :	'Sidetittel',
-		charset : 	'Tegnsett',
-		charsetOther : 'Annet tegnsett',
+		meta : 'Meta andmed',
+		chooseColor : 'Choose', // MISSING
+		other : '<muu>',
+		docTitle :	'Lehekülje tiitel',
+		charset : 	'Märgistiku kodeering',
+		charsetOther : 'Ülejäänud märgistike kodeeringud',
 		charsetASCII : 'ASCII', // MISSING
-		charsetCE : 'Sentraleuropeisk',
-		charsetCT : 'Tradisonell kinesisk(Big5)',
-		charsetCR : 'Cyrillic', // MISSING
-		charsetGR : 'Gresk',
-		charsetJP : 'Japansk',
-		charsetKR : 'Koreansk',
-		charsetTR : 'Tyrkisk',
+		charsetCE : 'Kesk-Euroopa',
+		charsetCT : 'Hiina traditsiooniline (Big5)',
+		charsetCR : 'Kirillisa',
+		charsetGR : 'Kreeka',
+		charsetJP : 'Jaapani',
+		charsetKR : 'Korea',
+		charsetTR : 'Türgi',
 		charsetUN : 'Unicode (UTF-8)', // MISSING
-		charsetWE : 'Vesteuropeisk',
-		docType : 'Dokumenttype header',
-		docTypeOther : 'Annet dokumenttype header',
-		xhtmlDec : 'Inkluder XHTML-deklarasjon',
-		bgColor : 'Bakgrunnsfarge',
-		bgImage : 'URL for bakgrunnsbilde',
-		bgFixed : 'Lås bakgrunnsbilde',
-		txtColor : 'Tekstfarge',
-		margin : 'Sidemargin',
-		marginTop : 'Topp',
-		marginLeft : 'Venstre',
-		marginRight : 'Høyre',
-		marginBottom : 'Bunn',
-		metaKeywords : 'Dokument nøkkelord (kommaseparert)',
-		metaDescription : 'Dokumentbeskrivelse',
-		metaAuthor : 'Forfatter',
-		metaCopyright : 'Kopirett',
+		charsetWE : 'Lääne-Euroopa',
+		docType : 'Dokumendi tüüppäis',
+		docTypeOther : 'Teised dokumendi tüüppäised',
+		xhtmlDec : 'Arva kaasa XHTML deklaratsioonid',
+		bgColor : 'Taustavärv',
+		bgImage : 'Taustapildi URL',
+		bgFixed : 'Mittekeritav tagataust',
+		txtColor : 'Teksti värv',
+		margin : 'Lehekülje äärised',
+		marginTop : 'Ülaserv',
+		marginLeft : 'Vasakserv',
+		marginRight : 'Paremserv',
+		marginBottom : 'Alaserv',
+		metaKeywords : 'Dokumendi võtmesõnad (eraldatud komadega)',
+		metaDescription : 'Dokumendi kirjeldus',
+		metaAuthor : 'Autor',
+		metaCopyright : 'Autoriõigus',
 		previewHtml : '<p>This is some <strong>sample text</strong>. You are using <a href="javascript:void(0)">CKEditor</a>.</p>' // MISSING
 	}
 };

@@ -29,3 +29,19 @@ ul.hmenu li {
     text-align: center;
     color: #006400;
 }
+
+.linktoadmin {
+    display: inline;
+}
+
+.userline {
+
+}
+
+.showprofilelink {
+    display: inline;
+}
+
+.mailtolink {
+    display: inline;
+}

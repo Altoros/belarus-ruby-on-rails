@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    filter(:change_comment, @comment)
+    filter_ajax :change_comment, @comment
   end
 
   def create
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   def update
     @saved = false
     @comment = Comment.find(params[:id])
-    filter(:change_comment, @comment)
+    filter_ajax :change_comment, @comment
     @comment.update_attributes(params[:comment])
     if @comment.save
       @saved = true
@@ -32,19 +32,14 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    filter(:remove_comment, @comment)
+    filter_ajax :remove_comment, @comment
     @comment.destroy
     @div_id = "comment" + params[:id].to_s
   end
 
   private
   def add_filter
-    filter(:add_comment)
+    filter_ajax(:add_comment)
   end
 
-  def filter(action, object = nil)
-    unless can action, object
-      render js: "window.location='#{new_user_session_path}'"
-    end
-  end
 end

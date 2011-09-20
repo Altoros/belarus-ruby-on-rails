@@ -20,6 +20,7 @@ class Devise::RegistrationsController < ApplicationController
           last_name: params[:profile][:last_name],
           user_id: resource.id
       })
+      resource.profile = profile
       profile.save
 
       if resource.active_for_authentication?

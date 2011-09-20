@@ -4,5 +4,5 @@ FactoryGirl.define do
   factory :custom_news do
       title "MyString"
       content "MyText"
-    end
+  end
 end

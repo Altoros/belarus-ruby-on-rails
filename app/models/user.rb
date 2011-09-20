@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  has_many :comments
+  validates_associated :profile
+
   has_one :profile
+
+  def change_admin_state
+    self.is_admin = !self.is_admin
+    self.save
+  end
+
 end
