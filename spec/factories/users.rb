@@ -2,11 +2,9 @@
 
 FactoryGirl.define do
   factory :user do |u|
-    u.first_name 'User'
-    u.last_name 'Surname'
     u.email 'user@test.com'
     u.password 'password'
     u.confirmed_at Time.now
-    u.confirmation_sent_at  Time.now
+    u.confirmation_sent_at Time.now
   end
 end
