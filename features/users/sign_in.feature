@@ -14,17 +14,15 @@ Feature: Sign in
 
     Scenario: User enters wrong password
       Given I am not logged in
-      And I am a user named "foo" and surnamed "asd" with an email "user@test.com" and password "please"
+      And I am signed up as a user
       When I go to the sign in page
-      And I sign in as "user@test.com/wrongpassword"
+      And I sign in as a user with wrong password
       Then I should see "Invalid email or password."
       And I go to the home page
       And I should be signed out
 
     Scenario: User signs in successfully with email
       Given I am not logged in
-      And I am a user named "foo" and surnamed "asd" with an email "user@test.com" and password "please"
-      When I go to the sign in page
-      And I sign in as "user@test.com/please"
+      And I am signed in as a user
       Then I should see "Signed in successfully"
       And I should be signed in
