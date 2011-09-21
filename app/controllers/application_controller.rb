@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
+  before_filter :set_locale
 
   def after_sign_in_path_for(resource_or_scope)
     case resource_or_scope
@@ -19,5 +20,15 @@ class ApplicationController < ActionController::Base
    else
      root_path
    end
+  end
+
+  def set_locale
+    I18n.locale = extract_locale_from_accept_language_header
+  end
+
+  private
+
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
   end
 end

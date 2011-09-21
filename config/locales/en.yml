@@ -2,4 +2,5 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  cant_be_blank: "can't be blank"
+  has_not_valid_size: "has not valid size"
