@@ -1,6 +1,7 @@
 BelarusRubyOnRails::Application.routes.draw do
   resources :custom_news
   resources :comments
+  resources :profiles
 
   get "welcome/index"
 

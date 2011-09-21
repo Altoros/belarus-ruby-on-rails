@@ -3,11 +3,14 @@ Given /^no user exists with an email of "(.*)"$/ do |email|
 end
 
 Given /^I am a user named "([^"]*)" and surnamed "([^"]*)" with an email "([^"]*)" and password "([^"]*)"$/ do |first_name, last_name, email, password|
-  User.new(:first_name => first_name,
-            :last_name => last_name,
-            :email => email,
-            :password => password,
-            :password_confirmation => password).confirm!
+  user = User.create(
+            email: email,
+            password: password,
+            password_confirmation: password)
+  user.profile = Profile.create(
+            first_name: first_name,
+            last_name: last_name)
+  user.confirm!
 end
 
 Then /^I should be already signed in$/ do
