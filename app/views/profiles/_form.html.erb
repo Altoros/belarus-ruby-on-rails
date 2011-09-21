@@ -1,0 +1,15 @@
+<%= form_for(@profile) do |f| %>
+  <%= errors_for(@profile, "Opps, unable to save profile") %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
