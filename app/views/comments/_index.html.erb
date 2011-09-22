@@ -1,0 +1,14 @@
+<div id="comments_block">
+  <% if user_signed_in? %>
+  <div>
+     <%= render "comments/form", :comment => @custom_news.comments.build %>
+     <div id="comment_notice"></div>
+  </div>
+  <% else %>
+     <div id="comment_notice">Please <%= link_to "login", login_path %> for post comments</div>
+  <% end %>
+  <div id="comments">
+      <%= render :partial => "comments/show", :collection => @custom_news.comments.includes( { :user => :profile })%>
+  </div>
+  <hr/>
+</div>
