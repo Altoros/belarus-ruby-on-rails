@@ -1,8 +1,8 @@
 <% if @saved %>
     $("#comments").prepend("<%= escape_javascript(render partial: "comments/show", collection: [@comment]) %>");
-    $("#comment<%= @comment.id %>").hide();
-    $("#comment<%= @comment.id %>").slideToggle("slow");
-    comment_notify("Comment <%= @comment.id %> was successfully added");
+    var comment_div = $("#<%= dom_id @comment %>");
+    comment_div.hide().slideToggle("slow");
+    comment_notify("Comment successfully added");
     $("#comment_body").val("");
     $("#comment_author").val("");
 <% else %>

@@ -1,0 +1,5 @@
+<hr/>
+<%= form_for @comment, :as => :comment, :url => { :controller => :comments, :action => :update, :id => @comment }, :remote => true do |f| %>
+  <div><%= f.text_area :body %></div>
+  <div><%= submit_tag "Apply" %></div>
+<% end %>
