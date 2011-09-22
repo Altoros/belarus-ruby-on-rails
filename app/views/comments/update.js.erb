@@ -1,11 +1,9 @@
 <% if @saved %>
-    $("#comment<%= params[:id] %>").slideToggle("fast", function () {
-        $("#comment<%= params[:id] %>").html("<%= escape_javascript(render :partial => "comments/show", :collection => [@comment]) %>");
-        $("#comment<%= params[:id] %>").hide();
-        $("#comment<%= params[:id] %>").slideToggle("fast");
+    var comment_div = $("#<%= dom_id @comment %>");
+    comment_div.slideToggle("fast", function () {
+        comment_div.html("<%= escape_javascript(render :partial => "comments/show", :collection => [@comment], :as => "comment") %>")
+                    .hide().slideToggle("fast");
     });
-
-
     $("#comment_body").val("");
     $("#comment_author").val("");
 <% end %>
