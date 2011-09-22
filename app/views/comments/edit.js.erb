@@ -1,5 +1,5 @@
-$("#comment<%= params[:id] %>").slideToggle("fast", function () {
-    $("#comment<%= params[:id] %>").html("<%= escape_javascript(render partial: "comments/editform") %>");
-    $("#comment<%= params[:id] %>").hide();
-    $("#comment<%= params[:id] %>").slideToggle("fast");
-})
+var comment_div = $("#<%= dom_id @comment %>");
+comment_div.slideToggle("fast", function () {
+    comment_div.html("<%= escape_javascript(render "comments/form", :comment => @comment) %>").hide().slideToggle("fast");
+    $("#<%= dom_id @comment %>").find("input").last().val("Edit comment"); // Change button title
+});
