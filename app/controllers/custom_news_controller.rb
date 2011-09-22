@@ -17,7 +17,7 @@ class CustomNewsController < ApplicationController
   # GET /custom_news/1
   # GET /custom_news/1.json
   def show
-    @custom_news = CustomNews.find(params[:id])
+    @custom_news = CustomNews.includes(:comments => [{ :user => :profile }]).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
