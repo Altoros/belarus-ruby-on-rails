@@ -13,11 +13,10 @@ function update_edit_custom_news_action() {
 }
 
 function comment_notify(message) {
-    $("#commentnotice").html(message);
-    $("#commentnotice").hide();
-    $("#commentnotice").slideToggle("slow", function () {
+    var notice_div = $("#comment_notice");
+    notice_div.html(message).hide().slideToggle("slow", function () {
         setTimeout(function () {
-            $("#commentnotice").slideToggle("slow")
+            $("#comment_notice").slideToggle("slow")
         },2000)
     });
 }

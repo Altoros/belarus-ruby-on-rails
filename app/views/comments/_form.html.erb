@@ -1,9 +1,5 @@
-<%= form_for @comment, :as => :comment, :url => {:controller => "comments", :action => "create", :id => @custom_news.id}, :remote => true do |f| %>
-<table width="100%">
-  <tr><td align="center"><%= f.label :title, "Name" %></td></tr>
-  <tr><td align="center"><%= f.text_field :author, :style => "width: 300px;" %></td></tr>
-  <tr><td align="center"><div><%= f.label :body, "Comment" %></div></td></tr>
-  <tr><td align="center"><%= f.text_area :body %></td></tr>
-  <tr><td align="center"><%= submit_tag "Send" %></td></tr>
-</table>
+<%= form_for @comment, :as => :comment, :url => {:controller => "comments", :action => "create", :custom_news => @custom_news}, :remote => true do |f| %>
+  <div><%= f.label :body, "Comment" %></div>
+  <div><%= f.text_area :body %></div>
+  <div><%= submit_tag "Send" %></div>
 <% end %>
