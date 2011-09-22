@@ -1,0 +1,14 @@
+<div id="comments_block">
+  <% if user_signed_in? %>
+  <div id="post_comment_form">
+     <%= render :partial => "comments/form" %>
+     <div id="comment_notice"></div>
+  </div>
+  <% else %>
+     <div id="comment_notice">Please <%= link_to "login", new_user_session_path %> for post comments</div>
+  <% end %>
+  <div id="comments" style="text-align: center;">
+      <%= render :partial => "comments/show", :collection => @custom_news.comments %>
+  </div>
+  <hr/>
+</div>
