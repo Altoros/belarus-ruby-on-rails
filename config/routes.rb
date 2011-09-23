@@ -4,6 +4,7 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :profiles
 
   get "welcome/index"
+  get "user_manager/index"
   devise_for :users, :controllers => { :confirmations => "confirmations" } do
     get '/users/sign_in', :to => "devise/sessions#new", :as => 'login'
     post '/users/sign_in', :to => "devise/sessions#create", :as => 'login'

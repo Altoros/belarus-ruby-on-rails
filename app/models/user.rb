@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
   accepts_nested_attributes_for :profile, :allow_destroy => true
+
+  def change_admin_state!
+    toggle(:is_admin).save
+  end
 end
