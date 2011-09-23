@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20110915141413) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "custom_news", :force => true do |t|
@@ -47,7 +46,6 @@ ActiveRecord::Schema.define(:version => 20110915141413) do
     t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
