@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20110915141413) do
 
   create_table "comments", :force => true do |t|
     t.integer  "custom_news_id"
-    t.string   "author"
+    t.integer  "user_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
