@@ -30,7 +30,6 @@ describe ProfilesController do
   describe "GET show" do
     it "assigns the requested profile as @profile" do
       user = Factory(:user)
-      user.profile = Factory(:profile)
       get :show, :id => user.profile.id
       assigns(:profile).should eq(user.profile)
     end
@@ -39,7 +38,6 @@ describe ProfilesController do
   describe "GET edit" do
     it "assigns the requested profile as @profile" do
       user = Factory(:user)
-      user.profile = Factory(:profile)
       get :edit, :id => user.profile.id
       assigns(:profile).should eq(user.profile)
     end
@@ -49,7 +47,6 @@ describe ProfilesController do
     describe "with valid params" do
       it "updates the requested profile" do
         user = Factory(:user)
-        user.profile = Factory(:profile)
         # Assuming there are no other profiles in the database, this
         # specifies that the Profile created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -60,14 +57,12 @@ describe ProfilesController do
 
       it "assigns the requested profile as @profile" do
         user = Factory(:user)
-        user.profile = Factory(:profile)
         put :update, :id => user.profile.id, :profile => valid_attributes
         assigns(:profile).should eq(user.profile)
       end
 
       it "redirects to the profile" do
         user = Factory(:user)
-        user.profile = Factory(:profile)
         put :update, :id => user.profile.id, :profile => valid_attributes
         response.should redirect_to(user.profile)
       end
@@ -76,7 +71,6 @@ describe ProfilesController do
     describe "with invalid params" do
       it "assigns the profile as @profile" do
         user = Factory(:user)
-        user.profile = Factory(:profile)
         # Trigger the behavior that occurs when invalid params are submitted
         Profile.any_instance.stub(:save).and_return(false)
         put :update, :id => user.profile.id, :profile => {}
@@ -85,7 +79,6 @@ describe ProfilesController do
 
       it "re-renders the 'edit' template" do
         user = Factory(:user)
-        user.profile = Factory(:profile)
         # Trigger the behavior that occurs when invalid params are submitted
         Profile.any_instance.stub(:save).and_return(false)
         put :update, :id => user.profile.id, :profile => {}
