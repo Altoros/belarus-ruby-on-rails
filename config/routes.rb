@@ -1,6 +1,8 @@
 BelarusRubyOnRails::Application.routes.draw do
-  resources :custom_news
-  resources :comments
+  resources :custom_news do
+    resources :comments
+  end
+
   resources :profiles
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do

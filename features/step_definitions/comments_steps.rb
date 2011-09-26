@@ -1,10 +1,11 @@
 Given /^I am logged in$/ do
+  @user = Factory(:user)
 end
 
 Given /^I have (\d+) custom news article$/ do |arg1|
   CustomNews.delete_all
   arg1.to_i.times do
-    CustomNews.new({title: "Title", content: "CustomNews's text"}).save
+    Factory :custom_news
   end
   @custom_news = CustomNews.first
 end
@@ -17,11 +18,12 @@ end
 
 Given /^I have (\d+) comment for custom news article "([^"]*)"$/ do |arg1, arg2|
   CustomNews.delete_all
-  CustomNews.new({ title: arg2, content: "current_news body" }).save
+  #CustomNews.create({ :title => arg2, :content => "current_news body" })
+  Factory :custom_news, :title => arg2
   @custom_news = CustomNews.find_by_title arg2
   @custom_news.comments.delete_all
   arg1.to_i.times do
-    Comment.new({ body: "I'm a test comment", custom_news: (CustomNews.find @custom_news.id)}).save
+    Comment.create({ :body => "I'm a test comment", :custom_news_id => @custom_news.id, :user => @user })
   end
 end
 
@@ -34,12 +36,11 @@ When /^(?:|I )push "Delete comment"$/ do
 end
 
 When /^(?:|I )push "Add comment"$/ do
-  Comment.new({ body: "I'm a test comment", custom_news: @custom_news}).save
+  Comment.create({ :body => "I'm a test comment", :custom_news_id => @custom_news.id, :user => @user })
 end
 
 When /^(?:|I )type "([^"]*)" in "Message" textarea$/ do |value|
-  (CustomNews.find @custom_news.id).comments[0].body = value
-  (CustomNews.find @custom_news.id).comments[0].save
+  (CustomNews.find @custom_news.id).comments[0].update_attributes({ :body => value })
 end
 
 Then /^I should have no comments$/ do
