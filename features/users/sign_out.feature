@@ -4,7 +4,7 @@ Feature: Sign out
   Should be able to sign out
 
     Scenario: User signs out
-      Given I am signed in as a user
+      Given I am logged in as user
       Then I should be signed in
       And I sign out
       When I return next time
