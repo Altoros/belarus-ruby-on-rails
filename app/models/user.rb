@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
+  has_many :comments
   validates_associated :profile
 
   # Include default devise modules. Others available are:

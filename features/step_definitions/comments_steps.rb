@@ -4,7 +4,7 @@ end
 Given /^I have (\d+) custom news article$/ do |arg1|
   CustomNews.delete_all
   arg1.to_i.times do
-    CustomNews.new({title: "Title", content: "CustomNews's text"}).save
+    CustomNews.new({:title => "Title", :content => "CustomNews's text"}).save
   end
   @custom_news = CustomNews.first
 end
@@ -17,11 +17,11 @@ end
 
 Given /^I have (\d+) comment for custom news article "([^"]*)"$/ do |arg1, arg2|
   CustomNews.delete_all
-  CustomNews.new({ title: arg2, content: "current_news body" }).save
+  CustomNews.new({ :title => arg2, :content => "current_news body" }).save
   @custom_news = CustomNews.find_by_title arg2
   @custom_news.comments.delete_all
   arg1.to_i.times do
-    Comment.new({ body: "I'm a test comment", custom_news: (CustomNews.find @custom_news.id)}).save
+    Comment.new({ :body => "I'm a test comment", :custom_news => (CustomNews.find @custom_news.id)}).save
   end
 end
 
@@ -34,7 +34,7 @@ When /^(?:|I )push "Delete comment"$/ do
 end
 
 When /^(?:|I )push "Add comment"$/ do
-  Comment.new({ body: "I'm a test comment", custom_news: @custom_news}).save
+  Comment.new({ :body => "I'm a test comment", :custom_news => @custom_news}).save
 end
 
 When /^(?:|I )type "([^"]*)" in "Message" textarea$/ do |value|
