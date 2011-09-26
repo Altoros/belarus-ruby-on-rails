@@ -68,6 +68,19 @@ Given /^I am not logged in$/ do
   Given %{I sign out}
 end
 
+Given /^I am logged in as (.*)$/ do |role|
+  @user = case role.to_sym
+    when :user then Factory(:user) 
+    when :admin then Factory(:user, :is_admin => true)
+    else User.new
+  end
+
+  @user.profile = Factory(:profile)
+
+  Given %{I am not logged in}
+  When %{I sign in as "#{@user.email}/#{@user.password}"}
+end
+
 When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
   Given %{I am not logged in}
   When %{I go to the sign in page}
