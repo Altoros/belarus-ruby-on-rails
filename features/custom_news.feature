@@ -20,30 +20,65 @@ Feature: Custom news management
     When I am on the custom_news page
     Then I should see "There is no news at the moment."
 
+  # TODO DRY scenarios, reduce repetitions
+  Scenario: Visitor can't create a new custom news article
+    Given I am not logged in
+    And I am on the custom_news page
+    Then I should not see "New custom news"
+
+  Scenario: User can't create a new custom news article
+    Given I am logged in as user
+    And I am on the custom_news page
+    Then I should not see "New custom news"
+
   Scenario: Admin can add custom news
     Given I am logged in as admin
     When I go to new custom news path
     And I fill in "Title" with "Ruby rocks"
     And I fill in "Content" with "So hard"
     And I press "Create"
-    And I should see "Ruby rocks"
+    Then I should see "Ruby rocks"
     And I should see "So hard"
 
-  Scenario: Admin can update custom news
-    Given I am logged in as admin
+  Scenario: Visitor can't update custom news
     Given custom news exists with title: Ruby with content "It rocks!"
+    And I am not logged in
+    And I am on the custom_news page
+    Then I should not see /^Edit$/
+
+  Scenario: User can't update custom news
+    Given custom news exists with title: Ruby with content "It rocks!"
+    And I am logged in as user
+    And I am on the custom_news page
+    Then I should not see /^Edit$/
+
+  Scenario: Admin can update custom news
+    Given custom news exists with title: Ruby with content "It rocks!"
+    And I am logged in as admin
     When I am on the custom_news page
     And I follow edit custom news page for Ruby
     And I fill in "Title" with "Ruby7"
     And I fill in "Content" with "7th"
     And I press "Update"
-    And I should see "Ruby7"
+    Then I should see "Ruby7"
     And I should see "7th"
 
-  Scenario: Admin can delete custom news
-    Given I am logged in as admin
+  Scenario: Visitor can't delete custom news
     Given custom news exists with title: Ruby7 with content "It rocks!"
+    And I am not logged in
+    When I am on the custom_news page
+    Then I should not see "Delete"
+
+  Scenario: User can't delete custom news
+    Given custom news exists with title: Ruby7 with content "It rocks!"
+    And I am logged in as user
+    When I am on the custom_news page
+    Then I should not see "Delete"
+
+  Scenario: Admin can delete custom news
+    Given custom news exists with title: Ruby7 with content "It rocks!"
+    And I am logged in as admin
     When I am on the custom_news page
     And I follow "Delete"
-    And I should not see "Ruby7"
+    Then I should not see "Ruby7"
     And I should not see "It rocks!"
