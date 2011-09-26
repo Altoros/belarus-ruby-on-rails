@@ -22,8 +22,10 @@
       <td><%= custom_news.title %></td>
       <td><%= raw custom_news.content %></td>
       <td><%= link_to 'Show', custom_news %></td>
-      <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
-      <td><%= link_to 'Delete', custom_news, confirm: 'Are you sure?', method: :delete %></td>
+      <% if can? :manage, custom_news %>
+        <td><%= link_to 'Edit', edit_custom_news_path(custom_news) %></td>
+        <td><%= link_to 'Delete', custom_news, confirm: 'Are you sure?', method: :delete %></td>
+      <% end %>
     </tr>
   <% end %>
   </table>
@@ -32,6 +34,8 @@
 
 <br />
 
-<%= link_to 'New Custom news', new_custom_news_path %>
+<% if can? :create, CustomNews %>
+  <%= link_to 'New Custom news', new_custom_news_path %>
+<% end %>
 
 <%= will_paginate @custom_news %>
