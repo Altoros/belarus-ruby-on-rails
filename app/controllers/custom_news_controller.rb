@@ -1,4 +1,6 @@
 class CustomNewsController < ApplicationController
+  load_and_authorize_resource
+
   # GET /custom_news
   # GET /custom_news.json
   def index

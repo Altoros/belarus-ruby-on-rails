@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::Base
+  rescue_from CanCan::AccessDenied do
+    if current_user
+      render :file => "#{Rails.root}/public/403.html", :status => 403
+    else
+      redirect_to login_path
+    end
+  end
+
   protect_from_forgery
   include SessionsHelper
 
