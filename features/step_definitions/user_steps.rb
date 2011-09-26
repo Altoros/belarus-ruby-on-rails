@@ -1,11 +1,3 @@
-def create_profile
-  user = Factory(:user)
-  user.profile = Factory(:profile)
-  user.confirm!
-
-  user
-end
-
 Given /^I am a user named "([^"]*)" and surnamed "([^"]*)" with an email "([^"]*)" and password "([^"]*)"$/ do |first_name, last_name, email, password|
   User.new(:first_name => first_name,
             :last_name => last_name,
@@ -19,21 +11,10 @@ Given /^no user exists with an email of "(.*)"$/ do |email|
   User.find(:first, :conditions => { :email => email }).should be_nil
 end
 
-Given /^I am signed up as a user$/ do
-  user = create_profile
-end
-
-Given /^I am signed in as a user$/ do
-  user = create_profile
-  Given %{I am not logged in}
-  When %{I sign in as "#{user.email}/#{user.password}"}
-end
-
 Given /I'm editing my profile page$/ do
-  user = create_profile
-  Given %{I am not logged in}
-  When %{I sign in as "#{user.email}/#{user.password}"}
-  visit(edit_profile_path(user.profile.id))
+    Given %{I am logged in as user}
+    When %{I follow "Edit profile"}
+    Then %{I should see "Edit profile"}
 end
 
 When /^I fill in profile fields$/ do

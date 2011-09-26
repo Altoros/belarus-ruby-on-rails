@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-  let(:user) { Factory.stub(:user) }
+  let(:user) { Factory.stub(:user, :profile => Factory.build(:profile)) }
   before(:each) do
     @custom_message = 'Custom Message'
   end

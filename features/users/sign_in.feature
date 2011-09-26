@@ -14,7 +14,7 @@ Feature: Sign in
 
     Scenario: User enters wrong password
       Given I am not logged in
-      And I am signed up as a user
+      And I am logged in as user
       When I go to the sign in page
       And I sign in as a user with wrong password
       Then I should see "Invalid email or password."
@@ -23,6 +23,6 @@ Feature: Sign in
 
     Scenario: User signs in successfully with email
       Given I am not logged in
-      And I am signed in as a user
+      And I am logged in as user
       Then I should see "Signed in successfully"
       And I should be signed in
