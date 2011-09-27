@@ -1,12 +1,16 @@
-<% if @saved %>
-    $("#comment<%= params[:id] %>").slideToggle("fast", function () {
-        $("#comment<%= params[:id] %>").html("<%= escape_javascript(render :partial => "comments/show", :collection => [@comment]) %>");
-        $("#comment<%= params[:id] %>").hide();
-        $("#comment<%= params[:id] %>").slideToggle("fast");
+<% if @comment.errors.present? %>
+    var comment_div = $("#<%= dom_id @comment %>");
+    comment_div.slideToggle("fast", function () {
+        comment_div.html("<%= escape_javascript(render "comments/form", :comment => @comment) %>")
+                .hide().slideToggle("fast");
+        });
+<% else %>
+    var comment_div = $("#<%= dom_id @comment %>");
+    comment_div.slideToggle("fast", function () {
+        comment_div.html("<%= escape_javascript(render "comments/show", :comment => @comment) %>")
+                    .hide().slideToggle("fast");
     });
-
-
     $("#comment_body").val("");
     $("#comment_author").val("");
+    comment_notify("Comment was updated successfully");
 <% end %>
-comment_notify("<%= @notify %>");
