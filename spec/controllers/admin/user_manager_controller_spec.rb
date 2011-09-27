@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserManagerController do
+describe Admin::UsersController do
 
   describe "For anonymous user" do
     it "should not show user list" do
@@ -9,7 +9,7 @@ describe UserManagerController do
     end
 
     it "should not change admin rights" do
-      get 'change_admin_state'
+      post 'update'
       response.should_not be_success
     end
   end
@@ -29,7 +29,7 @@ describe UserManagerController do
       sign_in @user
       user = User.new(:email => "user@example.com", :password => "password", :password_confirmation => "password")
       user.save
-      get 'change_admin_state', { :id => user.id }
+      post 'update', { :id => user.id }
       (User.find user.id).is_admin?.should be_true
     end
   end
