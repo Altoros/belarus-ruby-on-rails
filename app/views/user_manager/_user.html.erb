@@ -8,7 +8,7 @@
   </td>
   <td>
   <%= div_for user, :class => "link_to_admin" do %>
-    <%= link_to_if can(:change_admin), link_to_admin_title(user), { :action => :change_admin_state, :id => user } %>
+    <%= link_to_if(can?(:update, user), link_to_admin_title(user), { :action => :change_admin_state, :id => user }) %>
   <% end %>
   </td>
 </tr>
