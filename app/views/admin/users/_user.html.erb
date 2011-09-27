@@ -8,7 +8,7 @@
   </td>
   <td>
   <%= div_for user, :class => "link_to_admin" do %>
-    <%= link_to_if(can?(:update, user), link_to_admin_title(user), admin_user_update_url(:id => user.id)) %>
+    <%= link_to link_to_admin_title(user), admin_user_path(user), {:method => :put} if can? :update, user %>
   <% end %>
   </td>
 </tr>

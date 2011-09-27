@@ -14,9 +14,8 @@ BelarusRubyOnRails::Application.routes.draw do
     post '/users/omiauth', :to => 'users#omniauth_create', :as => 'onmiauth_signup'
   end
 
-  scope :module => "admin", :path => '/admin' do
-    get '/users', :to => 'users#index', :as => 'admin_user'
-    post '/users/update/:id', :to => 'user#update', :as => 'admin_user_update'
+  namespace :admin do
+    resources :users
   end
 
   # The priority is based upon order of creation:
