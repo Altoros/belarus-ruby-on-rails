@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @profile = Profile.find(params[:id])
+    @providers = @profile.providers_data
 
     respond_to do |format|
       format.html # show.html.erb
