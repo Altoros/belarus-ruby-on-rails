@@ -1,6 +1,5 @@
-class UserManagerController < ApplicationController
-  include UserManagerHelper
-  before_filter :admin_filter
+class Admin::UsersController < ApplicationController
+  load_and_authorize_resource :class => User
 
   def index
     @users = User.paginate(
@@ -10,8 +9,8 @@ class UserManagerController < ApplicationController
                          )
   end
 
-  def change_admin_state
+  def update
     User.find(params[:id]).change_admin_state!
-    redirect_to :controller => :user_manager
+    redirect_to :action => :index
   end
 end
