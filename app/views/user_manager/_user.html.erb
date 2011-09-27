@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= link_to "#{ user.profile.first_name } #{ user.profile.last_name }", { :controller => :profiles, :action => :show, :id => user.profile.id } %>
+    <%= link_to user.profile.full_name, profile_path(user.profile) %>
     <%= "(Attention!!! This is you!)" if user == current_user %>
   </td>
   <td>
@@ -8,7 +8,7 @@
   </td>
   <td>
   <%= div_for user, :class => "link_to_admin" do %>
-    <%= link_to_if can(:change_admin), link_to_admin_title(user), { :action => :change_admin_state, :id => user } %>
+    <%= link_to_if(can?(:update, user), link_to_admin_title(user), { :action => :change_admin_state, :id => user }) %>
   <% end %>
   </td>
 </tr>
