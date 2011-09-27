@@ -1,9 +1,17 @@
 class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do
     if current_user
-      render :file => "#{Rails.root}/public/403.html", :status => 403
+      if request.xml_http_request?
+        render :js => "window.location='#{ root_path }403.html'"
+      else
+        render :file => "#{Rails.root}/public/403.html", :status => 403
+      end
     else
-      redirect_to login_path
+      if request.xml_http_request?
+        render :js => "window.location='#{ login_path }'"
+      else
+        redirect_to login_path
+      end
     end
   end
 
