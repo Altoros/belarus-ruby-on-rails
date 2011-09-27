@@ -5,4 +5,8 @@ class Profile < ActiveRecord::Base
   validates :first_name, :length => {:maximum => 255}
   validates :last_name, :presence => true
   validates :last_name, :length => {:maximum => 255}
+
+  def full_name
+    [first_name, last_name].join(" ")
+  end
 end
