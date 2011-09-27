@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= link_to user.profile.full_name, profile_path(user.profile) %>
+    <%= "(Attention!!! This is you!)" if user == current_user %>
+  </td>
+  <td>
+    <%= mail_to user.email %>
+  </td>
+  <td>
+  <%= div_for user, :class => "link_to_admin" do %>
+    <%= link_to_if(can?(:update, user), link_to_admin_title(user), { :action => :update, :id => user.id }) %>
+  <% end %>
+  </td>
+</tr>
