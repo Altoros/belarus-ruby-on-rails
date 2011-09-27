@@ -8,4 +8,17 @@
   <%= @profile.last_name %>
 </p>
 
+<% if @providers %>
+    <h4>External providers:</h4>
+    <ul>
+    <% @providers.each do |provider| %>
+        <%=
+            provider_link(provider, @profile.user.id) do |item|
+                "<li>#{provider.printable_name}: #{item}</li>"
+            end
+        %>
+    <% end %>
+    </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %>

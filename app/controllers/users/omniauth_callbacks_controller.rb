@@ -16,7 +16,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if current_user
       current_user.user_tokens.find_or_create_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
-      flash[:notice] = "Authentication successful"
+      provider_name = Provider::Factory.get_instance(omniauth['provider']).printable_name
+      flash[:notice] = I18n.t('omniauth.successfully_binded', :provider_name => provider_name)
       redirect_to get_stored_location
     else
       register_user

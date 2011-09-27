@@ -1,0 +1,4 @@
+en:
+  omniauth:
+    successfully_binded: 'Provider %{provider_name} binded successfully'
+    bind_with: 'Bind with %{provider_name}'
