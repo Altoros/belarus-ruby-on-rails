@@ -1,9 +1,6 @@
-<%= form_for @comment, :as => :comment, :url => {:controller => "comments", :action => "create", :id => @custom_news.id}, :remote => true do |f| %>
-<table width="100%">
-  <tr><td align="center"><%= f.label :title, "Name" %></td></tr>
-  <tr><td align="center"><%= f.text_field :author, :style => "width: 300px;" %></td></tr>
-  <tr><td align="center"><div><%= f.label :body, "Comment" %></div></td></tr>
-  <tr><td align="center"><%= f.text_area :body %></td></tr>
-  <tr><td align="center"><%= submit_tag "Send" %></td></tr>
-</table>
+<hr/>
+<%= form_for [comment.custom_news, comment], :remote => true do |f| %>
+  <div><%= errors_for comment, "Invalid format of comment" %></div>
+  <div><%= f.text_area :body %></div>
+  <div><%= f.submit "Leave a comment" %></div>
 <% end %>
