@@ -8,4 +8,23 @@
   <%= @profile.last_name %>
 </p>
 
+<h4>External providers:</h4>
+<% providers = @profile.providers_data %>
+<% if providers %>
+    <ul>
+    <% providers.each do |provider| %>
+        <li>
+          <%= provider.printable_name %>:
+          <%=
+              if provider.profile_link
+                  link_to provider.profile_link
+              else
+                  link_to "Bind with " + provider.printable_name, user_omniauth_authorize_path(provider.provider_name)
+              end
+          %>
+        </li>
+    <% end %>
+    </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %>
