@@ -9,7 +9,7 @@ describe Admin::UsersController do
     end
 
     it "should not change admin rights" do
-      post 'update'
+      put 'update'
       response.should_not be_success
     end
   end
@@ -29,7 +29,7 @@ describe Admin::UsersController do
       sign_in @user
       user = User.new(:email => "user@example.com", :password => "password", :password_confirmation => "password")
       user.save
-      post 'update', { :id => user.id }
+      put 'update', { :id => user.id }
       (User.find user.id).is_admin?.should be_true
     end
   end
