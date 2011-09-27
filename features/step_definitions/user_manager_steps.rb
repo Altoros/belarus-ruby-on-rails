@@ -35,3 +35,7 @@ end
 When /^I click "([^"]*)"$/ do |arg1|
   click_link arg1
 end
+
+Then /^I restricted to visit page$/ do
+  assert_equal 403, page.driver.status_code
+end
