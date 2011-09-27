@@ -5,4 +5,16 @@ class Profile < ActiveRecord::Base
   validates :first_name, :length => {:maximum => 255}
   validates :last_name, :presence => true
   validates :last_name, :length => {:maximum => 255}
+
+  def providers_data
+    tokens = self.user.user_tokens
+    User.omniauth_providers.inject([]) do |res, provider|
+      if token = tokens.detect { |obj| obj.provider == provider.to_s}
+        res << Provider::Factory.get_instance(provider, token.uid)
+      else
+        res << Provider::Factory.get_instance(provider)
+      end
+      res
+    end
+  end
 end
