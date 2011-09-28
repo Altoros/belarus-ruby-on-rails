@@ -25,4 +25,14 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+
+  protected
+  def ckeditor_authenticate
+    authorize! action_name, @asset
+  end
+
+  def ckeditor_before_create_asset(asset)
+    asset.assetable = current_user
+    return true
+  end
 end
