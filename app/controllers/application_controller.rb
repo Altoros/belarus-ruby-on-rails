@@ -1,9 +1,16 @@
 class ApplicationController < ActionController::Base
-  rescue_from CanCan::AccessDenied do
+  rescue_from CanCan::AccessDenied do |e|
     if current_user
-      render :file => "#{Rails.root}/public/403.html", :status => 403
+      respond_to do |format|
+        format.html { render :file => "#{Rails.root}/public/403.html", :status => :forbidden }
+        format.js   { render :text => e.message, :status => :forbidden }
+      end
     else
-      redirect_to login_path
+      respond_to do |format|
+        format.html { redirect_to login_path }
+        format.js   { render :js => "window.location='#{ login_path }'" }
+      end
+
     end
   end
 
