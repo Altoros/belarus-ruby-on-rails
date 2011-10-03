@@ -17,6 +17,10 @@ BelarusRubyOnRails::Application.routes.draw do
   namespace :admin do
     resources :users
   end
+  
+  match '/about' => 'static_page#about'
+  
+  match '/friends' => 'static_page#friends'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
