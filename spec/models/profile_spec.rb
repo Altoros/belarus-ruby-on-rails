@@ -26,6 +26,8 @@ describe Profile do
     profile.should have(1).error_on(:last_name)
   end
 
+  it { should respond_to(:subscribed) }
+
   it "has a Ruby experience level" do
     profile = Factory(:profile, :experience => Factory(:experience))
     profile.experience.should_not be_nil
