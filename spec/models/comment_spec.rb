@@ -16,8 +16,8 @@ describe Comment do
     @comment.should_not be_valid
   end
 
-  it "parent custom news should be" do
-    @comment.custom_news = nil
+  it "parent article should be" do
+    @comment.article = nil
     @comment.should_not be_valid
   end
 end

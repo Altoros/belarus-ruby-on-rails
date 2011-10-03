@@ -8,8 +8,8 @@
 //= require jquery_ujs
 //= require_tree .
 
-function update_edit_custom_news_action() {
-    jQuery('.edit_custom_news input[name="_method"]').val('delete');
+function update_edit_article_action() {
+    jQuery('.edit_article input[name="_method"]').val('delete');
 }
 
 function comment_notify(message) {
