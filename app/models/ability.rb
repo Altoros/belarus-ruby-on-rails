@@ -3,14 +3,14 @@ class Ability
 
   def initialize(user)
     unless user
-      can :read, CustomNews
+      can :read, Article
       can :read, Comment
     else
       # admin
       can :manage, :all if user.is_admin?
 
       # user
-      can :read, CustomNews
+      can :read, Article
 
       can :read, Profile
       can :update, Profile do |profile|

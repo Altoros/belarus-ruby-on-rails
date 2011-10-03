@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CustomNewsController do
+describe ArticlesController do
   before(:each) do
     sign_in user
   end
@@ -13,8 +13,8 @@ describe CustomNewsController do
         get :new
       end
 
-      it "assigns a new custom_news as @custom_news" do
-        assigns(:custom_news).should be_a_new(CustomNews)
+      it "assigns a new article as @article" do
+        assigns(:article).should be_a_new(Article)
       end
 
       it "renders the 'new' template" do
@@ -24,12 +24,12 @@ describe CustomNewsController do
 
     describe "#edit" do
       before(:each) do
-        @custom_news = Factory(:custom_news)
-        get :edit, :id => @custom_news.id
+        @article = Factory(:article)
+        get :edit, :id => @article.id
       end
 
-      it "assigns the requested custom_news as @custom_news" do
-        assigns(:custom_news).should eq(@custom_news)
+      it "assigns the requested article as @article" do
+        assigns(:article).should eq(@article)
       end
 
       it "renders the 'edit' template" do
@@ -39,31 +39,31 @@ describe CustomNewsController do
 
     describe "#create" do
       before(:each) do
-        post :create, :custom_news => attributes
+        post :create, :article => attributes
       end
 
       context "with valid parameters" do
-        let(:attributes) { Factory.attributes_for(:custom_news) }
+        let(:attributes) { Factory.attributes_for(:article) }
 
-        it "creates a new CustomNews" do
-          CustomNews.all.should have(1).item
+        it "creates a new Article" do
+          Article.all.should have(1).item
         end
 
-        it "assigns a newly created custom_news as @custom_news" do
-          assigns(:custom_news).should be_a(CustomNews)
-          assigns(:custom_news).should be_persisted
+        it "assigns a newly created article as @article" do
+          assigns(:article).should be_a(Article)
+          assigns(:article).should be_persisted
         end
 
-        it "redirects to the created custom_news" do
-          response.should redirect_to(CustomNews.last)
+        it "redirects to the created article" do
+          response.should redirect_to(Article.last)
         end
       end
 
       context "with invalid parameters" do
         let(:attributes) { {} }
 
-        it "assigns a newly created but unsaved custom_news as @custom_news" do
-          assigns(:custom_news).should be_a_new(CustomNews)
+        it "assigns a newly created but unsaved article as @article" do
+          assigns(:article).should be_a_new(Article)
         end
 
         it "re-renders the 'new' template" do
@@ -74,8 +74,8 @@ describe CustomNewsController do
 
     describe "#update" do
       before(:each) do
-        @custom_news = Factory(:custom_news)
-        put :update, :id => @custom_news.id, :custom_news => attributes
+        @article = Factory(:article)
+        put :update, :id => @article.id, :article => attributes
       end
 
       context "with valid parameters" do
@@ -85,26 +85,26 @@ describe CustomNewsController do
           { :title => @title }
         end
 
-        it "updates the requested custom_news" do
-          @custom_news.reload
+        it "updates the requested article" do
+          @article.reload
 
-          @custom_news.title.should eq(@title)
+          @article.title.should eq(@title)
         end
 
-        it "assigns the requested custom_news as @custom_news" do
-          assigns(:custom_news).should eq(@custom_news)
+        it "assigns the requested article as @article" do
+          assigns(:article).should eq(@article)
         end
 
-        it "redirects to the custom_news" do
-          response.should redirect_to(@custom_news)
+        it "redirects to the article" do
+          response.should redirect_to(@article)
         end
       end
 
       describe "with invalid parameters" do
         let(:attributes) { {:title => "" } }
 
-        it "assigns the custom_news as @custom_news" do
-          assigns(:custom_news).should eq(@custom_news)
+        it "assigns the article as @article" do
+          assigns(:article).should eq(@article)
         end
 
         it "re-renders the 'edit' template" do
@@ -115,16 +115,16 @@ describe CustomNewsController do
 
     describe "#destroy" do
       before(:each) do
-        @custom_news = Factory(:custom_news)
-        delete :destroy, :id => @custom_news.id
+        @article = Factory(:article)
+        delete :destroy, :id => @article.id
       end
 
-      it "destroys the requested custom_news" do
-        CustomNews.all.should have(0).items
+      it "destroys the requested article" do
+        Article.all.should have(0).items
       end
 
-      it "redirects to the custom_news list" do
-        response.should redirect_to(custom_news_index_path)
+      it "redirects to the articles list" do
+        response.should redirect_to(articles_path)
       end
     end
   end
@@ -173,12 +173,12 @@ describe CustomNewsController do
 
     describe "#index" do
       before(:each) do
-        @custom_news = Factory(:custom_news)
+        @article = Factory(:article)
         get :index
       end
 
-      it "assigns all custom_news as @custom_news" do
-        assigns(:custom_news).should eq([@custom_news])
+      it "assigns all articles as @article" do
+        assigns(:articles).should eq([@article])
       end
 
       it "renders the 'index' template" do
@@ -188,12 +188,12 @@ describe CustomNewsController do
 
     describe "#show" do
       before(:each) do
-        @custom_news = Factory(:custom_news)
-        get :show, :id => @custom_news.id
+        @article = Factory(:article)
+        get :show, :id => @article.id
       end
 
-      it "assigns the requested custom_news as @custom_news" do
-        assigns(:custom_news).should eq(@custom_news)
+      it "assigns the requested article as @article" do
+        assigns(:article).should eq(@article)
       end
 
       it "renders the 'show' template" do

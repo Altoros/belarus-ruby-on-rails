@@ -20,9 +20,9 @@ Feature:
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user after successfull sign in with Facebook returns to the same page
-      And I come to custom news page with name "Very specific custom news 911"
+      And I come to article page with name "Very specific article 911"
       When I follow "Sign in with Facebook"
-      Then I should see "Very specific custom news 911"
+      Then I should see "Very specific article 911"
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user previously registered by email and now successfully signs in with Facebook

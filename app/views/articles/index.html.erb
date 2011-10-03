@@ -1,0 +1,39 @@
+<h1>Listing articles</h1>
+
+<% if @articles.empty? %>
+
+   There is no news at the moment.
+
+<% else %>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= raw article.content %></td>
+      <td><%= link_to 'Show', article %></td>
+      <% if can? :manage, article %>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Delete', article, :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+
+<% end %>
+
+<br />
+
+<% if can? :create, Article %>
+  <%= link_to 'New article', new_article_path %>
+<% end %>
+
+<%= will_paginate @articles %>

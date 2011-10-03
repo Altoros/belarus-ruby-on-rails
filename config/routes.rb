@@ -1,5 +1,5 @@
 BelarusRubyOnRails::Application.routes.draw do
-  resources :custom_news do
+  resources :articles do
     resources :comments
   end
   resources :profiles
@@ -73,7 +73,7 @@ BelarusRubyOnRails::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'custom_news#index'
+  root :to => 'articles#index'
 
   # See how all your routes lay out with "rake routes"
 
