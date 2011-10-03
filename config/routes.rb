@@ -16,6 +16,8 @@ BelarusRubyOnRails::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    resource :dashboard, :only => :show
+    root :to => 'dashboards#show'
   end
 
   # The priority is based upon order of creation:
