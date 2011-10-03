@@ -1,33 +1,35 @@
 require 'spec_helper'
 
-def valid_profile_attributes
-  Factory.attributes_for(:profile)
-end
-
 describe Profile do
-
-  before(:each) do
-    @user = User.new
-    @user.profile = Profile.new
-  end
-
   it "should be valid" do
-    @user.profile.attributes = valid_profile_attributes
-    @user.profile.should be_valid
+    profile = Factory.build(:profile)
+    profile.should be_valid
   end
 
-  it "should not be valid without required fields" do
-    c = valid_profile_attributes
-    c.delete :first_name
-    c.delete :last_name
-    @user.profile.attributes = c
-    @user.profile.should_not be_valid
-    @user.profile.error_on(:first_name).should eql(["can't be blank"])
-    @user.profile.first_name = valid_profile_attributes[:first_name]
-    @user.profile.should_not be_valid
-    @user.profile.error_on(:last_name).should eql(["can't be blank"])
-    @user.profile.last_name = valid_profile_attributes[:last_name]
-    @user.profile.should be_valid
+  it "should not be valid without first name" do
+    profile = Factory.build(:profile, :first_name => "")
+    profile.should have(1).error_on(:first_name)
+  end
+  
+  it "should not be valid without last name" do
+    profile = Factory.build(:profile, :last_name => "")
+    profile.should have(1).error_on(:last_name)
   end
 
+  it "should not be valid if first name is longer than 255 symbols" do
+    profile = Factory.build(:profile, :first_name => "a" * 256)
+    profile.should have(1).error_on(:first_name)
+  end
+
+  it "should not be valid if last name is longer than 255 symbols" do
+    profile = Factory.build(:profile, :last_name => "a" * 256)
+    profile.should have(1).error_on(:last_name)
+  end
+
+  it { should respond_to(:subscribed) }
+
+  it "has a Ruby experience level" do
+    profile = Factory(:profile, :experience => Factory(:experience))
+    profile.experience.should_not be_nil
+  end
 end

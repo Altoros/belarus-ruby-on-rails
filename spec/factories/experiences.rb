@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :experience do
-      level "MyString"
-    end
+    sequence(:level) { |n| "level#{n}" }
+  end
 end

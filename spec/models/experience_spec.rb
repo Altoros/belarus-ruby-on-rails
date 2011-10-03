@@ -17,4 +17,14 @@ describe Experience do
 
     another_experience.should have(1).error_on(:level)
   end
+
+  it "has many profiles" do
+    experience = Factory(:experience)
+
+    2.times do
+      Factory(:profile, :experience => experience)
+    end
+
+    experience.profiles.should have(2).items
+  end
 end
