@@ -1,5 +1,5 @@
 <hr/>
-<%= form_for [comment.custom_news, comment], :remote => true do |f| %>
+<%= form_for [comment.article, comment], :remote => true do |f| %>
   <div><%= errors_for comment %></div>
   <div><%= f.text_area :body %></div>
   <div><%= f.submit "Leave a comment" %></div>

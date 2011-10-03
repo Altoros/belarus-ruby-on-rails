@@ -2,7 +2,7 @@ Feature: User profile management
 
   Scenario: User can edit his profile
     Given I am logged in as user
-    And I am on the custom_news page
+    And I am on the articles page
     When I follow "Edit profile"
     Then I should see "Editing profile"
 
@@ -14,5 +14,5 @@ Feature: User profile management
 
   Scenario: Visitor can't edit profiles
     Given I am not logged in
-    And I am on the custom_news page
+    And I am on the articles page
     Then I should not see "Edit profile"
