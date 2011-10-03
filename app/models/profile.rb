@@ -6,6 +6,8 @@ class Profile < ActiveRecord::Base
   validates :last_name, :presence => true
   validates :last_name, :length => {:maximum => 255}
 
+  belongs_to :experience
+
   def providers_data
     tokens = self.user.user_tokens
     User.omniauth_providers.inject([]) do |res, provider|
