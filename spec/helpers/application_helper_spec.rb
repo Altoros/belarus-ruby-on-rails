@@ -17,6 +17,7 @@ describe ApplicationHelper do
     before(:each) do
       user.email = ''
       user.password = ''
+      user.password_confirmation = ''
       user.should_not be_valid
     end
 
