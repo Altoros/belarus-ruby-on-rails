@@ -16,17 +16,17 @@ module NavigationHelpers
 
     when /the sign in page/
       '/users/sign_in'
-      
-    when /^the custom_news page$/
-      '/custom_news'
-    
-    when /^new custom news path/
-      '/custom_news/new'
-      
-    when /^edit custom news path/
-      '/custom_news/id/edit'
-      
-      
+
+    when /^the articles page$/
+      '/articles'
+
+    when /^new article path/
+      '/articles/new'
+
+    when /^edit article path/
+      '/articles/id/edit'
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
