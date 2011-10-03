@@ -12,6 +12,8 @@
       <%= render 'devise/menu/profile_items' %>
       <%= render 'devise/menu/login_items' %>
       <%= link_to("Control panel", admin_users_path) if can? :manage, User %>
+      <%= link_to "About", about_path %>
+      <%= link_to "Friends", friends_path %>
     </ul>
 
     <% flash.each do |name, msg| %>
