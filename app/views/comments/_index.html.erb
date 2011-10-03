@@ -1,7 +1,7 @@
 <div id="comments_block">
   <% if can? :create, Comment %>
     <div>
-         <%= render "comments/form", :comment => @custom_news.comments.build %>
+         <%= render "comments/form", :comment => @article.comments.build %>
          <div id="comment_notice"></div>
     </div>
   <% else %>
@@ -10,7 +10,7 @@
   <% if can? :read, Comment %>
     <div id="comments">
         <%= render :partial => "comments/show",
-                   :collection => @custom_news.comments.includes(:user => :profile),
+                   :collection => @article.comments.includes(:user => :profile),
                    :as => 'comment' %>
     </div>
   <% end %>
