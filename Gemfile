@@ -29,6 +29,8 @@ gem 'paperclip'
 
 gem 'rspec-rails', :groups => [:development, :test]
 
+gem 'delayed_job'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'

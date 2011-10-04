@@ -19,4 +19,10 @@ class Message
   def persisted?
     false
   end
+
+  def self.deliver(recipient_group, subject, body)
+    UsersFilter.emails_list(recipient_group).each do |email|
+      Notifier.custom(email, subject, body).deliver
+    end
+  end
 end
