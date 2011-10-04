@@ -9,7 +9,7 @@ ru:
     messages:
       title: 'Рассылка'
       invalid_user_group: " содержит неправильный фильтр"
-      successfully_sent: 'Сообщение было отослано'
+      successfully_sent: 'Сообщение будет отослано'
       send: 'рассылка'
       send_button: 'Послать сообщение'
   errors:

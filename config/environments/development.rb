@@ -8,7 +8,6 @@ BelarusRubyOnRails::Application.configure do
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
-
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -21,7 +20,10 @@ BelarusRubyOnRails::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default :charset => 'utf-8',
+                               :from => 'no-reply@belarusrubyonrails.org'
+
+  #config.action_mailer.default :from => 'no-reply@belarusrubyonrails.org'
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -35,3 +37,4 @@ BelarusRubyOnRails::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+

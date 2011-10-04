@@ -9,7 +9,7 @@ en:
     messages:
       title: 'Send mail to users'
       invalid_user_group: ' contains not valid user group'
-      successfully_sent: 'Message was successfully sent'
+      successfully_sent: 'Message is being sent'
       send: 'send mail'
       send_button: 'Send Message'
   errors:
