@@ -16,12 +16,12 @@ BelarusRubyOnRails::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    resource :message
     resource :dashboard, :only => :show
     root :to => 'dashboards#show'
   end
 
   match '/about' => 'static_page#about'
-
   match '/friends' => 'static_page#friends'
 
   # The priority is based upon order of creation:
