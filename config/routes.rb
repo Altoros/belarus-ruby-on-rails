@@ -3,6 +3,7 @@ BelarusRubyOnRails::Application.routes.draw do
     resources :comments
   end
   resources :profiles
+  resource :message
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do
     get '/users/sign_in', :to => "devise/sessions#new", :as => 'login'
@@ -21,7 +22,6 @@ BelarusRubyOnRails::Application.routes.draw do
   end
 
   match '/about' => 'static_page#about'
-
   match '/friends' => 'static_page#friends'
 
   # The priority is based upon order of creation:
