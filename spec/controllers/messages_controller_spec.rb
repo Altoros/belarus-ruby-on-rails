@@ -20,7 +20,10 @@ describe MessagesController do
 
     describe "#create" do
       before(:each) do
-        @user = Factory(:user)
+        ActionMailer::Base.deliveries = []
+        @user_subscribed = Factory(:user, :profile => Factory(:profile,
+                                                  :subscribed => true,
+                                                  :experience => Factory(:experience)))
         post :create, :message => attributes
       end
 
@@ -28,7 +31,8 @@ describe MessagesController do
         let(:attributes) { Factory.attributes_for(:message) }
 
         it "send message to user group" do
-          #ActionMailer::Base.deliveries.last.to.should eq(@user.email)
+          ActionMailer::Base.deliveries.should_not be_empty
+          ActionMailer::Base.deliveries.last.to.should eq([@user_subscribed.email])
         end
 
         it "redirects to the admin's dashboard'" do

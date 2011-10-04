@@ -9,7 +9,9 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
 
     if @message.valid?
-      # TODO send message here
+      UsersFilter.emails_list(@message.recipient_group).each do |email|
+        Notifier.custom(email, @message.subject, @message.body).deliver
+      end
       redirect_to admin_root_url, :notice => I18n.t('admin.messages.successfully_sent')
     else
       render :action => 'new'
