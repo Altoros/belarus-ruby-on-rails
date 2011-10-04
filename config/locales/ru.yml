@@ -5,5 +5,9 @@ ru:
   admin:
     users:
       not_found: 'Пользователь не найден'
+  notifier:
+    title: 'Рассылка'
+    invalid_user_group: " содержит неправильный фильтр"
+    successfully_sent: 'Сообщение было отослано'
   errors:
     changes_not_saved: "Не удалось сохранить изменения"
