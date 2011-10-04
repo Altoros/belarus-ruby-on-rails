@@ -1,0 +1,18 @@
+<h1><%= I18n.t 'admin.messages.title' %></h1>
+
+<%= form_for @message, :url => message_path do |f| %>
+  <%= errors_for @message %>
+  <p>
+    <%= f.label :recipient_group %><br />
+    <%= f.select :recipient_group, UsersFilter.filters_collection.invert.to_a %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit I18n.t('admin.messages.send_button') %></p>
+<% end %>
