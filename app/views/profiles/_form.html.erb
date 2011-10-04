@@ -1,5 +1,5 @@
 <%= form_for(@profile) do |f| %>
-  <%= errors_for(@profile, "Opps, unable to save profile") %>
+  <%= errors_for(@profile, t('errors.changes_not_saved')) %>
 
   <div class="field">
     <%= f.label :first_name %><br />
