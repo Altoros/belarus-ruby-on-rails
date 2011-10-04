@@ -5,3 +5,6 @@ en:
   admin:
     users:
       not_found: 'User not found'
+  profile:
+    errors:
+      impossible_to_save: "Opps, unable to save profile"

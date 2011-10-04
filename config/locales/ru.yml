@@ -1,0 +1,10 @@
+ru:
+  omniauth:
+    successfully_binded: 'Провайдер %{provider_name} успешно подключён'
+    bind_with: 'Связать с %{provider_name}'
+  admin:
+    users:
+      not_found: 'Пользователь не найден'
+  profile:
+    errors:
+      impossible_to_save: "Не удалось сохранить изменения"
