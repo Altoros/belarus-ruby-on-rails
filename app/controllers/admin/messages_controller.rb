@@ -9,7 +9,7 @@ class Admin::MessagesController < ApplicationController
     @message = Message.new(params[:message])
 
     if @message.valid?
-      # TODO send message here
+      Message.delay.deliver(@message.recipient_group, @message.subject, @message.body)
       redirect_to admin_root_url, :notice => I18n.t('admin.messages.successfully_sent')
     else
       render :action => 'new'
