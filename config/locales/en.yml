@@ -3,7 +3,32 @@ en:
     successfully_binded: 'Provider %{provider_name} binded successfully'
     bind_with: 'Bind with %{provider_name}'
   admin:
+    dashboard: 'Dashboard'
+    you_can: 'You can'
     users:
       not_found: 'User not found'
+      edit_users: 'edit users'
   errors:
-    changes_not_saved: "Unable to save changes"
+    changes_not_saved: 'Unable to save changes'
+  articles:
+    article_successfully_created: 'Article was successfully created'
+    article_successfully_updated: 'Article was successfully updated'
+    article_successfully_deleted: 'Article was successfully deleted'
+    unable_save: 'Unable to save article'
+    no_news: 'There is no news at the moment'
+    are_you_sure: 'Are you sure?'
+    title: 'Title'
+    content: 'Content'
+    delete: 'Delete'
+    edit: 'Edit'
+    update: 'Update'
+    create: 'Create'
+    add_an_article: 'add an article'
+    see_articles_list: 'see articles list'
+    editing_article: 'Editing article'
+    new_article: 'New article'
+    show: 'Show'
+    listing_articles: 'Listing articles'
+    status: 'Status'
+    published: 'Published'
+    unpublished: 'Unpublished'

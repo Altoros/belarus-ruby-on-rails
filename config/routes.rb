@@ -1,5 +1,5 @@
 BelarusRubyOnRails::Application.routes.draw do
-  resources :articles do
+  resources :articles, :only => [:index, :show] do
     resources :comments
   end
   resources :profiles
@@ -17,6 +17,7 @@ BelarusRubyOnRails::Application.routes.draw do
   namespace :admin do
     resources :users
     resource :dashboard, :only => :show
+    resources :articles, :except => [:show]
     root :to => 'dashboards#show'
   end
 
