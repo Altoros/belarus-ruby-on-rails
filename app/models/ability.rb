@@ -8,6 +8,7 @@ class Ability
     else
       # admin
       can :manage, :all if user.is_admin?
+      can :admin, :dashboard if user.is_admin?
 
       # user
       can :read, Article

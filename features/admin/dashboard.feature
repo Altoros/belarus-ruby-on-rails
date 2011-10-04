@@ -1,4 +1,4 @@
-Feature: Admin: User management
+Feature: Admin User management
   Background:
     Given I have 2 users(1 of them is admin)
 
