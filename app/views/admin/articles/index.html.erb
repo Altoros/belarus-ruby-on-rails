@@ -1,0 +1,29 @@
+<h1>Listing articles</h1>
+
+<% if @articles.empty? %>
+
+   There is no news at the moment.
+      
+<% else %>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th></th>
+    </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, edit_admin_article_path(article) %></td>
+      <td><%= link_to 'Delete', admin_article_path(article), confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<% end %>
+
+<br />
+
+<%= link_to 'add an article', new_admin_article_path %>
+
+<%= will_paginate @articles %>
