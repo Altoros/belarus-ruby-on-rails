@@ -1,10 +1,17 @@
 en:
   omniauth:
-    successfully_binded: 'Provider %{provider_name} binded successfully'
+    successfully_binded: 'Provider %{provider_name} bound successfully'
     bind_with: 'Bind with %{provider_name}'
   admin:
     users:
+      edit: 'edit users'
       not_found: 'User not found'
+    messages:
+      title: 'Send mail to users'
+      invalid_user_group: ' contains not valid user group'
+      successfully_sent: 'Message was successfully sent'
+      send: 'send mail'
+      send_button: 'Send Message'
   errors:
     changes_not_saved: "Unable to save changes"
   labels:
