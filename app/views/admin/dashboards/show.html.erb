@@ -2,5 +2,6 @@
 
 <h3>You can:</h3>
 <ul>
-  <li><%= link_to("edit users", admin_users_path) %></li>
+  <li><%= link_to(I18n.t('admin.users.edit'), admin_users_path) %></li>
+  <li><%= link_to(I18n.t('admin.messages.send'), new_admin_message_path) %></li>
 </ul>
