@@ -5,6 +5,7 @@ class Profile < ActiveRecord::Base
   validates :first_name, :length => {:maximum => 255}
   validates :last_name, :presence => true
   validates :last_name, :length => {:maximum => 255}
+  validates :subscribed, :presence => true, :if => :experience
 
   belongs_to :experience
 
