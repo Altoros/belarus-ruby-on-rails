@@ -29,7 +29,13 @@ describe Profile do
   it { should respond_to(:subscribed) }
 
   it "has a Ruby experience level" do
-    profile = Factory(:profile, :experience => Factory(:experience))
+    profile = Factory(:profile, :subscribed => true, :experience => Factory(:experience))
     profile.experience.should_not be_nil
+  end
+
+  it "can't set Ruby experience level if not subscribed" do
+    profile = Factory(:profile, :subscribed => false)
+    profile.experience = Factory.build(:experience)
+    profile.should have(1).error_on(:subscribed)
   end
 end
