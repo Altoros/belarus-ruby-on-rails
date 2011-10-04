@@ -1,7 +1,9 @@
-<h1>Dashboard</h1>
+<h1><%= t('admin.dashboard') %></h1>
 
-<h3>You can:</h3>
+<h3><%= t('admin.you_can') %>:</h3>
 <ul>
-  <li><%= link_to(I18n.t('admin.users.edit'), admin_users_path) %></li>
+  <li><%= link_to(t('admin.edit_users'), admin_users_path) %></li>
   <li><%= link_to(I18n.t('admin.messages.send'), new_admin_message_path) %></li>
+  <li><%= link_to(t('articles.add_an_article'), new_admin_article_path) %></li>
+  <li><%= link_to(t('articles.see_articles_list'), admin_articles_path) %></li>
 </ul>

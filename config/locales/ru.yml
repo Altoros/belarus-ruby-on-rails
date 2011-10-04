@@ -3,6 +3,8 @@ ru:
     successfully_binded: 'Провайдер %{provider_name} успешно подключён'
     bind_with: 'Связать с %{provider_name}'
   admin:
+    dashboard: 'Панель админа'
+    you_can: 'Вы можете'
     users:
       edit: 'редактировать пользователей'
       not_found: 'Пользователь не найден'
@@ -13,8 +15,30 @@ ru:
       send: 'рассылка'
       send_button: 'Послать сообщение'
   errors:
-    changes_not_saved: "Не удалось сохранить изменения"
+    changes_not_saved: 'Не удалось сохранить изменения'
   profile:
     subscribed_for_comments: "Я хочу получать по почте уведомления о новых комментариях:"
   labels:
     all: 'все'
+  articles:
+    article_successfully_created: 'Статья была успешно сохранена'
+    article_successfully_updated: 'Статья была успешно обновлена'
+    article_successfully_deleted: 'Статья была успешно удалена'
+    unable_save: 'Не удалось сохранить статью'
+    no_news: 'Нет статей в настоящий момент'
+    are_you_sure: 'Вы уверены?'
+    title: 'Заголовок'
+    content: 'Содержимое'
+    delete: 'Удалить'
+    edit: 'Изменить'
+    update: 'Обновить'
+    create: 'Создать'
+    add_an_article: 'добавить статью'
+    see_articles_list: 'просмотреть список статей'
+    editing_article: 'Редактирование статьи'
+    new_article: 'Новая статья'
+    show: 'Показать'
+    listing_articles: 'Список статей'
+    status: 'Статус'
+    published: 'Опубликовано'
+    unpublished: 'Не опубликовано'

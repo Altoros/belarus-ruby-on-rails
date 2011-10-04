@@ -1,0 +1,25 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%= form_for([:admin, @article]) do |f| %>
+  <%= errors_for(@article, t('articles.unable_save')) %>
+
+  <div class="field">
+    <%= f.label :title, t('articles.title') %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content, t('articles.content') %><br />
+    <%= f.cktext_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :published, t('articles.status') %><br />
+    <%= f.select(:published, [[t('articles.published'), true], [t('articles.unpublished'), false]]) %>
+  </div>
+  <div class="actions">
+    <% if params[:id] != nil %>
+      <%= submit_tag t('articles.update') %>
+      <%= submit_tag t('articles.delete'), :onclick=>'update_edit_article_action();' %>
+    <% else %>
+      <%= submit_tag t('articles.create') %>
+    <% end %>
+  </div>
+<% end %>

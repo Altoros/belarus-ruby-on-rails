@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
-  validates :title, :length => {:maximum => 255, :message => "%{value} is not a valid size"}
-  validates :title, :presence => {:message => "can't be blank"}
-  validates :content, :presence => {:message => "can't be blank"}
+  validates :title, :length => {:maximum => 255}
+  validates :title, :presence => true
+  validates :content, :presence => true
   has_many :comments, :order => "created_at DESC", :dependent => :delete_all
 
   scope :published, where(:published => true)

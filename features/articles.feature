@@ -32,7 +32,7 @@ Feature: Articles management
     Given there are no articles
     And I am not logged in
     When I am on the articles page
-    Then I should see "There is no news at the moment."
+    Then I should see "There is no news at the moment"
 
   # TODO DRY scenarios, reduce repetitions
   Scenario: Visitor can't create a new article
@@ -47,12 +47,11 @@ Feature: Articles management
 
   Scenario: Admin can add article
     Given I am logged in as admin
-    When I go to new article path
+    When I go to the new admin article page
     And I fill in "Title" with "Ruby rocks"
     And I fill in "Content" with "So hard"
     And I press "Create"
-    Then I should see "Ruby rocks"
-    And I should see "So hard"
+    Then I should see "Article was successfully created"
 
   Scenario: Visitor can't update article
     Given article exists with title "Ruby" and content "It rocks!"
@@ -70,12 +69,11 @@ Feature: Articles management
     Given article exists with title "Ruby" and content "It rocks!"
     And I am logged in as admin
     When I am on the articles page
-    And I follow edit article page for Ruby
+    And I follow edit article page for "Ruby"
     And I fill in "Title" with "Ruby7"
     And I fill in "Content" with "7th"
     And I press "Update"
-    Then I should see "Ruby7"
-    And I should see "7th"
+    Then I should see "Article was successfully updated"
 
   Scenario: Visitor can't delete article
     Given article exists with title "Ruby7" and content "It rocks!"
