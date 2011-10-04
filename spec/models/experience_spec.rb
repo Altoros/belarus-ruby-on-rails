@@ -22,7 +22,7 @@ describe Experience do
     experience = Factory(:experience)
 
     2.times do
-      Factory(:profile, :experience => experience)
+      Factory(:profile, :subscribed => true, :experience => experience)
     end
 
     experience.profiles.should have(2).items
