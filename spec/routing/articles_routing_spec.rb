@@ -8,7 +8,7 @@ describe ArticlesController do
     end
 
     it "routes to #new" do
-      get("/articles/new").should route_to("articles#new")
+      get("/articles/new").should_not route_to("articles#new")
     end
 
     it "routes to #show" do
@@ -16,19 +16,19 @@ describe ArticlesController do
     end
 
     it "routes to #edit" do
-      get("/articles/1/edit").should route_to("articles#edit", :id => "1")
+      get("/articles/1/edit").should_not route_to("articles#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/articles").should route_to("articles#create")
+      post("/articles").should_not route_to("articles#create")
     end
 
     it "routes to #update" do
-      put("/articles/1").should route_to("articles#update", :id => "1")
+      put("/articles/1").should_not route_to("articles#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/articles/1").should route_to("articles#destroy", :id => "1")
+      delete("/articles/1").should_not route_to("articles#destroy", :id => "1")
     end
 
   end

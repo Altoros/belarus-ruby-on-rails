@@ -3,6 +3,8 @@ en:
     successfully_binded: 'Provider %{provider_name} bound successfully'
     bind_with: 'Bind with %{provider_name}'
   admin:
+    dashboard: 'Dashboard'
+    you_can: 'You can'
     users:
       edit: 'edit users'
       not_found: 'User not found'
@@ -13,7 +15,7 @@ en:
       send: 'send mail'
       send_button: 'Send Message'
   errors:
-    changes_not_saved: "Unable to save changes"
+    changes_not_saved: 'Unable to save changes'
   profile:
     subscribed_for_comments: "I would like to receive email notifications about new comments"
   labels:
@@ -36,3 +38,25 @@ en:
     back_link: 'Back'
     meetups_link: 'Manage meetups'
     save_button: 'Save it!'
+  articles:
+    article_successfully_created: 'Article was successfully created'
+    article_successfully_updated: 'Article was successfully updated'
+    article_successfully_deleted: 'Article was successfully deleted'
+    unable_save: 'Unable to save article'
+    no_news: 'There is no news at the moment'
+    are_you_sure: 'Are you sure?'
+    title: 'Title'
+    content: 'Content'
+    delete: 'Delete'
+    edit: 'Edit'
+    update: 'Update'
+    create: 'Create'
+    add_an_article: 'add an article'
+    see_articles_list: 'see articles list'
+    editing_article: 'Editing article'
+    new_article: 'New article'
+    show: 'Show'
+    listing_articles: 'Listing articles'
+    status: 'Status'
+    published: 'Published'
+    unpublished: 'Unpublished'

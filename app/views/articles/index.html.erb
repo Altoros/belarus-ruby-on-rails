@@ -1,14 +1,14 @@
-<h1>Listing articles</h1>
+<h1><%= t('articles.listing_articles') %></h1>
 
 <% if @articles.empty? %>
 
-   There is no news at the moment.
+   <%= t('articles.no_news') %>
 
 <% else %>
 
   <table>
     <tr>
-      <th>Title</th>
+      <th><%= t('articles.title') %></th>
       <th>Content</th>
       <th></th>
       <th></th>
@@ -19,10 +19,10 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= raw article.content %></td>
-      <td><%= link_to 'Show', article %></td>
+      <td><%= link_to t('articles.show'), article %></td>
       <% if can? :manage, article %>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Delete', article, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to t('articles.edit'), edit_admin_article_path(article) %></td>
+        <td><%= link_to t('articles.delete'), admin_article_path(article), :confirm => t('articles.are_you_sure'), :method => :delete %></td>
       <% end %>
     </tr>
   <% end %>
@@ -33,7 +33,7 @@
 <br />
 
 <% if can? :create, Article %>
-  <%= link_to 'New article', new_article_path %>
+  <%= link_to t('articles.new_article'), new_admin_article_path %>
 <% end %>
 
 <%= will_paginate @articles %>
