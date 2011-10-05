@@ -8,6 +8,8 @@
   <%= raw @article.content %>
 </p>
 
+<%= render :template => "layouts/sharing_buttons.html.erb" %>
+
 <%= render "comments/index" %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
