@@ -1,0 +1,33 @@
+<% if @meetup.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@meetup.errors.count, "error") %></h2>
+
+    <ul>
+    <% @meetup.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @meetup] do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </dev>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label "date_and_time" %>
+    <%= f.datetime_select :date_and_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
