@@ -1,0 +1,23 @@
+<%= errors_for @meetup %>
+
+<%= form_for [:admin, @meetup] do |f| %>
+  <div class="field">
+    <%= f.label :topic, t('meetup.topic') %>
+    <%= f.text_field :topic %>
+  </dev>
+  <div class="field">
+    <%= f.label :description, t('meetup.description') %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :place, t('meetup.place') %>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label "date_and_time", t('meetup.date_and_time') %>
+    <%= f.datetime_select :date_and_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('meetup.save_button') %>
+  </div>
+<% end %>
