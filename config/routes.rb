@@ -18,6 +18,7 @@ BelarusRubyOnRails::Application.routes.draw do
     resources :users
     resource :dashboard, :only => :show
     root :to => 'dashboards#show'
+    resources :meetups
   end
 
   match '/about' => 'static_page#about'
