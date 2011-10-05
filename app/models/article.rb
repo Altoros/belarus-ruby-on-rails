@@ -3,4 +3,6 @@ class Article < ActiveRecord::Base
   validates :title, :presence => {:message => "can't be blank"}
   validates :content, :presence => {:message => "can't be blank"}
   has_many :comments, :order => "created_at DESC", :dependent => :delete_all
+
+  scope :published, where(:published => true)
 end

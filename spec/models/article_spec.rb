@@ -4,7 +4,7 @@ module ArticleSpecHelper
   def valid_article_attributes
     { :title => 'Some title',
       :content => 'Some text',
-      :status => 1 }
+      :published => true }
   end
 end
 

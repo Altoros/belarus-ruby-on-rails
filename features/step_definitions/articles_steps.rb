@@ -1,5 +1,9 @@
 Given /^article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
-  Article.create!(:title => title, :content => content)
+  Factory(:article, {:title => title, :content => content, :published => true})
+end
+
+Given /^unpublished article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
+  Factory(:article, {:title => title, :content => content, :published => false})
 end
 
 When /^I follow "(.+)" page$/ do |title|
@@ -13,5 +17,3 @@ end
 When /^I follow edit article page for (.+)$/ do |title|
   visit article_path(Article.find_by_title(title).id) + '/edit'
 end
-
-
