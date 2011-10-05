@@ -4,6 +4,9 @@
     comment_div.hide().slideToggle("slow");
     comment_notify("Comment successfully added");
     $("#comment_body").val("");
+    if ($('#receive_email').attr('checked')) {
+      jQuery('#comment_email_subscription').remove()
+      }
 <% else %>
     comment_notify("You don't write a comment (its length must be greater then 4)!!!");
 <% end %>

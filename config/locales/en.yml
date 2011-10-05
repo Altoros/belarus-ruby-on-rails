@@ -7,3 +7,6 @@ en:
       not_found: 'User not found'
   errors:
     changes_not_saved: "Unable to save changes"
+  comments:
+    activate: "Please activate to receive email notifications about new comments"
+    add: "Leave a comment"

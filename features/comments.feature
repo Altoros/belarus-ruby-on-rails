@@ -11,6 +11,6 @@ Feature: Comments management for articles.
   Scenario: Logged in users can delete their comments
     Given I am logged in
     And I have 1 comment for article "Ruby rocks"
-    When I am stay on article path for "Ruby rocks"
+    When I stay on article path for "Ruby rocks"
     And I push "Delete comment"
     Then I should have no comments

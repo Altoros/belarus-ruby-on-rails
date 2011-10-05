@@ -2,5 +2,11 @@
 <%= form_for [comment.article, comment], :remote => true do |f| %>
   <div><%= errors_for comment %></div>
   <div><%= f.text_area :body %></div>
-  <div><%= f.submit "Leave a comment" %></div>
+  <% if !CommentsSubscription.find_by_profile_id_and_article_id(current_user.profile.id, params[:id]) %>
+  <div id = "comment_email_subscription">
+    <%= check_box_tag 'receive_email', 'yes', false %>
+    <%= label_tag(t('comments.activate')) %>
+  </div>
+  <% end %>
+  <div><%= f.submit t('comments.add') %></div>
 <% end %>
