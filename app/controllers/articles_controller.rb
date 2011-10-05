@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.paginate(
+    @articles = Article.where(:status => 0).paginate(
       :per_page => 5,
       :page => params[:page],
       :order => 'created_at DESC'
@@ -19,7 +19,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(:all, :conditions => {:status => 0, :id => params[:id]})
+    @article = @article.count > 0 ? @article.first : nil
 
     respond_to do |format|
       format.html # show.html.erb

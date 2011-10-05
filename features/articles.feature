@@ -7,12 +7,26 @@ Feature: Articles management
     Then I should see "Ruby"
     And I should see "Rails"
 
+  Scenario: Visitor can't see unpublished articles in the list of articles
+    Given unpublished article exists with title "Article title" and content "Article content"
+    And I am not logged in
+    When I am on the articles page
+    Then I should not see "Article title"
+    And I should not see "Article content"
+
   Scenario: Visitor can read article
     Given article exists with title "Ruby" and content "It rocks!"
     And I am not logged in
     When I follow "Ruby" page
     Then I should see "Ruby"
     And I should see "It rocks!"
+
+  Scenario: Visitor can't read unpublished article
+    Given unpublished article exists with title "Article title" and content "Article content"
+    And I am not logged in
+    When I follow "Article title" page
+    Then I should not see "Article title"
+    And I should not see "Article content"
 
   Scenario: Visitor should see no news message
     Given there are no articles
