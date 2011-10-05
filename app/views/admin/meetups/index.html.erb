@@ -1,0 +1,26 @@
+<h1><%= I18n.t('meetup.show_page') %></h1>
+
+<% if @meetup %>
+  <p>
+    <b><%= I18n.t('meetup.topic') %>:</b>
+    <%= @meetup.topic %>
+  </p>
+  <p>
+    <b><%= I18n.t('meetup.description') %>:</b>
+    <%= @meetup.description %>
+  </p>
+  <p>
+    <b><%= I18n.t('meetup.place') %>:</b>
+    <%= @meetup.place %>
+  </p>
+  <p>
+    <b><%= I18n.t('meetup.date') %>:</b>
+    <%= @meetup.date_and_time.strftime("%Y-%m-%d") %>
+  </p>
+  <p>
+    <b><%= I18n.t('meetup.time') %>:</b>
+    <%= @meetup.date_and_time.to_s(:time) %>
+  </p>
+<% else %>
+  <%= link_to I18n.t('meetup.create_link'), new_admin_meetup_path %>
+<% end %>
