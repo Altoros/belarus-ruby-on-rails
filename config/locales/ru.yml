@@ -7,3 +7,20 @@ ru:
       not_found: 'Пользователь не найден'
   errors:
     changes_not_saved: "Не удалось сохранить изменения"
+  meetup:
+    incorrect_datetime_format: 'заданы в неверном формате'
+    datetime_must_future: 'должны быть из будущего'
+    topic: 'Тема'
+    description: 'Описание'
+    place: 'Место'
+    date_and_time: 'Дата и время'
+    date: 'Дата'
+    time: 'Время'
+    create_page: 'Создание митапа'
+    update_page: 'Редактирование митапа'
+    show_page: 'Митап'
+    create_ok: 'Митап успешно создан'
+    create_link: 'Создать митап'
+    update_link: 'Редактировать митап'
+    meetups_link: 'Митапы'
+    save_button: 'Сохранить!'
