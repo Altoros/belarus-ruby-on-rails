@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
   accepts_nested_attributes_for :profile, :allow_destroy => true
 
+  scope :not_admin, where('is_admin = ?', false)
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session[:omniauth]

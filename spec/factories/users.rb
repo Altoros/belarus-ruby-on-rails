@@ -6,7 +6,7 @@ FactoryGirl.define do
 
     after_build do |user|
       user.skip_confirmation!
-      user.profile = Factory.build(:profile)
+      user.profile = Factory.build(:profile) unless user.profile
     end
 
     after_stub do |user|
