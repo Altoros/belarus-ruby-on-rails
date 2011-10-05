@@ -26,7 +26,7 @@ Given /^I have (\d+) comment for article "([^"]*)"$/ do |commnents_count, news_t
   end
 end
 
-When /^I am stay on article path for "([^"]*)"$/ do |arg1|
+When /^I stay on article path for "([^"]*)"$/ do |arg1|
   @article = Article.find_by_title arg1
 end
 

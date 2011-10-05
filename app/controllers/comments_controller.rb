@@ -10,6 +10,12 @@ class CommentsController < ApplicationController
     @comment = article.comments.build params[:comment]
     @comment.user = current_user
     @comment.save
+
+    if (params[:receive_email] == 'yes')
+      @comments_subscription = CommentsSubscription.new(:profile_id => current_user.profile.id,
+                                                         :article_id => params[:article_id])
+      @comments_subscription.save
+    end
   end
 
   def update
