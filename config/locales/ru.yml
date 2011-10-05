@@ -7,3 +7,5 @@ ru:
       not_found: 'Пользователь не найден'
   errors:
     changes_not_saved: "Не удалось сохранить изменения"
+  labels:
+    all: 'все'
