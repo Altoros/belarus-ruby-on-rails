@@ -2,9 +2,7 @@ require 'spec_helper'
 
 module ArticleSpecHelper
   def valid_article_attributes
-    { :title => 'Some title',
-      :content => 'Some text',
-      :status => 1 }
+    Factory.attributes_for(:article)
   end
 end
 
