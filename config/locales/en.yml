@@ -9,3 +9,5 @@ en:
     changes_not_saved: "Unable to save changes"
   profile:
     subscribed_for_comments: "I would like to receive email notifications about new comments"
+  labels:
+    all: 'all'

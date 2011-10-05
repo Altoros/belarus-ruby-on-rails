@@ -9,6 +9,8 @@ class Profile < ActiveRecord::Base
 
   belongs_to :experience
 
+  scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
+
   def providers_data
     tokens = self.user.user_tokens
     User.omniauth_providers.inject([]) do |res, provider|
