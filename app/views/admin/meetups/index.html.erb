@@ -1,0 +1,26 @@
+<h1>Meetup</h1>
+
+<% if @meetup %>
+  <p>
+    <b>Title:</b>
+    <%= @meetup.title %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @meetup.description %>
+  </p>
+  <p>
+    <b>Place:</b>
+    <%= @meetup.address %>
+  </p>
+  <p>
+    <b>Date:</b>
+    <%= @meetup.date_and_time.strftime("%Y-%m-%d") %>
+  </p>
+  <p>
+    <b>Time:</b>
+    <%= @meetup.date_and_time.to_s(:time) %>
+  </p>
+<% else %>
+  <%= link_to "Create meetup", :controller => 'meetups', :action => 'new' %>
+<% end %>
