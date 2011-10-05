@@ -1,14 +1,22 @@
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<% if @article.nil? %>
 
-<p>
-  <b>Content:</b>
-  <%= raw @article.content %>
-</p>
+   There is no article with this id.
 
-<%= render "comments/index" %>
+<% else %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <p>
+    <b>Title:</b>
+    <%= @article.title %>
+  </p>
+
+  <p>
+    <b>Content:</b>
+    <%= raw @article.content %>
+  </p>
+
+  <%= render "comments/index" %>
+
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+
+<% end %>

@@ -1,5 +1,9 @@
 Given /^article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
-  Article.create!(:title => title, :content => content)
+  Article.create!(:title => title, :content => content, :status => 0)
+end
+
+Given /^unpublished article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
+  Article.create!(:title => title, :content => content, :status => 1)
 end
 
 When /^I follow "(.+)" page$/ do |title|
