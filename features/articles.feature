@@ -14,6 +14,12 @@ Feature: Articles management
     Then I should see "Ruby"
     And I should see "It rocks!"
 
+  Scenario: Visitor should see share buttons on article page
+    Given article exists with title "Article title" and content "Article content"
+    And I am not logged in
+    When I follow "Article title" page
+    Then I should see xpath //div[contains(@class, 'addthis_toolbox')]
+
   Scenario: Visitor should see no news message
     Given there are no articles
     And I am not logged in
