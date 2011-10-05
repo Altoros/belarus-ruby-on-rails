@@ -7,3 +7,5 @@ en:
       not_found: 'User not found'
   errors:
     changes_not_saved: "Unable to save changes"
+  labels:
+    all: 'all'
