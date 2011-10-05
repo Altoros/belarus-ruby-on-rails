@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(:version => 20111007093030) do
     t.string "level"
   end
 
+  create_table "meetups", :force => true do |t|
+    t.string   "topic"
+    t.text     "description"
+    t.string   "place"
+    t.datetime "date_and_time"
+    t.boolean  "active",        :default => true
+  end
+
   create_table "profiles", :force => true do |t|
     t.integer "user_id"
     t.string  "first_name"

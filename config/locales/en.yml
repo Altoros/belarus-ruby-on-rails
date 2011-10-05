@@ -18,3 +18,21 @@ en:
     subscribed_for_comments: "I would like to receive email notifications about new comments"
   labels:
     all: 'all'
+  meetup:
+    incorrect_datetime_format: 'are in incorrect format'
+    datetime_must_future: 'must be in future'
+    topic: 'Topic'
+    description: 'Description'
+    place: 'Place'
+    date_and_time: 'Date and time'
+    date: 'Date'
+    time: 'Time'
+    create_page: 'Meetup creation'
+    update_page: 'Meetup update'
+    show_page: 'Meetup'
+    create_ok: 'Meetup created successfully'
+    create_link: 'Create meetup'
+    update_link: 'Edit meetup'
+    back_link: 'Back'
+    meetups_link: 'Manage meetups'
+    save_button: 'Save it!'
