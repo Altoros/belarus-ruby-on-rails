@@ -252,3 +252,19 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^(?:|I )should see xpath (.*)$/ do |xpath|
+  if page.respond_to? :should
+    page.should have_xpath(xpath)
+  else
+    assert page.has_xpath?(xpath)
+  end
+end
+
+Then /^(?:|I )should not see xpath (.*)$/ do |xpath|
+  if page.respond_to? :should
+    page.should_not have_xpath(xpath)
+  else
+    assert page.has_no_xpath?(xpath)
+  end
+end
