@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :first_name, :last_name
+  attr_accessible :first_name, :last_name, :subscribed_for_comments
   validates :first_name, :presence => true
   validates :first_name, :length => {:maximum => 255}
   validates :last_name, :presence => true
