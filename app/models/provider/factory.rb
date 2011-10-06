@@ -4,6 +4,8 @@ class Provider::Factory
     case provider
       when :facebook
         Provider::Facebook.new(uid)
+      when :google_apps
+        Provider::GoogleApps.new(uid)
       else
         raise NoMethodError, "Not defined provider class"
     end
