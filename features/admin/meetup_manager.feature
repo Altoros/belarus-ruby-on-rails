@@ -10,19 +10,19 @@ Feature: Admin: Meetup management
   Scenario: as admin I can create meetup
     Given I am logged in with email "admin@example.com" and password "password"
     And I visit admin/meetups/new
-    When I fill in "Title" with "New RoR Meetup"
+    When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
-    And I fill in "Address" with "Belarus, Minsk"
+    And I fill in "Place" with "Belarus, Minsk"
     And I select "2007-11-11 10:00" as the "Date and time" date
-    And I press "Create Meetup"
+    And I press "Save it !"
     Then I should see "Date and time must be in future"
 
   Scenario: as admin I can create meetup
     Given I am logged in with email "admin@example.com" and password "password"
     And I visit admin/meetups/new
-    When I fill in "Title" with "New RoR Meetup"
+    When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
-    And I fill in "Address" with "Belarus, Minsk"
+    And I fill in "Place" with "Belarus, Minsk"
     And I select "2015-11-11 10:00" as the "Date and time" date
-    And I press "Create Meetup"
+    And I press "Save it !"
     Then I should see "Meetup created successfully"

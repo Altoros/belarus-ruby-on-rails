@@ -12,22 +12,22 @@
 
 <%= form_for [:admin, @meetup] do |f| %>
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :topic, I18n.t('meetup.topic') %>
+    <%= f.text_field :topic %>
   </dev>
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :description, I18n.t('meetup.description') %>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.label :place, I18n.t('meetup.place') %>
+    <%= f.text_field :place %>
   </div>
   <div class="field">
-    <%= f.label "date_and_time" %>
+    <%= f.label "date_and_time", I18n.t('meetup.date_and_time') %>
     <%= f.datetime_select :date_and_time %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit I18n.t('meetup.save_button') %>
   </div>
 <% end %>

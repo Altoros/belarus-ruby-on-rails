@@ -1,12 +1,11 @@
 class CreateMeetups < ActiveRecord::Migration
   def change
     create_table :meetups do |t|
-      t.string :title
+      t.string :topic
       t.text :description
-      t.string :address
+      t.string :place
       t.datetime :date_and_time
-
-      t.timestamps
+      t.boolean :is_active, :default => true
     end
   end
 end

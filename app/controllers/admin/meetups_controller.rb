@@ -5,7 +5,7 @@ class Admin::MeetupsController < ApplicationController
     @meetup=Meetup.new(params[:meetup])
 
     if @meetup.save
-      flash[:notice]="Meetup created successfully"
+      flash[:notice]=I18n.t('meetup.create_ok')
       redirect_to admin_meetups_url
     else
       respond_to do |format|
