@@ -2,6 +2,7 @@ ru:
   omniauth:
     successfully_binded: 'Провайдер %{provider_name} успешно подключён'
     bind_with: 'Связать с %{provider_name}'
+    no_profile_link: 'Нет ссылки на профайл'
   admin:
     users:
       not_found: 'Пользователь не найден'

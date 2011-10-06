@@ -2,6 +2,7 @@ en:
   omniauth:
     successfully_binded: 'Provider %{provider_name} binded successfully'
     bind_with: 'Bind with %{provider_name}'
+    no_profile_link: 'There is no link to profile'
   admin:
     users:
       not_found: 'User not found'

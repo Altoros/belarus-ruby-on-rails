@@ -15,6 +15,9 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  #In order to use OmniAuth OpenID, we have to require openid store.
+  require 'openid/store/filesystem'
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -199,6 +202,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, "247609061947034", "509f2c3e860311b3618e326d348c8eee", {:scope => 'email'}
+
+  #Configuration GoogleApps
+  config.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
