@@ -6,6 +6,8 @@ class Provider::Factory
         Provider::Facebook.new(uid)
       when :vkontakte
         Provider::Vkontakte.new(uid)
+      when :google_apps
+        Provider::GoogleApps.new(uid)
       else
         raise NoMethodError, "Not defined provider class"
     end

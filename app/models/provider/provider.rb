@@ -8,7 +8,7 @@ class Provider::Provider
   end
 
   def provider_name
-    class_without_namespace.downcase.to_sym
+    class_without_namespace.underscore.to_sym
   end
 
   private
