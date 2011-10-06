@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005082633) do
+ActiveRecord::Schema.define(:version => 20111006142518) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20111005082633) do
     t.integer  "user_id"
   end
 
+  create_table "comments_subscriptions", :id => false, :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments_subscriptions", ["article_id"], :name => "index_comments_subscriptions_on_article_id"
+  add_index "comments_subscriptions", ["profile_id"], :name => "index_comments_subscriptions_on_profile_id"
+
   create_table "experiences", :force => true do |t|
     t.string "level"
   end
@@ -52,7 +62,8 @@ ActiveRecord::Schema.define(:version => 20111005082633) do
     t.string  "first_name"
     t.string  "last_name"
     t.integer "experience_id"
-    t.boolean "subscribed",    :default => false
+    t.boolean "subscribed",            :default => false
+    t.boolean "comments_subscription", :default => false
   end
 
   create_table "user_tokens", :force => true do |t|

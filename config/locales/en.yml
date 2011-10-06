@@ -7,3 +7,5 @@ en:
       not_found: 'User not found'
   errors:
     changes_not_saved: "Unable to save changes"
+  profile:
+    comments_subscription: "I would like to receive email notifications about new comments"

@@ -7,3 +7,5 @@ ru:
       not_found: 'Пользователь не найден'
   errors:
     changes_not_saved: "Не удалось сохранить изменения"
+  profile:
+    comments_subscription: "Я хочу получать по почте уведомления о новых комментариях:"

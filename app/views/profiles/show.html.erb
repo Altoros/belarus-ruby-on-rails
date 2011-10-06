@@ -8,6 +8,11 @@
   <%= @profile.last_name %>
 </p>
 
+<p>
+  <b><%= t('profile.comments_subscription') %></b>
+  <%= @profile.comments_subscription %>
+</p>
+
 <% if @providers %>
     <h4>External providers:</h4>
     <ul>

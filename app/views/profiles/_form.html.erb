@@ -9,6 +9,10 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
   </div>
+  <div class="field">
+    <%= f.label :comments_subscription, t('profile.comments_subscription') %>
+    <%= f.check_box :comments_subscription %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
