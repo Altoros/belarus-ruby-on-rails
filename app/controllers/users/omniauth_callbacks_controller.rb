@@ -9,6 +9,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     bind_provider_with_user if User.omniauth_providers.index(:vkontakte)
   end
 
+  def google_apps
+    env['omniauth.auth']['uid'] = env['omniauth.auth']['user_info']['email']
+    bind_provider_with_user if User.omniauth_providers.index(:google_apps)
+  end
+
   private
 
   def get_omniauth_data
