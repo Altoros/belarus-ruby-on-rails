@@ -19,6 +19,7 @@ end
 gem 'devise'
 gem 'cancan'
 gem "oa-oauth", :require => "omniauth/oauth"
+gem 'oa-openid', :require => 'omniauth/openid'
 
 gem 'will_paginate'
 
