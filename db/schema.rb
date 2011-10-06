@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20111006143416) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.boolean  "published"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,7 +52,8 @@ ActiveRecord::Schema.define(:version => 20111006143416) do
     t.string  "first_name"
     t.string  "last_name"
     t.integer "experience_id"
-    t.boolean "subscribed",    :default => false
+    t.boolean "subscribed",              :default => false
+    t.boolean "subscribed_for_comments", :default => false
   end
 
   create_table "user_tokens", :force => true do |t|
