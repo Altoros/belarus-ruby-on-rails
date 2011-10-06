@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005082633) do
+ActiveRecord::Schema.define(:version => 20111006142518) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -52,7 +52,8 @@ ActiveRecord::Schema.define(:version => 20111005082633) do
     t.string  "first_name"
     t.string  "last_name"
     t.integer "experience_id"
-    t.boolean "subscribed",    :default => false
+    t.boolean "subscribed",              :default => false
+    t.boolean "subscribed_for_comments", :default => false
   end
 
   create_table "user_tokens", :force => true do |t|
