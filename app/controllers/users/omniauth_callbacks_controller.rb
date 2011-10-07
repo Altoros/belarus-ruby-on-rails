@@ -5,6 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     bind_provider_with_user if User.omniauth_providers.index(:facebook)
   end
 
+  def vkontakte
+    bind_provider_with_user if User.omniauth_providers.index(:vkontakte)
+  end
+
   private
 
   def get_omniauth_data
