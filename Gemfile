@@ -18,7 +18,8 @@ end
 # Authorization and permissions
 gem 'devise'
 gem 'cancan'
-gem "oa-oauth", :require => "omniauth/oauth"
+gem 'oa-oauth', :require => 'omniauth/oauth'
+gem 'oa-vkontakte'
 
 gem 'will_paginate'
 
