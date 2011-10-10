@@ -65,7 +65,11 @@ GEM
       capybara (>= 1.1.1)
       cucumber (~> 1.0.6)
       nokogiri (>= 1.5.0)
+    daemons (1.1.4)
     database_cleaner (0.6.7)
+    delayed_job (2.1.4)
+      activesupport (~> 3.0)
+      daemons
     devise (1.4.7)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -82,6 +86,8 @@ GEM
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
+    faraday_middleware (0.6.5)
+      faraday (~> 0.6.0)
     ffi (1.0.9)
     gherkin (2.4.21)
       json (>= 1.4.6)
@@ -92,6 +98,7 @@ GEM
       guard (>= 0.4.0)
     guard-rspec (0.4.5)
       guard (>= 0.4.0)
+    hashie (1.0.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.14)
@@ -182,6 +189,7 @@ GEM
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    simple_oauth (0.1.5)
     sprockets (2.0.0)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -192,6 +200,13 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (1.6.0)
+      faraday (~> 0.6.1)
+      faraday_middleware (~> 0.6.3)
+      hashie (~> 1.0.0)
+      multi_json (~> 1.0.0)
+      multi_xml (~> 0.2.0)
+      simple_oauth (~> 0.1.5)
     tzinfo (0.3.29)
     uglifier (1.0.3)
       execjs (>= 0.3.0)
@@ -212,6 +227,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   cucumber-rails
   database_cleaner
+  delayed_job
   devise
   factory_girl_rails
   guard-cucumber
@@ -224,5 +240,6 @@ DEPENDENCIES
   rails (= 3.1.0)
   rspec-rails
   sass-rails (~> 3.1.0)
+  twitter
   uglifier
   will_paginate
