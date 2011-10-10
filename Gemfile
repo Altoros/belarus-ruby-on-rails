@@ -21,6 +21,7 @@ gem 'cancan'
 gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'oa-vkontakte'
 gem 'oa-openid', :require => 'omniauth/openid'
+gem 'twitter'
 
 gem 'will_paginate'
 
