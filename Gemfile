@@ -20,6 +20,7 @@ gem 'devise'
 gem 'cancan'
 gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'oa-vkontakte'
+gem 'twitter'
 
 gem 'will_paginate'
 
