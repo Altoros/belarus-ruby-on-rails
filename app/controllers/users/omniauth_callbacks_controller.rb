@@ -24,6 +24,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     bind_provider_with_user if User.omniauth_providers.index(:github)
   end
 
+  def linked_in
+    env['omniauth.auth']['uid'] = env['omniauth.auth']['user_info']['public_profile_url'].sub(/http:\/\/www\.linkedin\.com\/pub\//, '') if env['omniauth.auth']['user_info']['public_profile_url']
+    bind_provider_with_user if User.omniauth_providers.index(:linked_in)
+  end
+
   private
 
   def get_omniauth_data
