@@ -26,4 +26,18 @@ class Admin::MeetupsController < ApplicationController
     flash[:notice] = t('meetup.cancel_ok')
     redirect_to admin_meetups_path
   end
+
+  def update
+    @meetup = Meetup.find(params[:id])
+
+    if @meetup.update_attributes(params[:meetup])
+      flash[:notice] = t('meetup.update_ok')
+      redirect_to admin_meetups_path
+    else
+      respond_to do |format|
+        format.html  { render :action => "edit" }
+        format.json  { render :json => @meetup.errors }
+      end
+    end
+  end
 end
