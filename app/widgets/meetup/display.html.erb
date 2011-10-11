@@ -1,0 +1,20 @@
+<%= widget_div do %>
+  <h1>
+    <%= @meetup.topic %>
+  </h1>
+
+  <p>
+    <%= @meetup.description %>
+  </p>
+
+  <p>Date: <%= @meetup.date_and_time %></p>
+  <p>Place: <%= @meetup.place %></p>
+
+  <% if @current_user %>
+    <%= link_to t('meetup.register_at'), url_for_event(:register), :remote => true %>
+  <% else %>
+    <%= t('meetup.signed_in_to_attend') %> <%= link_to t('profile.login'), login_path %>
+  <% end %>
+<% end %>
+
+
