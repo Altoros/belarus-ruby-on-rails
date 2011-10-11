@@ -33,6 +33,7 @@ en:
     update_page: 'Meetup update'
     show_page: 'Meetup'
     create_ok: 'Meetup created successfully'
+    update_ok: 'Meetup updated successfully'
     create_link: 'Create meetup'
     update_link: 'Edit meetup'
     back_link: 'Back'

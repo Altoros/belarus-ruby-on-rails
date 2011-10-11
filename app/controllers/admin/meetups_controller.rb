@@ -18,4 +18,12 @@ class Admin::MeetupsController < ApplicationController
   def index
     @meetup = Meetup.future.id_desc.first
   end
+
+  def update
+    @meetup = Meetup.find(params[:id])
+		@meetup.update_attributes(params[:meetup])
+
+    flash[:notice] = t('meetup.update_ok')
+    redirect_to admin_meetups_path
+  end
 end
