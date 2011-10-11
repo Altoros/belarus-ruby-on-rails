@@ -19,6 +19,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     bind_provider_with_user if User.omniauth_providers.index(:twitter)
   end
 
+  def github
+    env['omniauth.auth']['uid'] = env['omniauth.auth']['user_info']['nickname']
+    bind_provider_with_user if User.omniauth_providers.index(:github)
+  end
+
   private
 
   def get_omniauth_data
