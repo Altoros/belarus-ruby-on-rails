@@ -21,6 +21,7 @@ BelarusRubyOnRails::Application.routes.draw do
     resources :articles, :except => [:show]
     root :to => 'dashboards#show'
     resources :meetups
+    get 'meetups(/:id)/cancel' => "meetups#cancel"
   end
 
   match '/about' => 'static_page#about'

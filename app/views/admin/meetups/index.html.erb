@@ -21,6 +21,8 @@
     <b><%= t('meetup.time') %>:</b>
     <%= @meetup.date_and_time.to_s(:time) %>
   </p>
+  <%= link_to t('meetup.cancel_link'), :id => @meetup[:id], :action => 'cancel' %>
+  <%= link_to t('meetup.edit_link'), edit_admin_meetup_path(@meetup[:id]) %>
 <% else %>
   <%= link_to t('meetup.create_link'), new_admin_meetup_path %>
 <% end %>
