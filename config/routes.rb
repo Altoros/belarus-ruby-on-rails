@@ -20,7 +20,9 @@ BelarusRubyOnRails::Application.routes.draw do
     resource :dashboard, :only => :show
     resources :articles, :except => [:show]
     root :to => 'dashboards#show'
-    resources :meetups
+    resources :meetups do
+      put 'cancel' => "meetups#cancel"
+    end
   end
 
   match '/about' => 'static_page#about'

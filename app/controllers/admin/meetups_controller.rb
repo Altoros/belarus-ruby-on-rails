@@ -18,4 +18,13 @@ class Admin::MeetupsController < ApplicationController
   def index
     @meetup = Meetup.future.id_desc.first
   end
+
+  def cancel
+    @meetup = Meetup.find(params[:meetup_id])
+    @meetup.cancelled = true
+    @meetup.save
+
+    flash[:notice] = t('meetup.cancel_ok')
+    redirect_to admin_meetups_path
+  end
 end
