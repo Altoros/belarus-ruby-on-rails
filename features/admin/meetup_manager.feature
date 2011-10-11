@@ -26,3 +26,9 @@ Feature: Admin: Meetup management
     And I select "2015-11-11 10:00" as the "Date and time" date
     And I press "Save it!"
     Then I should see "Meetup created successfully"
+
+  Scenario: as admin I can cancel existing meetup
+    Given I am logged in with email "admin@example.com" and password "password"
+    And I come to meetups page and create meetup with topic "Belarus RnR meetup 2014"
+    When I follow "Cancel meetup"
+    Then I should see "Meetup cancelled successfully"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007093030) do
+ActiveRecord::Schema.define(:version => 20111011103952) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20111007093030) do
     t.text     "description"
     t.string   "place"
     t.datetime "date_and_time"
-    t.boolean  "active",        :default => true
+    t.boolean  "cancelled",     :default => false
   end
 
   create_table "profiles", :force => true do |t|
