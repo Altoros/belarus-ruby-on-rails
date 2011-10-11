@@ -204,9 +204,8 @@ Devise.setup do |config|
   config.omniauth :facebook, "247609061947034", "509f2c3e860311b3618e326d348c8eee", {:scope => 'email'}
   config.omniauth :vkontakte, '2635765', 'amdlYLlOONGAm1vTDryY'
   config.omniauth :twitter, "34ffxkWkX8DK0BTXveINog", "N7EwWA7W2Bs23hXue0EG2SsMakyB489YOOlutwcOo"
-
-  #Configuration GoogleApps
   config.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
+  config.omniauth :linked_in, "wekksbg13hb7", "QDyunrG3VIV6KwQg", :site => 'https://api.linkedin.com/', :authorize_path => '/uas/oauth/authorize', :access_token_path => '/uas/oauth/accessToken'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
