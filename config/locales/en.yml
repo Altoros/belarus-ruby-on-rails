@@ -17,6 +17,7 @@ en:
   errors:
     changes_not_saved: 'Unable to save changes'
   profile:
+    login: 'Login'
     subscribed_for_comments: "I would like to receive email notifications about new comments"
   labels:
     all: 'all'
@@ -41,6 +42,8 @@ en:
     back_link: 'Back'
     meetups_link: 'Manage meetups'
     save_button: 'Save it!'
+    register_at: 'Register to meetup'
+    signed_in_to_attend: 'You need to be signed in to attempt to meetup'
   articles:
     article_successfully_created: 'Article was successfully created'
     article_successfully_updated: 'Article was successfully updated'

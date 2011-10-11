@@ -34,6 +34,9 @@ gem 'rspec-rails', :groups => [:development, :test]
 
 gem 'delayed_job'
 
+gem 'cells'
+gem 'apotomo'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
@@ -41,6 +44,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'rspec-apotomo'
 end
 # Use unicorn as the web server
 # gem 'unicorn'
