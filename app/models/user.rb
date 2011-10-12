@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :user_tokens, :dependent => :delete_all
   has_many :comments
+  has_many :participants
   has_one :profile, :dependent => :destroy
   validates_associated :profile
 

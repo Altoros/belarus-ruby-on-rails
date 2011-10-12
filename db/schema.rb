@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011103952) do
+ActiveRecord::Schema.define(:version => 20111011122020) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(:version => 20111011103952) do
     t.datetime "date_and_time"
     t.boolean  "cancelled",     :default => false
   end
+
+  create_table "participants", :id => false, :force => true do |t|
+    t.integer  "meetup_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participants", ["meetup_id"], :name => "index_participants_on_meetup_id"
+  add_index "participants", ["user_id"], :name => "index_participants_on_user_id"
 
   create_table "profiles", :force => true do |t|
     t.integer "user_id"
