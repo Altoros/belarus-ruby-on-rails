@@ -14,6 +14,9 @@ en:
       successfully_sent: 'Message is being sent'
       send: 'send mail'
       send_button: 'Send Message'
+  common:
+    create: "Create"
+    update: "Update"
   errors:
     changes_not_saved: 'Unable to save changes'
   profile:
@@ -69,3 +72,13 @@ en:
     status: 'Status'
     published: 'Published'
     unpublished: 'Unpublished'
+  user:
+    sign_up: "Sign up"
+
+  activerecord:
+    models:
+      experience: "Ruby on Rails level"
+    attributes:
+      profile:
+        experience_id: "Ruby on Rails level"
+        subscribed: "Receive news E-mails"

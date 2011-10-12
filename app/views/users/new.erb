@@ -1,0 +1,21 @@
+<h2><%= t('omniauth.set_profile') %></h2>
+
+<%= form_for @user do |f| %>
+  <%= errors_for(@user) %>
+
+  <% if @user.email.empty? %>
+    <div>
+      <%= f.label :email, t('user.email') %><br/>
+      <%= f.email_field :email %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :profile do |profile_form| %>
+    <%= render 'profiles/level', :f => profile_form %>
+  <% end %>
+
+  <div>
+    <%= f.submit t('common.create') %>
+  </div>
+
+<% end %>

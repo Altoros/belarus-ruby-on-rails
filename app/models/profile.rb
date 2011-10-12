@@ -1,13 +1,18 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :first_name, :last_name, :subscribed_for_comments
-  validates :first_name, :presence => true
-  validates :first_name, :length => {:maximum => 255}
-  validates :last_name, :presence => true
-  validates :last_name, :length => {:maximum => 255}
-  validates :experience, :presence => true, :if => :subscribed
-
   belongs_to :experience
+
+  attr_accessible :first_name,
+                  :last_name,
+                  :subscribed,
+                  :experience_id,
+                  :subscribed_for_comments
+
+  validates :first_name, :presence => true,
+            :length => { :maximum => 255 }
+  validates :last_name, :presence => true,
+            :length => { :maximum => 255 }
+  validates :experience_id, :presence => true
 
   scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
 
