@@ -1,0 +1,8 @@
+<div class="field">
+  <%= f.check_box :subscribed %>
+  <%= f.label :subscribed %>
+</div>
+<div class="ruby_level">
+  <%= f.label :experience_id %><br/>
+  <%= f.collection_select(:experience_id, Experience.all, :id, :level, :prompt => true) %>
+</div>

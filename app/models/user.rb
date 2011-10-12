@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_many :user_tokens, :dependent => :delete_all
   has_many :comments
   has_one :profile, :dependent => :destroy
-  validates_associated :profile
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,7 +9,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
-  accepts_nested_attributes_for :profile, :allow_destroy => true
+  accepts_nested_attributes_for :profile
+
+  validates_associated :profile
+  validates :profile, :presence => true
 
   scope :not_admin, where('is_admin = ?', false)
 
@@ -26,6 +28,16 @@ class User < ActiveRecord::Base
     (user_tokens.empty? || password.present?) && super
   end
 
+  def bind_social_network(provider, uid)
+    self.user_tokens.find_or_create_by_provider_and_uid(provider, uid)
+  end
+
+  def self.find_by_social_network(provider, uid)
+    user_token = UserToken.includes(:user).find_by_provider_and_uid(provider, uid)
+
+    user_token.user if user_token
+  end
+
   def apply_omniauth(omniauth)
     if omniauth
       build_profile unless profile
@@ -38,15 +50,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.create_based_omniauth(omniauth)
-    if omniauth['user_info']['email'].present?
+  def self.build_via_social_network(omniauth)
+    if omniauth['user_info']['email']
       user = User.find_or_initialize_by_email(:email => omniauth['user_info']['email'])
     else
       user = User.new
     end
 
     user.apply_omniauth(omniauth)
-    user.confirm! unless user.email.blank?
 
     user
   end
@@ -54,5 +65,4 @@ class User < ActiveRecord::Base
   def change_admin_state!
     toggle!(:is_admin)
   end
-
 end

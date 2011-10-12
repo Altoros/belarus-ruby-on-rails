@@ -33,8 +33,8 @@ describe Profile do
     profile.experience.should_not be_nil
   end
 
-  it "should set Ruby experience level if subscribed" do
-    profile = Factory.build(:profile, :subscribed => true)
-    profile.should have(1).error_on(:experience)
+  it "should set Ruby on Rails experience level if subscribed" do
+    profile = Factory.build(:profile, :experience => nil)
+    profile.should have(1).error_on(:experience_id)
   end
 end
