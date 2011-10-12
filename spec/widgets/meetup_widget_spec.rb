@@ -31,6 +31,10 @@ describe MeetupWidget do
         it 'availible to attend' do
           rendered_meetup.should have_link('Register to meetup')
         end
+
+        it 'attending a meetup' do
+          trigger(:register, :meetup).first.should include('You are participant !!!')
+        end
       end
     end
   end

@@ -1,14 +1,17 @@
 class MeetupWidget < Apotomo::Widget
+  responds_to_event :register
   after_initialize :setup!
 
   def display
     if @meetup
+      @is_participant = @meetup.participant? @current_user
       render
     end
   end
 
   def register
-    replace :view => :display
+    @meetup.participants.create(:user_id => @current_user.id)
+    replace :state => :display
   end
 
   private

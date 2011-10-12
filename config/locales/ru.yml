@@ -24,6 +24,7 @@ ru:
     place: 'Место проведения'
     all: 'все'
   meetup:
+    attend_to: 'Зарегистрироваться на митап'
     incorrect_datetime_format: 'заданы в неверном формате'
     datetime_must_future: 'должны быть из будущего'
     topic: 'Тема'
@@ -45,6 +46,7 @@ ru:
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'
     signed_in_to_attend: 'Ты должен быть зарегистрированным пользователем, чтобы записаться на митап'
+    registered: 'Вы зарегестрированы !!!'
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'
