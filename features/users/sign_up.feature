@@ -4,8 +4,8 @@ Feature: Sign up
   I want to be able to sign up
 
     Background:
-      Given I am not logged in
-      And I am on the home page
+      Given there is Ruby on Rails level "Expert"
+      And I am not logged in
       And I go to the sign up page
 
     Scenario: User signs up with valid data
@@ -15,6 +15,7 @@ Feature: Sign up
         | Last name             | McUserton       |
         | Password              | please          |
         | Password confirmation | please          |
+      And I select "Expert" from "Ruby on Rails level"
       And I press "Sign up"
       Then I should see "You have signed up successfully."
       
@@ -25,6 +26,7 @@ Feature: Sign up
         | Last name             | McUserton       |
         | Password              | please          |
         | Password confirmation | please          |
+      And I select "Expert" from "Ruby on Rails level"
       And I press "Sign up"
       Then I should see "Email is invalid"
 
@@ -35,6 +37,7 @@ Feature: Sign up
         | Last name             | McUserton       |
         | Password              |                 |
         | Password confirmation | please          |
+      And I select "Expert" from "Ruby on Rails level"
       And I press "Sign up"
       Then I should see "Password can't be blank"
 
@@ -45,6 +48,7 @@ Feature: Sign up
         | Last name             | McUserton       |
         | Password              | please          |
         | Password confirmation |                 |
+      And I select "Expert" from "Ruby on Rails level"
       And I press "Sign up"
       Then I should see "Password doesn't match confirmation"
 
@@ -54,7 +58,16 @@ Feature: Sign up
         | First name            | Testy           |
         | Last name             | McUserton       |
         | Password              | please          |
-        | Password confirmation | please1         |
+      And I select "Expert" from "Ruby on Rails level"
       And I press "Sign up"
       Then I should see "Password doesn't match confirmation"
 
+    Scenario: User signs up without setting Ruby on Rails level
+      And I fill in the following:
+        | Email                 | user@test.com   |
+        | First name            | Testy           |
+        | Last name             | McUserton       |
+        | Password              | please          |
+        | Password confirmation | please          |
+      And I press "Sign up"
+      Then I should see "Profile experience can't be blank"

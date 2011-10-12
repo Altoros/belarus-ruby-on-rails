@@ -62,3 +62,28 @@ ru:
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+  common:
+    create: "Создать"
+    update: "Сохранить"
+  user:
+    sign_up: "Зарегистрироваться"
+
+  activerecord:
+    models:
+      experience: "Уровень владения Ruby on Rails"
+    attributes:
+      experience:
+        level: "Уровень"
+      profile:
+        experience_id: "Уровень владения Ruby on Rails"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        subscribed: "Получать новости по E-mail"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+  actionview:
+    helpers:
+      select:
+        prompt: "Пожалуйста, выберите"
