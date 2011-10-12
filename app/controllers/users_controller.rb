@@ -1,30 +1,41 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:omniauth_new, :omniauth_create]
+  before_filter :authenticate_user!, :only => [:reset_password]
 
   def reset_password
     if user_signed_in?
       current_user.send_reset_password_instructions
-      flash[:notice] = I18n.t('devise.passwords.send_instructions')
+      flash[:notice] = t('devise.passwords.send_instructions')
     end
 
     redirect_to root_path
   end
 
-  def omniauth_new
-    @user = User.new
+  def new
+    omniauth_data = session["devise.omniauth"]
+    @user = User.build_via_social_network(omniauth_data)
   end
 
   # Create User based on user's data gotten from external service and e-mail entered by user
-  def omniauth_create
-    omniauth = session[:omniauth]
-    @user = User.new params[:user]
-    @user.apply_omniauth(omniauth)
+  def create
+    omniauth_data = session["devise.omniauth"]
+
+    attributes = {'user' => params[:user]}.merge(omniauth_data)
+    @user = User.build_via_social_network(attributes)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to root_path, :notice => I18n.t("devise.confirmations.send_instructions") }
+      if @user.valid?
+        if omniauth_data["user_info"]["email"]
+          @user.confirm!
+          sign_in @user
+          notice = t('devise.omniauth_callbacks.success', :kind => omniauth_data['provider'])
+        else
+          @user.save
+          notice = t("devise.confirmations.send_instructions")
+        end
+
+        format.html { redirect_to root_path, :notice => notice }
       else
-        format.html { render :action => "omniauth_new" }
+        format.html { render :action => :new }
       end
     end
   end

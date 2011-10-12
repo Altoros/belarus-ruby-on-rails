@@ -5,14 +5,16 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :profiles
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do
-    get '/users/sign_in', :to => "devise/sessions#new", :as => 'login'
-    post '/users/sign_in', :to => "devise/sessions#create", :as => 'login'
-    delete '/users/sign_out', :to => "devise/sessions#destroy", :as => 'logout'
-    get '/users/auth/:provider', :to => 'omniauth#passthru'
-    get '/users/reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
-    get '/users/omniauth', :to => 'users#omniauth_new', :as => 'omniauth_signup'
-    post '/users/omniauth', :to => 'users#omniauth_create', :as => 'omniauth_signup'
+    scope "/users/" do
+      get 'sign_in', :to => "devise/sessions#new", :as => 'login'
+      post 'sign_in', :to => "devise/sessions#create", :as => 'login'
+      delete 'sign_out', :to => "devise/sessions#destroy", :as => 'logout'
+      get 'auth/:provider', :to => 'omniauth#passthru'
+      get 'reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
+    end
   end
+
+  resources :users, :only => [:new, :create], :path => '/users/omniauth/'
 
   namespace :admin do
     resources :users

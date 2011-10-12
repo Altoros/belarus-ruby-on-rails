@@ -1,14 +1,11 @@
 Feature: Admin: Meetup management
-  Background:
-    Given I have 2 users(1 of them is admin)
-
   Scenario: as admin I can see meetup page
-    Given I am logged in with email "admin@example.com" and password "password"
+    Given I am logged in as admin
     When I visit admin/meetups
     Then I should see "Meetup"
 
   Scenario: as admin I can create meetup
-    Given I am logged in with email "admin@example.com" and password "password"
+    Given I am logged in as admin
     And I visit admin/meetups/new
     When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
@@ -18,7 +15,7 @@ Feature: Admin: Meetup management
     Then I should see "Date and time must be in future"
 
   Scenario: as admin I can create meetup
-    Given I am logged in with email "admin@example.com" and password "password"
+    Given I am logged in as admin
     And I visit admin/meetups/new
     When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
@@ -28,13 +25,13 @@ Feature: Admin: Meetup management
     Then I should see "Meetup created successfully"
 
   Scenario: as admin I can cancel existing meetup
-    Given I am logged in with email "admin@example.com" and password "password"
+    Given I am logged in as admin
     And I come to meetups page and create meetup with topic "Belarus RnR meetup 2014"
     When I follow "Cancel meetup"
     Then I should see "Meetup cancelled successfully"
 
   Scenario: as admin I can edit existing meetup
-    Given I am logged in with email "admin@example.com" and password "password"
+    Given I am logged in as admin
     And I come to meetups page and create meetup with topic "Belarus RnR meetup 2014"
     When I follow "Edit meetup"
     And I fill in "Topic" with "Belarus RnR meetup october,2014"
