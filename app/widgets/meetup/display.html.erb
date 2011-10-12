@@ -11,7 +11,11 @@
   <p>Place: <%= @meetup.place %></p>
 
   <% if @current_user %>
-    <%= link_to t('meetup.register_at'), url_for_event(:register), :remote => true %>
+        <% if @is_participant %>
+            <%= t('meetup.registered') %>
+        <% else %>
+            <%= link_to t('meetup.register_at'), url_for_event(:register), :remote => true %>
+        <% end %>
   <% else %>
     <%= t('meetup.signed_in_to_attend') %> <%= link_to t('profile.login'), login_path %>
   <% end %>
