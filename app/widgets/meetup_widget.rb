@@ -4,6 +4,7 @@ class MeetupWidget < Apotomo::Widget
 
   def display
     if @meetup
+      @share = { :title => @meetup.topic, :description => @meetup.description }
       @is_participant = @meetup.participant? @current_user
       render
     end
