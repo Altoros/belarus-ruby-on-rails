@@ -5,4 +5,5 @@ tmp/
 .sass-cache/
 .rvmrc*
 .*~
-
+config/database.yml
+config/credentials.yml
