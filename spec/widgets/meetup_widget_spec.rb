@@ -17,6 +17,10 @@ describe MeetupWidget do
         rendered_meetup.should have_content(@meetup.topic)
       end
 
+      it 'contain \'Share\' buttons' do
+        rendered_meetup.should have_selector('div.addthis_toolbox')
+      end
+
       it 'unvailible to register for signed out user' do
         rendered_meetup.should_not have_link('Register to meetup')
         rendered_meetup.should have_link('Login')
