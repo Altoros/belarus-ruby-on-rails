@@ -69,3 +69,18 @@ ru:
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+  users:
+    login: 'Вход'
+    logout: 'Выход'
+    registration: 'Регистрация'
+    edit_registration: 'Регистрационные данные'
+    edit_profile: 'Профайл'
+  general:
+    sitename: 'Belarus Ruby on Rails User Group'
+  menu:
+    main: 'Главная'
+    news: 'Новости Ruby on Rails'
+    about: 'О нас'
+    friends: 'Друзья'
+    control_panel: 'Админка'
+    contact: 'Связаться с нами'

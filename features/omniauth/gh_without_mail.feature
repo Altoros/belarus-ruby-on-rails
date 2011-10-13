@@ -5,7 +5,8 @@ Feature: Github authorization without shared email
   don't allow access to this information
     Background:
       Given I am on the homepage
-      When I follow "Sign in with Github"
+      When I follow "Login"
+      And I follow "Sign in with Github"
       Then I should see "Enter your email"
 
     @omniauth_test_without_email @omniauth_test_after

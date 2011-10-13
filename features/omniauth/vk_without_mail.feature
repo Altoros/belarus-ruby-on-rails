@@ -1,11 +1,12 @@
 Feature: Vkontakte authorization without shared email
   In order to get access to protected sections of the site
-  a user should be able to sign in via external authorization provider,
+  As a user I user should be able to sign in via external authorization provider,
   but he can hide his email on public services or public services
   don't allow access to this information
     Background:
       Given I am on the homepage
-      When I follow "Sign in with Vkontakte"
+      When I follow "Login"
+      And I follow "Sign in with Vkontakte"
       Then I should see "Enter your email"
 
     @omniauth_test_without_email @omniauth_test_after

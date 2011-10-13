@@ -8,29 +8,34 @@ Feature: OmniAuth authorization via Github
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user successfully signs in with Github
-      When I follow "Sign in with Github"
+      When I follow "Login"
+      And I follow "Sign in with Github"
       Then I should see "Logout"
 
     @omniauth_test_failure @omniauth_test_after
     Scenario: A user unsuccessfully signs in with Github
-      When I follow "Sign in with Github"
+      When I follow "Login"
+      And I follow "Sign in with Github"
       Then I should see "Could not authorize you from Github because"
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user after successfull sign in with Github returns to the same page
       And I come to article page with name "Very specific article 911"
-      When I follow "Sign in with Github"
+      When I follow "Login"
+      And I follow "Sign in with Github"
       Then I should see "Very specific article 911"
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user previously registered by email and now successfully signs in with Github
       And I am a user named "Name" and surnamed "Surname" with an email "user@test.com" and password "please"
+      And I follow "Login"
       And  I follow "Sign in with Github"
       When I follow "Edit registration"
       Then I should see "Current password"
 
     @omniauth_test_success @omniauth_test_after
     Scenario: A user never registered before and now successfully signs in with Github
-      When I follow "Sign in with Github"
+      When I follow "Login"
+      And I follow "Sign in with Github"
       And  I follow "Edit registration"
       Then I should see "Reset my password"

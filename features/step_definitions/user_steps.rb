@@ -97,7 +97,7 @@ When /^I return next time$/ do
 end
 
 Then /^I should be signed out$/ do
-  And %{I should see "Sign up"}
+  And %{I should see "Registration"}
   And %{I should see "Login"}
   And %{I should not see "Logout"}
 end
