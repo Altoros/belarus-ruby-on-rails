@@ -69,3 +69,5 @@ en:
     status: 'Status'
     published: 'Published'
     unpublished: 'Unpublished'
+  notifier:
+    comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'
