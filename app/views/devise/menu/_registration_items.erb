@@ -2,10 +2,10 @@
   <li><%= link_to('Edit registration', edit_user_registration_path) %></li>
 <% else %>
   <li><%= link_to 'Sign up', new_user_registration_path  %></li>
-  <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-  <li><%= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte) %></li>
-  <li><%= link_to "Sign in with GoogleApps", user_omniauth_authorize_path(:google_apps) %></li>
-  <li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
+  <li><%= link_to image_tag("ico_facebook.png", {:height => 32, :width => 32, :alt => "Sign in with Facebook"}), user_omniauth_authorize_path(:facebook) %></li>
+  <li><%= link_to image_tag("ico_vk.png", {:height => 32, :width => 32, :alt => "Sign in with Vkontakte"}), user_omniauth_authorize_path(:vkontakte) %></li>
+  <li><%= link_to image_tag("ico_google_plus.png", {:height => 32, :width => 32, :alt => "Sign in with Google Apps"}), user_omniauth_authorize_path(:google_apps) %></li>
+  <li><%= link_to image_tag("ico_twitter.png", {:height => 32, :width => 32, :alt => "Sign in with Twitter"}), user_omniauth_authorize_path(:twitter) %></li>
   <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li>
-  <li><%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linked_in) %></li>
+  <li><%= link_to image_tag("ico_linkedin.png", {:height => 32, :width => 32, :alt => "Sign in with Linked In"}), user_omniauth_authorize_path(:linked_in) %></li>
 <% end %>

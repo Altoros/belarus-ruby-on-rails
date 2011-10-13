@@ -1,26 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BelarusRubyOnRails</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/profile_items' %>
-      <%= render 'devise/menu/login_items' %>
-      <%= link_to("Control panel", admin_root_path) if can? :manage, :all %>
-      <%= link_to "About", about_path %>
-      <%= link_to "Friends", friends_path %>
-    </ul>
-
-    <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-    <% end %>
-
-<%= yield %>
-
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= t('general.sitename') %></title>
+    <%= stylesheet_link_tag "style" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="block">
+          <div class="logo_row">
+            <%= link_to image_tag("logo_ror_belarus.png", {:height => 60, :width => 428, :alt => "Belarus Ruby on Rails User Group"}), root_path, :class => :logo %>
+            <div class="sublinks">
+              <%= render 'devise/menu/login_items' %>
+            </div>
+          </div>
+          <div class="menu_row">
+            <ul>
+              <li><%= link_to_unless_current t('menu.main'), root_path %></li>
+              <li><%= link_to_unless_current t('menu.news'), articles_path %></li>
+              <li><%= link_to_unless_current t('menu.about'), about_path %></li>
+              <li><%= link_to_unless_current t('menu.friends'), friends_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% flash.each do |type, msg| %>
+        <% notification_class = 'notification-error' %>
+        <% notification_class = 'notification' if type == :notice %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, content_tag(:div, content_tag(:div, msg), :class => 'block'), :class => notification_class %>
+        <% end %>
+      <% end %>
+      <div class="block">
+        <div class="left">
+          <%= yield %>
+        </div>
+        <div class="right">
+          <!--It should be replaced with meetup partial-->
+          <div class="participate">
+            <h3>Как стать Ruby on Rails-разработчиком за 60 дней</h3>
+            <div class="iteminfo">
+              <span class="date">23 сентября 2011, 23:23</span>
+            </div>
+            <p>Организаторы курсов по Ruby on Rails приглашают всех желающих на встречу для обсуждения насущных вопросов, связанных с подготовкой RoR-разработчиков в нашей стране.</p>
+            <p><%= link_to 'Подробнее', '#' %></p>
+            <%= link_to image_tag("btn_participate.png", {:height => 36, :weight => 200, :alt => "Стать участником", :title => "Стать участником"}), '#' %>
+            <!--<%= image_tag("you-participate.png", {:height => 36, :weight => 200, :alt => "Вы участвуете", :title => "Вы участвуете"}) %>--><!-- for registered -->
+            <ins></ins>
+            <ins></ins>
+            <ins></ins>
+            <ins></ins>
+          </div>
+          <div class="social">
+            <div id="fb-root"></div>
+            <%= javascript_include_tag "http://connect.facebook.net/en_US/all.js#xfbml=1" %>
+            <fb:like-box href="http://www.facebook.com/pages/Belarus-Ruby-on-Rails-User-Group/207353712622529" width="250" show_faces="true" stream="false" header="false"></fb:like-box>
+          </div>
+          <div class="social">
+            <div id="vk_groups"></div>
+          </div>
+          <div class="social">
+            <div id="twitter_feed"></div>
+            <%= javascript_include_tag "http://widgets.twimg.com/j/2/widget.js" %>
+          </div>
+        </div>
+        <div class="cl_all"></div>
+        <div class="left">
+          <div class="partners">
+            <h4>Партнёры</h4>
+            <div class="links">
+              <%= link_to image_tag("logo_altoros_dev.png", {:height => 49, :width => 213, :alt => "Altoros Development"}), "http://altoros.com/" %>
+              <%= link_to image_tag("logo_miu.png", {:height => 49, :width => 213, :alt => ""}), "http://www.miu.by/" %>
+              <%= link_to image_tag("logo_rubymine.png", {:height => 30, :width => 120, :alt => ""}), "http://www.jetbrains.com/ruby/" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="block"><span class="copy">&copy; Belarus Ruby on Rails User Group, 2011</span><a href="#">Связаться с нами</a></div>
+      </div>
+    </div>
+  </body>
 </html>
