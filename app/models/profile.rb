@@ -10,6 +10,7 @@ class Profile < ActiveRecord::Base
   belongs_to :experience
 
   scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
+  scope :comment_subscribed, where('subscribed_for_comments = ?', true)
 
   def providers_data
     tokens = self.user.user_tokens

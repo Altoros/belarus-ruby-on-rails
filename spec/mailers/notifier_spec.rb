@@ -18,4 +18,18 @@ describe Notifier do
       mail.to.should == [user.email]
     end
   end
+
+  describe '.comment' do
+    let(:user) { Factory.stub(:user) }
+    let(:article) { Factory.stub(:article) }
+    let(:mail) { Notifier.comment(user.email, article) }
+
+    it 'renders the article title' do
+      mail.body.should include(article.title)
+    end
+
+    it 'renders the receiver email' do
+      mail.to.should == [user.email]
+    end
+  end
 end

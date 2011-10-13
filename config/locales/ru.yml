@@ -69,3 +69,5 @@ ru:
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+  notifier:
+    comments_notifier_email: К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link} .
