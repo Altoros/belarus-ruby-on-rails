@@ -28,22 +28,22 @@ ol li span {font-weight:normal;}
 
 .wrapper {position:relative;min-width:950px;}
 .wrapper > .block {margin-top:25px;}
-.header {min-width:950px;height:163px;background:url(../images/bg_header.gif) 0 0 repeat-x; border-bottom:1px solid #c1c1c1;}
+.header {min-width:950px;height:163px;background:url(bg_header.gif) 0 0 repeat-x; border-bottom:1px solid #c1c1c1;}
 .block {position:relative; overflow:hidden; width:950px; margin:0 auto;}
 .logo_row {height:105px; border-bottom:1px solid #d3d3d3;}
 a.logo { float:left; margin-top:24px;}
 .sublinks { float:right; margin-top:34px; font-size:12px; line-height:22px; color:#737373;}
 .sublinks a {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
-.sublinks .user {display:inline-block; *display:inline; padding-left:18px;background: url(../images/ico_user.png) 0 4px no-repeat; zoom:1;}
+.sublinks .user {display:inline-block; *display:inline; padding-left:18px;background: url(ico_user.png) 0 4px no-repeat; zoom:1;}
 .menu_row {height:56px; border-top:1px solid #fff;}
 .menu_row ul { float:left; margin-top:20px;}
 .menu_row ul li {display:inline-block; *display:inline; margin-right:30px; font-size:15px; color:#000; zoom:1;}
 .menu_row ul li a {color:#850008;}
 
 .notification {border-bottom:1px solid #a1cf7a; background:#e3ffcb; font-size:12px; line-height:14px;}
-.notification .block div {min-height:14px; padding:8px 0 7px 21px; background:url(../images/ico_info_success.png) 0 8px no-repeat; color:#387900;}
+.notification .block div {min-height:14px; padding:8px 0 7px 21px; background:url(ico_info_success.png) 0 8px no-repeat; color:#387900;}
 .notification-error {border-bottom:1px solid #ffc1c1; background:#ffd8d8; font-size:12px; line-height:14px;}
-.notification-error .block div {min-height:14px; padding:8px 0 7px 21px; background:url(../images/ico_info_error.png) 0 8px no-repeat; color:#c46969;}
+.notification-error .block div {min-height:14px; padding:8px 0 7px 21px; background:url(ico_info_error.png) 0 8px no-repeat; color:#c46969;}
 
 .left { float:left; clear:both; width:650px; padding-bottom:10px;}
 .left a { color:#850008;}
@@ -52,17 +52,17 @@ a.logo { float:left; margin-top:24px;}
 .left .item:first-child {padding:10px 0 30px; border-top:none;}
 .iteminfo { margin:8px 0; font-size:12px;line-height:20px; color:#737373;}
 .iteminfo * {display:inline-block; *display:ilnine; padding-left:20px; margin-right:20px; background-position:0 4px; background-repeat:no-repeat; zoom:1;}
-.iteminfo .date {background-image:url(../images/ico_calendar.png);}
-.iteminfo .author {background-image:url(../images/ico_user.png);}
-.iteminfo span.comments {background-image:url(../images/ico_message.png);}
+.iteminfo .date {background-image:url(ico_calendar.png);}
+.iteminfo .author {background-image:url(ico_user.png);}
+.iteminfo span.comments {background-image:url(ico_message.png);}
 
 .pages {padding:0 0 40px 0; font-weight:bold; font-size:1px;}
 .pages a {display:inline-block; *display:ilnine; height:21px; padding-right:3px; margin-right:3px; vertical-align:top; font-size:14px; line-height:21px; color:#850008; zoom:1;}
 .pages a span {display:block;height:21px; padding:0 4px 0 7px; cursor:pointer;}
-.pages a:hover, .pages a.act { background:url(../images/bg_page.png) 100% -21px no-repeat; text-decoration:none;}
-.pages a:hover span, .pages a.act span { background:url(../images/bg_page.png) 0 0 no-repeat; color:#000;}
-.pages .prev { width:13px;height:21px; background:url(../images/arrow_prev.gif) 0 4px no-repeat !important;}
-.pages .next { width:13px;height:21px; background:url(../images/arrow_next.gif) 0 4px no-repeat !important;}
+.pages a:hover, .pages a.act { background:url(bg_page.png) 100% -21px no-repeat; text-decoration:none;}
+.pages a:hover span, .pages a.act span { background:url(bg_page.png) 0 0 no-repeat; color:#000;}
+.pages .prev { width:13px;height:21px; background:url(arrow_prev.gif) 0 4px no-repeat !important;}
+.pages .next { width:13px;height:21px; background:url(arrow_next.gif) 0 4px no-repeat !important;}
 
 .partners { padding:15px 0 45px; border-top:1px solid #d3d3d3;}
 .partners .links {overflow:hidden; text-align:center;}
@@ -71,7 +71,7 @@ a.logo { float:left; margin-top:24px;}
 
 .right { float:right;width:250px;}
 .participate { position:relative; padding:20px 22px 22px; margin-bottom:20px; border:2px solid #850008; font-size:12px; line-height:16px;}
-.participate ins {background: url(../images/crn.png) 0 0 no-repeat; position:absolute; top:-2px; bottom:auto; left:-2px; width:5px; height:5px;}
+.participate ins {background: url(crn.png) 0 0 no-repeat; position:absolute; top:-2px; bottom:auto; left:-2px; width:5px; height:5px;}
 .participate ins + ins {top:-2px; bottom:auto; left:auto; right:-2px; background-position:-5px 0;}
 .participate ins + ins + ins {bottom:-2px; top:auto; left:auto; right:-2px; background-position:-5px -5px;}
 .participate ins + ins + ins + ins {bottom:-2px; top:auto; right:auto; left:-2px; background-position:0 -5px;}
@@ -86,7 +86,7 @@ a.logo { float:left; margin-top:24px;}
 
 .right .social {margin-bottom:20px;}
 
-.footer { min-height:80px; border-top:1px solid #d3d3d3; background:#e4e4e4 url(../images/bg_footer.gif) 0 0 repeat-x;}
+.footer { min-height:80px; border-top:1px solid #d3d3d3; background:#e4e4e4 url(bg_footer.gif) 0 0 repeat-x;}
 .footer .block {padding-top:32px; font-size:12px; color:#000;}
 .footer .copy { margin-right:27px;}
 
@@ -126,7 +126,7 @@ a.logo { float:left; margin-top:24px;}
 .forms .field a { margin-left:20px; font-size:13px; color:#881e24; text-decoration:none;}
 .forms .field a:hover {text-decoration:underline;}
 .forms .field .msg {display:none;}
-.forms .field.error .msg {display:inline-block; *display:inline; overflow:hidden; max-width:180px; max-height:28px; padding:0 0 0 21px; margin-left:10px; *margin-left:0px; font-size:12px; line-height:14px; background:url(../images/ico_info_error.png) 0 center no-repeat; color:#c46969; vertical-align:middle;zoom:1;vertical-align:middle;}
+.forms .field.error .msg {display:inline-block; *display:inline; overflow:hidden; max-width:180px; max-height:28px; padding:0 0 0 21px; margin-left:10px; *margin-left:0px; font-size:12px; line-height:14px; background:url(ico_info_error.png) 0 center no-repeat; color:#c46969; vertical-align:middle;zoom:1;vertical-align:middle;}
 .forms select { clear:both; width:228px;font-size:14px; line-height:18px; border:1px solid #888888;}
 .btns { margin:25px 0;}
 .login { overflow:hidden; margin:25px 0;}
@@ -134,8 +134,8 @@ a.logo { float:left; margin-top:24px;}
 .login .links { float:left; margin-left:30px; font-size:12px; line-height:16px;}
 .login .links a { color:#850008;}
 button { overflow:visible; height:31px; padding:0 1px 0 0; font-size:16px; font-weight:bold; color:#fff;text-shadow: #1f0002 0px -1px 1px;cursor:pointer;}
-button span { display:block;overflow:visible;  margin:0; height:31px; padding:0 5px 0 0;background:url(../images/bg_buttons.png) 100% -31px;}
-button span span { display:block; margin:0; height:31px; padding:0 15px 0 20px; line-height:31px; white-space:nowrap; background:url(../images/bg_buttons.png) 0 0;}
+button span { display:block;overflow:visible;  margin:0; height:31px; padding:0 5px 0 0;background:url(bg_buttons.png) 100% -31px;}
+button span span { display:block; margin:0; height:31px; padding:0 15px 0 20px; line-height:31px; white-space:nowrap; background:url(bg_buttons.png) 0 0;}
 button:hover span { background-position:100% -93px;}
 button:hover span span { background-position:0 -62px;}
 button:active span { background-position:100% -155px;}
@@ -147,9 +147,9 @@ button:active span span { background-position:0 -124px;}
 .social_name img { float:left; margin-right:12px;}
 .social_name span { float:left; width:255px; margin-top:5px; font-size:20px; line-height:24px;}
 
-.participation { overflow:hidden; padding:0 0 16px 40px; margin-bottom:15px; background:url(../images/ico_info.png) 0 3px no-repeat; color:#3e7600; font-size:17px; line-height:22px; border-bottom:1px solid #c0c0c0;}
+.participation { overflow:hidden; padding:0 0 16px 40px; margin-bottom:15px; background:url(ico_info.png) 0 3px no-repeat; color:#3e7600; font-size:17px; line-height:22px; border-bottom:1px solid #c0c0c0;}
 
-a.share { display:inline-block; *display:inline; padding:0 0 0 20px; margin:10px 0; background:url(../images/ico_share.png) 0 4px no-repeat; color:#850008; font-size:14px; zoom:1;}
+a.share { display:inline-block; *display:inline; padding:0 0 0 20px; margin:10px 0; background:url(ico_share.png) 0 4px no-repeat; color:#850008; font-size:14px; zoom:1;}
 
 div.comments { padding: 10px 0 30px;}
 div.comments h3 {font:normal 20px/26px Arial, Helvetica, sans-serif; color:#31322c;}
@@ -164,7 +164,7 @@ div.comments h3 span { position:relative; bottom:6px; font:bold 14px/26px Arial,
 .thread {padding:20px 0 0; margin-left:-15px; border-left:2px solid #cfcfcf;}
 .comment .comment { padding-left:80px;}
 .comment .comment .upic {left:15px;}
-.login_comments { padding:10px 0 10px 40px; color:#000; font-size:16px; line-height:18px;background:url(../images/ico_comment_login.png) 20px 14px no-repeat;}
+.login_comments { padding:10px 0 10px 40px; color:#000; font-size:16px; line-height:18px;background:url(ico_comment_login.png) 20px 14px no-repeat;}
 .login_comments a {color:#850008;}
 
 .to_comment { position:relative; min-height:100px; padding:20px 0 20px 65px; margin:10px 0 0 20px; border:1px solid #c7c7c7; border-width:1px 0; background:#efefef;}
@@ -175,10 +175,9 @@ div.comments h3 span { position:relative; bottom:6px; font:bold 14px/26px Arial,
 a.close { margin-left:20px; color:#881e24; font-size:14px; text-decoration:none;}
 a.close:hover {text-decoration:underline;}
 
-a.submit {display:inline-block; *display:inline; height:31px; padding:0 5px 0 0; background:url(../images/bg_submit.png) 100% -31px no-repeat; color:#252525; font-weight:bold; line-height:31px; text-decoration:none; zoom:1;text-shadow: #fff 0px 1px 1px;}
-a.submit span {display:inline-block; *display:inline; height:31px; padding:0 12px 0 17px; background:url(../images/bg_submit.png) 0 0 no-repeat; zoom:1;}
+a.submit {display:inline-block; *display:inline; height:31px; padding:0 5px 0 0; background:url(bg_submit.png) 100% -31px no-repeat; color:#252525; font-weight:bold; line-height:31px; text-decoration:none; zoom:1;text-shadow: #fff 0px 1px 1px;}
+a.submit span {display:inline-block; *display:inline; height:31px; padding:0 12px 0 17px; background:url(bg_submit.png) 0 0 no-repeat; zoom:1;}
 a.submit:hover { background-position:100% -93px;}
 a.submit:hover span { background-position:0 -62px;}
 a.submit:active, a.submit:focus { background-position:100% -155px; line-height:32px;}
 a.submit:active span { background-position:0 -124px;}
-
