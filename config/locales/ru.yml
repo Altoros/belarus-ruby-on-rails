@@ -24,7 +24,7 @@ ru:
     place: 'Место проведения'
     all: 'все'
   meetup:
-    attend_to: 'Зарегистрироваться на митап'
+    attend_to: 'Стать участником'
     incorrect_datetime_format: 'заданы в неверном формате'
     datetime_must_future: 'должны быть из будущего'
     topic: 'Тема'
@@ -46,7 +46,7 @@ ru:
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'
     signed_in_to_attend: 'Ты должен быть зарегистрированным пользователем, чтобы записаться на митап'
-    registered: 'Вы зарегестрированы !!!'
+    registered: 'Вы участвуете'
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'
@@ -69,6 +69,24 @@ ru:
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+  users:
+    login: 'Вход'
+    logout: 'Выход'
+    registration: 'Регистрация'
+    edit_registration: 'Регистрационные данные'
+    edit_profile: 'Профайл'
+  general:
+    altoros: 'ООО Альторос Девелопмент'
+    more_information: 'Подробнее'
+    partners: 'Партнёры'
+    site_name: 'Belarus Ruby on Rails User Group'
+  menu:
+    main: 'Главная'
+    news: 'Новости Ruby on Rails'
+    about: 'О нас'
+    friends: 'Друзья'
+    control_panel: 'Админка'
+    contact: 'Связаться с нами'
   common:
     create: "Создать"
     update: "Сохранить"
