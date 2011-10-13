@@ -82,3 +82,5 @@ en:
       profile:
         experience_id: "Ruby on Rails level"
         subscribed: "Receive news E-mails"
+  notifier:
+    comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe CommentsController do
-
   before :each do
     @comment = Factory(:comment, :article_id => Factory(:article).id, :user => Factory(:user))
   end
@@ -95,6 +94,44 @@ describe CommentsController do
     it "should not render update template on update action by ajax" do
       xhr :get, :update, { :id => @comment, :comment => { :body => "new text" }, :article_id => @comment.article_id }
       response.should_not render_template "comments/update"
+    end
+  end
+
+  context 'email notification' do
+    before(:each) do
+      ActionMailer::Base.deliveries = []
+      @article = Factory :article
+      @user_subscribed = Factory(:user, :profile => Factory(:profile,
+                                                :subscribed => true,
+                                                :subscribed_for_comments => true,
+                                                :experience => Factory(:experience)))
+      @user_unsubscribed = Factory(:user, :profile => Factory(:profile,
+                                                :experience => Factory(:experience)))
+      sign_in @user_subscribed
+      xhr :post, :create, { :article_id => @article.id, :comment => { :body => 'Example comment'} }
+      sign_out @user_subscribed
+
+      sign_in @user_unsubscribed
+      xhr :post, :create, { :article_id => @article.id, :comment => { :body => 'Example comment'} }
+      sign_out @user_unsubscribed
+
+      sign_in @user_subscribed
+      xhr :post, :create, { :article_id => @article.id, :comment => { :body => 'Example comment'} }
+      sign_out @user_subscribed
+
+      Delayed::Worker.new.work_off
+    end
+
+    it "messages was sent" do
+      ActionMailer::Base.deliveries.should_not be_empty
+    end
+
+    it "send message to subscibed user" do
+      ActionMailer::Base.deliveries.last.to.should eq([@user_subscribed.email])
+    end
+
+    it "don't send message to usubscibed user" do
+      ActionMailer::Base.deliveries.collect{ |el| el.to }.should_not include([@user_unsubscribed.email])
     end
   end
 end

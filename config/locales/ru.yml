@@ -94,3 +94,5 @@ ru:
     helpers:
       select:
         prompt: "Пожалуйста, выберите"
+  notifier:
+    comments_notifier_email: 'К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link}.'
