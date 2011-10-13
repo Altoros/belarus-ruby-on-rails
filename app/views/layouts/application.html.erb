@@ -1,26 +1,264 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BelarusRubyOnRails</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/profile_items' %>
-      <%= render 'devise/menu/login_items' %>
-      <%= link_to("Control panel", admin_root_path) if can? :manage, :all %>
-      <%= link_to "About", about_path %>
-      <%= link_to "Friends", friends_path %>
-    </ul>
-
-    <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Belarus Ruby on Rails User Group</title>
+    <%= stylesheet_link_tag "style" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
+    <% content_for :javascript do %>
+      <script type='test/javascript'>
+        VK.init({apiId: 2323414, onlyWidgets: true});
+      </script>
     <% end %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="block">
+          <div class="logo_row">
+            <%= link_to image_tag("logo_ror_belarus.png", {:height => 60, :width => 428, :alt => "Belarus Ruby on Rails User Group"}), root_path, :class => :logo %>
+            <div class="sublinks"><span class="user">Username</span><%= link_to "Выйти", logout_path %></div><!-- logged in -->
+            <!--<div class="sublinks"><%= link_to "Войти", login_path %></div> --><!-- log in -->
+          </div>
+          <div class="menu_row">
+            <ul>
+              <li><%= link_to_unless_current "Главная", root_path %></li>
+              <li><%= link_to_unless_current "Новости Ruby on Rails", articles_path %></li>
+              <li><%= link_to_unless_current "О нас", about_path %></li>
+              <li><%= link_to_unless_current "Друзья", friends_path %></li>
+              <%= render 'devise/menu/registration_items' %>
+              <%= render 'devise/menu/profile_items' %>
+              <%= render 'devise/menu/login_items' %>
+              <%= link_to("Control panel", admin_root_path) if can? :manage, :all %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="left">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+          <% end %>
 
-<%= yield %>
+          <%= yield %>
 
-</body>
+          <div class="partners">
+            <h4>Партнёры</h4>
+            <div class="links">
+              <%= link_to image_tag("logo_altoros_dev.png", {:height => 49, :width => 213, :alt => "Altoros Development"}), "http://altoros.com/" %>
+              <%= link_to image_tag("logo_miu.png", {:height => 49, :width => 213, :alt => ""}), "http://www.miu.by/" %>
+              <%= link_to image_tag("logo_rubymine.png", {:height => 30, :width => 120, :alt => "A"}), "http://www.jetbrains.com/ruby/" %>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="participate">
+            <h3>Как стать Ruby on Rails-разработчиком за 60 дней</h3>
+            <div class="iteminfo">
+              <span class="date">23 сентября 2011, 23:23</span>
+            </div>
+            <p>Организаторы курсов по Ruby on Rails приглашают всех желающих на встречу для обсуждения насущных вопросов, связанных с подготовкой RoR-разработчиков в нашей стране.</p>
+            <p><a href="#">Подробнее</a></p>
+            <a href="#"><% image_tag("btn_participate.png", {:height => 36, :weight => 200, :alt => "Стать участником", :title => "Стать участником"}) %></a>
+            <!--<% image_tag("you-participate.png", {:height => 36, :weight => 200, :alt => "Вы участвуете", :title => "Вы участвуете"}) %>--><!-- for registered -->
+            <ins></ins>
+            <ins></ins>
+            <ins></ins>
+            <ins></ins>
+          </div>
+          <div class="social">
+            <div id="fb-root"></div>
+            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+            <fb:like-box href="http://www.facebook.com/pages/Belarus-Ruby-on-Rails-User-Group/207353712622529" width="250" show_faces="true" stream="false" header="false"></fb:like-box>
+          </div>
+          <div class="social">
+            <div id="vk_groups"></div>
+            <% content_for :javascript do %>
+              <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "250"}, 26128021);
+              </script>
+            <% end %>
+          </div>
+          <div class="social">
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <% content_for :javascript do %>
+              <script type="text/javascript">
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'search',
+                  search: '#',
+                  interval: 30000,
+                  title: 'Что пишут о',
+                  subject: 'Belarus Ruby on Rails',
+                  width: 250,
+                  height: 300,
+                  theme: {
+                    shell: {
+                      background: '#6b0000',
+                      color: '#ffffff'
+                    },
+                    tweets: {
+                      background: '#ffffff',
+                      color: '#884467',
+                      links: '#6b0000'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    toptweets: true,
+                    behavior: 'default'
+                  }
+                }).render().start();
+              </script>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" style="display:none;">
+      <div class="overlay"></div>
+      <div class="popup">
+        <div class="popup_content">
+          <h2>Регистрация</h2>
+          <del></del>
+          <form action="" method="get">
+            <label>Имя</label>
+            <span class="req">Все поля обязательны для заполнения</span>
+            <div><input type="text" /></div>
+            <label>Фамилия</label>
+            <div><input type="text" /></div>
+            <label>Электронная почта</label>
+            <div><input type="text" /></div>
+            <div class="note">Пароль будет выслан по электронной почте</div>
+            <div class="check"><label><input type="checkbox" />Получать новости о предстоящих встречах</label></div>
+            <label>Уровень владения Ruby on Rails</label>
+            <div>
+              <select>
+                <option>Что такое Ruby on Rails?</option>
+              </select>
+            </div>
+            <div class="btns"><button type="submit"><span>Создать аккаунт</span></button></div>
+          </form>
+        </div>
+        <div class="t"></div>
+        <div class="r"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+      </div>
+    </div>
+    <div class="modal" style="display:none;">
+      <div class="overlay"></div>
+      <div class="popup">
+        <div class="popup_content">
+          <h2>Участие</h2>
+          <del></del>
+          <form action="" method="get">
+            <div class="participation">
+                	Вы зарегистрированы на событии как <b>Василий Иванов</b>
+            </div>
+            <label>Электронная почта</label>
+            <div><input type="text" /></div>
+            <label>Уровень владения Ruby on Rails</label>
+            <div>
+              <select>
+                <option>Что такое Ruby on Rails?</option>
+              </select>
+            </div>
+            <div class="btns"><button type="submit"><span>Сохранить</span></button></div>
+          </form>
+        </div>
+        <div class="t"></div>
+        <div class="r"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+      </div>
+    </div>
+    <div class="modal" style="display:none;">
+      <div class="overlay"></div>
+      <div class="popup">
+        <div class="popup_content">
+          <h2>Регистрация</h2>
+          <del></del>
+          <form action="" method="get">
+            <div class="social_name">
+              <% image_tag("ico_facebook.png", {:height => 32, :width => 32, :alt => "Facebook"}) %><span>Василий Иванов</span>
+            </div>
+            <label>Электронная почта</label>
+            <div><input type="text" /></div>
+            <div class="check"><label><input type="checkbox" checked="checked" />Получать новости о предстоящих встречах</label></div>
+            <label>Уровень владения Ruby on Rails</label>
+            <div>
+              <select>
+                <option>Что такое Ruby on Rails?</option>
+              </select>
+            </div>
+            <div class="btns"><button type="submit"><span>Создать аккаунт</span></button></div>
+          </form>
+        </div>
+        <div class="t"></div>
+        <div class="r"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+      </div>
+    </div>
+    <div class="modal" style="display:none;">
+      <div class="overlay"></div>
+      <div class="popup">
+        <div class="popup_content">
+          <h2>Вход</h2>
+          <del></del>
+          <form action="" method="get">
+            <div class="social_list">
+              <%= link_to 'Sign up', new_user_registration_path  %>
+              <%= link_to image_tag("ico_facebook.png", {:height => 32, :width => 32, :alt => "Sign in with Facebook"}), user_omniauth_authorize_path(:facebook) %>
+              <%= link_to image_tag("ico_vk.png", {:height => 32, :width => 32, :alt => "Sign in with Vkontakte"}), user_omniauth_authorize_path(:vkontakte) %>
+              <%= link_to image_tag("ico_google_plus.png", {:height => 32, :width => 32, :alt => "Sign in with GoogleApps"}), user_omniauth_authorize_path(:google_apps) %>
+              <%= link_to image_tag("ico_twitter.png", {:height => 32, :width => 32, :alt => "Sign in with Twitter"}), user_omniauth_authorize_path(:twitter) %>
+              <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+              <%= link_to image_tag("ico_linkedin.png", {:height => 32, :width => 32, :alt => "Sign in with LinkedIn"}), user_omniauth_authorize_path(:linked_in) %>
+            </div>
+            <label>Электронная почта</label>
+            <div class="error"><input type="text" /></div>
+            <label>Пароль</label>
+            <div><input type="password" /></div>
+            <div class="login">
+              <button type="submit"><span>Войти</span></button>
+              <div class="links">
+                <%= link_to "Забыли пароль?", user_reset_password_path %><br />
+                <%= link_to "Нет аккаунта?", new_user_registration_path %>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="t"></div>
+        <div class="r"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+        <ins></ins>
+      </div>
+    </div>
+  </body>
 </html>
