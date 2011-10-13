@@ -197,7 +197,6 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = Rails.env.test? ? :get : :delete
 
-  config.omniauth :linked_in, "wekksbg13hb7", "QDyunrG3VIV6KwQg", :site => 'https://api.linkedin.com/', :authorize_path => '/uas/oauth/authorize', :access_token_path => '/uas/oauth/accessToken'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
