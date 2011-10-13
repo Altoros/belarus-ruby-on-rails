@@ -14,10 +14,10 @@ Feature: OmniAuth authorization via Social Network accounts
       Then I should see "<expectation>"
 
       Examples: providers
-        | provider   | expectation                         |
-        | Facebook   | http://www.facebook.com/profile.php |
-        | GoogleApps | user@test.com                       |
-        | Vkontakte  | http://vkontakte.ru/                |
-        | Twitter    | http://twitter.com/#!/              |
-        | Github     | https://github.com/                 |
-        | LinkedIn   | http://www.linkedin.com/pub/        |
+        | provider     | expectation                         |
+        | Facebook     | http://www.facebook.com/profile.php |
+        | GoogleApps   | user@test.com                       |
+        | Vkontakte    | http://vkontakte.ru/                |
+        | Twitter      | http://twitter.com/#!/              |
+        | Github       | https://github.com/                 |
+        | LinkedIn     | http://www.linkedin.com/pub/        |

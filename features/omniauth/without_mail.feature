@@ -6,7 +6,7 @@ Feature: Social Network authorization without shared email
   don't allow access to this information
     Background:
       Given there is Ruby on Rails level "Expert"
-      And I am on the homepage
+      And I am on the login page
 
     @omniauth_test_without_email @omniauth_test_after
     Scenario Outline: A user without shared email signs in and enters email in application
@@ -18,17 +18,17 @@ Feature: Social Network authorization without shared email
       And I should be signed out
 
       Examples: providers
-        | provider   |
-        | Facebook   |
-        | Github     |
-        | Vkontakte  |
-        | Twitter    |
-        | LinkedIn   |
+        | provider    |
+        | Facebook    |
+        | Github      |
+        | Vkontakte   |
+        | Twitter     |
+        | Linked In   |
 
     @omniauth_test_without_email @omniauth_test_after
     Scenario Outline: A user without shared email signs in and enters reserved email
-      Given I follow "Sign in with <provider>"
-      When I am a user named "foo" and surnamed "asd" with an email "user@test.com" and password "please" with Ruby on Rails level "Expert"
+      Given I am a user named "foo" and surnamed "asd" with an email "user@test.com" and password "please" with Ruby on Rails level "Expert"
+      When I follow "Sign in with <provider>"
       And I fill in "Email" with "user@test.com"
       And I select "Expert" from "Ruby on Rails level"
       And I press "Create"
@@ -36,12 +36,12 @@ Feature: Social Network authorization without shared email
       And I should be signed out
 
       Examples: providers
-        | provider   |
-        | Facebook   |
-        | Github     |
-        | Vkontakte  |
-        | Twitter    |
-        | LinkedIn   |
+        | provider    |
+        | Facebook    |
+        | Github      |
+        | Vkontakte   |
+        | Twitter     |
+        | Linked In   |
 
     @omniauth_test_without_email @omniauth_test_after
     Scenario Outline: User doesn't set his Ruby on Rails level
@@ -51,9 +51,9 @@ Feature: Social Network authorization without shared email
       Then I should see "Profile experience can't be blank"
 
       Examples: providers
-        | provider   |
-        | Facebook   |
-        | Github     |
-        | Vkontakte  |
-        | Twitter    |
-        | LinkedIn   |
+        | provider    |
+        | Facebook    |
+        | Github      |
+        | Vkontakte   |
+        | Twitter     |
+        | Linked In   |

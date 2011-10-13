@@ -1,9 +1,10 @@
 <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  </li>
+  <span class="user"><%= current_user.profile.first_name %> </span>
+  <%= link_to t('users.edit_registration'), edit_user_registration_path %>
+  <%= link_to t('users.edit_profile'), edit_profile_path(current_user.profile) %>
+  <%= link_to t('menu.control_panel'), admin_root_path if can? :manage, :all %>
+  <%= link_to t('users.logout'), destroy_user_session_path, :method => :delete %>
 <% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>
-  </li>
+  <%= link_to t('users.registration'), new_user_registration_path %>
+  <%= link_to t('users.login'), new_user_session_path %>
 <% end %>

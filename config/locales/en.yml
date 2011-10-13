@@ -27,6 +27,7 @@ en:
     place: 'Place'
     all: 'all'
   meetup:
+    attend_to: 'Attend'
     incorrect_datetime_format: 'are in incorrect format'
     datetime_must_future: 'must be in future'
     topic: 'Topic'
@@ -72,6 +73,24 @@ en:
     status: 'Status'
     published: 'Published'
     unpublished: 'Unpublished'
+  users:
+    login: 'Login'
+    logout: 'Logout'
+    registration: 'Registration'
+    edit_registration: 'Edit registration'
+    edit_profile: 'Edit profile'
+  general:
+    altoros: 'Altoros Development'
+    more_information: 'More information'
+    partners: 'Partners'
+    site_name: 'Belarus Ruby on Rails User Group'
+  menu:
+    main: 'Home'
+    news: 'Ruby on Rails News'
+    about: 'About'
+    friends: 'Friends'
+    control_panel: 'Control panel'
+    contact: 'Contact us'
   user:
     sign_up: "Sign up"
 

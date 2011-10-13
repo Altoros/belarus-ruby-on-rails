@@ -1,26 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BelarusRubyOnRails</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/profile_items' %>
-      <%= render 'devise/menu/login_items' %>
-      <%= link_to("Control panel", admin_root_path) if can? :manage, :all %>
-      <%= link_to "About", about_path %>
-      <%= link_to "Friends", friends_path %>
-    </ul>
-
-    <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-    <% end %>
-
-<%= yield %>
-
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= t('general.site_name') %></title>
+    <%= stylesheet_link_tag "style" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="block">
+          <div class="logo_row">
+            <%= link_to image_tag("logo_ror_belarus.png", { :alt => t('general.site_name') }), root_path, :class => :logo %>
+            <div class="sublinks">
+              <%= render 'devise/menu/login_items' %>
+            </div>
+          </div>
+          <div class="menu_row">
+            <ul>
+              <li><%= link_to_unless_current t('menu.main'), root_path %></li>
+              <li><%= link_to_unless_current t('menu.news'), articles_path %></li>
+              <li><%= link_to_unless_current t('menu.about'), about_path %></li>
+              <li><%= link_to_unless_current t('menu.friends'), friends_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% flash.each do |type, msg| %>
+        <% notification_class = 'notification-error' %>
+        <% notification_class = 'notification' if type == :notice %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, content_tag(:div, content_tag(:div, msg), :class => 'block'), :class => notification_class %>
+        <% end %>
+      <% end %>
+      <div class="block">
+        <div class="left">
+          <%= yield %>
+        </div>
+        <div class="right">
+          <!-- meetup widget -->
+          <div class="social"><!-- facebook --></div>
+          <div class="social"><!-- vkontakte --></div>
+          <div class="social"><!-- twitter feed --></div>
+        </div>
+        <div class="cl_all"></div>
+        <div class="left">
+          <div class="partners">
+            <h4><%= t('general.partners') %></h4>
+            <div class="links">
+              <%= link_to image_tag("logo_altoros_dev.png", {:height => 49, :width => 213, :alt => t('general.altoros')}), "http://altoros.com/" %>
+              <%= link_to image_tag("logo_miu.png", {:height => 49, :width => 213, :alt => ""}), "http://www.miu.by/" %>
+              <%= link_to image_tag("logo_rubymine.png", {:height => 30, :width => 120, :alt => ""}), "http://www.jetbrains.com/ruby/" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="block"><span class="copy">&copy; <%= t('general.sitename') %>, 2011</span><%= link_to t('menu.contact'), '#' %></div>
+      </div>
+    </div>
+  </body>
 </html>
