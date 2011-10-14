@@ -4,7 +4,7 @@
   <%= errors_for @message %>
   <p>
     <%= f.label :recipient_group %><br />
-    <%= f.select :recipient_group, UsersFilter.options_for_select %>
+    <%= f.select :recipient_group, UsersFilter.options_for_select, {}, { :multiple => true, :size => 5 } %>
   </p>
   <p>
     <%= f.label :subject %><br />
