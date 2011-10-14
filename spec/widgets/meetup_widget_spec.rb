@@ -4,7 +4,7 @@ describe MeetupWidget do
   let(:rendered_meetup) { render_widget(:meetup) }
 
   context 'active meetup is exist' do
-    before(:each) do
+    before(:all) do
       @meetup = Factory :meetup, :date_and_time => Time.now + 1.week
     end
 
@@ -44,13 +44,17 @@ describe MeetupWidget do
   end
 
   context "active meetup isn't exist" do
+    before(:all) do
+      Meetup.delete_all
+    end
+
     describe '#display' do
       has_widgets do |root|
         root << widget(:meetup)
       end
 
       it "don't contain any information" do
-        render_widget(:meetup).native.should be_nil
+        rendered_meetup.native.should be_nil
       end
     end
   end
