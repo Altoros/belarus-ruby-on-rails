@@ -36,5 +36,8 @@ BelarusRubyOnRails::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+#  config.action_view.field_proc = Proc.new {  |html_tag, instance| "<span class='field'>#{html_tag}</span>".html_safe  }
+  config.action_view.field_error_proc = Proc.new {  |html_tag, instance| (instance.inspect + "<span class='field_errors'>#{html_tag}</span>".html_safe)  }
 end
 

@@ -1,4 +1,12 @@
 module ApplicationHelper
+  ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    unless html_tag =~ /^<label/
+      %{<div class="field error">#{html_tag}<span class="msg">#{instance.error_message.first}</span></div>}.html_safe
+    else
+      %{#{html_tag}}.html_safe
+    end
+  end
+
   def errors_for(object, message = nil)
     html = ""
     unless object.errors.blank?
@@ -10,7 +18,6 @@ module ApplicationHelper
       else
          html << "\t\t<h2>#{message}</h5>\n"
       end
-
       html << "\t\t<ul>\n"
       object.errors.full_messages.each do |error|
         html << "\t\t\t<li>#{error}</li>\n"
