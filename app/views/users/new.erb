@@ -1,22 +1,29 @@
 <h2><%= t('omniauth.set_profile') %></h2>
 
-<%= form_for @user do |f| %>
-  <%= errors_for(@user) %>
+<div class="forms">
+  <%= form_for @user do |f| %>
+    <%= errors_for(@user) %>
+    <table class="loginTBL">
+      <% if @user.email.empty? %>
+        <tr>
+          <td><%= f.label :email, t('user.email') %></td>
+          <td>
+            <div class="field"><%= f.email_field :email %></div>
+          </td>
+        </tr>
+      <% end %>
 
-  <% if @user.email.empty? %>
-    <div>
-      <%= f.label :email, t('user.email') %><br/>
-      <%= f.email_field :email %>
-    </div>
-  <% end %>
-
-  <%= f.fields_for :profile do |profile_form| %>
+      <%= f.fields_for :profile do |profile_form| %>
     <%= render 'profiles/name', :f => profile_form %>
-    <%= render 'profiles/level', :f => profile_form %>
+        <%= render 'profiles/level', :f => profile_form %>
+      <% end %>
+
+      <tr>
+        <td></td>
+        <td class="save">
+          <button type="submit"><span><span><%= t('common.create') %></span></span></button>
+        </td>
+      </tr>
+    </table>
   <% end %>
-
-  <div>
-    <%= f.submit t('common.create') %>
-  </div>
-
-<% end %>
+</div>

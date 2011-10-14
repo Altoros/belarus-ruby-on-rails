@@ -1,17 +1,51 @@
-<h2>Sign in</h2>
+<h2><%= t('users.sign_in') %></h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<div class="forms">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <table class="loginTBL">
+      <tr>
+        <th><%= t('users.via_networks') %></th>
+        <th>
+          <div class="social_list">
+            <%= link_to image_tag("ico_facebook.png", {:alt => "Sign in with Facebook"}), user_omniauth_authorize_path(:facebook) %>
+            <%= link_to image_tag("ico_vk.png", {:alt => "Sign in with Vkontakte"}), user_omniauth_authorize_path(:vkontakte) %>
+            <%= link_to image_tag("ico_google_plus.png", {:alt => "Sign in with Google Apps"}), user_omniauth_authorize_path(:google_apps) %>
+            <%= link_to image_tag("ico_twitter.png", {:alt => "Sign in with Twitter"}), user_omniauth_authorize_path(:twitter) %>
+            <%= link_to image_tag("ico_github.png", {:alt => "Sign in with Github"}), user_omniauth_authorize_path(:github) %>
+            <%= link_to image_tag("ico_linkedin.png", {:alt => "Sign in with Linked In"}), user_omniauth_authorize_path(:linked_in) %>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td>
+          <div class="field"><%= f.email_field :email %></div>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :password %></td>
+        <td><div class="field"><%= f.password_field :password %></div></td>
+      </tr>
+    </table>
+    <div class="login">
+      <button type="submit"><span><span><%= t('users.login') %></span></span></button>
+      <div class="links">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+          <%= link_to t('users.forgot_your_password'), new_password_path(resource_name) %><br />
+        <% end -%>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+        <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+          <%= link_to t('users.didnt_receive_confirmation_instructions'), new_confirmation_path(resource_name) %><br />
+        <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+        <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+          <%= link_to t('users.didnt_receive_unlock_instructions'), new_unlock_path(resource_name) %><br />
+        <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to t('users.sign_up'), new_registration_path(resource_name) %><br />
+        <% end -%>
+      </div>
+    </div>
+  <% end %>
+</div>

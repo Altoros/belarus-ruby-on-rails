@@ -1,30 +1,52 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <% if resource.encrypted_password.present? %>
+  <div class="forms">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-        <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
+    <table class="loginTBL">
 
-        <div><%= f.label :email %><br />
-        <%= f.email_field :email %></div>
+    <tr>
+      <td><%= f.label :email %></td>
+      <td>
+        <div class="field"><%= f.email_field :email %></div>
+      </td>
+    </tr>
 
-        <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password %></div>
+    <tr>
+      <td><%= f.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
+      <td>
+        <div class="field"><%= f.password_field :password %></div>
+      </td>
+    </tr>
 
-        <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation %></div>
+    <tr>
+      <td><%= f.label :password_confirmation %></td>
+      <td>
+        <div class="field"><%= f.password_field :password_confirmation %></div>
+      </td>
+    </tr>
 
-        <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password %></div>
+    <tr>
+      <td><%= f.label :current_password %> <i>(<%= t('users.we_need_your_password') %>)</i></td>
+      <td>
+        <div class="field"><%= f.password_field :current_password %></div>
+      </td>
+    </tr>
 
-        <div><%= f.submit "Update" %></div>
+      <tr>
+        <td></td>
+        <td class="save">
+          <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+        </td>
+      </tr>
+      </table>
     <% end %>
+  </div>
 <% else %>
-    <p>Now you can't change your data, because your don't have password yet. Please click the link bellow for set password.</p>
-    <div>Email: <%= resource.email %></div>
-    <%= link_to "Reset my password", user_reset_password_url %><br />
+  <p><%= t('usrs.no_passwd_no_data_changes') %></p>
+  <div><%= t('activerecord.attributes.user.email') %>: <%= resource.email %></div>
+  <%= link_to t('users.reset_my_password'), user_reset_password_url %><br />
 <% end %>
 
-<h3>Cancel my account</h3>
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
+<%= link_to t('users.cancel_my_account'), registration_path(resource_name), :confirm => t('common.are_you_sure'), :method => :delete %>
