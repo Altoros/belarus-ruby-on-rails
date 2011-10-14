@@ -1,10 +1,6 @@
 class ArticlesController < ApplicationController
   load_and_authorize_resource
 
-  has_widgets do |root|
-    root << widget(:meetup, :user => current_user)
-  end
-
   # GET /articles
   # GET /articles.json
   def index

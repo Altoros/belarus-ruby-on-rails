@@ -22,7 +22,7 @@ describe MeetupWidget do
       end
 
       it 'unvailible to register for signed out user' do
-        rendered_meetup.should_not have_link('Register to meetup')
+        rendered_meetup.should_not have_link('Attend')
         rendered_meetup.should have_link('Login')
       end
 
@@ -33,7 +33,7 @@ describe MeetupWidget do
         end
 
         it 'availible to attend' do
-          rendered_meetup.should have_link('Register to meetup')
+          rendered_meetup.should have_link('Attend')
         end
 
         it 'attending a meetup' do
