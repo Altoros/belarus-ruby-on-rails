@@ -3,8 +3,9 @@ class UsersFilter
     collection.invert
   end
 
-  def self.collection
-    @filters_collection ||= generate
+  def self.collection(reload = false)
+    @filters_collection = generate if reload or not defined?(@filters_collection)
+    @filters_collection
   end
 
   def self.emails_list(filter)
@@ -12,7 +13,7 @@ class UsersFilter
     if filter == '0' or !collection.include?(filter)
       emails = Profile.select('DISTINCT users.email AS email').subscribed
     else
-      # TODO select emails of users, which take part in selected meetup
+      emails = Profile.select('DISTINCT users.email AS email').participants_on(filter)
     end
 
     emails.collect(&:email)
@@ -22,7 +23,7 @@ class UsersFilter
 
   def self.generate
     res = { '0' => I18n.t('labels.all') }
-    # TODO select all meetups and include them with id to result hash
+    Meetup.all.each { |el| res[el.id.to_s] = el.topic }
     res
   end
 end

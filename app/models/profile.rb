@@ -16,6 +16,10 @@ class Profile < ActiveRecord::Base
 
   scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
   scope :subscribed_for_comments, where('subscribed_for_comments = ?', true)
+  scope :participants_on, lambda { |meetup_id|
+    subscribed.joins('INNER JOIN participants ON participants.user_id = users.id')
+      .where('participants.meetup_id = ?', meetup_id)
+  }
 
   def providers_data
     tokens = self.user.user_tokens
