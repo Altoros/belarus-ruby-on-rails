@@ -72,7 +72,7 @@ When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
   When %{I go to the sign in page}
   And %{I fill in "Email" with "#{email}"}
   And %{I fill in "Password" with "#{password}"}
-  And %{I press "Sign in"}
+  And %{I press "Login"}
 end
 
 When /^I sign in as a user with wrong password$/ do
@@ -81,7 +81,7 @@ When /^I sign in as a user with wrong password$/ do
   When %{I go to the sign in page}
   And %{I fill in "Email" with "#{@user.email}"}
   And %{I fill in "Password" with "#{@user.password + 'qwerty'}"}
-  And %{I press "Sign in"}
+  And %{I press "Login"}
 end
 
 Then /^I should be signed in$/ do

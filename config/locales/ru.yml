@@ -10,15 +10,14 @@ ru:
       not_found: 'Пользователь не найден'
     messages:
       title: 'Рассылка'
-      invalid_user_group: " содержит неправильный фильтр"
+      invalid_user_group: ' содержит неправильный фильтр'
       successfully_sent: 'Сообщение будет отослано'
       send: 'рассылка'
       send_button: 'Послать сообщение'
   errors:
     changes_not_saved: 'Не удалось сохранить изменения'
   profile:
-    login: 'Войти'
-    subscribed_for_comments: "Я хочу получать по почте уведомления о новых комментариях:"
+    subscribed_for_comments: 'Я хочу получать по почте уведомления о новых комментариях:'
   labels:
     date: 'Дата'
     place: 'Место проведения'
@@ -75,6 +74,18 @@ ru:
     registration: 'Регистрация'
     edit_registration: 'Регистрационные данные'
     edit_profile: 'Профайл'
+    sign_up: 'Зарегистрироваться'
+    sign_in: 'Войти'
+    via_networks: 'Через соцсети'
+    forgot_your_password: 'Забыли пароль?'
+    didnt_receive_confirmation_instructions: 'Не получили письмо с подтверждением?'
+    didnt_receive_unlock_instructions: 'Не получили инструкции по разблокировке?'
+    all_fields_are_required: 'Все поля обязательны для заполнения'
+    reset_my_password: 'Сбросить пароль'
+    cancel_my_account: 'Удалить аккаунт'
+    leave_blank_if_no_changes: 'оставьте это поле пустым, если не хотите его менять'
+    we_need_your_password: 'нам нужен Ваш текущий пароль, что бы подтвердить изменения'
+    no_passwd_no_data_changes: 'Сейчас Вы не можете изменить данные, т.к. у Вас не задан пароль. Пожалуйства пройдите по ссылке ниже, что бы задать пароль.'
   general:
     altoros: 'ООО Альторос Девелопмент'
     more_information: 'Подробнее'
@@ -88,29 +99,27 @@ ru:
     control_panel: 'Админка'
     contact: 'Связаться с нами'
   common:
-    create: "Создать"
-    update: "Сохранить"
-  user:
-    sign_up: "Зарегистрироваться"
-
+    create: 'Создать'
+    update: 'Сохранить'
+    are_you_sure: 'Вы уверены?'
   activerecord:
     models:
-      experience: "Уровень владения Ruby on Rails"
+      experience: 'Уровень владения Ruby on Rails'
     attributes:
       experience:
-        level: "Уровень"
+        level: 'Уровень'
       profile:
-        experience_id: "Уровень владения Ruby on Rails"
-        first_name: "Имя"
-        last_name: "Фамилия"
-        subscribed: "Получать новости по E-mail"
+        experience_id: 'Уровень владения Ruby on Rails'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        subscribed: 'Получать новости по E-mail'
       user:
-        email: "Электронная почта"
-        password: "Пароль"
-        password_confirmation: "Подтвердите пароль"
+        email: 'Электронная почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтвердите пароль'
   actionview:
     helpers:
       select:
-        prompt: "Пожалуйста, выберите"
+        prompt: 'Пожалуйста, выберите'
   notifier:
     comments_notifier_email: 'К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link}.'

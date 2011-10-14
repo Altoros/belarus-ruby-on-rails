@@ -118,7 +118,7 @@ a.logo { float:left; margin-top:24px;}
 .check {overflow:hidden; margin:15px 0;}
 .check label {font-size:14px; color:#000;}
 .forms input[type="checkbox"] {margin:0 4px 0 0;*margin:0 1px 0 -3px;}
-.forms input[type="text"], .forms input[type="password"] { clear:both; overflow:visible; width:228px;*width:226px; height:27px; color:#737373; font-size:14px; line-height:27px; text-indent:5px; border:1px solid #888888; background:#fff;}
+.forms input[type="text"], .forms input[type="password"], .forms input[type="email"] { clear:both; overflow:visible; width:228px;*width:226px; height:27px; color:#737373; font-size:14px; line-height:27px; text-indent:5px; border:1px solid #888888; background:#fff;}
 .forms .field.error {padding:1px;*padding:0 1px;border:1px solid #d37f84; background:#ffd8d8;}
 .forms .field.error input, .forms .field.error select { display:inline-block; *display:inline;zoom:1; vertical-align:middle;}
 .forms .field {padding:1px;*padding:0 1px; background:#fff; border:1px solid #fff;}
@@ -140,9 +140,10 @@ button:hover span { background-position:100% -93px;}
 button:hover span span { background-position:0 -62px;}
 button:active span { background-position:100% -155px;}
 button:active span span { background-position:0 -124px;}
-.social_list { overflow:hidden;;}
+.social_list { overflow:hidden;}
 .social_list a { float:left; margin-left:8px;}
 .social_list a:first-child {margin-left:0;}
+.social_list img {height:32px; width:32px;}
 .social_name {overflow:hidden; padding:0 0 16px;}
 .social_name img { float:left; margin-right:12px;}
 .social_name span { float:left; width:255px; margin-top:5px; font-size:20px; line-height:24px;}

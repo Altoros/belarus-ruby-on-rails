@@ -1,15 +1,22 @@
-<%= form_for(@profile) do |f| %>
-  <%= errors_for(@profile, t('errors.changes_not_saved')) %>
+<div class="forms">
+  <%= form_for(@profile) do |f| %>
+    <%= errors_for(@profile, t('errors.changes_not_saved')) %>
 
-  <%= render 'profiles/name', :f => f %>
-  <%= render 'profiles/level', :f => f %>
+    <%= render 'profiles/name', :f => f %>
+    <%= render 'profiles/level', :f => f %>
 
-  <div class="field">
-    <%= f.label :subscribed_for_comments, t('profile.subscribed_for_comments') %>
-    <%= f.check_box :subscribed_for_comments %>
-  </div>
+    <tr>
+      <td></td>
+      <td>
+        <div class="check"><%= f.check_box :subscribed_for_comments %><%= f.label :subscribed_for_comments, t('profile.subscribed_for_comments') %></div>
+      </td>
+    </tr>
 
-  <div class="actions">
-    <%= f.submit t('common.update') %>
-  </div>
-<% end %>
+    <tr>
+      <td></td>
+      <td class="save">
+        <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+      </td>
+    </tr>
+  <% end %>
+</div>

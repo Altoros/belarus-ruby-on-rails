@@ -14,14 +14,10 @@ en:
       successfully_sent: 'Message is being sent'
       send: 'send mail'
       send_button: 'Send Message'
-  common:
-    create: "Create"
-    update: "Update"
   errors:
     changes_not_saved: 'Unable to save changes'
   profile:
-    login: 'Login'
-    subscribed_for_comments: "I would like to receive email notifications about new comments"
+    subscribed_for_comments: 'I would like to receive email notifications about new comments'
   labels:
     date: 'Date'
     place: 'Place'
@@ -79,6 +75,18 @@ en:
     registration: 'Registration'
     edit_registration: 'Edit registration'
     edit_profile: 'Edit profile'
+    sign_up: 'Sign up'
+    sign_in: 'Sign in'
+    via_networks: 'Via networks'
+    forgot_your_password: 'Forgot your password?'
+    didnt_receive_confirmation_instructions: 'Didn''t receive confirmation instructions?'
+    didnt_receive_unlock_instructions: 'Didn''t receive unlock instructions?'
+    all_fields_are_required: 'All fields are requied'
+    reset_my_password: 'Reset my password'
+    cancel_my_account: 'Cancel my account'
+    leave_blank_if_no_changes: 'leave blank if you don''t want to change it'
+    we_need_your_password: 'we need your current password to confirm your changes'
+    no_passwd_no_data_changes: 'Now you can''t change your data, because your don''t have password yet. Please click the link bellow for set password.'
   general:
     altoros: 'Altoros Development'
     more_information: 'More information'
@@ -91,15 +99,26 @@ en:
     friends: 'Friends'
     control_panel: 'Control panel'
     contact: 'Contact us'
-  user:
-    sign_up: "Sign up"
-
+  common:
+    create: 'Create'
+    update: 'Update'
+    are_you_sure: 'Are you sure?'
   activerecord:
     models:
-      experience: "Ruby on Rails level"
+      experience: 'Ruby on Rails level'
     attributes:
       profile:
-        experience_id: "Ruby on Rails level"
-        subscribed: "Receive news E-mails"
+        experience_id: 'Ruby on Rails level'
+        first_name: 'First name'
+        last_name: 'Last name'
+        subscribed: 'Receive news E-mails'
+      user:
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+  actionview:
+    helpers:
+      select:
+        prompt: 'Please choose'
   notifier:
     comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'

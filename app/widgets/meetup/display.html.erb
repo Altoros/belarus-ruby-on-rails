@@ -17,7 +17,7 @@
             <%= link_to t('meetup.register_at'), url_for_event(:register), :remote => true %>
         <% end %>
   <% else %>
-    <%= t('meetup.signed_in_to_attend') %> <%= link_to t('profile.login'), login_path %>
+    <%= t('meetup.signed_in_to_attend') %> <%= link_to t('users.login'), login_path %>
   <% end %>
 <% end %>
 

@@ -1,8 +1,12 @@
-<div>
-  <%= f.label :first_name %><br/>
-  <%= f.text_field :first_name %>
-</div>
-<div>
-  <%= f.label :last_name %><br/>
-  <%= f.text_field :last_name %>
-</div>
+<tr>
+  <td><%= f.label :first_name %></td>
+  <td>
+    <div class="field"><%= f.text_field :first_name %></div>
+  </td>
+</tr>
+<tr>
+  <td><%= f.label :last_name %></td>
+  <td>
+    <div class="field"><%= f.text_field :last_name %></div>
+  </td>
+</tr>
