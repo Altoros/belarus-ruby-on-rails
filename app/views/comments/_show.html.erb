@@ -3,9 +3,9 @@
     <b><%= link_to comment.user.profile.full_name, "mailto:#{ comment.user.email }" %></b>
     <!-- <%= distance_of_time_in_words_to_now(comment.created_at) %> ago wrote: -->
     <% if can? :delete, comment %>
-        <%= link_to_if(can?(:update, comment), "Edit", edit_article_comment_path(comment.article, comment),
+        <%= link_to_if(can?(:update, comment), t('articles.edit'), edit_article_comment_path(comment.article, comment),
       :remote => true, :title => "click for edit") %>
-        <%= link_to "Delete", article_comment_path(comment.article, comment), :method => :delete ,  :confirm => 'Are you sure?', :remote => true %>
+        <%= link_to t('articles.delete'), article_comment_path(comment.article, comment), :method => :delete ,  :confirm => 'Are you sure?', :remote => true %>
     <% end %>
 
     <div class="upic">
