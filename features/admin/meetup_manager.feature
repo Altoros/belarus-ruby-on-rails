@@ -12,7 +12,7 @@ Feature: Admin: Meetup management
     And I fill in "Place" with "Belarus, Minsk"
     And I select "2007-11-11 10:00" as the "Date and time" date
     And I press "Save it!"
-    Then I should see "Date and time must be in future"
+    Then I should see "must be in future"
 
   Scenario: as admin I can create meetup
     Given I am logged in as admin
