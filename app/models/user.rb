@@ -34,7 +34,8 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_social_network(provider, uid)
-    joins(:user_tokens).where(:user_tokens => {:provider => provider, :uid => uid}).first
+    token = UserToken.where(:provider => provider, :uid => uid).first
+    token.user if token
   end
 
   def apply_omniauth(omniauth)
