@@ -1,6 +1,6 @@
 <div class="comments">
   <h3>
-    Comments
+    <%= t('articles.comments') %>
     <span><%= @article.comments.size %></span></h3>
   <div id="comments_block">
     <% if can? :create, Comment %>
@@ -9,7 +9,8 @@
            <div id="comment_notice"></div>
       </div>
     <% else %>
-      <div id="comment_notice">Please <%= link_to "login", login_path %> for post comments</div>
+      <div id="comment_notice"><%= raw t("articles.login_to_comment",
+       :href => link_to(t("articles.log_in_href"), login_path)) %></div>
     <% end %>
     <% if can? :read, Comment %>
       <div id="comments">

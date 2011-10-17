@@ -12,7 +12,7 @@
       <%= link_to article.title, article %>
     </h2>
     <div class="iteminfo">
-      <span class="date"><%= article.created_at%></span>
+      <span class="date"><%= l(article.created_at, :format => :long) %></span>
     </div>
     <p><%= raw article.content %></p>
         <%= link_to t('articles.show'), article %>

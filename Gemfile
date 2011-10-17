@@ -38,6 +38,7 @@ gem 'cells'
 gem 'apotomo'
 
 gem 'tlsmail'
+gem 'russian'
 
 group :test do
   gem 'cucumber-rails'

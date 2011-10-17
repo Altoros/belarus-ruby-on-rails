@@ -202,6 +202,7 @@ GEM
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
     rubyzip (0.9.4)
+    russian (0.2.7)
     sass (3.1.7)
     sass-rails (3.1.2)
       actionpack (~> 3.1.0)
@@ -269,6 +270,7 @@ DEPENDENCIES
   rails (= 3.1.0)
   rspec-apotomo
   rspec-rails
+  russian
   sass-rails (~> 3.1.0)
   tlsmail
   twitter
