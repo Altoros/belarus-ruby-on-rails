@@ -31,8 +31,8 @@ BelarusRubyOnRails::Application.configure do
   # Don't care if the mailer can't send
   # ActionMailer Config
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
-  config.action_mailer.default :charset => 'utf-8',
-                               :from => 'no-reply@belarusrubyonrails.org'
+  config.action_mailer.default :charset => 'utf-8'
+  ActionMailer::Base.default :from => 'no-reply@belarusrubyonrails.org'
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
