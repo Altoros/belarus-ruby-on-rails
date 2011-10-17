@@ -2,6 +2,7 @@ en:
   omniauth:
     successfully_binded: 'Provider %{provider_name} bound successfully'
     bind_with: 'Bind with %{provider_name}'
+    set_profile: 'Set profile'
   admin:
     dashboard: 'Dashboard'
     you_can: 'You can'

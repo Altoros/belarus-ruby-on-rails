@@ -2,6 +2,7 @@ ru:
   omniauth:
     successfully_binded: 'Провайдер %{provider_name} успешно подключён'
     bind_with: 'Связать с %{provider_name}'
+    set_profile: 'Создание профайла'
   admin:
     dashboard: 'Панель админа'
     you_can: 'Вы можете'
