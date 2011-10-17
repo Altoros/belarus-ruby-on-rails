@@ -1,4 +1,4 @@
 Given /^I come to meetups page and create meetup with topic "([^"]*)"$/ do |topic|
-  Meetup.new(:topic => topic, :description => "Content of meetup description", :place => 'Minsk, Belarus', :date_and_time => '2011-10-15 11:21:00').save!
+  Factory(:meetup, :topic => topic, :date_and_time => 1.month.from_now)
   visit('/admin/meetups')
 end

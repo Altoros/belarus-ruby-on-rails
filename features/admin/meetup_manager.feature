@@ -26,14 +26,14 @@ Feature: Admin: Meetup management
 
   Scenario: as admin I can cancel existing meetup
     Given I am logged in as admin
-    And I come to meetups page and create meetup with topic "Belarus RnR meetup 2014"
+    And I come to meetups page and create meetup with topic "Belarus RoR meetup"
     When I follow "Cancel meetup"
     Then I should see "Meetup cancelled successfully"
 
   Scenario: as admin I can edit existing meetup
     Given I am logged in as admin
-    And I come to meetups page and create meetup with topic "Belarus RnR meetup 2014"
+    And I come to meetups page and create meetup with topic "Belarus RoR meetup"
     When I follow "Edit meetup"
-    And I fill in "Topic" with "Belarus RnR meetup october,2014"
+    And I fill in "Topic" with "Belarus RoR meetup 2"
     And I press "Save it!"
     Then I should see "Meetup updated successfully"
