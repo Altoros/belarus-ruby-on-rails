@@ -2,8 +2,8 @@
     $("#comments").prepend("<%= escape_javascript(render "comments/show", :comment => @comment) %>");
     var comment_div = $("#<%= dom_id @comment %>");
     comment_div.hide().slideToggle("slow");
-    comment_notify("Comment successfully added");
+    comment_notify("Your comment was successfully added.");
     $("#comment_body").val("");
 <% else %>
-    comment_notify("You don't write a comment (its length must be greater then 4)!!!");
+    comment_notify("The length of the comment should be more then 4 symbols!");
 <% end %>

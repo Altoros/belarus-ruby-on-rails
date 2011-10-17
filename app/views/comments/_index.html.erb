@@ -1,18 +1,23 @@
-<div id="comments_block">
-  <% if can? :create, Comment %>
-    <div>
-         <%= render "comments/form", :comment => @article.comments.build %>
-         <div id="comment_notice"></div>
-    </div>
-  <% else %>
-    <div id="comment_notice">Please <%= link_to "login", login_path %> for post comments</div>
-  <% end %>
-  <% if can? :read, Comment %>
-    <div id="comments">
-        <%= render :partial => "comments/show",
-                   :collection => @article.comments.includes(:user => :profile),
-                   :as => 'comment' %>
-    </div>
-  <% end %>
-  <hr/>
+<div class="comments">
+  <h3>
+    Comments
+    <span><%= @article.comments.size %></span></h3>
+  <div id="comments_block">
+    <% if can? :create, Comment %>
+      <div>
+           <%= render "comments/form", :comment => @article.comments.build %>
+           <div id="comment_notice"></div>
+      </div>
+    <% else %>
+      <div id="comment_notice">Please <%= link_to "login", login_path %> for post comments</div>
+    <% end %>
+    <% if can? :read, Comment %>
+      <div id="comments">
+          <%= render :partial => "comments/show",
+                     :collection => @article.comments.includes(:user => :profile),
+                     :as => 'comment' %>
+      </div>
+    <% end %>
+    <hr/>
+  </div>
 </div>

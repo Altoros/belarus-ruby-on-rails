@@ -1,13 +1,14 @@
-<p>
-  <b><%= t('articles.title') %>:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b><%= t('articles.content') %>:</b>
-  <%= raw @article.content %>
-</p>
-
+<div class="item">
+  <h2>
+    <%= @article.title %>
+  </h2>
+  <div class="iteminfo">
+    <span class="date"><%= @article.created_at%></span>
+    </div>
+        <p><%= raw @article.content %></p>
+    </div>
+  </div>
 <%= render :partial => "sharing_buttons" %>
 
 <%= render "comments/index" %>
+</div>
