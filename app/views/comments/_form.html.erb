@@ -1,6 +1,12 @@
-<hr/>
-<%= form_for [comment.article, comment], :remote => true do |f| %>
-  <div><%= errors_for comment %></div>
-  <div><%= f.text_area :body %></div>
-  <div><%= f.submit "Leave a comment" %></div>
-<% end %>
+<div class="to_comment">
+  <div class="upic">
+    <%= image_tag("upic-empty.jpg")%>
+  </div>
+    <div>
+      <%= form_for [comment.article, comment], :remote => true do |f| %>
+      <div><%= errors_for comment %></div>
+      <div><%= f.text_area :body %></div>
+      <div><%= f.submit "Leave a comment" %></div>
+      <% end %>
+    </div>
+</div>
