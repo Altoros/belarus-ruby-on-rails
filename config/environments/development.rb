@@ -12,18 +12,25 @@ BelarusRubyOnRails::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-#  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
-#  # ActionMailer Config
+# ActionMailer Config
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
-#  # A dummy setup for development - no deliveries, but logged
-#  config.action_mailer.delivery_method = :smtp
-#  config.action_mailer.perform_deliveries = false
-#  config.action_mailer.raise_delivery_errors = true
-#  config.action_mailer.default :charset => 'utf-8',
-#                               :from => 'no-reply@belarusrubyonrails.org'
-#
-  config.action_mailer.default :from => 'belarusrubyonrails@gmail.com'
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => 'utf-8'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :tls                  => true,
+    :domain               => 'gmail.com',
+    :user_name            => 'belarusrubyonrails@gmail.com',
+    :password             => 'bror-altoros',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true,
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
