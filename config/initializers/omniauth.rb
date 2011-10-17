@@ -5,11 +5,12 @@ Devise.setup do |config|
   credentials = CONFIG['github'] || {}
 
   config.omniauth :github, credentials['app_id'], credentials['secret_key'],
-                  :scope => 'user,public_repo'
+                { :scope => 'user,public_repo',
+                  :client_options => { :ssl => { :ca_path => "/etc/ssl/certs" }}}
 
   credentials = CONFIG['facebook'] || {}
   config.omniauth :facebook, credentials['app_id'], credentials['secret_key'],
-                  :scope => 'email'
+                { :scope => 'email', :client_options => { :ssl => { :ca_path => "/etc/ssl/certs" }}}
 
   credentials = CONFIG['vkontakte'] || {}
   config.omniauth :vkontakte, credentials['app_id'], credentials['secret_key']
