@@ -7,8 +7,12 @@ ru:
     dashboard: 'Панель админа'
     you_can: 'Вы можете'
     users:
-      edit: 'редактировать пользователей'
+      edit: 'управлять учетными записями пользователей'
+      edit_current_user: 'Редактирование пользователя'
       not_found: 'Пользователь не найден'
+      manage_users_title: 'Управление учетными записями пользователей'
+      remove_admin: 'Отозвать права администратора'
+      make_admin: 'Дать права администратора'
     messages:
       title: 'Рассылка'
       invalid_user_group: ' содержит неправильный фильтр'
@@ -19,6 +23,9 @@ ru:
     changes_not_saved: 'Не удалось сохранить изменения'
   profile:
     subscribed_for_comments: 'Я хочу получать по почте уведомления о новых комментариях:'
+    edit_profile: 'Редактирование профиля'
+    show_profile: 'Показать профиль'
+    social_networks: 'Социальные сети'
   labels:
     date: 'Дата'
     place: 'Место проведения'
@@ -42,6 +49,7 @@ ru:
     cancel_link: 'Отменить митап'
     create_link: 'Создать митап'
     update_link: 'Редактировать митап'
+    back_link: 'Назад'
     meetups_link: 'Митапы'
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'
@@ -51,6 +59,10 @@ ru:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'
     article_successfully_deleted: 'Статья была успешно удалена'
+    comments: 'Комментарии'
+    leave_a_comment: 'Оставить комментарий'
+    login_to_comment: 'Пожалуйста %{href} чтобы оставлять комментарии'
+    log_in_href: 'войдите'
     unable_save: 'Не удалось сохранить статью'
     no_news: 'Нет статей в настоящий момент'
     are_you_sure: 'Вы уверены?'
@@ -118,6 +130,11 @@ ru:
         email: 'Электронная почта'
         password: 'Пароль'
         password_confirmation: 'Подтвердите пароль'
+        current_password: 'Текущий пароль'
+      message:
+        recipient_group: 'Адресаты'
+        subject: 'Тема'
+        body: 'Содержание'
   actionview:
     helpers:
       select:

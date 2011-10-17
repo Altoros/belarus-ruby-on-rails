@@ -19,7 +19,7 @@
            </tr>
            <tr>
              <th><%= t('meetup.date') %>:</th>
-             <td><%= @meetup.date_and_time.strftime("%Y-%m-%d") %></td>
+             <td><%= l(@meetup.date_and_time, :format => :long) %></td>
            </tr>
            <tr>
              <th><%= t('meetup.time') %>:</th>

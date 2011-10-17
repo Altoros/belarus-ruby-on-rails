@@ -1,7 +1,8 @@
 <tr>
   <td>
     <%= link_to user.profile.full_name, profile_path(user.profile) %>
-    <%= "(Attention!!! This is you!)" if user == current_user %>
+    <%= t('devise.info.this_is_you') if user == current_user %>
+
   </td>
   <td>
     <%= mail_to user.email %>

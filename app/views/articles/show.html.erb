@@ -3,7 +3,7 @@
     <%= @article.title %>
   </h2>
   <div class="iteminfo">
-    <span class="date"><%= @article.created_at%></span>
+    <span class="date"><%= l(@article.created_at, :format => :long) %></span>
     <div>
         <p><%= raw @article.content %></p>
     </div>

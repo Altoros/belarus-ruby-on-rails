@@ -1,10 +1,10 @@
 <p>
-  <b>First name:</b>
+  <b><%= t('activerecord.attributes.profile.first_name')%>:</b>
   <%= @profile.first_name %>
 </p>
 
 <p>
-  <b>Last name:</b>
+  <b><%= t('activerecord.attributes.profile.last_name')%>:</b>
   <%= @profile.last_name %>
 </p>
 
@@ -14,7 +14,7 @@
 </p>
 
 <% if @providers %>
-    <h4>External providers:</h4>
+    <h4><%= t('profile.social_networks') %>:</h4>
     <ul>
     <% @providers.each do |provider| %>
         <% provider_link(provider, @profile.user.id) do |item| %>
@@ -24,4 +24,4 @@
     </ul>
 <% end %>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %>
+<%= link_to t('profile.edit_profile'), edit_profile_path(@profile) %>

@@ -1,25 +1,25 @@
 <div class="forms">
-    <h1><%= I18n.t 'admin.messages.title' %></h1>
-    <div class="required"><%= I18n.t 'users.all_fields_are_required' %></div>
+    <h1><%= t('admin.messages.title') %></h1>
+    <div class="required"><%= t('users.all_fields_are_required') %></div>
     <%= form_for @message, :url => admin_message_path do |f| %>
       <%= errors_for @message %>
         <table class="loginTBL">
             <tr>
-                <td><%= f.label :recipient_group %></td>
+                <td><%= f.label t('activerecord.attributes.message.recipient_group') %></td>
                 <td><div class='field'><%= f.select :recipient_group, UsersFilter.options_for_select, {}, { :multiple => true } %></div></td>
             </tr>
             <tr>
-                <td><%= f.label :subject %></td>
+                <td><%= f.label t('activerecord.attributes.message.subject') %></td>
                 <td><div class='field'><%= f.text_field :subject %></div></td>
             </tr>
             <tr>
-                <td><%= f.label :body %></td>
+                <td><%= f.label t('activerecord.attributes.message.body') %></td>
                 <td><%= f.text_area :body %></td>
             </tr>
             <tr>
               <td></td>
               <td class="save">
-                <button type="submit"><span><span><%= I18n.t('admin.messages.send_button') %></span></span></button>
+                <button type="submit"><span><span><%= t('admin.messages.send_button') %></span></span></button>
               </td>
         </table>
     <% end %>

@@ -8,7 +8,11 @@ en:
     you_can: 'You can'
     users:
       edit: 'edit users'
+      edit_current_user: 'Edit user'
       not_found: 'User not found'
+      manage_users_title: 'User Manager'
+      remove_admin: 'Remove admin'
+      make_admin: 'Make admin'
     messages:
       title: 'Send mail to users'
       invalid_user_group: ' contains not valid user group'
@@ -19,6 +23,9 @@ en:
     changes_not_saved: 'Unable to save changes'
   profile:
     subscribed_for_comments: 'I would like to receive email notifications about new comments'
+    edit_profile: 'Editing profile'
+    show_profile: 'Show profile'
+    social_networks: 'Social networks'
   labels:
     date: 'Date'
     place: 'Place'
@@ -52,6 +59,10 @@ en:
     article_successfully_created: 'Article was successfully created'
     article_successfully_updated: 'Article was successfully updated'
     article_successfully_deleted: 'Article was successfully deleted'
+    comments: 'Comments'
+    leave_a_comment: 'Leave a comment'
+    login_to_comment: 'Please %{href} to post comments'
+    log_in_href: 'login'
     unable_save: 'Unable to save article'
     no_news: 'There is no news at the moment'
     are_you_sure: 'Are you sure?'
@@ -108,6 +119,8 @@ en:
     models:
       experience: 'Ruby on Rails level'
     attributes:
+      experience:
+        level: 'Level'
       profile:
         experience_id: 'Ruby on Rails level'
         first_name: 'First name'
@@ -117,6 +130,11 @@ en:
         email: 'Email'
         password: 'Password'
         password_confirmation: 'Password confirmation'
+        current_password: 'Current password'
+      message:
+        recipient_group: 'Recipient group'
+        subject: 'Subject'
+        body: 'Body'
   actionview:
     helpers:
       select:

@@ -37,6 +37,8 @@ gem 'delayed_job'
 gem 'cells'
 gem 'apotomo'
 
+gem 'russian'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
