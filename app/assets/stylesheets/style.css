@@ -45,7 +45,7 @@ a.logo { float:left; margin-top:24px;}
 .notification-error {border-bottom:1px solid #ffc1c1; background:#ffd8d8; font-size:12px; line-height:14px;}
 .notification-error .block div {min-height:14px; padding:8px 0 7px 21px; background:url(ico_info_error.png) 0 8px no-repeat; color:#c46969;}
 
-.left { float:left; clear:both; width:650px; padding-bottom:10px;}
+.left { float:left; clear:both; width:650px; padding-bottom:10px; position:relative;}
 .left a { color:#850008;}
 .left .item {padding:20px 0 30px; border-top:1px solid #e0e0e0;}
 .item a { color:#000;}
