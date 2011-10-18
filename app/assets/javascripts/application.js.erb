@@ -20,3 +20,8 @@ function comment_notify(message) {
         },2000)
     });
 }
+
+jQuery(document).ready(function(){
+    VK.init({apiId: <%= SOCIAL_CONFIG['social_groups_id']['vkontakte_apiId'] %>, onlyWidgets: true});
+    VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "250"}, <%= SOCIAL_CONFIG['social_groups_id']['vkontakte'] %>);
+});

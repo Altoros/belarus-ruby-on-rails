@@ -14,6 +14,10 @@ development: &development
   linkedin:
     app_id:
     secret_key:
+  social_groups_id:
+    facebook:
+    vkontakte:
+    vkontakte_apiId:
 test:
   <<: *development
 production:
