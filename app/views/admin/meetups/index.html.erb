@@ -2,33 +2,36 @@
 
 <div class="profile">
   <div class="info">
-<% if @meetup %>
-<table>
-  <tbody>
-   <tr>
-     <th><%= t('meetup.topic') %>:</th>
-     <td><%= @meetup.topic %><td>
-   </tr>
-   <tr>
-     <th><%= t('meetup.description') %>:</th>
-     <td><%= @meetup.description %></td>
-   </tr>
-   <tr>
-     <th><%= t('meetup.place') %>:</th>
-     <td><%= @meetup.place %></td>
-   </tr>
-   <tr>
-     <th><%= t('meetup.date') %>:</th>
-     <td><%= @meetup.date_and_time.strftime("%Y-%m-%d") %></td>
-   </tr>
-   <tr>
-     <th><%= t('meetup.time') %>:</th>
-     <td><%= @meetup.date_and_time.to_s(:time) %></td>
-   </tr>
-  </tbody>
-</table>
-  <%= link_to t('meetup.cancel_link'), admin_meetup_cancel_path(@meetup), :method => :put %>
-  <%= link_to t('meetup.update_link'), edit_admin_meetup_path(@meetup) %>
-<% else %>
-  <%= link_to t('meetup.create_link'), new_admin_meetup_path %>
-<% end %>
+    <% if @meetup %>
+        <table>
+          <tbody>
+           <tr>
+             <th><%= t('meetup.topic') %>:</th>
+             <td><%= @meetup.topic %><td>
+           </tr>
+           <tr>
+             <th><%= t('meetup.description') %>:</th>
+             <td><%= @meetup.description %></td>
+           </tr>
+           <tr>
+             <th><%= t('meetup.place') %>:</th>
+             <td><%= @meetup.place %></td>
+           </tr>
+           <tr>
+             <th><%= t('meetup.date') %>:</th>
+             <td><%= @meetup.date_and_time.strftime("%Y-%m-%d") %></td>
+           </tr>
+           <tr>
+             <th><%= t('meetup.time') %>:</th>
+             <td><%= @meetup.date_and_time.to_s(:time) %></td>
+           </tr>
+          </tbody>
+        </table>
+
+      <%= link_to t('meetup.cancel_link'), admin_meetup_cancel_path(@meetup), :method => :put %>
+      <%= link_to t('meetup.update_link'), edit_admin_meetup_path(@meetup) %>
+    <% else %>
+      <%= link_to t('meetup.create_link'), new_admin_meetup_path %>
+    <% end %>
+  </div>
+</div>
