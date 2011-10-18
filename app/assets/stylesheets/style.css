@@ -57,7 +57,7 @@ a.logo { float:left; margin-top:24px;}
 .iteminfo span.comments {background-image:url(ico_message.png);}
 
 .pages {padding:0 0 40px 0; font-weight:bold; font-size:1px;}
-.pages a {display:inline-block; *display:ilnine; height:21px; padding-right:3px; margin-right:3px; vertical-align:top; font-size:14px; line-height:21px; color:#850008; zoom:1;}
+.pages a, .pages .pagination > span {display:inline-block; *display:ilnine; height:21px; padding-right:3px; margin-right:3px; vertical-align:top; font-size:14px; line-height:21px; color:#850008; zoom:1;}
 .pages a span {display:block;height:21px; padding:0 4px 0 7px; cursor:pointer;}
 .pages a:hover, .pages a.act { background:url(bg_page.png) 100% -21px no-repeat; text-decoration:none;}
 .pages a:hover span, .pages a.act span { background:url(bg_page.png) 0 0 no-repeat; color:#000;}
