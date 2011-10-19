@@ -6,3 +6,4 @@ SOCIAL_CONFIG = YAML.load_file("#{Rails.root}/config/social_config.yml")[Rails.e
 
 # Initialize the rails application
 BelarusRubyOnRails::Application.initialize!
+
