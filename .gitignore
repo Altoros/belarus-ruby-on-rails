@@ -6,4 +6,4 @@ tmp/
 .rvmrc*
 .*~
 config/database.yml
-config/credentials.yml
+config/social_config.yml
