@@ -23,11 +23,7 @@ class Message
   end
 
   def self.deliver(recipient_group, subject, body)
-    emails_list = recipient_group.inject([]) do |res, filter|
-      res |= UsersFilter.emails_list(filter)
-    end
-
-    emails_list.each do |email|
+    UsersFilter.emails_list(recipient_group).each do |email|
       Notifier.custom(email, subject, body).deliver
     end
   end

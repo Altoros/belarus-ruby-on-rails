@@ -17,7 +17,9 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :users, :only => [:new, :create], :path => '/users/omniauth/'
 
   namespace :admin do
-    resources :users
+    resources :users, :except => [:create] do
+      post '/' => 'users#index', :on => :collection
+    end
     resource :message
     resource :dashboard, :only => :show
     resources :articles, :except => [:show]

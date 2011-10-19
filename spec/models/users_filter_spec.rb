@@ -44,10 +44,6 @@ describe UsersFilter do
       @email_list.should_not include(@user_unsubscribed.email)
     end
 
-    it "does not contain email of admin" do
-      @email_list.should_not include(@admin.email)
-    end
-
     it "does not contain duplicate" do
       @email_list.uniq!.should be_nil
     end

@@ -7,6 +7,7 @@
   <td>
     <%= mail_to user.email %>
   </td>
+  <td><%= I18n.l(user.created_at, :format => :short) %></td>
   <td>
   <%= div_for user, :class => "link_to_admin" do %>
     <%= link_to(link_to_admin_title(user), admin_user_path(user), :method => :put) if can? :update, user %>
