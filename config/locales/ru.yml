@@ -7,6 +7,10 @@ ru:
     dashboard: 'Панель админа'
     you_can: 'Вы можете'
     users:
+      users_list: 'Список пользователей'
+      filter_list: 'Список фильтров'
+      filter: 'Фильтровать'
+      download_csv: 'Скачать CSV'
       edit: 'редактировать пользователей'
       not_found: 'Пользователь не найден'
     messages:
@@ -118,6 +122,7 @@ ru:
         email: 'Электронная почта'
         password: 'Пароль'
         password_confirmation: 'Подтвердите пароль'
+        created_at: 'Создан'
   actionview:
     helpers:
       select:
