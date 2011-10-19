@@ -8,7 +8,11 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "http://vkontakte.ru/js/api/openapi.js" %>
     <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
+    <%= javascript_include_tag "http://widgets.twimg.com/j/2/widget.js" %>
     <%= favicon_link_tag 'favicon.ico' %>
+    <%= javascript_tag do -%>
+      var twitter_posts_settings = <%= raw twitter_posts_settings.to_json %>;
+    <% end -%>
   </head>
   <body>
     <div id="fb-root"></div>
@@ -56,7 +60,9 @@
           <div class="social">
             <div id="vk_groups"></div>
           </div>
-          <div class="social"><!-- twitter feed --></div>
+          <div class="social">
+            <div id="twtr-search-widget"></div>
+          </div>
         </div>
         <div class="cl_all"></div>
         <div class="left">

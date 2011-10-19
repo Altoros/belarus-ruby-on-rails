@@ -1,0 +1,46 @@
+<div class="forms">
+    <h1><%= t('twitter_posts.edit') %></h1>
+
+    <%= form_for([:admin, @twitter_post]) do |f| %>
+        <%= errors_for(@twitter_post, t('twitter_posts.unable_save')) %>
+        <table class="loginTBL">
+            <tr>
+                <td><%= f.label :search, t('activerecord.attributes.twitter_post.search') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :search %></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><%= f.label :title, t('activerecord.attributes.twitter_post.title') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :title %></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><%= f.label :subject, t('activerecord.attributes.twitter_post.subject') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :subject %></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><%= f.label :footer_text, t('activerecord.attributes.twitter_post.footer_text') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :footer_text %></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="save">
+                    <button type="submit"><span><span><%= t('twitter_posts.update') %></span></span></button>
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>
+
+<%= t('twitter_posts.example').html_safe() %>
+<%= t('twitter_posts.operators').html_safe() %>
