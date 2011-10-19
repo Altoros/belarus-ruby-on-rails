@@ -5,6 +5,7 @@
     <title><%= t('general.site_name') %></title>
     <%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "lazyload" %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "http://vkontakte.ru/js/api/openapi.js" %>
     <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
@@ -56,7 +57,7 @@
           <div class="social">
             <div id="vk_groups"></div>
           </div>
-          <div class="social"><!-- twitter feed --></div>
+          <%= render :partial => "twitter_block" %>
         </div>
         <div class="cl_all"></div>
         <div class="left">

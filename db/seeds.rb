@@ -17,3 +17,22 @@ Experience.delete_all
 levels.each do |level|
   Experience.create(:level => level)
 end
+
+twitter_block_settings = if I18n.locale.to_s == 'ru'
+                          {:title => 'Что пишут о',
+                          :subject => 'Belarus Ruby on Rails',
+                          :search => '#hacby',
+                          :footer_text => 'Присоединиться к обсуждению'}
+                        else
+                          {:title => 'What is written about',
+                          :subject => 'Belarus Ruby on Rails',
+                          :search => '#hacby',
+                          :footer_text => 'Join the conversation'}
+                        end
+TwitterBlock.delete_all
+TwitterBlock.create(
+  :title => twitter_block_settings[:title],
+  :subject => twitter_block_settings[:subject],
+  :search => twitter_block_settings[:search],
+  :footer_text => twitter_block_settings[:footer_text]
+)
