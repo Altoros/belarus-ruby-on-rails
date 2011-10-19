@@ -24,4 +24,42 @@ function comment_notify(message) {
 jQuery(document).ready(function(){
     VK.init({apiId: <%= SOCIAL_CONFIG['social_groups_id']['vkontakte_apiId'] %>, onlyWidgets: true});
     VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "250"}, <%= SOCIAL_CONFIG['social_groups_id']['vkontakte'] %>);
+
+    if(twitter_posts_settings) {
+      new TWTR.Widget({
+          id: 'twtr-search-widget',
+          version: 2,
+          type: 'search',
+          search: twitter_posts_settings.search,
+          interval: 30000,
+          title: twitter_posts_settings.title,
+          subject: twitter_posts_settings.subject,
+          width: 250,
+          height: 300,
+          theme: {
+              shell: {
+                  background: '#6b0000',
+                  color: '#ffffff'
+              },
+              tweets: {
+                  background: '#ffffff',
+                  color: '#884467',
+                  links: '#6b0000'
+              }
+          },
+          features: {
+              scrollbar: false,
+              loop: true,
+              live: true,
+              hashtags: true,
+              timestamp: true,
+              avatars: true,
+              toptweets: true,
+              behavior: 'default'
+          }
+      })
+      .setFooterText(twitter_posts_settings.footer_text)
+      .render()
+      .start();
+    }
 });
