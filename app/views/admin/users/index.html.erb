@@ -1,9 +1,27 @@
 <h1>UserManager</h1>
+<%= form_tag(admin_users_path, :method => "post", :class=>'forms') do %>
+    <table class='loginTBL'>
+      <tr>
+        <td><%= t 'admin.users.filter_list' %></td>
+        <td><div class='field'><%= select_tag 'filters', options_for_select(UsersFilter.options_for_select, :selected => params[:filters]), { :multiple => true } %></div></td>
+      </tr>
+      <tr><td></td><td></td></tr>
+      <tr>
+        <td class='field' colspan='2'>
+            <button type="submit" onclick="$(this).closest('form').attr('action', '<%= admin_users_path %>');"><span><span><%= I18n.t('admin.users.filter') %></span></span></button>
+            <button type="submit" onclick="$(this).closest('form').attr('action', '<%= admin_users_path(:format => 'csv') %>');"><span><span><%= I18n.t('admin.users.download_csv') %></span></span></button>
+        </td>
+    </table>
+<% end %>
+
 <table>
+    <tr>
+      <th><%= I18n.t('activerecord.attributes.profile.first_name') %></th>
+      <th><%= I18n.t('activerecord.attributes.user.email') %></th>
+      <th><%= I18n.t('activerecord.attributes.user.created_at') %></th>
+      <th></th>
+    </tr>
     <%= render :partial => "admin/users/user", :collection => @users %>
 </table>
 
 <%= will_paginate @users %>
-<hr/>
-
-<%= link_to :Home, root_path %>

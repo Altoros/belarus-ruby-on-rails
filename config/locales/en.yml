@@ -7,6 +7,9 @@ en:
     dashboard: 'Dashboard'
     you_can: 'You can'
     users:
+      filter_list: 'List of filters'
+      filter: 'Filter'
+      download_csv: 'Download CSV'
       edit: 'edit users'
       not_found: 'User not found'
     messages:
@@ -117,6 +120,7 @@ en:
         email: 'Email'
         password: 'Password'
         password_confirmation: 'Password confirmation'
+        created_at: 'Created at'
   actionview:
     helpers:
       select:
