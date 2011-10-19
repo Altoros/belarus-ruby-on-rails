@@ -9,6 +9,10 @@ en:
     users:
       edit: 'edit users'
       edit_current_user: 'Edit user'
+      users_list: 'List of users'
+      filter_list: 'List of filters'
+      filter: 'Filter'
+      download_csv: 'Download CSV'
       not_found: 'User not found'
       manage_users_title: 'User Manager'
       remove_admin: 'Remove admin'
@@ -142,6 +146,7 @@ en:
         password: 'Password'
         password_confirmation: 'Password confirmation'
         current_password: 'Current password'
+        created_at: 'Created at'
       message:
         recipient_group: 'Recipient group'
         subject: 'Subject'

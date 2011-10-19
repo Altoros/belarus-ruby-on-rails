@@ -14,11 +14,11 @@ class Profile < ActiveRecord::Base
             :length => { :maximum => 255 }
   validates :experience_id, :presence => true
 
-  scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
-  scope :subscribed_for_comments, where('subscribed_for_comments = ?', true)
-  scope :participants_on, lambda { |meetup_id|
-    subscribed.joins('INNER JOIN participants ON participants.user_id = users.id')
-      .where('participants.meetup_id = ?', meetup_id)
+  scope :subscribed, where('profiles.subscribed = ?', true)
+  scope :subscribed_for_comments, where('profiles.subscribed_for_comments = ?', true)
+  scope :participants_on, lambda { |meetup_ids|
+    joins('INNER JOIN participants ON participants.user_id = profiles.user_id')
+      .where('participants.meetup_id' => meetup_ids)
   }
 
   def providers_data
