@@ -6,6 +6,7 @@
   <td>
     <%= mail_to user.email %>
   </td>
+  <td><%= l user.created_at, :format => :short %></td>
   <td>
     <%= link_to(link_to_admin_title(user), admin_user_path(user, :attr => 'admin'), :method => :put, :confirm => t('common.are_you_sure')) if can? :update, user %>
     <%= link_to(link_to_banned_title(user), admin_user_path(user, :attr => 'banned'), :method => :put) if can? :ban, user %>

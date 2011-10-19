@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :user_tokens, :dependent => :delete_all
   has_many :articles
   has_many :comments
-  has_many :participants
+  has_many :participants, :dependent => :delete_all
   has_one :profile, :dependent => :destroy
 
   # Include default devise modules. Others available are:
@@ -21,6 +21,9 @@ class User < ActiveRecord::Base
 
   scope :not_admin, where('is_admin = ?', false)
   scope :banned, where('banned = ?', true)
+  scope :filter, lambda{ |*filters|
+    includes(:profile).joins(:profile).merge(Profile.filter(filters))
+  }
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -106,5 +109,21 @@ class User < ActiveRecord::Base
     io = open(URI.parse(path.sub("square","large")))
     def io.original_filename; Digest::MD5.hexdigest(rand.to_s) + '.jpg'; end;
     io
+  end
+
+  def self.to_csv(users)
+    require "csv"
+
+    headers = [ I18n.t('activerecord.attributes.profile.first_name'),
+                I18n.t('activerecord.attributes.profile.last_name'),
+                I18n.t('activerecord.attributes.user.email'),
+                I18n.t('activerecord.attributes.user.created_at') ]
+
+    CSV.generate(:col_sep => "\t") do |tsv|
+      tsv << headers
+      users.each do |user|
+        tsv << [user.profile.first_name, user.profile.last_name, user.email, I18n.l(user.created_at, :format => :short)]
+      end
+    end
   end
 end

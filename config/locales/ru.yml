@@ -9,6 +9,11 @@ ru:
     users:
       edit: 'управлять учетными записями пользователей'
       edit_current_user: 'Редактирование пользователя'
+      users_list: 'Список пользователей'
+      filter_list: 'Список фильтров'
+      filter: 'Фильтровать'
+      all_user_remark: 'Очистите селектор фильтров, чтобы выбрать всех пользователей'
+      download_csv: 'Скачать CSV'
       not_found: 'Пользователь не найден'
       manage_users_title: 'Управление учетными записями пользователей'
       remove_admin: 'Отозвать права администратора'
@@ -155,6 +160,7 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтвердите пароль'
         current_password: 'Текущий пароль'
+        created_at: 'Создан'
       message:
         recipient_group: 'Адресаты'
         subject: 'Тема'
