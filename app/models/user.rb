@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :user_tokens, :dependent => :delete_all
   has_many :comments
-  has_many :participants
+  has_many :participants, :dependent => :delete_all
   has_one :profile, :dependent => :destroy
 
   # Include default devise modules. Others available are:
@@ -16,6 +16,12 @@ class User < ActiveRecord::Base
   validates :profile, :presence => true
 
   scope :not_admin, where('is_admin = ?', false)
+  scope :filter, lambda{ |*filters|
+    filters = filters.compact.flatten
+    if filters.present? && !filters.include?(UsersFilter::ALL_OPTION)
+      joins(:profile).merge(Profile.participants_on(filters))
+    end
+  }
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -72,5 +78,21 @@ class User < ActiveRecord::Base
 
   def change_admin_state!
     toggle!(:is_admin)
+  end
+
+  def self.to_csv(users)
+    require "csv"
+
+    headers = [ I18n.t('activerecord.attributes.profile.first_name'),
+                I18n.t('activerecord.attributes.profile.last_name'),
+                I18n.t('activerecord.attributes.user.email'),
+                I18n.t('activerecord.attributes.user.created_at') ]
+
+    CSV.generate(:col_sep => "\t") do |tsv|
+      tsv << headers
+      users.each do |user|
+        tsv << [user.profile.first_name, user.profile.last_name, user.email, I18n.l(user.created_at, :format => :short)]
+      end
+    end
   end
 end
