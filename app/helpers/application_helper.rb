@@ -36,4 +36,11 @@ module ApplicationHelper
 
     html.html_safe
   end
+
+  def userpic_url(user, size)
+    default_url = "#{root_url}assets/upic_default.jpg"
+
+    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default_url}"
+  end
 end
