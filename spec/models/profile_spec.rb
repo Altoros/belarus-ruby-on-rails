@@ -42,4 +42,44 @@ describe Profile do
   it { should validate_attachment_content_type(:avatar).
               allowing('image/png', 'image/gif', 'image/jpg').
               rejecting('text/plain', 'text/xml') }
+
+  context '.subscribed.participants_on' do
+    before(:each) do
+      @meetup = Factory :meetup
+      @meetup_second = Factory :meetup, :date_and_time => Time.now + 1.week
+      @user_subscribed = Factory(:user, :profile => Factory(:profile,
+                                                    :subscribed => true,
+                                                    :experience => Factory(:experience)))
+      @user_unsubscribed = Factory(:user)
+      @admin = Factory(:user, :is_admin => true, :profile => Factory(:profile,
+                                                    :subscribed => true,
+                                                    :experience => Factory(:experience)))
+
+      @user_subscribed.participants.create(:meetup_id => @meetup.id)
+      @user_subscribed.participants.create(:meetup_id => @meetup_second.id)
+
+      @user_unsubscribed.participants.create(:meetup_id => @meetup.id)
+
+      @admin.participants.create(:meetup_id => @meetup.id)
+      @admin.participants.create(:meetup_id => @meetup_second.id)
+
+      @participants = Profile.subscribed.participants_on(@meetup.id.to_s)
+    end
+
+    it "contains email of subscribed user" do
+      @participants.should include(@user_subscribed.profile)
+    end
+
+    it "does not contain email of unsubscribed user" do
+      @participants.should_not include(@user_unsubscribed.profile)
+    end
+
+    it "contain email of admin" do
+      @participants.should include(@admin.profile)
+    end
+
+    it "does not contain duplicate" do
+      @participants.uniq!.should be_nil
+    end
+  end
 end
