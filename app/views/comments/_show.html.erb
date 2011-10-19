@@ -9,7 +9,7 @@
     <% end %>
 
     <div class="upic">
-      <%= image_tag("upic.jpg")%>
+      <%= image_tag userpic_url(comment.user, 50) %>
     </div>
     <div class="comment_text"><%= comment.body %></div>
     <span class="date"><%= l(comment.created_at, :format => :long) %></span>
