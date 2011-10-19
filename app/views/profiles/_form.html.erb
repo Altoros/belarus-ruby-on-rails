@@ -1,6 +1,7 @@
 <div class="forms">
   <%= form_for(@profile) do |f| %>
 
+    <%= render 'profiles/userpic', :user => @profile.user %>
     <%= render 'profiles/name', :f => f %>
     <%= render 'profiles/level', :f => f %>
 

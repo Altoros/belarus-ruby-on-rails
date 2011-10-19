@@ -1,6 +1,6 @@
 <div class="to_comment">
   <div class="upic">
-    <%= image_tag("upic-empty.jpg")%>
+    <%= image_tag userpic_url(current_user, 50) %>
   </div>
     <div>
       <%= form_for [comment.article, comment], :remote => true do |f| %>
