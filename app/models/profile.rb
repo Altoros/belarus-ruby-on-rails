@@ -20,11 +20,17 @@ class Profile < ActiveRecord::Base
                                       ['image/png', 'image/gif', 'image/x-png', 'image/jpeg', 'image/jpg'],
                                       :message => I18n.t('profile.wrong_image_type')}
 
-  scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
-  scope :subscribed_for_comments, where('subscribed_for_comments = ?', true)
-  scope :participants_on, lambda { |meetup_id|
-    subscribed.joins('INNER JOIN participants ON participants.user_id = users.id')
-      .where('participants.meetup_id = ?', meetup_id)
+  scope :subscribed, where('profiles.subscribed = ?', true)
+  scope :subscribed_for_comments, where('profiles.subscribed_for_comments = ?', true)
+  scope :participants_on, lambda { |meetup_ids|
+    joins('INNER JOIN participants ON participants.user_id = profiles.user_id')
+      .where('participants.meetup_id' => meetup_ids)
+  }
+  scope :filter, lambda{ |*filters|
+    filters = filters.compact.flatten
+    if filters.present?
+      participants_on(filters)
+    end
   }
 
   def providers_data
