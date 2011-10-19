@@ -23,7 +23,10 @@ BelarusRubyOnRails::Application.configure do
 #  config.action_mailer.default :charset => 'utf-8',
 #                               :from => 'no-reply@belarusrubyonrails.org'
 #
-  config.action_mailer.default :from => 'belarusrubyonrails@gmail.com'
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = { :arguments => '-i' }
+  config.action_mailer.default :charset => 'utf-8',
+                               :from => 'no-reply@belarusrubyonrails.org'
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

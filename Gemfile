@@ -37,8 +37,6 @@ gem 'delayed_job'
 gem 'cells'
 gem 'apotomo'
 
-gem 'tlsmail'
-
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
