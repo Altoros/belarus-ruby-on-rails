@@ -142,6 +142,11 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      twitter_block:
+        search: 'Поиск'
+        title: 'Заголовок'
+        subject: 'Тема'
+        footer_text: 'Нижний текст'
   actionview:
     helpers:
       select:
@@ -151,9 +156,24 @@ ru:
   static_pages:
     friends:
       title: 'Друзья'
-      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
+      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p>
+        <p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
     about:
       title: 'О нас'
       content: '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
   exception:
     no_icon_for_provider: 'Нет иконки для провайдера %{provider_name}'
+  twitter_blocks:
+    edit: 'Изменить настройки сообщений из twitter'
+    new_block: 'Добавить новый twitter блок'
+    listing_blocks: 'Список twitter блоков'
+    title: 'Заголовок'
+    delete: 'Удалить'
+    are_you_sure: 'Вы уверены, что хотите удалить блок?'
+    add_a_block: 'Добавить'
+    no_blocks: 'Еще пока нету блоков'
+    successfully_deleted: 'Успешно удален'
+    successfully_created: 'Успешно создан'
+    unable_save: 'Не удалось сохранить настройки сообщений из twitter'
+    update: 'Обновить'
+    successfully_updated: 'Нстройки успешно обновлены'

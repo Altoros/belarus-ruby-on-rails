@@ -1,0 +1,8 @@
+<%= javascript_include_tag "twitter_block" %>
+<%= javascript_tag do %>
+  var twitter_blocks_settings = <%= raw twitter_blocks_settings.to_json %>;
+<% end %>
+
+<div class="social">
+  <%= raw twitter_blocks %>
+</div>
