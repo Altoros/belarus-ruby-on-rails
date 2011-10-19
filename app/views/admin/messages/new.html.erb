@@ -4,8 +4,15 @@
     <%= form_for @message, :url => admin_message_path do |f| %>
         <table class="loginTBL">
             <tr>
-                <td><%= f.label t('activerecord.attributes.message.recipient_group') %></td>
-                <td><div class='field'><%= f.select :recipient_group, UsersFilter.options_for_select, {}, { :multiple => true } %></div></td>
+                <td>
+                  <%= f.label t('activerecord.attributes.message.recipient_group') %>
+                  <i> <%= t 'admin.users.all_user_remark' %></i>
+                </td>
+                <td>
+                  <div class='field'>
+                    <%= f.select :recipient_group, options_from_collection_for_select(Meetup.order('topic').all, 'id', 'topic', @message.recipient_group), {}, { :multiple => true } %>
+                  </div>
+                </td>
             </tr>
             <tr>
                 <td><%= f.label t('activerecord.attributes.message.subject') %></td>
