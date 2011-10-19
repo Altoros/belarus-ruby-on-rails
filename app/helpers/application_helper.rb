@@ -29,4 +29,16 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def twitter_blocks_settings
+    settings = TwitterBlock.first
+    if settings
+      {
+        :search => settings.search,
+        :title => settings.title,
+        :subject => settings.subject,
+        :footer_text => settings.footer_text
+      }
+    end
+  end
+
 end
