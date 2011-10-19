@@ -9,13 +9,13 @@ describe Message do
   it { should have_at_least(1).error_on(:body) }
 
   it "is not valid if fake recipient group" do
-    message = Factory.build(:message, :recipient_group => ['0', '42'])
+    message = Factory.build(:message, :recipient_group => [UsersFilter::ALL_OPTION, '42'])
     message.should have_at_least(1).error_on(:recipient_group)
   end
 
   it "is valid if existing meetup filter" do
     meetup = Factory :meetup
-    message = Factory.build(:message, :recipient_group => ['0', meetup.id])
+    message = Factory.build(:message, :recipient_group => [UsersFilter::ALL_OPTION, meetup.id])
     message.should have_at_least(1).error_on(:recipient_group)
   end
 
