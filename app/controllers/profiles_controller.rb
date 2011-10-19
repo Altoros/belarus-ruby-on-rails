@@ -1,10 +1,11 @@
 class ProfilesController < ApplicationController
   load_and_authorize_resource
 
+  before_filter :get_profile
+
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @profile = Profile.find(params[:id])
     @providers = @profile.providers_data
 
     respond_to do |format|
@@ -15,14 +16,11 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   # PUT /profiles/1
   # PUT /profiles/1.json
   def update
-    @profile = Profile.find(params[:id])
-
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
         format.html { redirect_to @profile, :notice => 'Profile was successfully updated.' }
@@ -34,4 +32,9 @@ class ProfilesController < ApplicationController
     end
   end
 
+  private
+
+  def get_profile
+    @profile = Profile.includes(:user).find(params[:id])
+  end
 end

@@ -2,6 +2,7 @@
   <%= form_for(@profile) do |f| %>
     <%= errors_for(@profile, t('errors.changes_not_saved')) %>
 
+    <%= render 'profiles/userpic', :user => @profile.user %>
     <%= render 'profiles/name', :f => f %>
     <%= render 'profiles/level', :f => f %>
 

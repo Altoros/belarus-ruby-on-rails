@@ -76,6 +76,19 @@ describe ProfilesController do
       it "renders the 'show' template" do
         response.should render_template(:show)
       end
+
+      context 'without gravatar userpic' do
+        it 'show default avatar' do
+          puts response.methods.inspect
+          response.should have_content('Name')
+        end
+      end
+
+      context 'with gravatar userpic' do
+        it 'show gravatar icon' do
+
+        end
+      end
     end
 
     describe "#edit" do
