@@ -141,6 +141,11 @@ en:
         recipient_group: 'Recipient group'
         subject: 'Subject'
         body: 'Body'
+      twitter_block:
+        search: 'Search'
+        title: 'Title'
+        subject: 'Subject'
+        footer_text: 'Footer text'
   actionview:
     helpers:
       select:
@@ -154,3 +159,17 @@ en:
       title: 'About'
   exception:
     no_icon_for_provider: 'No icon for provider %{provider_name}'
+  twitter_blocks:
+    edit: 'Edit twitter posts settings'
+    new_block: 'Add new twitter block'
+    listing_blocks: 'List of twitter blocks'
+    title: 'Title'
+    delete: 'Delete'
+    are_you_sure: 'Are you sure to delete block?'
+    add_a_block: 'Create'
+    no_blocks: 'There is no twitter blocks'
+    successfully_deleted: 'Successfully deleted'
+    successfully_created: 'Successfully created'
+    unable_save: 'Unable to save twitter posts settings'
+    update: 'Update'
+    successfully_updated: 'Settings successfully updated'

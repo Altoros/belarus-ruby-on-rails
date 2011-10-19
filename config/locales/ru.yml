@@ -141,6 +141,11 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      twitter_block:
+        search: 'Поиск'
+        title: 'Заголовок'
+        subject: 'Тема'
+        footer_text: 'Нижний текст'
     errors:
       models:
         profile:
@@ -164,3 +169,17 @@ ru:
       title: 'О нас'
   exception:
     no_icon_for_provider: 'Нет иконки для провайдера %{provider_name}'
+  twitter_blocks:
+    edit: 'Изменить настройки сообщений из twitter'
+    new_block: 'Добавить новый twitter блок'
+    listing_blocks: 'Список twitter блоков'
+    title: 'Заголовок'
+    delete: 'Удалить'
+    are_you_sure: 'Вы уверены, что хотите удалить блок?'
+    add_a_block: 'Добавить'
+    no_blocks: 'Еще пока нету блоков'
+    successfully_deleted: 'Успешно удален'
+    successfully_created: 'Успешно создан'
+    unable_save: 'Не удалось сохранить настройки сообщений из twitter'
+    update: 'Обновить'
+    successfully_updated: 'Нстройки успешно обновлены'
