@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011122020) do
+ActiveRecord::Schema.define(:version => 20111019071047) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -87,6 +87,13 @@ ActiveRecord::Schema.define(:version => 20111011122020) do
     t.integer "experience_id"
     t.boolean "subscribed",              :default => false
     t.boolean "subscribed_for_comments", :default => false
+  end
+
+  create_table "twitter_blocks", :force => true do |t|
+    t.string "title"
+    t.string "subject"
+    t.string "search"
+    t.string "footer_text"
   end
 
   create_table "user_tokens", :force => true do |t|

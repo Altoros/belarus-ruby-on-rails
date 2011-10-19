@@ -135,6 +135,11 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      twitter_block:
+        search: 'Поиск'
+        title: 'Заголовок'
+        subject: 'Тема'
+        footer_text: 'Нижний текст'
   actionview:
     helpers:
       select:
@@ -144,7 +149,23 @@ ru:
   static_pages:
     friends:
       title: 'Друзья'
-      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
+      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p>
+        <p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
     about:
       title: 'О нас'
       content: '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
+  twitter_blocks:
+    edit: 'Изменить настройки сообщений из twitter'
+    unable_save: 'Не удалось сохранить настройки сообщений из twitter'
+    update: 'Обновить'
+    successfully_updated: 'Нстройки успешно обновлены'
+    example: '<p>Пример:</p>
+      <p>from:dsgn_pro OR from:1stwebdesigner OR 1stwebdesigner OR 1wd</p>'
+    operators: '<p>Возможные операторы:</p>
+      <ul>
+        <li><b>#item</b> - поиск по hastag</li>
+        <li><b>from:USERID</b> - поиск по пользователю @USERID</li>
+        <li><b>filter:links</b> - поиск по ссылкам</li>
+        <li><b>:)</b> и <b>:(</b> и <b>?</b> - поиск positive / negative / question аттрибутов</li>
+        <li><b>-item</b> (минус) - это не оператор. Это исключает “item” из поиска.</li>
+      </ul>'
