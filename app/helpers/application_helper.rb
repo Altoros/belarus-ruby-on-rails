@@ -29,4 +29,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def twitter_blocks_settings
+    TwitterBlock.find(:all)
+  end
+
 end

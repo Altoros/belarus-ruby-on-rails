@@ -148,6 +148,8 @@ button:active span span { background-position:0 -124px;}
 .social_name img { float:left; margin-right:12px;}
 .social_name span { float:left; width:255px; margin-top:5px; font-size:20px; line-height:24px;}
 
+.twtr-search-widget {margin-bottom:20px;}
+
 .participation { overflow:hidden; padding:0 0 16px 40px; margin-bottom:15px; background:url(ico_info.png) 0 3px no-repeat; color:#3e7600; font-size:17px; line-height:22px; border-bottom:1px solid #c0c0c0;}
 
 a.share { display:inline-block; *display:inline; padding:0 0 0 20px; margin:10px 0; background:url(ico_share.png) 0 4px no-repeat; color:#850008; font-size:14px; zoom:1;}

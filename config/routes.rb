@@ -6,9 +6,9 @@ BelarusRubyOnRails::Application.routes.draw do
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"} do
     scope "/users/" do
-      get 'sign_in', :to => "devise/sessions#new", :as => 'login'
-      post 'sign_in', :to => "devise/sessions#create", :as => 'login'
-      delete 'sign_out', :to => "devise/sessions#destroy", :as => 'logout'
+      get 'sign_in', :to => 'devise/sessions#new', :as => 'login'
+      post 'sign_in', :to => 'devise/sessions#create', :as => 'login'
+      delete 'sign_out', :to => 'devise/sessions#destroy', :as => 'logout'
       get 'auth/:provider', :to => 'omniauth#passthru'
       get 'reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
     end
@@ -23,8 +23,9 @@ BelarusRubyOnRails::Application.routes.draw do
     resources :articles, :except => [:show]
     root :to => 'dashboards#show'
     resources :meetups do
-      put 'cancel' => "meetups#cancel"
+      put 'cancel' => 'meetups#cancel'
     end
+    resources :twitter_blocks
   end
 
   match '/about' => 'static_page#about'

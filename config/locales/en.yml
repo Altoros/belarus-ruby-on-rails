@@ -143,6 +143,11 @@ en:
         recipient_group: 'Recipient group'
         subject: 'Subject'
         body: 'Body'
+      twitter_block:
+        search: 'Search'
+        title: 'Title'
+        subject: 'Subject'
+        footer_text: 'Footer text'
   actionview:
     helpers:
       select:
@@ -152,9 +157,24 @@ en:
   static_pages:
     friends:
       title: 'Friends'
-      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
+      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p>
+        <p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
     about:
       title: 'About'
       content: '<p>Belarussian Ruby on Rails User Group is community of Rails-developers in Belarus, was found for exchenging ideas and expirience. We are also interested in developing Ruby on Rails in our country and help each other to build successfull IT-career.</p><p>If you would like take part in developing Belarus Ruby on Rails User Group, please send your ideas to: <a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
   exception:
     no_icon_for_provider: 'No icon for provider %{provider_name}'
+  twitter_blocks:
+    edit: 'Edit twitter posts settings'
+    new_block: 'Add new twitter block'
+    listing_blocks: 'List of twitter blocks'
+    title: 'Title'
+    delete: 'Delete'
+    are_you_sure: 'Are you sure to delete block?'
+    add_a_block: 'Create'
+    no_blocks: 'There is no twitter blocks'
+    successfully_deleted: 'Successfully deleted'
+    successfully_created: 'Successfully created'
+    unable_save: 'Unable to save twitter posts settings'
+    update: 'Update'
+    successfully_updated: 'Settings successfully updated'

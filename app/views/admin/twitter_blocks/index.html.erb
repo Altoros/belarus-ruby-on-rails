@@ -1,0 +1,22 @@
+<h1><%= t('twitter_blocks.listing_blocks') %></h1>
+
+<% if @twitter_blocks.empty? %>
+
+  <%= t('twitter_blocks.no_blocks') %>
+
+<% else %>
+
+  <% @twitter_blocks.each do |block| %>
+    <div>
+      <%= link_to "#{block.title} #{block.subject}", edit_admin_twitter_block_path(block) %>
+      <%= link_to t('twitter_blocks.delete'), admin_twitter_block_path(block), confirm: t('twitter_blocks.are_you_sure'), method: :delete %>
+    </div>
+  <% end %>
+
+<% end %>
+
+<br /><br />
+
+<%= link_to t('twitter_blocks.add_a_block'), new_admin_twitter_block_path %>
+
+<%= will_paginate @twitter_blocks %>
