@@ -54,8 +54,8 @@ describe Admin::ArticlesController do
           assigns(:article).should be_persisted
         end
 
-        it "redirects to the created article" do
-          response.should redirect_to(edit_admin_article_path(Article.last))
+        it "redirects to the articles list in admin control panel" do
+          response.should redirect_to(admin_articles_path)
         end
       end
 
