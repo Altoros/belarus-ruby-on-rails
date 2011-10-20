@@ -70,4 +70,4 @@ Feature: Sign up
         | Password              | please          |
         | Password confirmation | please          |
       And I press "Sign up"
-      Then I should see "Profile experience can't be blank"
+      Then I should see "Ruby on Rails level can't be blank"

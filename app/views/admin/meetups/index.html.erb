@@ -19,7 +19,7 @@
            </tr>
            <tr>
              <th><%= t('meetup.date') %>:</th>
-             <td><%= l(@meetup.date_and_time, :format => :long) %></td>
+             <td><%= l(@meetup.date_and_time.to_date, :format => :long) %></td>
            </tr>
            <tr>
              <th><%= t('meetup.time') %>:</th>
@@ -28,7 +28,7 @@
           </tbody>
         </table>
 
-      <%= link_to t('meetup.cancel_link'), admin_meetup_cancel_path(@meetup), :method => :put %>
+      <%= link_to t('meetup.cancel_link'), admin_meetup_cancel_path(@meetup), :confirm => t('meetup.are_you_sure'), :method => :put %>
       <%= link_to t('meetup.update_link'), edit_admin_meetup_path(@meetup) %>
     <% else %>
       <%= link_to t('meetup.create_link'), new_admin_meetup_path %>

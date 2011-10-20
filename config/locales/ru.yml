@@ -50,11 +50,12 @@ ru:
     create_link: 'Создать митап'
     update_link: 'Редактировать митап'
     back_link: 'Назад'
-    meetups_link: 'Митапы'
+    meetups_link: 'управление митапами'
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'
     signed_in_to_attend: 'Ты должен быть зарегистрированным пользователем, чтобы записаться на митап'
     registered: 'Вы участвуете'
+    are_you_sure: 'Вы уверены?'
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'

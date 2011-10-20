@@ -50,11 +50,12 @@ en:
     create_link: 'Create meetup'
     update_link: 'Edit meetup'
     back_link: 'Back'
-    meetups_link: 'Manage meetups'
+    meetups_link: 'manage meetups'
     save_button: 'Save it!'
     register_at: 'Register to meetup'
     signed_in_to_attend: 'You need to be signed in to attempt to meetup'
     registered: 'You are participant !!!'
+    are_you_sure: 'Are you sure?'
   articles:
     article_successfully_created: 'Article was successfully created'
     article_successfully_updated: 'Article was successfully updated'

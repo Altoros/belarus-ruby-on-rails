@@ -98,7 +98,7 @@ Feature: OmniAuth authorization via Social Networks
       Given I follow "Login"
       And I follow "Sign in with <provider>"
       When I press "Create"
-      Then I should see "Profile experience can't be blank"
+      Then I should see "Ruby on Rails level can't be blank"
 
       Examples: providers
         | provider    |

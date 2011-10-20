@@ -1,9 +1,8 @@
-<% resource.build_profile %>
+<% resource.build_profile if resource.profile.nil? %>
 <div class="forms">
   <h1><%= t('users.sign_up') %></h1>
   <div class="required"><%= t('users.all_fields_are_required') %></div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
     <table class="loginTBL">
       <%= f.fields_for :profile do |ff|%>
         <%= render 'profiles/name', :f => ff %>

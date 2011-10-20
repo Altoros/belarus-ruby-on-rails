@@ -2,7 +2,6 @@
     <h1><%= t('admin.messages.title') %></h1>
     <div class="required"><%= t('users.all_fields_are_required') %></div>
     <%= form_for @message, :url => admin_message_path do |f| %>
-      <%= errors_for @message %>
         <table class="loginTBL">
             <tr>
                 <td><%= f.label t('activerecord.attributes.message.recipient_group') %></td>

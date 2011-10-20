@@ -1,7 +1,6 @@
 <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
 <div class="forms">
     <%= form_for([:admin, @article]) do |f| %>
-        <%= errors_for(@article, t('articles.unable_save')) %>
         <table class="loginTBL">
             <tr>
                 <td><%= f.label :title, t('articles.title') %></td>

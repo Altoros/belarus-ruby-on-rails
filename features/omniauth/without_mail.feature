@@ -48,7 +48,7 @@ Feature: Social Network authorization without shared email
       Given I follow "Sign in with <provider>"
       When I fill in "Email" with "example@example.com"
       And I press "Create"
-      Then I should see "Profile experience can't be blank"
+      Then I should see "Ruby on Rails level can't be blank"
 
       Examples: providers
         | provider    |
