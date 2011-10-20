@@ -38,5 +38,19 @@ describe ArticlesController do
       end
     end
 
+    describe "#show using friendly ID" do
+      before(:each) do
+        @article = Factory(:article)
+        get :show, :id => @article.slug
+      end
+
+      it "assigns the requested article as @article" do
+        assigns(:article).should eq(@article)
+      end
+
+      it "renders the 'show' template" do
+        response.should render_template(:show)
+      end
+    end
   end
 end
