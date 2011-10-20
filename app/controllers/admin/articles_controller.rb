@@ -5,7 +5,7 @@ class Admin::ArticlesController < ApplicationController
   # GET /admin/articles.json
   def index
     authorize! :admin, :dashboard
-    @articles = Article.paginate(
+    @articles = Article.internal.paginate(
       :per_page => 20,
       :page => params[:page],
       :order => 'created_at DESC'
@@ -20,7 +20,7 @@ class Admin::ArticlesController < ApplicationController
   # GET /admin/articles/new
   # GET /admin/articles/new.json
   def new
-    @article = Article.new
+    @article = Article.internal.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -30,13 +30,13 @@ class Admin::ArticlesController < ApplicationController
 
   # GET /admin/articles/1/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.internal.find(params[:id])
   end
 
   # POST /admin/articles
   # POST /admin/articles.json
   def create
-    @article = Article.new(params[:article])
+    @article = Article.internal.new(params[:article])
     @article.user = current_user
 
     respond_to do |format|
@@ -53,7 +53,7 @@ class Admin::ArticlesController < ApplicationController
   # PUT /admin/articles/1
   # PUT /admin/articles/1.json
   def update
-    @article = Article.find(params[:id])
+    @article = Article.internal.find(params[:id])
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
@@ -69,7 +69,7 @@ class Admin::ArticlesController < ApplicationController
   # DELETE /admin/articles/1
   # DELETE /admin/articles/1.json
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.internal.find(params[:id])
     @article.destroy
 
     respond_to do |format|

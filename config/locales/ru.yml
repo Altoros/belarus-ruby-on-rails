@@ -78,13 +78,16 @@ ru:
     create: 'Создать'
     add_an_article: 'добавить статью'
     see_articles_list: 'просмотреть список статей'
+    see_aggregated_articles_list: 'просмотреть список rss статей'
     editing_article: 'Редактирование статьи'
     new_article: 'Новая статья'
     show: 'Читать статью полностью'
     listing_articles: 'Список статей'
+    listing_aggregated_articles: 'Список rss статей'
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+    rss_link: 'Ссылка на источник'
   users:
     login: 'Вход'
     logout: 'Выход'
@@ -148,6 +151,8 @@ ru:
         footer_text: 'Нижний текст'
       static_pages:
         permalink: 'Постоянная ссылка'
+      aggregator_configurations:
+        source: 'Источник'
     errors:
       models:
         profile:
@@ -196,3 +201,8 @@ ru:
     unable_save: 'Не удалось сохранить настройки сообщений из twitter'
     update: 'Обновить'
     successfully_updated: 'Нстройки успешно обновлены'
+  aggregator_configurations:
+    edit: 'Изменение настроек аггрегатора'
+    successfully_updated: 'Настройки аггрегатора успешно сохранены'
+    unable_save: 'Не удалось сохранить настройки аггрегатора'
+

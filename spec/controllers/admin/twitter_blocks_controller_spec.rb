@@ -46,7 +46,7 @@ describe Admin::TwitterBlocksController do
         let(:attributes) { Factory.attributes_for(:twitter_block) }
 
         it "creates a new TwitterBlock" do
-          TwitterBlock.all.should have(1).item
+          TwitterBlock.all.should have_at_least(1).item
         end
 
         it "assigns a newly created twitter_block as @twitter_block" do
@@ -120,7 +120,7 @@ describe Admin::TwitterBlocksController do
       end
 
       it "destroys the requested twitter block" do
-        TwitterBlock.all.should have(0).items
+        TwitterBlock.find_by_id(@twitter_block.id).should be_nil
       end
 
       it "redirects to the twitter blocks list" do
