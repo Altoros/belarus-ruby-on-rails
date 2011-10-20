@@ -17,3 +17,7 @@ Experience.delete_all
 levels.each do |level|
   Experience.create(:level => level)
 end
+
+AggregatorConfiguration.create(
+  :source => 'http://news.google.com/news?cf=all&ned=ru_ru&hl=ru&q=%22ruby+on+rails%22+OR+%22Ruby-on-RAILS%22+OR+%22ruby+development%22+OR+%22rails+development%22+OR+%22ruby+developers%22+OR+%22rails+developers%22&as_qdr=d&as_drrb=q&cf=all&scoring=n&output=rss'
+)

@@ -1,10 +1,10 @@
-class ArticlesController < ApplicationController
+class AggregatedArticlesController < ApplicationController
   load_and_authorize_resource
 
-  # GET /articles
-  # GET /articles.json
+  # GET /aggregated_articles
+  # GET /aggregated_articles.json
   def index
-    @articles = Article.internal.published.paginate(
+    @articles = AggregatedArticle.published.paginate(
       :per_page => 5,
       :page => params[:page],
       :order => 'created_at DESC'
@@ -16,11 +16,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET /aggregated_articles/1
+  # GET /aggregated_articles/1.json
   def show
-    @article = Article.internal.find(params[:id])
-    @share = {:title => @article.title}
+    @article = AggregatedArticle.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

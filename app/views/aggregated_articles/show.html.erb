@@ -1,0 +1,11 @@
+<div class="item">
+  <h2>
+    <%= link_to(@article.title, @article.rss_link, :target => :_blank) %>
+  </h2>
+  <div class="iteminfo">
+    <span class="date"><%= @article.created_at%></span>
+    <div>
+        <p><%= @article.content.html_safe %></p>
+    </div>
+  </div>
+</div>

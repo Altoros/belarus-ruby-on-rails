@@ -1,0 +1,45 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<div class="forms">
+    <%= form_for([:admin, @article]) do |f| %>
+        <%= errors_for(@article, t('articles.unable_save')) %>
+        <table class="loginTBL">
+            <tr>
+                <td><%= f.label :title, t('articles.title') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :title %></div>
+                </td>
+            </tr>
+            <tr>
+                <td><%= f.label :rss_link, t('articles.rss_link') %></td>
+                <td>
+                  <div class="field"><%= f.text_field :rss_link %></div>
+                </td>
+            </tr>
+            <tr>
+                <td><%= f.label :content, t('articles.content') %></td>
+                <td></td>
+            </tr>
+            <tr>
+              <td colspan="2"><div class="field"><%= f.cktext_area :content %></div></td>
+            </tr>
+
+            <tr>
+                <td><%= f.label :published, t('articles.status') %></td>
+                <td>
+                  <div class="field"><%= f.select(:published, [[t('articles.published'), true], [t('articles.unpublished'), false]]) %></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="save">
+                    <% if params[:id] != nil %>
+                      <button type="submit"><span><span><%= t('articles.update') %></span></span></button>
+                      <button type="submit" name="commit" onclick="update_edit_article_action();"><span><span><%= t('articles.delete') %></span></span></button>
+                    <% else %>
+                      <button type="submit"><span><span><%=t('articles.create') %></span></span></button>
+                    <% end %>
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>
