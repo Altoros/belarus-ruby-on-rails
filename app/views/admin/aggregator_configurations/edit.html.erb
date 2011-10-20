@@ -1,0 +1,22 @@
+<div class="forms">
+    <h1><%= t('aggregator_configurations.edit') %></h1>
+
+    <%= form_for([:admin, @aggregator_configuration]) do |f| %>
+        <%= errors_for(@aggregator_configuration, t('aggregator_configurations.unable_save')) %>
+        <table class="loginTBL">
+            <tr>
+                <td><%= f.label :source, t('activerecord.attributes.aggregator_configurations.source') %></td>
+                <td>
+                  <div class="field"><%= f.text_area :source %></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="save">
+                    <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>

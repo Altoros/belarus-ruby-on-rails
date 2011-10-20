@@ -9,7 +9,7 @@
   <% @twitter_blocks.each do |block| %>
     <div>
       <%= link_to "#{block.title} #{block.subject}", edit_admin_twitter_block_path(block) %>
-      <%= link_to t('twitter_blocks.delete'), admin_twitter_block_path(block), confirm: t('twitter_blocks.are_you_sure'), method: :delete %>
+      <%= link_to t('common.delete'), admin_twitter_block_path(block), confirm: t('common.are_you_sure'), method: :delete %>
     </div>
   <% end %>
 

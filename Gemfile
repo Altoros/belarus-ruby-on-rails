@@ -44,6 +44,8 @@ gem 'babosa'
 
 gem 'truncate_html'
 
+gem 'feedzirra'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.published.paginate(
+    @articles = Article.internal.published.paginate(
       :per_page => 5,
       :page => params[:page],
       :order => 'created_at DESC'
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article = Article.includes(:user => :profile).includes(:comments).find(params[:id])
+    @article = Article.internal.includes(:user => :profile).includes(:comments).find(params[:id])
     @share = { :title => @article.title }
 
 # Could be used to avoid from duplicate link for SEO purpose
