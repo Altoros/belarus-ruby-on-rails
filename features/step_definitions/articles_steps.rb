@@ -1,9 +1,9 @@
 Given /^article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
-  Factory(:article, {:title => title, :content => content, :published => true})
+  Factory(:article, {:title => title, :content => content, :published => true, :user => Factory(:user)})
 end
 
 Given /^unpublished article exists with title "([^"]*)" and content "([^"]*)"$/ do |title, content|
-  Factory(:article, {:title => title, :content => content, :published => false})
+  Factory(:article, {:title => title, :content => content, :published => false, :user => Factory(:user)})
 end
 
 When /^I follow "([^"]*)" page$/ do |title|
