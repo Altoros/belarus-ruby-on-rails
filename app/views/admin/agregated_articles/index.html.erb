@@ -1,0 +1,27 @@
+<h1><%= t('articles.listing_agregated_articles') %></h1>
+
+<% if @articles.empty? %>
+
+   t('articles.no_news')
+
+<% else %>
+
+  <table>
+    <tr>
+      <th><%= t('articles.title') %></th>
+      <th></th>
+    </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= link_to t('articles.delete'), admin_agregated_article_path(article), confirm: t('articles.are_you_sure'), method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<% end %>
+
+<br />
+
+<%= will_paginate @articles %>
