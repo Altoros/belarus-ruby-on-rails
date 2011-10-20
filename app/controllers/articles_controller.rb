@@ -20,10 +20,17 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @share = {:title => @article.title}
+    @share = { :title => @article.title }
+
+# Could be used to avoid from duplicate link for SEO purpose
+=begin
+    if request.path != article_path(@article)
+      return redirect_to @article, :status => :moved_permanently
+    end
+=end
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render :json => @article }
     end
   end
