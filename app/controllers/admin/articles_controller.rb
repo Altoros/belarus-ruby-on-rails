@@ -37,10 +37,11 @@ class Admin::ArticlesController < ApplicationController
   # POST /admin/articles.json
   def create
     @article = Article.new(params[:article])
+    @article.user = current_user
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to edit_admin_article_path(@article), :notice => t('articles.article_successfully_created') }
+        format.html { redirect_to admin_articles_path, :notice => t('articles.article_successfully_created') }
         format.json { render :json => @article, :status => :created, :location => @articles }
       else
         format.html { render :action => "new" }
