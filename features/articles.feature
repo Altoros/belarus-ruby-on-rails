@@ -58,6 +58,8 @@ Feature: Articles management
     And I fill in "Content" with "So hard"
     And I press "Create"
     Then I should see "Article was successfully created"
+    And I follow "Home"
+    Then I should see "First Last"
 
   Scenario: Visitor can't update article
     Given article exists with title "Ruby" and content "It rocks!"
