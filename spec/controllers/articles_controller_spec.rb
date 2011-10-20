@@ -24,19 +24,35 @@ describe ArticlesController do
     end
 
     describe "#show" do
-      before(:each) do
-        @article = Factory(:article)
-        get :show, :id => @article.id
+      context 'with integer ID' do
+        before(:each) do
+          @article = Factory(:article)
+          get :show, :id => @article.id
+        end
+
+        it "assigns the requested article as @article" do
+          assigns(:article).should eq(@article)
+        end
+
+        it "renders the 'show' template" do
+          response.should render_template(:show)
+        end
       end
 
-      it "assigns the requested article as @article" do
-        assigns(:article).should eq(@article)
-      end
+      context "with word's alias ID" do
+        before(:each) do
+          @article = Factory(:article)
+          get :show, :id => @article.slug
+        end
 
-      it "renders the 'show' template" do
-        response.should render_template(:show)
+        it "assigns the requested article as @article" do
+          assigns(:article).should eq(@article)
+        end
+
+        it "renders the 'show' template" do
+          response.should render_template(:show)
+        end
       end
     end
-
   end
 end

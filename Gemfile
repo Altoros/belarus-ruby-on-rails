@@ -39,6 +39,9 @@ gem 'apotomo'
 
 gem 'russian'
 
+gem 'friendly_id', '~> 4.0.0.beta14'
+gem 'babosa'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
