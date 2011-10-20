@@ -5,4 +5,6 @@ class Article < ActiveRecord::Base
   has_many :comments, :order => "created_at DESC", :dependent => :delete_all
 
   scope :published, where(:published => true)
+  scope :internal, where('rss_link IS NULL')
+  scope :external, where('rss_link IS NOT NULL')
 end

@@ -2,6 +2,7 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
     resources :comments
   end
+  resources :agregated_articles, :only => [:index, :show]
   resources :profiles
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do
@@ -21,6 +22,7 @@ BelarusRubyOnRails::Application.routes.draw do
     resource :message
     resource :dashboard, :only => :show
     resources :articles, :except => [:show]
+    resources :agregated_articles, :only => [:index, :destroy]
     root :to => 'dashboards#show'
     resources :meetups do
       put 'cancel' => "meetups#cancel"

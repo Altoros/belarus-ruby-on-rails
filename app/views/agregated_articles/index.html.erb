@@ -1,0 +1,26 @@
+<% if @articles.empty? %>
+  <%= t('articles.no_news') %>
+<% else %>
+
+  <% @articles.each do |article| %>
+  <div class="item">
+    <h2>
+      <%= link_to article.title, article %>
+    </h2>
+    <div class="iteminfo">
+      <span class="date"><%= article.created_at%></span>
+    </div>
+    <p><%= article.content.html_safe %></p>
+        <%= link_to t('articles.show'), article %>
+        <% if can? :manage, article %>
+        <%= link_to t('articles.delete'), admin_agregated_article_path(article),
+                      :confirm => t('articles.are_you_sure'), :method => :delete %>
+        <% end %>
+  </div>
+  <% end %>
+
+  <div class="pages">
+    <a><%= will_paginate @articles %></a>
+  </div>
+
+<% end %>
