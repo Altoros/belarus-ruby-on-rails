@@ -2,6 +2,7 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
     resources :comments
   end
+  resources :aggregated_articles, :only => [:index, :show], :path => '/news/'
   resources :profiles
 
   get 'page/:permalink', :to => 'static_pages#show', :as => 'static_page'
@@ -24,6 +25,8 @@ BelarusRubyOnRails::Application.routes.draw do
     resource :dashboard, :only => :show
     resources :articles, :except => [:show]
     resources :static_pages, :except => [:show]
+    resources :aggregated_articles, :only => [:index, :destroy], :path => '/news/'
+    resources :aggregator_configurations, :only => [:edit, :update]
     root :to => 'dashboards#show'
     resources :meetups do
       put 'cancel' => 'meetups#cancel'

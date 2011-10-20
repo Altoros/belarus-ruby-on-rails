@@ -1,4 +1,4 @@
-Feature: Admin User management
+Feature: Twitter blocks management
 
   Scenario: as admin I can create and update twitter posts settings
     Given I am logged in as admin

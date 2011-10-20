@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
   validates_associated :user
   attr_protected :user_id
   scope :published, where(:published => true)
+  scope :internal, where('rss_link IS NULL')
 
   def normalize_friendly_id(text)
     text.to_slug.normalize! :transliterations => :russian if text
