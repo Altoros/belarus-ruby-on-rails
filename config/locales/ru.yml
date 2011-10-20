@@ -80,13 +80,16 @@ ru:
     create: 'Создать'
     add_an_article: 'добавить статью'
     see_articles_list: 'просмотреть список статей'
+    see_aggregated_articles_list: 'просмотреть список rss статей'
     editing_article: 'Редактирование статьи'
     new_article: 'Новая статья'
     show: 'Читать статью полностью'
     listing_articles: 'Список статей'
+    listing_aggregated_articles: 'Список rss статей'
     status: 'Статус'
     published: 'Опубликовано'
     unpublished: 'Не опубликовано'
+    rss_link: 'Ссылка на источник'
   users:
     login: 'Вход'
     logout: 'Выход'
@@ -142,6 +145,8 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      aggregator_configurations:
+        source: 'Источник'
   actionview:
     helpers:
       select:
@@ -157,3 +162,7 @@ ru:
       content: '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
   exception:
     no_icon_for_provider: 'Нет иконки для провайдера %{provider_name}'
+  aggregator_configurations:
+    edit: 'Изменение настроек аггрегатора'
+    successfully_updated: 'Настройки аггрегатора успешно сохранены'
+    unable_save: 'Не удалось сохранить настройки аггрегатора'
