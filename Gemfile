@@ -39,6 +39,8 @@ gem 'apotomo'
 
 gem 'russian'
 
+gem 'feedzirra'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
