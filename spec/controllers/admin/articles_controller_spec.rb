@@ -81,13 +81,11 @@ describe Admin::ArticlesController do
       context "with valid parameters" do
         let(:attributes) do
           @title = "test_title"
-
           { :title => @title }
         end
 
         it "updates the requested article" do
           @article.reload
-
           @article.title.should eq(@title)
         end
 
@@ -96,6 +94,7 @@ describe Admin::ArticlesController do
         end
 
         it "redirects to the article" do
+          @article.reload
           response.should redirect_to(edit_admin_article_path(@article))
         end
       end
