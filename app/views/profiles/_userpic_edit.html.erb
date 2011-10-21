@@ -1,0 +1,15 @@
+<tr>
+    <th colspan="2" class="title"><%= t 'profile.image' %></th>
+</tr>
+<tr>
+  <td colspan="2">
+        <div class="profile_image">
+            <%= image_tag userpic_url(user, 98), :class => :photo, :id => 'profile_avatar_img' %>
+            <label><%= t 'profile.change_image' %></label>
+            <%= f.file_field :avatar %>
+            <% if user.profile.avatar.exists?  %>
+              <%= link_to  t('profile.delete_image'), avatar_profile_path(user.profile), :remote => true, :method => :delete %>
+            <% end %>
+        </div>
+    </td>
+</tr>

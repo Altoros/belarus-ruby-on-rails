@@ -26,6 +26,10 @@ en:
     edit_profile: 'Editing profile'
     show_profile: 'Show profile'
     social_networks: 'Social networks'
+    image: 'Image'
+    change_image: 'Change image'
+    delete_image: 'Delete'
+    wrong_image_type: 'Avatar is not one of image type'
   labels:
     date: 'Date'
     place: 'Place'

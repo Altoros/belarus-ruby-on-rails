@@ -26,6 +26,10 @@ ru:
     edit_profile: 'Редактирование профиля'
     show_profile: 'Показать профиль'
     social_networks: 'Социальные сети'
+    image: 'Изображение'
+    change_image: 'Изменить изображение'
+    delete_image: 'Удалить'
+    wrong_image_type: 'Аватарка не является картинкой'
   labels:
     date: 'Дата'
     place: 'Место проведения'

@@ -32,7 +32,14 @@ module ApplicationHelper
   def userpic_url(user, size)
     default_url = "#{root_url}assets/upic_default.jpg"
 
-    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default_url}"
+    if user.profile.avatar.exists?
+      size_shortcut = size == 98 ? :medium : :thumb
+      res = user.profile.avatar.url size_shortcut
+    else
+      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+      res = "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default_url}"
+    end
+
+    res.html_safe
   end
 end

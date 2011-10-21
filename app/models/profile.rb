@@ -6,13 +6,19 @@ class Profile < ActiveRecord::Base
                   :last_name,
                   :subscribed,
                   :experience_id,
-                  :subscribed_for_comments
+                  :subscribed_for_comments,
+                  :avatar
+  has_attached_file :avatar, :styles => { :medium => "98x98>", :thumb => "50x50>" },
+                    :url => "/system/:attachment/#{Rails.env}/:id/:style/:filename"
 
   validates :first_name, :presence => true,
             :length => { :maximum => 255 }
   validates :last_name, :presence => true,
             :length => { :maximum => 255 }
   validates :experience_id, :presence => true
+  validates_attachment_content_type :avatar, { :content_type =>
+                                      ['image/png', 'image/gif', 'image/x-png', 'image/x-png', 'image/jpeg', 'image/jpg'],
+                                      :message => I18n.t('profile.wrong_image_type')}
 
   scope :subscribed, where('subscribed = ?', true).joins(:user).merge(User.not_admin)
   scope :subscribed_for_comments, where('subscribed_for_comments = ?', true)
