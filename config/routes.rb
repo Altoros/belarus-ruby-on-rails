@@ -2,7 +2,9 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
     resources :comments
   end
-  resources :profiles
+  resources :profiles do
+    delete 'avatar' => 'profiles#avatar', :on => :member
+  end
 
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"} do
     scope "/users/" do

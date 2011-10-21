@@ -31,7 +31,10 @@ en:
     password: 'Password'
     subscriptions: 'Subscriptions'
     userpic: 'User picture'
-
+    image: 'Image'
+    change_image: 'Change image'
+    delete_image: 'Delete'
+    wrong_image_type: 'Avatar is not one of image type'
   labels:
     date: 'Date'
     place: 'Place'

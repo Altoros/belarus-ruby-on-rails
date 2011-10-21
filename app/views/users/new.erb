@@ -13,6 +13,7 @@
       <%= f.fields_for :profile do |profile_form| %>
         <%= render 'profiles/name', :f => profile_form %>
         <%= render 'profiles/level', :f => profile_form %>
+        <%= render 'profiles/news_subscription', :f => profile_form %>
       <% end %>
 
       <tr>

@@ -4,10 +4,3 @@
     <div class="field ruby_level"><%= f.collection_select(:experience_id, Experience.all, :id, :level, :prompt => true) %></div>
   </td>
 </tr>
-
-<tr>
-  <td></td>
-  <td>
-    <div class="check"><%= f.check_box :subscribed %><%= f.label :subscribed %></div>
-  </td>
-</tr>
