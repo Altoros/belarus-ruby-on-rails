@@ -1,64 +1,41 @@
 <div class="forms">
     <h1><%= t('profile.edit_profile') %></h1>
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <table class="loginTBL">
-    <tr>
-      <th colspan="2" class="title"><%= t('profile.userpic') %></th>
-    </tr>
-    <tr>
-      <th colspan="2" class="title"><%= t('profile.main_info') %></th>
-    </tr>
-    <%= f.fields_for :profile do |ff|%>
-      <%= render 'profiles/name', :f => ff %>
-    <% end %>
-    <%= f.fields_for :profile do |profile| %>
-    <tr>
-      <td><%= profile.label :experience_id %></td>
-      <td>
-        <div class="field ruby_level"><%= profile.collection_select(:experience_id, Experience.all, :id, :level, :prompt => t('activerecord.attributes.experience.prompt')) %></div>
-      </td>
-    </tr>
-    <% end %>
-    <tr>
-      <th colspan="2" class="title"><%= t('profile.password') %></th>
-    </tr>
-    <tr>
-      <td><%= f.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
-      <td>
-        <div class="field"><%= f.password_field :password %></div>
-      </td>
-    </tr>
-    <tr>
-      <td><%= f.label :password_confirmation %></td>
-      <td>
-        <div class="field"><%= f.password_field :password_confirmation %></div>
-      </td>
-    </tr>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+        <%= f.fields_for :profile do |profile_form|%>
+            <%= render 'profiles/userpic_edit', :user => resource, :f => profile_form %>
+            <tr>
+                <th colspan="2" class="title"><%= t('profile.main_info') %></th>
+            </tr>
+            <%= render 'profiles/name', :f => profile_form %>
+            <%= render 'profiles/level', :f => profile_form %>
+        <% end %>
+        <tr>
+          <th colspan="2" class="title"><%= t('profile.password') %></th>
+        </tr>
+        <tr>
+          <td><%= f.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
+          <td>
+            <div class="field"><%= f.password_field :password %></div>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.label :password_confirmation %></td>
+          <td>
+            <div class="field"><%= f.password_field :password_confirmation %></div>
+          </td>
+        </tr>
 
-      <tr>
-        <th colspan="2" class="title"><%= t('profile.subscriptions') %></th>
-      </tr>
-      <tr>
-        <td><%= f.label :email %></td>
-        <td>
-          <div class="field"><%= f.object.email %></div>
-        </td>
-      </tr>
-      <%= f.fields_for :profile do |profile|%>
-      <tr>
-        <td></td>
-        <td>
-          <div class="check"><%= profile.check_box :subscribed %><%= profile.label :subscribed %></div>
-          <div class="check"><%= profile.check_box :subscribed_for_comments %><%= profile.label :subscribed_for_comments, t('profile.subscribed_for_comments') %></div>
-        </td>
-      </tr>
-      <% end %>
-      <tr>
-        <td></td>
-        <td class="save">
-          <button type="submit"><span><span><%= t('common.update') %></span></span></button>
-        </td>
-      </tr>
+        <%= f.fields_for :profile do |profile_form|%>
+            <%= render 'profiles/subscription', :user => resource, :f => profile_form %>
+        <% end %>
+
+        <tr>
+            <td></td>
+            <td class="save">
+              <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+            </td>
+        </tr>
       </table>
     <% end %>
 

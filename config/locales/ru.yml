@@ -33,6 +33,10 @@ ru:
     password: 'Пароль'
     subscriptions: 'Рассылки'
     userpic: 'Изображение'
+    image: 'Изображение'
+    change_image: 'Изменить изображение'
+    delete_image: 'Удалить'
+    wrong_image_type: 'Аватарка не является картинкой'
   labels:
     date: 'Дата'
     place: 'Место проведения'

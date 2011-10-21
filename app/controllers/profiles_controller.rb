@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  include ApplicationHelper
+
   load_and_authorize_resource
 
   before_filter :get_profile
@@ -22,13 +24,23 @@ class ProfilesController < ApplicationController
   # PUT /profiles/1.json
   def update
     respond_to do |format|
-      if @profile.update_attributes(params[:profile])
+      if @profile.update_attributes params[:profile]
         format.html { redirect_to @profile, :notice => 'Profile was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => :edit }
         format.json { render :json => @profile.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  # DELETE /profiles/1/avatar
+  def delete_avatar
+    @profile.update_attributes(:avatar => nil)
+    @profile.user.reload
+
+    respond_to do |format|
+      format.js { render :js => "change_avatar('#{ userpic_url(@profile.user, 98) }')" }
     end
   end
 
