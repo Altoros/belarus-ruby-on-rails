@@ -1,0 +1,17 @@
+        <tr>
+            <th colspan="2" class="title"><%= t('profile.subscriptions') %></th>
+        </tr>
+        <tr>
+            <td><%= t 'activerecord.attributes.user.email' %></td>
+            <td>
+                <div class="field"><%= user.email %></div>
+            </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="check"><%= f.check_box :subscribed %><%= f.label :subscribed %></div>
+            <div class="check"><%= f.check_box :subscribed_for_comments %><%= f.label :subscribed_for_comments, t('profile.subscribed_for_comments') %></div>
+          </td>
+        </tr>
+

@@ -1,22 +1,34 @@
-<div class="forms">
-  <%= form_for(@profile) do |f| %>
-
-    <%= render 'profiles/userpic', :user => @profile.user %>
-    <%= render 'profiles/name', :f => f %>
-    <%= render 'profiles/level', :f => f %>
-
-    <tr>
-      <td></td>
-      <td>
-        <div class="check"><%= f.check_box :subscribed_for_comments %><%= f.label :subscribed_for_comments, t('profile.subscribed_for_comments') %></div>
-      </td>
-    </tr>
-
-    <tr>
-      <td></td>
-      <td class="save">
-        <button type="submit"><span><span><%= t('common.update') %></span></span></button>
-      </td>
-    </tr>
+  <%= form_for @profile, :html => { :method => 'put', :multipart => true } do |f| %>
+    <table class="loginTBL">
+        <%= render 'profiles/userpic_edit', :user => @profile.user, :f => f %>
+        <tr>
+            <th colspan="2" class="title"><%= t('profile.main_info') %></th>
+        </tr>
+        <%= render 'profiles/name', :f => f %>
+        <%= render 'profiles/level', :f => f %>
+        <%= f.fields_for :user do |user|%>
+            <tr>
+              <th colspan="2" class="title"><%= t('profile.password') %></th>
+            </tr>
+            <tr>
+              <td><%= user.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
+              <td>
+                <div class="field"><%= user.password_field :password %></div>
+              </td>
+            </tr>
+            <tr>
+              <td><%= user.label :password_confirmation %></td>
+              <td>
+                <div class="field"><%= user.password_field :password_confirmation %></div>
+              </td>
+            </tr>
+        <% end %>
+        <%= render 'profiles/subscription', :user => @profile.user, :f => f %>
+        <tr>
+          <td></td>
+          <td class="save">
+            <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+          </td>
+        </tr>
+    </table>
   <% end %>
-</div>

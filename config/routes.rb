@@ -4,6 +4,9 @@ BelarusRubyOnRails::Application.routes.draw do
   end
   resources :aggregated_articles, :only => [:index, :show], :path => '/news/'
   resources :profiles
+  resources :profiles do
+    delete 'avatar' => 'profiles#delete_avatar', :on => :member
+  end
 
   get 'page/:permalink', :to => 'static_pages#show', :as => 'static_page'
 
