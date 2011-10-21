@@ -105,27 +105,67 @@ describe ProfilesController do
     end
 
     describe "#update" do
-      context "when profile belongs to logged in user" do
-        before(:each) do
-          @user = sign_in_user
-          get :edit, :id => @user.profile.id
+      before(:each) do
+        @user = sign_in_user
+        put :update, :id => @user.profile.id, :profile => attributes
+      end
+
+      context "with valid params" do
+        let(:attributes) { { :first_name => @first_name = "test",
+                             :avatar => Rack::Test::UploadedFile.new("spec/fixtures/files/upic_default.jpg", 'image/jpg') } }
+
+        it "updates the requested profile" do
+          @user.profile.reload
+          @user.profile.first_name.should eq(@first_name)
+          @user.profile.avatar.exists?.should be_true
         end
 
         it "assigns the requested profile as @profile" do
           assigns(:profile).should eq(@user.profile)
         end
 
-        it "renders the 'edit' template" do
-          response.should render_template(:edit)
+        it "redirects to the profile" do
+          response.should redirect_to(@user.profile)
         end
       end
 
-      context "when profile belongs to another user" do
-        it "is forbidden" do
-          user = Factory(:user)
-          get :edit, :id => user.profile.id
+      context "with invalid params" do
+        let(:attributes) { { :first_name => "" } }
 
-          response.status.should eq(403)
+        it "assigns the profile as @profile" do
+          assigns(:profile).should eq(@user.profile)
+        end
+
+        it "re-renders the 'edit' template" do
+          response.should render_template("edit")
+        end
+      end
+    end
+
+    describe "#avatar" do
+      before(:each) do
+        @user = Factory(:user, :profile => Factory(:profile_with_upic))
+        sign_in @user
+      end
+
+      context 'on own profile' do
+        before(:each) do
+          xhr :delete, :delete_avatar, :id => @user.profile.id
+        end
+
+        it 'delete avatar' do
+          @user.profile.avatar.exists?.should be_false
+        end
+      end
+
+      context 'on foreigner profile' do
+        before(:each) do
+          @another_user = Factory(:user, :profile => Factory(:profile_with_upic))
+          xhr :delete, :delete_avatar, :id => @another_user.profile.id
+        end
+
+        it "don't delete avatar" do
+          @another_user.profile.avatar.exists?.should be_true
         end
       end
     end

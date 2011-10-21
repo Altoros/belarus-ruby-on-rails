@@ -1,0 +1,25 @@
+<% userpic_errors = user.profile.errors_on_avatar %>
+<tr>
+    <th colspan="2" class="title"><%= t('profile.userpic') %></th>
+</tr>
+<tr>
+  <td colspan="2">
+        <div class="profile_image">
+            <%= image_tag userpic_url(user, 98), :class => :photo, :id => 'profile_avatar_img' %>
+            <label><%= t 'profile.change_image' %></label>
+            <div class='field<%= ' error' if userpic_errors.present? %>'>
+                <%= f.file_field :avatar %>
+                <% if userpic_errors.present? %>
+                    <span class='msg'><%= userpic_errors.first %></span>
+                <% end %>
+            </div>
+            <% if user.profile.avatar.exists?  %>
+              <%= link_to  t('profile.delete_image'), avatar_profile_path(user.profile), :remote => true, :method => :delete, :id => 'delete_avatar' %>
+            <% end %>
+        </div>
+    </td>
+</tr>
+
+<% content_for :head do %>
+    <%= javascript_include_tag 'profile' %>
+<% end %>
