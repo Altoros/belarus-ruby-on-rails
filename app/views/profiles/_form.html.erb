@@ -1,8 +1,8 @@
 <div class="forms">
-  <%= form_for(@profile) do |f| %>
+  <%= form_for @profile, :html => { :method => 'put', :multipart => true } do |f| %>
     <%= errors_for(@profile, t('errors.changes_not_saved')) %>
-
-    <%= render 'profiles/userpic', :user => @profile.user %>
+    <table class="loginTBL">
+    <%= render 'profiles/userpic_edit', :user => @profile.user, :f => f %>
     <%= render 'profiles/name', :f => f %>
     <%= render 'profiles/level', :f => f %>
 
@@ -19,5 +19,6 @@
         <button type="submit"><span><span><%= t('common.update') %></span></span></button>
       </td>
     </tr>
+    </table>
   <% end %>
 </div>

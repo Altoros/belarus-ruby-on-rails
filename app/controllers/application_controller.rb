@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
   rescue_from CanCan::AccessDenied do |e|
     if current_user
       respond_to do |format|

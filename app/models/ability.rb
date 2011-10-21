@@ -18,7 +18,7 @@ class Ability
       end
 
       can :read, Profile
-      can :update, Profile do |profile|
+      can [:update, :avatar], Profile do |profile|
         profile.try(:user) == user || user.is_admin?
       end
 

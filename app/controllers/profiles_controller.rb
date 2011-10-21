@@ -22,13 +22,24 @@ class ProfilesController < ApplicationController
   # PUT /profiles/1.json
   def update
     respond_to do |format|
-      if @profile.update_attributes(params[:profile])
+      if @profile.update_attributes params[:profile]
         format.html { redirect_to @profile, :notice => 'Profile was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => :edit }
         format.json { render :json => @profile.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  # DELETE /profiles/1/avatar
+  def avatar
+    @profile.update_attributes(:avatar => nil)
+    @profile.user.reload
+    @image_src = userpic_url(@profile.user, 98)
+
+    respond_to do |format|
+      format.js
     end
   end
 
