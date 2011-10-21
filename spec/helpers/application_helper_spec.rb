@@ -35,6 +35,14 @@ describe ApplicationHelper do
   end
 
   describe '#userpic_url' do
+    context 'for user with avatar' do
+      let(:user) { Factory.stub(:user, :profile => Factory.build(:profile_with_upic)) }
+
+      it 'should contain path to local avatar' do
+        userpic_url(user, 50).should include user.profile.avatar.url :thumb
+      end
+    end
+
     context 'for user without avatar' do
       it 'should contain link to Gravatar icon' do
         userpic_url(user, 50).should include 'http://gravatar.com'

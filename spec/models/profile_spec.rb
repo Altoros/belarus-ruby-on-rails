@@ -37,4 +37,9 @@ describe Profile do
     profile = Factory.build(:profile, :experience => nil)
     profile.should have(1).error_on(:experience_id)
   end
+
+  it { should have_attached_file(:avatar) }
+  it { should validate_attachment_content_type(:avatar).
+              allowing('image/png', 'image/gif', 'image/jpg').
+              rejecting('text/plain', 'text/xml') }
 end
