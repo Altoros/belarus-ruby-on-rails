@@ -146,6 +146,8 @@ ru:
         title: 'Заголовок'
         subject: 'Тема'
         footer_text: 'Нижний текст'
+      static_pages:
+        permalink: 'Постоянная ссылка'
     errors:
       models:
         profile:
@@ -163,6 +165,17 @@ ru:
   notifier:
     comments_notifier_email: 'К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link}.'
   static_pages:
+    list: 'Список статических страниц'
+    new: 'Создать статическую страницу'
+    created: 'Страница была успешно создана'
+    manage: 'управлять статическими страницами'
+    edit: 'Редактирование страницы'
+    page_successfully_updated: 'Страница была успешно обновлена'
+    unable_save: 'Ошибка сохранения страницы'
+    deleted: 'Страница была успешно удалена'
+    not_found: 'Страница не найдена'
+    show: 'Показать'
+    back: 'Назад к списку'
     friends:
       title: 'Друзья'
     about:

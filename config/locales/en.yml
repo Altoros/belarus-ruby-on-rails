@@ -146,6 +146,8 @@ en:
         title: 'Title'
         subject: 'Subject'
         footer_text: 'Footer text'
+      static_pages:
+        permalink: 'Permalink'
   actionview:
     helpers:
       select:
@@ -153,6 +155,17 @@ en:
   notifier:
     comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'
   static_pages:
+    list: 'List of static pages'
+    new: 'New static page'
+    created: 'The page was successfully created'
+    manage: 'manage static pages'
+    edit: 'Editing the page'
+    page_successfully_updated: 'The page was successfully updated'
+    unable_save: 'Unable to save the page'
+    deleted: 'The page was successfully deleted'
+    not_found: 'Page not found'
+    show: 'Show'
+    back: 'Back to the list'
     friends:
       title: 'Friends'
     about:

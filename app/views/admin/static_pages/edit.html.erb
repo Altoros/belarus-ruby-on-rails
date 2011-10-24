@@ -1,0 +1,6 @@
+<h1><%= t('static_pages.edit') %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('static_pages.show'), static_page_path(:permalink => @static_page.permalink) %>
+<%= link_to t('static_pages.back'), admin_static_pages_path %>
