@@ -4,6 +4,8 @@ BelarusRubyOnRails::Application.routes.draw do
   end
   resources :profiles
 
+  get 'page/:permalink', :to => 'static_pages#show', :as => 'static_page'
+
   devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do
     scope "/users/" do
       get 'sign_in', :to => "devise/sessions#new", :as => 'login'
@@ -21,14 +23,12 @@ BelarusRubyOnRails::Application.routes.draw do
     resource :message
     resource :dashboard, :only => :show
     resources :articles, :except => [:show]
+    resources :static_pages, :except => [:show]
     root :to => 'dashboards#show'
     resources :meetups do
       put 'cancel' => "meetups#cancel"
     end
   end
-
-  match '/about' => 'static_page#about'
-  match '/friends' => 'static_page#friends'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

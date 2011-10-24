@@ -135,6 +135,8 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      static_pages:
+        permalink: 'Постоянная ссылка'
   actionview:
     helpers:
       select:
@@ -142,6 +144,17 @@ ru:
   notifier:
     comments_notifier_email: 'К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link}.'
   static_pages:
+    list: 'Список статических страниц'
+    new: 'Создать статическую страницу'
+    created: 'Страница была успешно создана'
+    manage: 'управлять статическими страницами'
+    edit: 'Редактирование страницы'
+    page_successfully_updated: 'Страница была успешно обновлена'
+    unable_save: 'Ошибка сохранения страницы'
+    deleted: 'Страница была успешно удалена'
+    not_found: 'Страница не найдена'
+    show: 'Показать'
+    back: 'Назад к списку'
     friends:
       title: 'Друзья'
       content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
