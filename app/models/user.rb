@@ -43,6 +43,12 @@ class User < ActiveRecord::Base
       build_profile unless profile
       profile.first_name = omniauth['user_info']['first_name'] if profile.first_name.blank?
       profile.last_name = omniauth['user_info']['last_name'] if profile.last_name.blank?
+      if omniauth['user_info']['image'].present? && !profile.avatar.exists?
+        require "open-uri"
+        io = open(URI.parse(omniauth['user_info']['image'].sub("square","large")))
+        def io.original_filename; Digest::MD5.hexdigest(rand.to_s) + '.jpg'; end;
+        profile.avatar = io
+      end
 
       if omniauth.include?('provider') && omniauth.include?('uid')
         user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
