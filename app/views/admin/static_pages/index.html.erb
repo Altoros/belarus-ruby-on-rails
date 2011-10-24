@@ -1,0 +1,15 @@
+<h1><%= t('static_pages.list') %></h1>
+
+<table>
+
+  <% @static_pages.each do |static_page| %>
+    <tr>
+      <td><%= link_to static_page.title, edit_admin_static_page_path(static_page) %></td>
+      <td><%= link_to t('articles.delete'), admin_static_page_path(static_page), confirm: t('articles.are_you_sure'), method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<br />
+
+<%= link_to t('static_pages.new'), new_admin_static_page_path %>

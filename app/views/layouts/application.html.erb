@@ -25,8 +25,7 @@
             <ul>
               <li><%= link_to_unless_current t('menu.main'), root_path %></li>
               <li><%= link_to_unless_current t('menu.news'), articles_path %></li>
-              <li><%= link_to_unless_current t('menu.about'), about_path %></li>
-              <li><%= link_to_unless_current t('menu.friends'), friends_path %></li>
+              <%= static_page_links %>
             </ul>
           </div>
         </div>

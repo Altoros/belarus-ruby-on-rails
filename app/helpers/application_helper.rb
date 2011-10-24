@@ -29,4 +29,11 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def static_page_links
+    html = StaticPage.all.inject('') do |res, page|
+      res << "<li>#{ link_to_unless_current page.title, static_page_path(:permalink => page.permalink) }</li>"
+    end
+
+    html.html_safe
+  end
 end
