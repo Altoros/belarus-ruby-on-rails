@@ -27,10 +27,10 @@ module NavigationHelpers
       '/articles/id/edit'
 
     when /About page/
-      '/about'
+      '/page/about'
 
     when /Friends page/
-      '/friends'
+      '/page/friends'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

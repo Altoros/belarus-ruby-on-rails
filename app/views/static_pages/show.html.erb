@@ -1,0 +1,9 @@
+<h2><%= @static_page.title %></h2>
+
+<div>
+  <%= @static_page.content.html_safe %>
+</div>
+
+<% if can? :manage, StaticPage %>
+  <%= link_to t('articles.edit'), edit_admin_static_page_path(@static_page) %>
+<% end %>
