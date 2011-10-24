@@ -8,3 +8,7 @@ tmp/
 config/database.yml
 config/social_config.yml
 public/system/*
+public/files/
+public/images/
+public/pub/
+
