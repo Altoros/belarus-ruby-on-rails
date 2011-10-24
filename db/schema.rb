@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111027170454) do
+ActiveRecord::Schema.define(:version => 20111027174111) do
 
   create_table "aggregator_configurations", :force => true do |t|
     t.string "source"
@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20111027170454) do
     t.datetime "updated_at"
     t.boolean  "is_admin",                              :default => false
     t.boolean  "banned"
+    t.string   "password_salt"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
