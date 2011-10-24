@@ -1,3 +1,5 @@
+require Rails.root.join('lib', 'devise', 'encryptors', 'md5')
+
 class User < ActiveRecord::Base
   has_many :user_tokens, :dependent => :delete_all
   has_many :comments
@@ -7,7 +9,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
+         :encryptable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
   accepts_nested_attributes_for :profile
@@ -27,6 +30,11 @@ class User < ActiveRecord::Base
 
   def password_required?
     (user_tokens.empty? || password.present?) && super
+  end
+
+  def valid_password?(password)
+    return false if encrypted_password.blank?
+    Devise.secure_compare(Devise::Encryptors::Md5.digest(password, nil, self.password_salt, nil), self.encrypted_password)
   end
 
   def bind_social_network(provider, uid)
