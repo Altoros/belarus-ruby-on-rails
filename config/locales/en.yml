@@ -136,6 +136,8 @@ en:
         recipient_group: 'Recipient group'
         subject: 'Subject'
         body: 'Body'
+      static_pages:
+        permalink: 'Permalink'
   actionview:
     helpers:
       select:
@@ -143,9 +145,18 @@ en:
   notifier:
     comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'
   static_pages:
+    list: 'List of static pages'
+    new: 'New static page'
+    created: 'The page was successfully created'
+    manage: 'manage static pages'
+    edit: 'Editing the page'
+    page_successfully_updated: 'The page was successfully updated'
+    unable_save: 'Unable to save the page'
+    deleted: 'The page was successfully deleted'
+    not_found: 'Page not found'
+    show: 'Show'
+    back: 'Back to the list'
     friends:
       title: 'Friends'
-      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
     about:
       title: 'About'
-      content: '<p>Belarussian Ruby on Rails User Group is community of Rails-developers in Belarus, was found for exchenging ideas and expirience. We are also interested in developing Ruby on Rails in our country and help each other to build successfull IT-career.</p><p>If you would like take part in developing Belarus Ruby on Rails User Group, please send your ideas to: <a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
