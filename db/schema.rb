@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011122020) do
+ActiveRecord::Schema.define(:version => 20111021120454) do
+
+  create_table "aggregator_configurations", :force => true do |t|
+    t.string "source"
+    t.text   "feed_object"
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,7 +24,11 @@ ActiveRecord::Schema.define(:version => 20111011122020) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "rss_link"
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
