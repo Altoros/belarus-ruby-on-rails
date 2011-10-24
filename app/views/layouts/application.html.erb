@@ -8,6 +8,7 @@
     <%= yield :head %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
+    <base href="#{request.protocol}#{request.host}:#{request.port.to_s}/" />
   </head>
   <body>
     <div id="fb-root"></div>

@@ -7,3 +7,7 @@ tmp/
 .*~
 config/database.yml
 config/social_config.yml
+public/files/
+public/images/
+public/pub/
+
