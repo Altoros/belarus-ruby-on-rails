@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :profile, :presence => true
 
   scope :not_admin, where('is_admin = ?', false)
+  scope :banned, where('banned = ?', true)
   scope :filter, lambda{ |*filters|
     filters = filters.compact.flatten
     if filters.present? && !filters.include?(UsersFilter::ALL_OPTION)
@@ -78,6 +79,10 @@ class User < ActiveRecord::Base
 
   def change_admin_state!
     toggle!(:is_admin)
+  end
+
+  def change_banned_state!
+    toggle!(:banned)
   end
 
   def self.to_csv(users)

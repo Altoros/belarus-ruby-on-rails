@@ -27,8 +27,14 @@ describe Admin::UsersController do
 
     it "should change admins" do
       user = Factory(:user)
-      put 'update', { :id => user.id }
+      put 'update', { :id => user.id, :attr => 'admin' }
       User.find(user.id).is_admin?.should be_true
+    end
+
+    it "should change ban state" do
+      user = Factory(:user)
+      put 'update', { :id => user.id, :attr => 'banned' }
+      User.find(user.id).banned?.should be_true
     end
 
     context 'downloaded CSV file' do

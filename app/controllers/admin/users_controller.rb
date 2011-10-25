@@ -10,7 +10,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    User.find(params[:id]).change_admin_state!
+    user = User.find(params[:id])
+    case params[:attr]
+      when 'admin'
+        user.change_admin_state!
+      when 'banned'
+        user.change_banned_state!
+    end
+
     redirect_to :action => :index
   end
 
