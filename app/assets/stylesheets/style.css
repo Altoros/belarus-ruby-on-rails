@@ -182,3 +182,11 @@ a.submit:hover { background-position:100% -93px;}
 a.submit:hover span { background-position:0 -62px;}
 a.submit:active, a.submit:focus { background-position:100% -155px; line-height:32px;}
 a.submit:active span { background-position:0 -124px;}
+
+.provider { display:block; height:32px; width:32px;}
+.provider_twitter { background-image:url(ico_twitter.png);}
+.provider_github { background-image:url(ico_github.png);}
+.provider_facebook { background-image:url(ico_facebook.png);}
+.provider_vkontakte { background-image:url(ico_vk.png);}
+.provider_linked_in { background-image:url(ico_linkedin.png);}
+.provider_google_app { background-image:url(ico_google_plus.png);}

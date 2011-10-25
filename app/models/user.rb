@@ -73,4 +73,14 @@ class User < ActiveRecord::Base
   def change_admin_state!
     toggle!(:is_admin)
   end
+
+  def update_with_password(params={})
+
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+
+    update_attributes(params)
+  end
 end

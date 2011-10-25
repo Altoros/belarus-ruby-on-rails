@@ -1,27 +1,47 @@
-<p>
-  <b><%= t('activerecord.attributes.profile.first_name')%>:</b>
-  <%= @profile.first_name %>
-</p>
-
-<p>
-  <b><%= t('activerecord.attributes.profile.last_name')%>:</b>
-  <%= @profile.last_name %>
-</p>
-
-<p>
-  <b><%= t('profile.subscribed_for_comments') %></b>
-  <%= @profile.subscribed_for_comments %>
-</p>
-
-<% if @providers %>
-    <h4><%= t('profile.social_networks') %>:</h4>
-    <ul>
-    <% @providers.each do |provider| %>
-        <% provider_link(provider, @profile.user.id) do |item| %>
-            <li><%= provider.printable_name %>: <%= item %></li>
+<h1><%= t('profile.show_profile_title') %></h1>
+<div class="profile">
+    <img src="images/upic_default.jpg" width="98" height="98" class="photo" alt="" />
+    <div class="info">
+        <table>
+            <tr>
+                <th><%= t('activerecord.attributes.profile.first_name')%></th>
+                <td><%= @profile.first_name %></td>
+            </tr>
+            <tr>
+                <th><%= t('activerecord.attributes.profile.last_name')%></th>
+                <td><%= @profile.last_name %></td>
+            </tr>
+            <tr>
+                <th><%= t('activerecord.attributes.user.email') %></th>
+                <td><%= @profile.user.email %></td>
+            </tr>
+            <tr>
+                <th><%= t('activerecord.attributes.profile.experience_id') %></th>
+                <td><%= @profile.experience.level %></td>
+            </tr>
+        </table>
+        <% if @profile.subscribed_for_comments %>
+          <p><%= t('profile.subscribed_for_comments') %></p>
         <% end %>
-    <% end %>
-    </ul>
-<% end %>
+        <% if @profile.subscribed %>
+          <p><%= t('activerecord.attributes.profile.subscribed') %></p>
+        <% end %>
+        <%= link_to t('profile.edit_profile'),  edit_user_registration_path, :class => 'set' %>
+    </div>
+</div>
+  <% if @providers %>
+    <br><br>
+    <div class="info">
+      <h4><%= t('profile.social_networks') %>:</h4>
+      <table>
+      <% @providers.each do |provider| %>
+          <% provider_link(provider, @profile.user.id) do |item| %>
+              <tr><th><%= provider.printable_name %></th><td><%= item %></td>
+          <% end %>
+      <% end %>
+      </table>
+    </div>
+  <% end %>
 
-<%= link_to t('profile.edit_profile'), edit_profile_path(@profile) %>
+
+
