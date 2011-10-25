@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :profile, :presence => true
 
   scope :not_admin, where('is_admin = ?', false)
+  scope :banned, where('banned = ?', true)
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -72,6 +73,10 @@ class User < ActiveRecord::Base
 
   def change_admin_state!
     toggle!(:is_admin)
+  end
+
+  def change_banned_state!
+    toggle!(:banned)
   end
 
   def update_with_password(params={})
