@@ -1,5 +1,60 @@
-<h1><%= t('profile.edit_profile') %></h1>
+<div class="forms">
+  <h1><%= t('profile.edit_profile') %></h1>
+  <%= form_for(@profile) do |f| %>
+    <table class="loginTBL">
+    <tr>
+      <th colspan="2" class="title"><%= t('profile.userpic') %></th>
+    </tr>
+    <tr>
+      <th colspan="2" class="title"><%= t('profile.main_info') %></th>
+    </tr>
+    <%= render 'profiles/name', :f => f %>
+    <tr>
+      <td><%= f.label :experience_id %></td>
+      <td>
+        <div class="field ruby_level"><%= f.collection_select(:experience_id, Experience.all, :id, :level, :prompt => true) %></div>
+      </td>
+    </tr>
+    <%= f.fields_for :user do |user|%>
+    <tr>
+      <th colspan="2" class="title"><%= t('profile.password') %></th>
+    </tr>
+    <tr>
+      <td><%= user.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
+      <td>
+        <div class="field"><%= user.password_field :password %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= user.label :password_confirmation %></td>
+      <td>
+        <div class="field"><%= user.password_field :password_confirmation %></div>
+      </td>
+    </tr>
 
-<%= render 'form' %>
-
-<%= link_to t('profile.show_profile'), @profile %>
+    <tr>
+      <th colspan="2" class="title"><%= t('profile.subscriptions') %></th>
+    </tr>
+    <tr>
+      <td><%= user.label :email %></td>
+      <td>
+        <div class="field"><%= @profile.user.email %></div>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td>
+        <div class="check"><%= f.check_box :subscribed %><%= f.label :subscribed %></div>
+        <div class="check"><%= f.check_box :subscribed_for_comments %><%= f.label :subscribed_for_comments, t('profile.subscribed_for_comments') %></div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="save">
+        <button type="submit"><span><span><%= t('common.update') %></span></span></button>
+      </td>
+    </tr>
+    </table>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@ Feature: User profile management
   Scenario: User can edit his profile
     Given I am logged in as user
     And I am on the articles page
-    When I follow "Edit profile"
+    When I follow "User profile"
     Then I should see "Editing profile"
 
   Scenario: User can update his profile

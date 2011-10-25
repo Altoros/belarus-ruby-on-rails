@@ -25,7 +25,13 @@ en:
     subscribed_for_comments: 'I would like to receive email notifications about new comments'
     edit_profile: 'Editing profile'
     show_profile: 'Show profile'
+    show_profile_title: 'User profile'
     social_networks: 'Social networks'
+    main_info: 'Main information'
+    password: 'Password'
+    subscriptions: 'Subscriptions'
+    userpic: 'User picture'
+
   labels:
     date: 'Date'
     place: 'Place'
@@ -99,6 +105,7 @@ en:
     leave_blank_if_no_changes: 'leave blank if you don''t want to change it'
     we_need_your_password: 'we need your current password to confirm your changes'
     no_passwd_no_data_changes: 'Now you can''t change your data, because your don''t have password yet. Please click the link bellow for set password.'
+    get_new_password: 'Get new password'
   general:
     altoros: 'Altoros Development'
     more_information: 'More information'
@@ -148,3 +155,5 @@ en:
     about:
       title: 'About'
       content: '<p>Belarussian Ruby on Rails User Group is community of Rails-developers in Belarus, was found for exchenging ideas and expirience. We are also interested in developing Ruby on Rails in our country and help each other to build successfull IT-career.</p><p>If you would like take part in developing Belarus Ruby on Rails User Group, please send your ideas to: <a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
+  exception:
+    no_icon_for_provider: 'No icon for provider %{provider_name}'

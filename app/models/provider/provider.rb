@@ -11,6 +11,10 @@ class Provider::Provider
     class_without_namespace.underscore.to_sym
   end
 
+  def provider_icon
+    raise NoMethodError, I18n.t('exception.no_icon_for_provider', :provider_name => self.class.name)
+  end
+
   private
 
   def class_without_namespace
