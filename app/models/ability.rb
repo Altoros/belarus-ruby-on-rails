@@ -26,9 +26,9 @@ class Ability
       end
 
       can :read, Comment
-      can :create, Comment
+      can :create, Comment unless user.banned?
       can :manage, Comment do |comment|
-        comment and comment.user == user
+        comment and comment.user == user and not user.banned?
       end
 
       can :read, StaticPage
