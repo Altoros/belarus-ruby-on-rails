@@ -4,7 +4,7 @@ module ProfilesHelper
               if provider.provider_name == :google_apps
                 provider.profile_link
               else
-                link_to(provider.profile_link, provider.profile_link, :target => '_blank')
+                link_to('', provider.profile_link, :target => '_blank', :class => "provider provider_#{provider.provider_name}")
               end
             elsif current_user.id == displayed_user_id
               link_to(I18n.t('omniauth.bind_with', :provider_name => provider.printable_name),

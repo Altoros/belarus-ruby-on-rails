@@ -56,5 +56,7 @@ module BelarusRubyOnRails
       g.test_framework :rspec, :views => false, :fixture => true
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
     end
+
+    config.paths["app/views"] << "app/views/devise"
   end
 end

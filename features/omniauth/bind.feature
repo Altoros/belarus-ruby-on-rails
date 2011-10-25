@@ -5,14 +5,12 @@ Feature: OmniAuth authorization via Social Network accounts
 
     Background:
       Given I am logged in as user
-      And I follow "Edit profile"
-      And I follow "Show"
+      And I follow "User profile"
 
     @omniauth_test_success @omniauth_test_after
     Scenario Outline: A signed user without Social Network token could bind it
       When I follow "Bind with <provider>"
-      Then I should see "<expectation>"
-
+      Then I should see the link or text "<expectation>"
       Examples: providers
         | provider     | expectation                         |
         | Facebook     | http://www.facebook.com/profile.php |

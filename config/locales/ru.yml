@@ -25,7 +25,12 @@ ru:
     subscribed_for_comments: 'Я хочу получать по почте уведомления о новых комментариях:'
     edit_profile: 'Редактирование профиля'
     show_profile: 'Показать профиль'
+    show_profile_title: 'Профиль пользователя'
     social_networks: 'Социальные сети'
+    main_info: 'Основная информация'
+    password: 'Пароль'
+    subscriptions: 'Рассылки'
+    userpic: 'Изображение'
   labels:
     date: 'Дата'
     place: 'Место проведения'
@@ -100,6 +105,7 @@ ru:
     leave_blank_if_no_changes: 'оставьте это поле пустым, если не хотите его менять'
     we_need_your_password: 'нам нужен Ваш текущий пароль, что бы подтвердить изменения'
     no_passwd_no_data_changes: 'Сейчас Вы не можете изменить данные, т.к. у Вас не задан пароль. Пожалуйства пройдите по ссылке ниже, что бы задать пароль.'
+    get_new_password: 'Получить новый пароль'
   general:
     altoros: 'ООО Альторос Девелопмент'
     more_information: 'Подробнее'
@@ -149,3 +155,5 @@ ru:
     about:
       title: 'О нас'
       content: '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
+  exception:
+    no_icon_for_provider: 'Нет иконки для провайдера %{provider_name}'
