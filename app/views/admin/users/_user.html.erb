@@ -8,8 +8,7 @@
     <%= mail_to user.email %>
   </td>
   <td>
-  <%= div_for user, :class => "link_to_admin" do %>
-    <%= link_to(link_to_admin_title(user), admin_user_path(user), :method => :put) if can? :update, user %>
-  <% end %>
+    <%= link_to(link_to_admin_title(user), admin_user_path(user, :attr => 'admin'), :method => :put) if can? :update, user %>
+    <%= link_to(link_to_banned_title(user), admin_user_path(user, :attr => 'banned'), :method => :put) if can? :ban, user %>
   </td>
 </tr>
