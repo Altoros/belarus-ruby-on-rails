@@ -6,22 +6,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+// require_tree .
 
-function update_edit_article_action() {
+  function update_edit_article_action() {
     jQuery('.edit_article input[name="_method"]').val('delete');
-}
+  }
 
-function comment_notify(message) {
+  function comment_notify(message) {
     var notice_div = $("#comment_notice");
     notice_div.html(message).hide().slideToggle("slow", function () {
-        setTimeout(function () {
-            notice_div.slideToggle("slow")
-        },2000)
+      setTimeout(function () {
+        notice_div.slideToggle("slow")
+      },2000)
     });
-}
-
-jQuery(document).ready(function(){
-    VK.init({apiId: <%= SOCIAL_CONFIG['social_groups_id']['vkontakte_apiId'] %>, onlyWidgets: true});
-    VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "250"}, <%= SOCIAL_CONFIG['social_groups_id']['vkontakte'] %>);
-});
+  }

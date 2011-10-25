@@ -5,9 +5,8 @@
     <title><%= t('general.site_name') %></title>
     <%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "lazyload" %>
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag "http://vkontakte.ru/js/api/openapi.js" %>
-    <%= javascript_include_tag "http://userapi.com/js/api/openapi.js?26" %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
@@ -44,18 +43,8 @@
         </div>
         <div class="right">
           <%= render_widget :meetup %>
-          <div class="social">
-            <iframe
-              src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F<%= SOCIAL_CONFIG['social_groups_id']['facebook'] %>&amp;width=250&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;height=258"
-              scrolling="no"
-              frameborder="0"
-              style="border:none; overflow:hidden; width:250px; height:258px;"
-              allowTransparency="true">
-            </iframe>
-          </div>
-          <div class="social">
-            <div id="vk_groups"></div>
-          </div>
+          <%= render :partial => "facebook_block" %>
+          <%= render :partial => "vkontakte_block" %>
           <div class="social"><!-- twitter feed --></div>
         </div>
         <div class="cl_all"></div>
