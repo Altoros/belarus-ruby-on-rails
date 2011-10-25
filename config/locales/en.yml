@@ -25,7 +25,13 @@ en:
     subscribed_for_comments: 'I would like to receive email notifications about new comments'
     edit_profile: 'Editing profile'
     show_profile: 'Show profile'
+    show_profile_title: 'User profile'
     social_networks: 'Social networks'
+    main_info: 'Main information'
+    password: 'Password'
+    subscriptions: 'Subscriptions'
+    userpic: 'User picture'
+
   labels:
     date: 'Date'
     place: 'Place'

@@ -4,7 +4,7 @@ BelarusRubyOnRails::Application.routes.draw do
   end
   resources :profiles
 
-  devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks" } do
+  devise_for :users, :controllers => { :confirmations => "confirmations", :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"} do
     scope "/users/" do
       get 'sign_in', :to => "devise/sessions#new", :as => 'login'
       post 'sign_in', :to => "devise/sessions#create", :as => 'login'

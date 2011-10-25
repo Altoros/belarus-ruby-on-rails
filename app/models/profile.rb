@@ -6,7 +6,10 @@ class Profile < ActiveRecord::Base
                   :last_name,
                   :subscribed,
                   :experience_id,
-                  :subscribed_for_comments
+                  :subscribed_for_comments,
+                  :user_attributes
+
+  accepts_nested_attributes_for :user
 
   validates :first_name, :presence => true,
             :length => { :maximum => 255 }

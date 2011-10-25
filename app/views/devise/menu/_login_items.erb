@@ -1,7 +1,6 @@
 <% if user_signed_in? %>
   <span class="user"><%= current_user.profile.first_name %> </span>
-  <%= link_to t('users.edit_registration'), edit_user_registration_path %>
-  <%= link_to t('users.edit_profile'), edit_profile_path(current_user.profile) %>
+  <%= link_to t('profile.show_profile_title'), profile_path(current_user.profile) %>
   <%= link_to t('menu.control_panel'), admin_root_path if can? :manage, :all %>
   <%= link_to t('users.logout'), destroy_user_session_path, :method => :delete %>
 <% else %>

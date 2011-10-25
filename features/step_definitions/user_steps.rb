@@ -21,8 +21,10 @@ end
 Given /I'm editing my profile page$/ do
   Given %{I am logged in as user}
   And %{I am on the homepage}
-  When %{I follow "Edit profile"}
-  Then %{I should see "Edit profile"}
+  And %{I follow "User profile"}
+  When %{I follow "Editing profile"}
+  Then %{I should see "Editing profile"}
+  And %{I should see "Update"}
 end
 
 When /^I fill in profile fields$/ do

@@ -1,7 +1,7 @@
 module ApplicationHelper
   ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
     unless html_tag =~ /^<label/
-      %{<div class="field error">#{html_tag}<span class="msg">#{instance.error_message.first}</span></div>}.html_safe
+      %{<div class="field error">#{html_tag}<span class="msg">#{instance.object.class.human_attribute_name(instance.method_name)} #{instance.error_message.first}</span></div>}.html_safe
     else
       %{#{html_tag}}.html_safe
     end

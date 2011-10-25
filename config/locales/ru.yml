@@ -25,7 +25,12 @@ ru:
     subscribed_for_comments: 'Я хочу получать по почте уведомления о новых комментариях:'
     edit_profile: 'Редактирование профиля'
     show_profile: 'Показать профиль'
+    show_profile_title: 'Профиль пользователя'
     social_networks: 'Социальные сети'
+    main_info: 'Основная информация'
+    password: 'Пароль'
+    subscriptions: 'Рассылки'
+    userpic: 'Изображение'
   labels:
     date: 'Дата'
     place: 'Место проведения'

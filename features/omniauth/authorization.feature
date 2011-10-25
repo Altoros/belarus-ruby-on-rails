@@ -63,8 +63,10 @@ Feature: OmniAuth authorization via Social Networks
       Given I am a user named "Name" and surnamed "Surname" with an email "user@test.com" and password "please" with Ruby on Rails level "Expert"
       And I follow "Login"
       And  I follow "Sign in with <provider>"
-      When I follow "Edit registration"
-      Then I should see "Current password"
+      When I follow "User profile"
+      And I follow "Editing profile"
+      Then I should see "Password confirmation"
+      And I should see "I would like to receive email notifications about new comments"
 
       Examples: providers
         | provider    |
@@ -81,7 +83,8 @@ Feature: OmniAuth authorization via Social Networks
       And I follow "Sign in with <provider>"
       And I select "Expert" from "Ruby on Rails level"
       And I press "Create"
-      When I follow "Edit registration"
+      When I follow "User profile"
+      And I follow "Editing profile"
       Then I should see "Reset my password"
 
       Examples: providers
@@ -98,7 +101,7 @@ Feature: OmniAuth authorization via Social Networks
       Given I follow "Login"
       And I follow "Sign in with <provider>"
       When I press "Create"
-      Then I should see "Profile experience can't be blank"
+      Then I should see "Ruby on Rails level can't be blank"
 
       Examples: providers
         | provider    |

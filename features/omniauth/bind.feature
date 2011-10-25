@@ -5,8 +5,7 @@ Feature: OmniAuth authorization via Social Network accounts
 
     Background:
       Given I am logged in as user
-      And I follow "Edit profile"
-      And I follow "Show"
+      And I follow "User profile"
 
     @omniauth_test_success @omniauth_test_after
     Scenario Outline: A signed user without Social Network token could bind it
