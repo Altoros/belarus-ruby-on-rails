@@ -88,6 +88,27 @@ describe CommentsController do
       xhr :get, :create, :comment => { :body => body, :article_id => stranger_article.id }, :article_id => @comment.article.id
       original_article_id.should be_eql Comment.find_by_body(body).article_id
     end
+
+    context 'banned user' do
+      before(:each) do
+        @comment.user.change_banned_state!
+      end
+
+      it 'should not has access to create comment' do
+        xhr :get, :create, :comment => { :body => "I'm a Test comment"}, :article_id => @comment.article.id
+        response.status.should eq 403
+      end
+
+      it 'should not has access to edit comment' do
+        xhr :get, :update, :id => @comment, :comment => { :body => "I'm updated comment" }, :article_id => @comment.article.id
+        response.status.should eq 403
+      end
+
+      it 'should not has access to remove comment' do
+        xhr :get, :destroy, :id => @comment
+        response.status.should eq 403
+      end
+    end
   end
 
   describe "as signed out user" do

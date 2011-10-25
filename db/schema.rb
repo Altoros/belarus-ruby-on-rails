@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20111027160226) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_admin",                              :default => false
+    t.boolean  "banned"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

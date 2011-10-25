@@ -13,6 +13,8 @@ en:
       manage_users_title: 'User Manager'
       remove_admin: 'Remove admin'
       make_admin: 'Make admin'
+      ban: 'Ban'
+      unban: 'Unban'
     messages:
       title: 'Send mail to users'
       invalid_user_group: ' contains not valid user group'
