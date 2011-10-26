@@ -50,6 +50,7 @@ group :test do
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'rspec-apotomo'
+  gem 'shoulda'
 end
 # Use unicorn as the web server
 # gem 'unicorn'
