@@ -4,13 +4,13 @@ Feature: Admin: Meetup management
     When I visit admin/meetups
     Then I should see "Meetup"
 
-  Scenario: as admin I can create meetup
+  Scenario: as admin I can't create meetup in past
     Given I am logged in as admin
     And I visit admin/meetups/new
     When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
     And I fill in "Place" with "Belarus, Minsk"
-    And I select "2007-11-11 10:00" as the "Date and time" date
+    And I fill in "Date and time" with "2007-11-11 10:00"
     And I press "Save it!"
     Then I should see "must be in future"
 
@@ -20,7 +20,7 @@ Feature: Admin: Meetup management
     When I fill in "Topic" with "New RoR Meetup"
     And I fill in "Description" with "Meetup description"
     And I fill in "Place" with "Belarus, Minsk"
-    And I select "2015-11-11 10:00" as the "Date and time" date
+    And I fill in "Date and time" with "2015-11-11 10:00"
     And I press "Save it!"
     Then I should see "Meetup created successfully"
 
