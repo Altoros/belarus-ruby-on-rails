@@ -6,17 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require_tree .
-
-  function update_edit_article_action() {
-    jQuery('.edit_article input[name="_method"]').val('delete');
-  }
-
-  function comment_notify(message) {
-    var notice_div = $("#comment_notice");
-    notice_div.html(message).hide().slideToggle("slow", function () {
-      setTimeout(function () {
-        notice_div.slideToggle("slow")
-      },2000)
-    });
-  }
+//= require lazyload
+//
+//= require articles
+//= require comments
