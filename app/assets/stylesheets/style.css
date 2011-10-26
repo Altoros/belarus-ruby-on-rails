@@ -182,3 +182,5 @@ a.submit:hover { background-position:100% -93px;}
 a.submit:hover span { background-position:0 -62px;}
 a.submit:active, a.submit:focus { background-position:100% -155px; line-height:32px;}
 a.submit:active span { background-position:0 -124px;}
+
+.ui-datepicker { width: 13em }
