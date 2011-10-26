@@ -190,3 +190,5 @@ a.submit:active span { background-position:0 -124px;}
 .provider_vkontakte { background-image:url(ico_vk.png);}
 .provider_linked_in { background-image:url(ico_linkedin.png);}
 .provider_google_app { background-image:url(ico_google_plus.png);}
+
+.ui-datepicker { width: 13em }
