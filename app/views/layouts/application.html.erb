@@ -3,9 +3,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%= t('general.site_name') %></title>
-    <%= stylesheet_link_tag "style" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "lazyload" %>
+    <%= yield :head %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>

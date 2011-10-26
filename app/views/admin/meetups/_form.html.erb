@@ -21,11 +21,8 @@
         <tr>
             <td><%= f.label "date_and_time", t('meetup.date_and_time') %></td>
             <td>
-                <div class="field<%= ((@meetup.errors.messages[:date_and_time].present?)? ' error' : '') %>">
-                  <div class="fll"><%= f.datetime_select :date_and_time %></div>
-                  <% if @meetup.errors.messages[:date_and_time].present? %>
-                    <span class="msg"><%= @meetup.errors.messages[:date_and_time].first %></span>
-                  <% end %>
+                <div class="field">
+                  <%= f.text_field :date_and_time,  :value => ( @meetup.date_and_time.present? ? @meetup.date_and_time.strftime('%Y-%m-%d %H:%M:%S') : '') %>
                 </div>
             </td>
         </tr>
@@ -39,4 +36,16 @@
             </td>
         </tr>
     </table>
+  <% end %>
+
+  <% content_for :head do %>
+      <% javascript_tag do %>
+        $(document).ready(function(){
+            $('#meetup_date_and_time').datetimepicker({
+                minDate: 0,
+                dateFormat: 'yy-mm-dd',
+                timeFormat: 'hh:mm:ss'
+            })
+        })
+      <% end %>
   <% end %>
