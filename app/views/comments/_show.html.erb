@@ -5,7 +5,7 @@
     <% if can? :delete, comment %>
         <%= link_to_if(can?(:update, comment), t('articles.edit'), edit_article_comment_path(comment.article, comment),
       :remote => true, :title => "click for edit") %>
-        <%= link_to t('articles.delete'), article_comment_path(comment.article, comment), :method => :delete ,  :confirm => 'Are you sure?', :remote => true %>
+        <%= link_to t('articles.delete'), article_comment_path(comment.article, comment), :method => :delete, :confirm => t('common.are_you_sure'), :remote => true %>
     <% end %>
 
     <div class="upic">

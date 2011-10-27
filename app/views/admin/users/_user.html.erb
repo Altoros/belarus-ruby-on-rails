@@ -9,7 +9,12 @@
   </td>
   <td>
   <%= div_for user, :class => "link_to_admin" do %>
-    <%= link_to(link_to_admin_title(user), admin_user_path(user), :method => :put) if can? :update, user %>
+    <%= link_to(
+      link_to_admin_title(user),
+      admin_user_path(user),
+      :method => :put,
+      :confirm => t('common.are_you_sure')
+    ) if can? :update, user %>
   <% end %>
   </td>
 </tr>

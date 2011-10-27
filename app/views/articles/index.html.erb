@@ -19,7 +19,7 @@
         <% if can? :manage, article %>
         <%= link_to t('articles.edit'), edit_admin_article_path(article) %>
         <%= link_to t('articles.delete'), admin_article_path(article),
-                      :confirm => t('articles.are_you_sure'), :method => :delete %>
+                      :confirm => t('common.are_you_sure'), :method => :delete %>
         <% end %>
   </div>
   <% end %>
