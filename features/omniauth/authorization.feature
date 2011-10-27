@@ -85,7 +85,7 @@ Feature: OmniAuth authorization via Social Networks
       And I press "Create"
       When I follow "User profile"
       And I follow "Editing profile"
-      Then I should see "Get new password"
+      Then I should see "I would like to receive email notifications about new comments"
 
       Examples: providers
         | provider    |

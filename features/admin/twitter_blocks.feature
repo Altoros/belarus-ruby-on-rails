@@ -12,5 +12,6 @@ Feature: Admin User management
 
   Scenario: as guest I can see block with tweets
     Given I am not logged in
+    And there is a twitter block
     When I go to the home page
     Then I should see xpath //div[contains(@class, 'twtr-search-widget')]
