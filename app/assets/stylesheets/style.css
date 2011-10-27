@@ -95,17 +95,15 @@ a.logo { float:left; margin-top:24px;}
 .loginTBL th { padding:0 0 20px; font-size:16px; font-weight:normal; text-align:left; color:#31322c; border-bottom:1px solid #c0c0c0;}
 .loginTBL th.title { padding:20px 0 10px; font-size:18px; font-weight:normal; color:#959595;}
 .loginTBL tr:first-child th.title { padding:0 0 10px;}
-.loginTBL th:first-child, .loginTBL td:first-child { width:200px;}
-.loginTBL td { padding:16px 0 0; font-size:16px; font-weight:normal; text-align:left; color:#31322c;}
-.loginTBL td div {padding:1px;*padding:0 1px; background:#fff; border:1px solid #fff;}
+.loginTBL th:first-child, .loginTBL > tbody > tr > td:first-child { width:200px;}
+.loginTBL > tbody > tr > td { padding:16px 0 0; font-size:16px; font-weight:normal; text-align:left; color:#31322c;}
+.loginTBL > tbody > tr > td > div {padding:1px;*padding:0 1px; background:#fff; border:1px solid #fff;}
 .loginTBL td div input { display:inline-block; *display:inline;zoom:1; vertical-align:middle;}
 .loginTBL td div.profile_image {position:relative; min-height:120px; padding-left:120px;}
 .loginTBL td div.profile_image img {position:absolute; left:0; top:0; border:1px solid #cfcfcf;}
 .loginTBL td div.profile_image label + input[type="file"] {margin-bottom:15px;}
 .loginTBL td div.profile_image a { margin:0; color:#881E24; font-size:15px; text-decoration:none;}
 .loginTBL td div.profile_image a:hover {text-decoration:underline;}
-.loginTBL a { margin-left:2px; color:#881E24; font-size:13px; text-decoration:none;}
-.loginTBL a:hover {text-decoration:underline;}
 .loginTBL td.save a { margin-left:20px; font-size:15px; text-decoration:underline;}
 .loginTBL td.save a:hover {text-decoration:none;}
 
@@ -124,8 +122,8 @@ a.logo { float:left; margin-top:24px;}
 .forms .field.error input, .forms .field.error select { display:inline-block; *display:inline;zoom:1; vertical-align:middle;}
 .forms .field {padding:1px;*padding:0 1px; background:#fff; border:1px solid #fff;}
 .forms .field input { display:inline-block; *display:inline;zoom:1; vertical-align:middle; position:relative; *left:-5px;}
-.forms .field a { margin-left:20px; font-size:13px; color:#881e24; text-decoration:none;}
-.forms .field a:hover {text-decoration:underline;}
+.forms .field > a { margin-left:20px; font-size:13px; color:#881e24; text-decoration:none;}
+.forms .field > a:hover {text-decoration:underline;}
 .forms .field .msg {display:none;}
 .forms .field.error .msg {display:inline-block; *display:inline; overflow:hidden; max-width:180px; max-height:28px; padding:0 0 0 21px; margin-left:10px; *margin-left:0px; font-size:12px; line-height:14px; background:url(ico_info_error.png) 0 center no-repeat; color:#c46969; vertical-align:middle;zoom:1;vertical-align:middle;}
 .forms select { clear:both; width:228px;font-size:14px; line-height:18px; border:1px solid #888888;}
@@ -134,13 +132,13 @@ a.logo { float:left; margin-top:24px;}
 .login button { float:left;}
 .login .links { float:left; margin-left:30px; font-size:12px; line-height:16px;}
 .login .links a { color:#850008;}
-button { overflow:visible; height:31px; padding:0 1px 0 0; font-size:16px; font-weight:bold; color:#fff;text-shadow: #1f0002 0px -1px 1px;cursor:pointer;}
-button span { display:block;overflow:visible;  margin:0; height:31px; padding:0 5px 0 0;background:url(bg_buttons.png) 100% -31px;}
-button span span { display:block; margin:0; height:31px; padding:0 15px 0 20px; line-height:31px; white-space:nowrap; background:url(bg_buttons.png) 0 0;}
-button:hover span { background-position:100% -93px;}
-button:hover span span { background-position:0 -62px;}
-button:active span { background-position:100% -155px;}
-button:active span span { background-position:0 -124px;}
+button, a.button { overflow:visible; height:31px; padding:0 1px 0 0; font-size:16px; font-weight:bold; color:#fff;text-shadow: #1f0002 0px -1px 1px;cursor:pointer;}
+button span, a.button span { display:inline-block;overflow:visible;  margin:0; height:31px; padding:0 5px 0 0;background:url(bg_buttons.png) 100% -31px;}
+button span span, a.button span span { display:inline-block; margin:0; height:31px; padding:0 10px 0 15px; line-height:31px; white-space:nowrap; background:url(bg_buttons.png) 0 0;}
+button:hover span, a.button:hover span { background-position:100% -93px;}
+button:hover span span, a.button:hover span span { background-position:0 -62px;}
+button:active span, a.button:active span { background-position:100% -155px;}
+button:active span span, a.button:active span span { background-position:0 -124px;}
 .social_list { overflow:hidden;}
 .social_list a { float:left; margin-left:8px;}
 .social_list a:first-child {margin-left:0;}
@@ -148,6 +146,8 @@ button:active span span { background-position:0 -124px;}
 .social_name {overflow:hidden; padding:0 0 16px;}
 .social_name img { float:left; margin-right:12px;}
 .social_name span { float:left; width:255px; margin-top:5px; font-size:20px; line-height:24px;}
+
+.addthis_toolbox {margin-top:10px;}
 
 .twtr-search-widget {margin-bottom:20px;}
 
