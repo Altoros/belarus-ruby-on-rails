@@ -1,6 +1,5 @@
 <div class="forms">
     <h1><%= t('profile.edit_profile') %></h1>
-<% if resource.encrypted_password.present? %>
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <table class="loginTBL">
     <tr>
@@ -62,14 +61,9 @@
       </tr>
       </table>
     <% end %>
-<% else %>
-  <p><%= t('users.no_passwd_no_data_changes') %></p>
-  <div><%= t('activerecord.attributes.user.email') %>: <%= resource.email %></div>
-  <%= link_to t('users.get_new_password'), user_reset_password_url %><br />
-<% end %>
 
-<%= link_to t('users.cancel_my_account'), registration_path(resource_name), :confirm => t('common.are_you_sure'), :method => :delete %>
-&nbsp;<%= link_to t('profile.show_profile'), profile_path(resource.profile), :class => 'set' %>
+    <%= link_to t('users.cancel_my_account'), registration_path(resource_name), :confirm => t('common.are_you_sure'), :method => :delete %>
+    &nbsp;<%= link_to t('profile.show_profile'), profile_path(resource.profile), :class => 'set' %>
 
 </div>
 
