@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_filter :export_i18n_messages
   rescue_from CanCan::AccessDenied do |e|
     if current_user
       respond_to do |format|
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
 
   has_widgets do |root|
     root << widget(:meetup, :user => current_user)
+  end
+
+  def export_i18n_messages
+    SimplesIdeias::I18n.export! if Rails.env.development?
   end
 
   def after_sign_in_path_for(resource_or_scope)

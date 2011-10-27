@@ -68,6 +68,11 @@ en:
     article_successfully_deleted: 'Article was successfully deleted'
     comments: 'Comments'
     leave_a_comment: 'Leave a comment'
+    comment_added: 'Your comment was successfully added'
+    comment_edit: 'Edit the comment'
+    comment_updated: 'The comment was updated successfully'
+    comment_length_warning: 'The length of the comment should be at least 5 symbols!'
+    comment_deleted: "The comment was successfully deleted"
     login_to_comment: 'Please %{href} to post comments'
     log_in_href: 'login'
     unable_save: 'Unable to save article'
@@ -197,4 +202,3 @@ en:
     edit: 'Edit aggregator settings'
     successfully_updated: 'Aggregator settings succesfully updated'
     unable_save: 'Unable to save aggregator settings'
-

@@ -38,6 +38,7 @@ gem 'cells'
 gem 'apotomo'
 
 gem 'russian'
+gem 'i18n-js'
 
 gem 'friendly_id', '~> 4.0.0.beta14'
 gem 'babosa'
