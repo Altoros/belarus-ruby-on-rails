@@ -1,31 +1,36 @@
-<% if can? :create, Article %>
-   <%= link_to t('articles.new_article'), new_admin_article_path %>
-<% end %>
-
 <% if @articles.empty? %>
   <%= t('articles.no_news') %>
 <% else %>
 
   <% @articles.each do |article| %>
-  <div class="item">
-    <h2>
-      <%= link_to article.title, article %>
-    </h2>
-    <div class="iteminfo">
-      <span class="date"><%= l(article.created_at, :format => :long) %></span>
-    </div>
+    <div class="item">
+      <h2>
+        <%= link_to article.title, article %>
+      </h2>
+      <div class="iteminfo">
+        <span class="date"><%= l(article.created_at, :format => :long) %></span>
+      </div>
     <p><%= raw truncate_html(article.content, :length => 300, :separator => ' ', :omission => '...') %></p>
-        <%= link_to t('articles.show'), article %>
-        <% if can? :manage, article %>
+      <%= link_to t('articles.show'), article %>
+      <% if can? :manage, article %>
         <%= link_to t('articles.edit'), edit_admin_article_path(article) %>
         <%= link_to t('articles.delete'), admin_article_path(article),
                       :confirm => t('common.are_you_sure'), :method => :delete %>
-        <% end %>
-  </div>
+      <% end %>
+    </div>
   <% end %>
 
   <div class="pages">
     <%= will_paginate @articles %>
   </div>
 
+<% end %>
+
+<% if can? :create, Article %>
+  <br /><br />
+  <%= link_to(
+    content_tag(:span, content_tag(:span, t('articles.new_article'))),
+    new_admin_article_path,
+    :class => :button
+  ) %>
 <% end %>

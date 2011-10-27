@@ -2,7 +2,7 @@
 
 <% if @articles.empty? %>
 
-   t('articles.no_news')
+  <%= t('articles.no_news') %>
 
 <% else %>
 
@@ -12,18 +12,22 @@
       <th></th>
     </tr>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= link_to article.title, edit_admin_article_path(article) %></td>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, edit_admin_article_path(article) %></td>
       <td><%= link_to t('articles.delete'), admin_article_path(article), confirm: t('common.are_you_sure'), method: :delete %></td>
-    </tr>
-  <% end %>
+      </tr>
+    <% end %>
   </table>
 
 <% end %>
 
-<br />
+<br /><br />
 
-<%= link_to t('articles.add_an_article'), new_admin_article_path %>
+<%= link_to(
+  content_tag(:span, content_tag(:span, t('articles.add_an_article'))),
+  new_admin_article_path,
+  :class => :button
+) %>
 
 <%= will_paginate @articles %>
