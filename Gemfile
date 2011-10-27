@@ -42,6 +42,8 @@ gem 'russian'
 gem 'friendly_id', '~> 4.0.0.beta14'
 gem 'babosa'
 
+gem 'truncate_html'
+
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'

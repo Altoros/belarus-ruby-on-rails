@@ -14,7 +14,7 @@
     <div class="iteminfo">
       <span class="date"><%= l(article.created_at, :format => :long) %></span>
     </div>
-    <p><%= raw article.content %></p>
+    <p><%= raw truncate_html(article.content, :length => 300, :separator => ' ', :omission => '...') %></p>
         <%= link_to t('articles.show'), article %>
         <% if can? :manage, article %>
         <%= link_to t('articles.edit'), edit_admin_article_path(article) %>

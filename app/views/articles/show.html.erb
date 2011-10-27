@@ -4,11 +4,11 @@
   </h2>
   <div class="iteminfo">
     <span class="date"><%= l(@article.created_at, :format => :long) %></span>
-    <div>
-        <p><%= raw @article.content %></p>
-    </div>
   </div>
-<%= render :partial => "sharing_buttons" %>
+  <div>
+    <p><%= raw @article.content %></p>
+  </div>
+  <%= render :partial => "sharing_buttons" %>
 
-<%= render "comments/index" %>
+  <%= render "comments/index" %>
 </div>
