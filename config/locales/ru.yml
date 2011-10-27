@@ -54,7 +54,7 @@ ru:
     cancel_link: 'Отменить митап'
     create_link: 'Создать митап'
     update_link: 'Редактировать митап'
-    back_link: 'Назад'
+    back_link: 'Отмена'
     meetups_link: 'управление митапами'
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'

@@ -1,42 +1,46 @@
-  <%= form_for [:admin, @meetup] do |f| %>
-    <table class="loginTBL">
-        <tr>
-            <td><%= f.label :topic, t('meetup.topic') %></td>
-            <td>
-                <div class="field"><%= f.text_field :topic %></div>
-            </td>
-        </tr>
-        <tr>
-            <td><%= f.label :description, t('meetup.description') %></td>
-            <td>
-                <div class="field"><%= f.text_area :description %></div>
-            </td>
-        </tr>
-        <tr>
-            <td><%= f.label :place, t('meetup.place') %></td>
-            <td>
-                <div class="field"><%= f.text_field :place %></div>
-            </td>
-        </tr>
-        <tr>
-            <td><%= f.label "date_and_time", t('meetup.date_and_time') %></td>
-            <td>
-                <div class="field<%= ((@meetup.errors.messages[:date_and_time].present?)? ' error' : '') %>">
-                  <div class="fll"><%= f.datetime_select :date_and_time %></div>
-                  <% if @meetup.errors.messages[:date_and_time].present? %>
-                    <span class="msg"><%= @meetup.errors.messages[:date_and_time].first %></span>
-                  <% end %>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="save">
-              <%= content_tag :button, :type => :submit, :name => :commit do %>
-                <span><span><%= t('meetup.save_button') %></span></span>
-              <% end %>
-              <%= link_to t('meetup.back_link'), admin_meetups_path %>
-            </td>
-        </tr>
-    </table>
-  <% end %>
+<%= form_for [:admin, @meetup] do |f| %>
+  <table class="loginTBL">
+    <tr>
+      <td><%= f.label :topic, t('meetup.topic') %></td>
+      <td>
+        <div class="field"><%= f.text_field :topic %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :description, t('meetup.description') %></td>
+      <td>
+        <div class="field"><%= f.text_area :description %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :place, t('meetup.place') %></td>
+      <td>
+        <div class="field"><%= f.text_field :place %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label "date_and_time", t('meetup.date_and_time') %></td>
+      <td>
+        <div class="field<%= ((@meetup.errors.messages[:date_and_time].present?)? ' error' : '') %>">
+          <div class="fll"><%= f.datetime_select :date_and_time %></div>
+          <% if @meetup.errors.messages[:date_and_time].present? %>
+            <span class="msg"><%= @meetup.errors.messages[:date_and_time].first %></span>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="save">
+        <%= content_tag :button, :type => :submit, :name => :commit do %>
+          <span><span><%= t('meetup.save_button') %></span></span>
+        <% end %>
+        <%= link_to(
+          content_tag(:span, content_tag(:span, t('meetup.back_link'))),
+          admin_meetups_path,
+          :class => :button
+        ) %>
+      </td>
+    </tr>
+  </table>
+<% end %>
