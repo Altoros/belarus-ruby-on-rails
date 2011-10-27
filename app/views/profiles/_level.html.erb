@@ -1,7 +1,7 @@
 <tr>
   <td><%= f.label :experience_id %></td>
   <td>
-    <div class="field ruby_level"><%= f.collection_select(:experience_id, Experience.all, :id, :level, :prompt => true) %></div>
+    <div class="field ruby_level"><%= f.collection_select(:experience_id, Experience.all, :id, :level, :prompt => t('activerecord.attributes.experience.prompt')) %></div>
   </td>
 </tr>
 

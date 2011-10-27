@@ -128,6 +128,7 @@ ru:
     attributes:
       experience:
         level: 'Уровень'
+        prompt: 'Выбрать'
       profile:
         experience_id: 'Уровень владения Ruby on Rails'
         first_name: 'Имя'
@@ -142,6 +143,16 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+    errors:
+      models:
+        profile:
+          attributes:
+            last_name:
+              blank: 'не может быть пустой'
+        user:
+          attributes:
+            email:
+              blank: 'не может быть пустой'
   actionview:
     helpers:
       select:
@@ -151,9 +162,7 @@ ru:
   static_pages:
     friends:
       title: 'Друзья'
-      content: '<p><a target="_blank" href="http://belarusjug.org/">Belarus Java User Group</a></p><p><a rel="nofollow" target="_blank" href="http://belarusflex.org">Belarus Flex User Group</a></p>'
     about:
       title: 'О нас'
-      content: '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
   exception:
     no_icon_for_provider: 'Нет иконки для провайдера %{provider_name}'

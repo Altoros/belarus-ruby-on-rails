@@ -16,7 +16,7 @@
     <tr>
       <td><%= profile.label :experience_id %></td>
       <td>
-        <div class="field ruby_level"><%= profile.collection_select(:experience_id, Experience.all, :id, :level, :prompt => true) %></div>
+        <div class="field ruby_level"><%= profile.collection_select(:experience_id, Experience.all, :id, :level, :prompt => t('activerecord.attributes.experience.prompt')) %></div>
       </td>
     </tr>
     <% end %>
@@ -72,4 +72,3 @@
 &nbsp;<%= link_to t('profile.show_profile'), profile_path(resource.profile), :class => 'set' %>
 
 </div>
-
