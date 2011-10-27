@@ -54,7 +54,7 @@ en:
     cancel_link: 'Cancel meetup'
     create_link: 'Create meetup'
     update_link: 'Edit meetup'
-    back_link: 'Back'
+    back_link: 'Cancel'
     meetups_link: 'manage meetups'
     save_button: 'Save it!'
     register_at: 'Register to meetup'
