@@ -14,6 +14,7 @@
     <div class="iteminfo">
       <span class="date"><%= l(article.created_at, :format => :long)%></span>
       <span class="author"><%= article.user.profile.full_name%></span>
+      <span class="comments"><%= article.comments.size %></span>
     </div>
     <p><%= raw truncate_html(article.content, :length => 300, :separator => ' ', :omission => '...') %></p>
         <%= link_to t('articles.show'), article %>
