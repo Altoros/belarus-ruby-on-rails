@@ -1,8 +1,7 @@
 <div class="forms">
     <h1><%= t('aggregator_configurations.edit') %></h1>
 
-    <%= form_for([:admin, @aggregator_configuration]) do |f| %>
-        <%= errors_for(@aggregator_configuration, t('aggregator_configurations.unable_save')) %>
+    <%= form_for @aggregator_configuration, :url => admin_aggregator_configurations_path do |f| %>
         <table class="loginTBL">
             <tr>
                 <td><%= f.label :source, t('activerecord.attributes.aggregator_configurations.source') %></td>
