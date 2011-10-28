@@ -4,9 +4,12 @@
   </div>
     <div>
       <%= form_for [comment.article, comment], :remote => true do |f| %>
-      <div><%= errors_for comment %></div>
       <div><%= f.text_area :body %></div>
-      <div><%= f.submit t('articles.leave_a_comment') %></div>
+      <div>
+        <%= content_tag :button, :type => :submit, :name => :commit do %>
+          <span><span><%= t('articles.leave_a_comment') %></span></span>
+        <% end %>
+      </div>
       <% end %>
     </div>
 </div>

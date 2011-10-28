@@ -1,5 +1,4 @@
 <%= form_for([:admin, @twitter_block]) do |f| %>
-    <%= errors_for(@twitter_block, t('twitter_blocks.unable_save')) %>
     <table class="loginTBL">
         <tr>
             <td><%= f.label :search, t('activerecord.attributes.twitter_block.search') %></td>

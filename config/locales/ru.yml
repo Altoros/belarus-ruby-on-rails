@@ -19,7 +19,7 @@ ru:
       title: 'Рассылка'
       invalid_user_group: ' содержит неправильный фильтр'
       successfully_sent: 'Сообщение будет отослано'
-      send: 'рассылка'
+      send: 'осуществлять рассылку'
       send_button: 'Послать сообщение'
   errors:
     changes_not_saved: 'Не удалось сохранить изменения'
@@ -57,7 +57,7 @@ ru:
     create_link: 'Создать митап'
     update_link: 'Редактировать митап'
     back_link: 'Отмена'
-    meetups_link: 'управление митапами'
+    meetups_link: 'управлять митапами'
     save_button: 'Сохранить!'
     register_at: 'Зарегистрироваться на митап'
     signed_in_to_attend: 'Ты должен быть зарегистрированным пользователем, чтобы записаться на митап'
@@ -134,6 +134,10 @@ ru:
     models:
       experience: 'Уровень владения Ruby on Rails'
     attributes:
+      article:
+        title: 'Заголовок'
+        content: 'Содержимое'
+        published: 'Статус'
       experience:
         level: 'Уровень'
         prompt: 'Выбрать'
@@ -151,15 +155,24 @@ ru:
         recipient_group: 'Адресаты'
         subject: 'Тема'
         body: 'Содержание'
+      meetup:
+        topic: 'Тема'
+        description: 'Содержание'
+        place: 'Место'
+        date_and_time: 'Дата и время'
       twitter_block:
         search: 'Поиск'
         title: 'Заголовок'
         subject: 'Тема'
         footer_text: 'Нижний текст'
-      static_pages:
+      static_page:
+        title: 'Заголовок'
         permalink: 'Постоянная ссылка'
-      aggregator_configurations:
+        content: 'Содержание'
+      aggregator_configuration:
         source: 'Источник'
+      comment:
+        body: 'Коментарий'
     errors:
       models:
         profile:
@@ -170,6 +183,29 @@ ru:
           attributes:
             email:
               blank: 'не может быть пустой'
+        meetup:
+          attributes:
+            topic:
+              blank: 'не может быть пустой'
+        comment:
+          attributes:
+            body:
+              blank: 'не может быть пустой'
+              too_short: "недостаточной длины"
+  activemodel:
+    attributes:
+      message:
+         recipient_group: 'Адресаты'
+         subject: 'Тема'
+         body: 'Содержание'
+    errors:
+      models:
+        message:
+          blank: 'не может быть пустой'
+          too_short: "недостаточной длины"
+          attributes:
+            body:
+              blank: 'не может быть пустым'
   actionview:
     helpers:
       select:
