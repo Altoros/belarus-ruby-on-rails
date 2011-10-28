@@ -22,7 +22,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def github
-    env['omniauth.auth']['uid'] = env['omniauth.auth']['user_info']['nickname']
+    env['omniauth.auth']['uid'] = env['omniauth.auth']['extra']['user_hash']['login']
+    env['omniauth.auth']['user_info']['first_name'] = env['omniauth.auth']['user_info']['name']
     bind_provider_with_user(:github)
   end
 

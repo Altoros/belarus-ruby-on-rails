@@ -55,7 +55,13 @@ Before('@omniauth_test_success') do
       "last_name"  => "Surname",
       "name"       => "Name Surname",
       "nickname"   => "nickname"
+    },
+    "extra" => {
+      "user_hash" => {
+        "login" => "login"
+      }
     }
+
   }
 
   OmniAuth.config.mock_auth[:linked_in] = {
@@ -127,6 +133,11 @@ Before('@omniauth_test_without_email') do
       "last_name"  => "Surname",
       "name"       => "Name Surname",
       "nickname"   => "nickname"
+    },
+    "extra" => {
+      "user_hash" => {
+        "login" => "login"
+      }
     }
   }
 
