@@ -1,22 +1,21 @@
 <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
 <div class="forms">
   <%= form_for([:admin, @static_page]) do |f| %>
-    <%= errors_for(@static_page, t('static_pages.unable_save')) %>
     <table class="loginTBL">
             <tr>
-                <td><%= f.label :title, t('articles.title') %></td>
+                <td><%= f.label :title %></td>
                 <td>
                   <div class="field"><%= f.text_field :title %></div>
                 </td>
             </tr>
             <tr>
-                <td><%= f.label :permalink, t('activerecord.attributes.static_pages.permalink') %></td>
+                <td><%= f.label :permalink  %></td>
                 <td>
                   <div class="field"><%= f.text_field :permalink %></div>
                 </td>
             </tr>
             <tr>
-                <td><%= f.label :content, t('articles.content') %></td>
+                <td><%= f.label :content %></td>
                 <td></td>
             </tr>
             <tr>
