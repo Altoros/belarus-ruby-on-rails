@@ -173,9 +173,9 @@ div.comments h3 span { position:relative; bottom:6px; font:bold 14px/26px Arial,
 
 .to_comment { position:relative; min-height:100px; padding:20px 0 20px 65px; margin:10px 0 0 20px; border:1px solid #c7c7c7; border-width:1px 0; background:#efefef;}
 .to_comment .upic { position:absolute; top:20px; left:7px;}
-.to_comment textarea { overflow:auto; width:563px; max-width:563px; height:90px; max-height:90px; margin-bottom:20px; }
+.to_comment textarea { overflow:auto; width:554px; max-width:554px; height:90px; max-height:90px; margin-bottom:20px; }
 .comment .to_comment {margin-left:-15px;}
-.comment .to_comment textarea {width:513px; max-width:513px;}
+.comment .to_comment textarea {width:504px; max-width:504px;}
 a.close { margin-left:20px; color:#881e24; font-size:14px; text-decoration:none;}
 a.close:hover {text-decoration:underline;}
 
@@ -195,3 +195,5 @@ a.submit:active span { background-position:0 -124px;}
 .provider_google_app { background-image:url(ico_google_plus.png);}
 
 .ui-datepicker { width: 13em }
+
+#comment_notice { margin-top: 5px; text-align: center; }
