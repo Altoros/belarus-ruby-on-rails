@@ -6,4 +6,5 @@ Feature: Aggregator settings management
     And I follow "Edit aggregator settings"
     And I fill in "Source" with "MySource"
     And I press "Update"
+    And I follow "Edit aggregator settings"
     Then I should see "MySource"
