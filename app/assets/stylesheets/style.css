@@ -33,7 +33,8 @@ ol li span {font-weight:normal;}
 .logo_row {height:105px; border-bottom:1px solid #d3d3d3;}
 a.logo { float:left; margin-top:24px;}
 .sublinks { float:right; margin-top:34px; font-size:12px; line-height:22px; color:#737373;}
-.sublinks a {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
+.sublinks span {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
+.sublinks a {color:#737373;}
 .sublinks .user {display:inline-block; *display:inline; padding-left:18px;background: url(ico_user.png) 0 4px no-repeat; zoom:1;}
 .menu_row {height:56px; border-top:1px solid #fff;}
 .menu_row ul { float:left; margin-top:20px;}
@@ -56,9 +57,9 @@ a.logo { float:left; margin-top:24px;}
 .iteminfo .author {background-image:url(ico_user.png);}
 .iteminfo span.comments {background-image:url(ico_message.png);}
 
-.pagination {padding:0 0 40px 0; font-weight:bold; font-size:1px;}
-.pagination a, .pagination > span {display:inline-block; *display:ilnine; height:21px; padding-right:3px; margin-right:3px; vertical-align:top; font-size:14px; line-height:21px; color:#850008; zoom:1;}
-.pagination a span {display:block;height:21px; padding:0 4px 0 7px; cursor:pointer;}
+.pagination { padding:0 0 40px 0; font-weight:bold; font-size:1px;}
+.pagination a, .pagination > span { display:inline-block; *display:ilnine; height:21px; padding-right:3px; margin-right:3px; vertical-align:top; font-size:14px; line-height:21px; color:#850008; zoom:1;}
+.pagination a span { display:block;height:21px; padding:0 4px 0 7px; cursor:pointer;}
 .pagination a:hover, .pagination a.act { background:url(bg_page.png) 100% -21px no-repeat; text-decoration:none;}
 .pagination a:hover span, .pagination a.act span { background:url(bg_page.png) 0 0 no-repeat; color:#000;}
 .pagination .prev { width:13px;height:21px; background:url(arrow_prev.gif) 0 4px no-repeat !important;}
