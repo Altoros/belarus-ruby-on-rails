@@ -38,7 +38,7 @@ en:
       reject_password_change: 'Your password won''t change until you access the link above and create a new one.'
       password_change_requested: 'Someone has requested a link to change your password, and you can do this through the link below.'
     confirmations:
-      greetings: 'Welcome %{resource.email}!'
+      greetings: 'Welcome %{resource_email}!'
       confirmation_mail_text: 'You can confirm your account through the link below:'
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
@@ -67,7 +67,7 @@ en:
       failure: 'Could not authorize you from %{kind} because "%{reason}".'
       sign_in_with_social: 'Sign in with %{provider}'
     mailer:
-      greetings: 'Hello, %{resource.email}!'
+      greetings: 'Hello, %{resource_email}!'
       confirm_account: 'Confirm my account'
       confirmation_instructions:
         subject: 'Confirmation instructions'
