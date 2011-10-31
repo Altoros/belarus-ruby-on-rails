@@ -1,14 +1,16 @@
 <tr>
   <td>
-    <%= link_to user.profile.full_name, edit_profile_path(user.profile) %>
-    <%= t('devise.info.this_is_you') if user == current_user %>
+    <%= link_to user.profile.full_name, edit_profile_path(user.profile), :title => t('admin.users.edit_profile') %>
+    <%= "<span class='warn-message'>#{ t('devise.info.this_is_you') }</span>".html_safe if user == current_user %>
   </td>
   <td>
-    <%= mail_to user.email %>
+    <%= mail_to user.email, user.email, :title => t('admin.users.send_to', :name => user.profile.full_name) %>
   </td>
   <td><%= l user.created_at, :format => :short %></td>
   <td>
-    <%= link_to(link_to_admin_title(user), admin_user_path(user, :attr => 'admin'), :method => :put, :confirm => t('common.are_you_sure')) if can? :update, user %>
-    <%= link_to(link_to_banned_title(user), admin_user_path(user, :attr => 'banned'), :method => :put) if can? :ban, user %>
+    <ul>
+        <li><%= link_to(link_to_admin_title(user), admin_user_path(user, :attr => 'admin'), :method => :put, :confirm => t('common.are_you_sure')) if can? :update, user %> </li>
+        <li><%= link_to(link_to_banned_title(user), admin_user_path(user, :attr => 'banned'), :method => :put) if can? :ban, user %> </li>
+    </ul>
   </td>
 </tr>

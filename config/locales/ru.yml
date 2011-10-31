@@ -12,8 +12,10 @@ ru:
       users_list: 'Список пользователей'
       filter_list: 'Список фильтров'
       filter: 'Фильтровать'
-      all_user_remark: 'Очистите селектор фильтров, чтобы выбрать всех пользователей'
+      all_user_remark: 'Снимите выделение для выбора всех пользователей'
       download_csv: 'Скачать CSV'
+      send_to: 'Выслать  емейл %{name}'
+      edit_profile: 'Редактировать профиль пользователя'
       not_found: 'Пользователь не найден'
       manage_users_title: 'Управление учетными записями пользователей'
       remove_admin: 'Отозвать права администратора'
@@ -93,8 +95,8 @@ ru:
     update: 'Обновить'
     create: 'Создать'
     add_an_article: 'добавить статью'
-    see_articles_list: 'просмотреть список статей'
-    see_aggregated_articles_list: 'просмотреть список rss статей'
+    see_articles_list: 'управлять статьями'
+    see_aggregated_articles_list: 'управлять RSS статьями'
     editing_article: 'Редактирование статьи'
     new_article: 'Новая статья'
     show: 'Читать статью полностью'
@@ -223,6 +225,7 @@ ru:
   notifier:
     comments_notifier_email: 'К статье %{article_title} были оставлены новые комментарии, чтобы просмотреть их пожалуйста пройдите по ссылке %{article_link}.'
   static_pages:
+    title: 'Название'
     list: 'Список статических страниц'
     new: 'Создать статическую страницу'
     created: 'Страница была успешно создана'
@@ -234,6 +237,7 @@ ru:
     not_found: 'Страница не найдена'
     show: 'Показать'
     back: 'Назад к списку'
+    no_pages: 'В данный момент статические страницы отсутствуют'
     friends:
       title: 'Друзья'
     about:
@@ -243,11 +247,12 @@ ru:
   twitter_blocks:
     edit: 'Изменить настройки сообщений из twitter'
     new_block: 'Добавить новый twitter блок'
-    listing_blocks: 'Список twitter блоков'
+    listing_blocks: 'управлять twitter блоками'
+    list_title: 'Список twitter блоков'
     title: 'Заголовок'
     delete: 'Удалить'
     are_you_sure: 'Вы уверены, что хотите удалить блок?'
-    add_a_block: 'Добавить'
+    add_a_block: 'Добавить блок'
     no_blocks: 'Еще пока нету блоков'
     successfully_deleted: 'Успешно удален'
     successfully_created: 'Успешно создан'
@@ -256,6 +261,7 @@ ru:
     successfully_updated: 'Нстройки успешно обновлены'
   aggregator_configurations:
     edit: 'Изменение настроек аггрегатора'
+    edit_title: 'изменить настройки RSS аггрегатора'
     successfully_updated: 'Настройки аггрегатора успешно сохранены'
     unable_save: 'Не удалось сохранить настройки аггрегатора'
   will_paginate:

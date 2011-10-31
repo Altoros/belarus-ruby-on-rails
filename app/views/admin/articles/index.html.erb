@@ -6,7 +6,7 @@
 
 <% else %>
 
-  <table>
+  <table class='list-table'>
     <tr>
       <th><%= t('articles.title') %></th>
       <th></th>
@@ -14,8 +14,8 @@
 
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.title, edit_admin_article_path(article) %></td>
-      <td><%= link_to t('articles.delete'), admin_article_path(article), confirm: t('common.are_you_sure'), method: :delete %></td>
+        <td><%= link_to article.title, edit_admin_article_path(article), :title => t('articles.editing_article') %></td>
+        <td><%= link_to t('articles.delete'), admin_article_path(article), confirm: t('common.are_you_sure'), method: :delete %></td>
       </tr>
     <% end %>
   </table>
@@ -24,10 +24,6 @@
 
 <br /><br />
 
-<%= link_to(
-  content_tag(:span, content_tag(:span, t('articles.add_an_article'))),
-  new_admin_article_path,
-  :class => :button
-) %>
+<%= link_to button_inner_html(t('articles.add_an_article')), new_admin_article_path, :class => :button %>
 
 <%= will_paginate @articles %>

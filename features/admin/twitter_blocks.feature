@@ -3,7 +3,8 @@ Feature: Twitter blocks management
   Scenario: as admin I can create and update twitter posts settings
     Given I am logged in as admin
     When I visit admin
-    And I follow "Add new twitter block"
+    And I follow "edit twitter blocks"
+    And I follow "Create a new block"
     And I fill in "Search" with "#hacby"
     And I press "Create"
     And I fill in "Search" with "from:melnikaite"
