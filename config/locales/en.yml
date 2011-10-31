@@ -206,3 +206,5 @@ en:
     edit: 'Edit aggregator settings'
     successfully_updated: 'Aggregator settings succesfully updated'
     unable_save: 'Unable to save aggregator settings'
+  will_paginate:
+    page_gap: '...'
