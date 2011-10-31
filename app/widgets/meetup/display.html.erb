@@ -1,23 +1,19 @@
-<div class="participate">
-  <%= widget_div do %>
-    <h3><%= @meetup.topic %></h3>
+<%= widget_div do %>
+  <h3><%= @meetup.topic %></h3>
 
-    <div class="iteminfo">
-      <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
-    </div>
+  <div class="iteminfo">
+    <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
+  </div>
 
-    <p><%= @meetup.description %></p>
+  <p><%= @meetup.description %></p>
 
-    <% if @current_user %>
+  <% if @current_user %>
       <% if @is_participant %>
-        <%= image_tag("you-participate.png", { :alt => t('meetup.registered'), :title => t('meetup.registered') }) %>
+          <%= image_tag("you-participate.png", {:alt => t('meetup.registered'), :title => t('meetup.registered')}) %>
       <% else %>
-        <%= link_to image_tag("btn_participate.png", { :alt => t('meetup.attend_to'), :title => t('meetup.attend_to') }), url_for_event(:register), :remote => true, :class => 'attend_button' %>
+          <%= link_to image_tag("btn_participate.png", {:alt => t('meetup.attend_to'), :title => t('meetup.attend_to')}), url_for_event(:register), :remote => true, :class => 'attend_button' %>
       <% end %>
-    <% else %>
+  <% else %>
       <%= t('meetup.signed_in_to_attend') %> <%= link_to t('users.login'), login_path %>
-    <% end %>
   <% end %>
-
-  <%= render :file => "app/views/application/_sharing_buttons.html.erb" %>
-</div>
+<% end %>
