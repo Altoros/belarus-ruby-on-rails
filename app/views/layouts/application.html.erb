@@ -41,7 +41,7 @@
           <%= yield %>
         </div>
         <div class="right">
-          <%= render_widget :meetup %>
+          <%= render :partial => "meetup_block" if @meetup && @meetup.id %>
           <%= render :partial => "facebook_block" %>
           <%= render :partial => "vkontakte_block" %>
           <%= render :partial => "twitter_block" %>
