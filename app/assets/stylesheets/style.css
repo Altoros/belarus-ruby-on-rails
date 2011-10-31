@@ -197,3 +197,32 @@ a.submit:active span { background-position:0 -124px;}
 .ui-datepicker { width: 13em }
 
 #comment_notice { margin-top: 5px; text-align: center; }
+
+ul.task-list { list-style-type:circle; list-style-position:inside; margin-bottom:10px; }
+ul.task-list li { margin-left: 10px; }
+ul.task-list li a { text-decoration: none; }
+
+.i-warn-message { font-style: italic; font-size:12px; display: block; }
+.warn-message { font-weight: bold; display:block; }
+
+.list-table
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 15px auto;
+	width: 650px;
+	border-collapse: collapse;
+	text-align: left;
+}
+.list-table th
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #850008;
+	padding: 10px 8px;
+	border-bottom: 2px solid #c46969;
+}
+.list-table td { color: #c46969; padding: 9px 8px 0px 8px; }
+.list-table td a { text-decoration: none; color: #c46969; }
+.list-table tbody tr:hover td, .list-table tbody tr:hover td a { color: #850008;}

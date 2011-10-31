@@ -50,4 +50,8 @@ module ApplicationHelper
 
     res.html_safe
   end
+
+  def button_inner_html(text)
+    "<span><span>#{ text }</span></span>".html_safe
+  end
 end

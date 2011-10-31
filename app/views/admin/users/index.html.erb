@@ -2,7 +2,7 @@
 <%= form_tag(admin_users_path, :method => "post", :class=>'forms') do %>
     <table class='loginTBL'>
       <tr>
-        <td><%= t 'admin.users.filter_list' %><i> <%= t 'admin.users.all_user_remark' %></i></td>
+        <td><%= t 'admin.users.filter_list' %><span class='i-warn-message'><%= t 'admin.users.all_user_remark' %></span></td>
         <td>
           <div class='field'>
             <%= select_tag 'filters',
@@ -26,7 +26,7 @@
     </table>
 <% end %>
 
-<table>
+<table class='list-table'>
     <tr>
       <th><%= t 'activerecord.attributes.profile.first_name' %></th>
       <th><%= t 'activerecord.attributes.user.email' %></th>

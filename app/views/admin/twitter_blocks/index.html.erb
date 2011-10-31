@@ -1,22 +1,26 @@
-<h1><%= t('twitter_blocks.listing_blocks') %></h1>
+<h1><%= t('twitter_blocks.list_title') %></h1>
 
 <% if @twitter_blocks.empty? %>
 
   <%= t('twitter_blocks.no_blocks') %>
 
 <% else %>
-
+  <table class='list-table'>
+    <tr>
+      <th><%= t('twitter_blocks.title') %></th>
+      <th></th>
+    </tr>
   <% @twitter_blocks.each do |block| %>
-    <div>
-      <%= link_to "#{block.title} #{block.subject}", edit_admin_twitter_block_path(block) %>
-      <%= link_to t('common.delete'), admin_twitter_block_path(block), confirm: t('common.are_you_sure'), method: :delete %>
-    </div>
+    <tr>
+      <td><%= link_to "#{block.title} #{block.subject}", edit_admin_twitter_block_path(block) %> </td>
+      <td><%= link_to t('common.delete'), admin_twitter_block_path(block), confirm: t('common.are_you_sure'), method: :delete %></td>
+    </tr>
   <% end %>
-
+  </table>
 <% end %>
 
 <br /><br />
 
-<%= link_to t('twitter_blocks.add_a_block'), new_admin_twitter_block_path %>
+<%= link_to button_inner_html(t('twitter_blocks.add_a_block')), new_admin_twitter_block_path, :class => 'button' %>
 
 <%= will_paginate @twitter_blocks %>

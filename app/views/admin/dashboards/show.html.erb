@@ -1,15 +1,13 @@
 <h1><%= t('admin.dashboard') %></h1>
 
 <h3><%= t('admin.you_can') %>:</h3>
-<ul>
+<ul class="task-list">
   <li><%= link_to(t('admin.users.edit'), admin_users_path) %></li>
   <li><%= link_to(t('admin.messages.send'), new_admin_message_path) %></li>
   <li><%= link_to(t('meetup.meetups_link'), admin_meetups_path) %></li>
-  <li><%= link_to(t('articles.add_an_article'), new_admin_article_path) %></li>
   <li><%= link_to(t('articles.see_articles_list'), admin_articles_path) %></li>
-  <li><%= link_to(t('twitter_blocks.new_block'), new_admin_twitter_block_path) %></li>
+  <li><%= link_to(t('articles.see_aggregated_articles_list'), admin_aggregated_articles_path) %></li>
   <li><%= link_to(t('twitter_blocks.listing_blocks'), admin_twitter_blocks_path) %></li>
   <li><%= link_to(t('static_pages.manage'), admin_static_pages_path) %></li>
-  <li><%= link_to(t('articles.see_aggregated_articles_list'), admin_aggregated_articles_path) %></li>
-  <li><%= link_to t('aggregator_configurations.edit'), edit_admin_aggregator_configurations_path %></li>
+  <li><%= link_to t('aggregator_configurations.edit_title'), edit_admin_aggregator_configurations_path %></li>
 </ul>

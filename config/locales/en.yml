@@ -14,6 +14,8 @@ en:
       filter: 'Filter'
       all_user_remark: 'Select nothing to reset all filters'
       download_csv: 'Download CSV'
+      send_to: 'Send mail to %{name}'
+      edit_profile: 'Edit profile'
       not_found: 'User not found'
       manage_users_title: 'User Manager'
       remove_admin: 'Remove admin'
@@ -177,6 +179,7 @@ en:
   notifier:
     comments_notifier_email: 'There were new comments added to article %{article_title}, please visit %{article_link} to see them.'
   static_pages:
+    title: 'Title'
     list: 'List of static pages'
     new: 'New static page'
     created: 'The page was successfully created'
@@ -187,6 +190,7 @@ en:
     deleted: 'The page was successfully deleted'
     not_found: 'Page not found'
     show: 'Show'
+    no_pages: 'No pages yet'
     back: 'Back to the list'
     friends:
       title: 'Friends'
@@ -197,11 +201,12 @@ en:
   twitter_blocks:
     edit: 'Edit twitter posts settings'
     new_block: 'Add new twitter block'
-    listing_blocks: 'List of twitter blocks'
+    listing_blocks: 'edit twitter blocks'
+    list_title: 'List of twitter blocks'
     title: 'Title'
     delete: 'Delete'
     are_you_sure: 'Are you sure to delete block?'
-    add_a_block: 'Create'
+    add_a_block: 'Create a new block'
     no_blocks: 'There is no twitter blocks'
     successfully_deleted: 'Successfully deleted'
     successfully_created: 'Successfully created'
@@ -209,7 +214,8 @@ en:
     update: 'Update'
     successfully_updated: 'Settings successfully updated'
   aggregator_configurations:
-    edit: 'Edit aggregator settings'
+    edit: 'Edit RSS aggregator settings'
+    edit_title: 'edit RSS aggregator settings'
     successfully_updated: 'Aggregator settings succesfully updated'
     unable_save: 'Unable to save aggregator settings'
   will_paginate:
