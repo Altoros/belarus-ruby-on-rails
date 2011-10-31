@@ -32,12 +32,18 @@ namespace 'aggregator' do
 
     #now let's put all new entries to database
     new_entries.each { |entry|
+      rss_link = entry.url
+      complex_rss_link = rss_link.scan(/&url=(.*?)$/)
+      if complex_rss_link && complex_rss_link.count > 0
+        rss_link = complex_rss_link[0][0]
+      end
       AggregatedArticle.create(
         :title => entry.title.gsub(%r{</?[^>]+?>}, ''),
         :content => entry.summary.gsub(%r{</?[^>]+?>}, '')
                                  .gsub('и другие&nbsp;&raquo;', ''),
-        :rss_link => entry.url,
-        :published => true
+        :rss_link => rss_link,
+        :published => true,
+        :created_at => entry.published
       )
     }
 
