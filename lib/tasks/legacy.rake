@@ -44,7 +44,9 @@ namespace :legacy do
     LegacyRecords.select('DISTINCT name').each { |record|
       meetup = Meetup.new(
         :topic => record.name,
-        :date_and_time => DateTime.parse(record.name.gsub(/conference_/, '').gsub(/_/, '/') + ' GMT').utc
+        :date_and_time => DateTime.parse(record.name.gsub(/conference_/, '').gsub(/_/, '/') + ' GMT').utc,
+        :description => record.name,
+        :place => record.name
       )
       meetup.save!(:validate => false)
       print "\033[0;32m.\033[0m"
