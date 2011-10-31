@@ -6,23 +6,6 @@
         </tr>
         <%= render 'profiles/name', :f => f %>
         <%= render 'profiles/level', :f => f %>
-        <%= f.fields_for :user do |user|%>
-            <tr>
-              <th colspan="2" class="title"><%= t('profile.password') %></th>
-            </tr>
-            <tr>
-              <td><%= user.label :password %> <i>(<%= t('users.leave_blank_if_no_changes') %>)</i></td>
-              <td>
-                <div class="field"><%= user.password_field :password %></div>
-              </td>
-            </tr>
-            <tr>
-              <td><%= user.label :password_confirmation %></td>
-              <td>
-                <div class="field"><%= user.password_field :password_confirmation %></div>
-              </td>
-            </tr>
-        <% end %>
         <%= render 'profiles/subscription', :user => @profile.user, :f => f %>
         <tr>
           <td></td>

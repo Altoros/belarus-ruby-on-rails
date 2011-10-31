@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe ProfilesController do
+  include SessionsHelper
+
   before(:each) do
     sign_in sign_in_user
   end
@@ -26,6 +28,7 @@ describe ProfilesController do
     describe "#update" do
       before(:each) do
         @user = Factory(:user)
+        store_location profile_path(@user.profile)
         put :update, :id => @user.profile.id, :profile => attributes
       end
 
@@ -107,6 +110,7 @@ describe ProfilesController do
     describe "#update" do
       before(:each) do
         @user = sign_in_user
+        store_location profile_path(@user.profile)
         put :update, :id => @user.profile.id, :profile => attributes
       end
 

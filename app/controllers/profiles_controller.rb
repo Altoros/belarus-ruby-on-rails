@@ -25,11 +25,9 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update_attributes params[:profile]
-        format.html { redirect_to @profile, :notice => 'Profile was successfully updated.' }
-        format.json { head :ok }
+        format.html { redirect_to get_stored_location, :notice => 'Profile was successfully updated.' }
       else
         format.html { render :action => :edit }
-        format.json { render :json => @profile.errors, :status => :unprocessable_entity }
       end
     end
   end
