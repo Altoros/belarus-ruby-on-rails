@@ -33,7 +33,8 @@ ol li span {font-weight:normal;}
 .logo_row {height:105px; border-bottom:1px solid #d3d3d3;}
 a.logo { float:left; margin-top:24px;}
 .sublinks { float:right; margin-top:34px; font-size:12px; line-height:22px; color:#737373;}
-.sublinks a {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
+.sublinks span {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
+.sublinks a {color:#737373;}
 .sublinks .user {display:inline-block; *display:inline; padding-left:18px;background: url(ico_user.png) 0 4px no-repeat; zoom:1;}
 .menu_row {height:56px; border-top:1px solid #fff;}
 .menu_row ul { float:left; margin-top:20px;}

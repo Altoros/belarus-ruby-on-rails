@@ -1,9 +1,8 @@
 <% if user_signed_in? %>
-  <span class="user"><%= current_user.profile.first_name %> </span>
-  <%= link_to t('profile.show_profile_title'), profile_path(current_user.profile) %>
-  <%= link_to t('menu.control_panel'), admin_root_path if can? :manage, :all %>
-  <%= link_to t('users.logout'), destroy_user_session_path, :method => :delete %>
+  <span class="user"><%= link_to_unless_current current_user.profile.full_name, profile_path(current_user.profile), :title => t('profile.show_profile_title') %></span>
+  <span><%= link_to_unless_current t('menu.control_panel'), admin_root_path if can? :manage, :all %></span>
+  <span><%= link_to_unless_current t('users.logout'), destroy_user_session_path, :method => :delete %></span>
 <% else %>
-  <%= link_to t('users.registration'), new_user_registration_path %>
-  <%= link_to t('users.login'), new_user_session_path %>
+  <span><%= link_to_unless_current t('users.registration'), new_user_registration_path %></span>
+  <span><%= link_to_unless_current t('users.login'), new_user_session_path %></span>
 <% end %>
