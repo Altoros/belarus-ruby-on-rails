@@ -147,6 +147,9 @@ namespace :legacy do
       user = User.find_by_is_admin(true) if !user
 
       #getting content
+      if !article.fulltext.strip.empty?
+        article.fulltext = '{MORE}' + article.fulltext
+      end
       content = (article.introtext + article.fulltext).gsub(/<!--.*?-->/, '')
 
       #creating article
