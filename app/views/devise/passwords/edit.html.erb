@@ -1,16 +1,32 @@
-<h2><%= t('devise.passwords.change_password') %></h2>
+<div class="forms">
+<h1><%= t('devise.passwords.change_password') %></h1>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+<%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :password, t('devise.passwords.new_password') %><br />
-  <%= f.password_field :password %></div>
+<table class="loginTBL">
+  <tr>
+    <td><%= f.label :password, t('devise.passwords.new_password') %></td>
+    <td>
+      <div class="field"><%= f.password_field :password %></div>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label :password_confirmation, t('devise.confirmations.confirm_new_password') %></td>
+    <td>
+      <div class="field"><%= f.password_field :password_confirmation %></div>
+    </td>
+  </tr>
+  <tr>
 
-  <div><%= f.label :password_confirmation, t('devise.confirmations.confirm_new_password') %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit t('devise.passwords.submit_change_password') %></div>
+    <td class="save" align="center" colspan=2>
+      <%= content_tag :button, :type => :submit, :name => :commit do %>
+        <span><span><%= t('devise.passwords.submit_change_password') %></span></span>
+      <% end %>
+    </td>
+  </tr>
+  <%= render :partial => "devise/shared/links" %>
+</table>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+</div>

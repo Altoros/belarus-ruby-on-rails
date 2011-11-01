@@ -1,12 +1,23 @@
-<h2><%= t('users.forgot_your_password') %></h2>
-
+<div class="forms">
+<h1><%= t('users.forgot_your_password') %></h1>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit t('devise.passwords.ask_send_instructions') %></div>
+<table class="loginTBL">
+  <tr>
+    <td><%= f.label :email %></td>
+    <td>
+      <div class="field"><%= f.email_field :email %></div>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="save">
+      <%= content_tag :button, :type => :submit, :name => :commit do %>
+        <span><span id="ask_send_instructions"><%= t('devise.passwords.ask_send_instructions') %></span></span>
+      <% end %>
+    </td>
+  </tr>
 <% end %>
+   <%= render :partial => "devise/shared/links" %>
+</table>
 
-<%= render :partial => "devise/shared/links" %>
+</div>

@@ -1,0 +1,11 @@
+<%- if devise_mapping.omniauthable? %>
+<div class="social_list">
+  <%= link_to image_tag("ico_facebook.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Facebook")}), user_omniauth_authorize_path(:facebook) %>
+
+  <%= link_to image_tag("ico_vk.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Vkontakte")}), user_omniauth_authorize_path(:vkontakte) %>
+  <%= link_to image_tag("ico_google_plus.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Google Apps")}), user_omniauth_authorize_path(:google_apps) %>
+  <%= link_to image_tag("ico_twitter.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Twitter")}), user_omniauth_authorize_path(:twitter) %>
+  <%= link_to image_tag("ico_github.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Github")}), user_omniauth_authorize_path(:github) %>
+  <%= link_to image_tag("ico_linkedin.png", {:alt => t("devise.omniauth_callbacks.sign_in_with_social", :provider => "Linked In")}), user_omniauth_authorize_path(:linked_in) %>
+</div>
+<% end -%>
