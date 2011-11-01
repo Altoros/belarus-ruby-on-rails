@@ -31,7 +31,7 @@
       <%= link_to button_inner_html(t('meetup.cancel_link')), admin_meetup_cancel_path(@meetup), :confirm => t('common.are_you_sure'), :method => :put, :class => 'button' %>
       <%= link_to button_inner_html(t('meetup.update_link')), edit_admin_meetup_path(@meetup), :class => 'button' %>
     <% else %>
-      <%= link_to t('meetup.create_link'), new_admin_meetup_path %>
+      <%= link_to button_inner_html(t('meetup.create_link')), new_admin_meetup_path, :class => 'button' %>
     <% end %>
   </div>
 </div>
