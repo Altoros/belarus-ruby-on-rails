@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    (user_tokens.empty? || password.present?) && super
+    (user_tokens.empty? || password.present? || reset_password_token.present? ) && super
   end
 
   def valid_password?(password)
