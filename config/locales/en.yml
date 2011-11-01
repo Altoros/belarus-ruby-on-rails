@@ -106,6 +106,7 @@ en:
     published: 'Published'
     unpublished: 'Unpublished'
     rss_link: 'Rss link'
+    more_tip: 'You can use {MORE} to divide preview part'
   users:
     login: 'Login'
     logout: 'Logout'

@@ -9,7 +9,7 @@
     <span class="comments"><%= @article.comments.size %></span>
   </div>
   <div>
-        <p><%= raw @article.content %></p>
+        <p><%= raw @article.content.gsub(/\{MORE\}/, '') %></p>
   </div>
   <%= render :partial => "sharing_buttons" %>
 
