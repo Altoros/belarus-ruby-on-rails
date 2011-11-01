@@ -4,6 +4,9 @@ class MeetupWidget < Apotomo::Widget
   responds_to_event :register
   after_initialize :setup!
 
+  DESCRIPTION_LENGTH = 300
+  DESCRIPTION_OMISSION = '<span id="meetup-omission">...</span>'
+
   def display
     if @meetup
       @share = { :title => @meetup.topic, :description => @meetup.description }

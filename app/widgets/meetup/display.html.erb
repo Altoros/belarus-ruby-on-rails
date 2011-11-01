@@ -5,8 +5,23 @@
     <div class="iteminfo">
       <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
     </div>
-
-    <p><%= @meetup.description %></p>
+    <% if @meetup.description.size <= MeetupWidget::DESCRIPTION_LENGTH %>
+       <p><%= @meetup.description %></p>
+    <%
+       else
+        short_description = truncate(@meetup.description,
+                                     :length => MeetupWidget::DESCRIPTION_LENGTH,
+                                     :separator => ' ',
+                                     :omission => MeetupWidget::DESCRIPTION_OMISSION)
+        omission_pos = -(MeetupWidget::DESCRIPTION_OMISSION.size + 1)
+        last_part = @meetup.description.gsub(short_description[0..omission_pos], '')
+    %>
+        <p>
+          <%= short_description.html_safe %>
+          <a href='#' id='meetup-read-more'><%= t 'general.more_information' %></a>
+          <span id='meetup-description-full' style='display: none;'><%= last_part %></span>
+        </p>
+    <% end %>
 
     <% if @current_user %>
       <% if @is_participant %>
@@ -21,3 +36,5 @@
 
   <%= render :file => "app/views/application/_sharing_buttons.html.erb" %>
 </div>
+
+<%= javascript_include_tag 'meetup' %>
