@@ -44,6 +44,7 @@ en:
     change_image: 'Change image'
     delete_image: 'Delete'
     wrong_image_type: 'Avatar is not one of image type'
+    profile_updated: 'Profile was successfully updated.'
   labels:
     date: 'Date'
     place: 'Place'
