@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111028170011) do
+ActiveRecord::Schema.define(:version => 20111101105251) do
 
   create_table "aggregator_configurations", :force => true do |t|
     t.string "source"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20111028170011) do
     t.boolean  "cancelled",     :default => false
   end
 
-  create_table "participants", :id => false, :force => true do |t|
+  create_table "participants", :force => true do |t|
     t.integer  "meetup_id"
     t.integer  "user_id"
     t.datetime "created_at"
