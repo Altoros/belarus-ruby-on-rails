@@ -227,4 +227,4 @@ ul.task-list li a { text-decoration: none; }
 .list-table tbody tr:hover td, .list-table tbody tr:hover td a { color: #850008;}
 
 #ask_send_instructions {font-size:12px; text-align: center;}
-
+#meetup-read-more { display: block; margin: 5px 0; }

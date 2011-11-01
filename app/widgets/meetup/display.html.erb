@@ -5,8 +5,15 @@
     <div class="iteminfo">
       <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
     </div>
-
-    <p><%= @meetup.description %></p>
+    <% unless @meetup.description.include?('{MORE}') %>
+       <p><%= @meetup.description %></p>
+    <% else %>
+        <p>
+          <span id='meetup-description-short'><%= @meetup.description.gsub(/(.+)\{MORE\}(.+)/, '\1') %></span>
+          <a href='#' id='meetup-read-more'><%= t 'general.more_information' %></a>
+          <span id='meetup-description-full' style='display: none;'><%= @meetup.description.gsub(/\{MORE\}/, '') %></span>
+        </p>
+    <% end %>
 
     <% if @current_user %>
       <% if @is_participant %>
@@ -21,3 +28,5 @@
 
   <%= render :file => "app/views/application/_sharing_buttons.html.erb" %>
 </div>
+
+<%= javascript_include_tag 'meetup' %>

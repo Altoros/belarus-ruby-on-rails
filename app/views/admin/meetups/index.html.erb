@@ -11,7 +11,7 @@
            </tr>
            <tr>
              <th><%= t('meetup.description') %>:</th>
-             <td><%= @meetup.description %></td>
+             <td><%= @meetup.description.gsub('{MORE}', '') %></td>
            </tr>
            <tr>
              <th><%= t('meetup.place') %>:</th>

@@ -74,6 +74,7 @@ ru:
     register_at: 'Зарегистрироваться на митап'
     signed_in_to_attend: 'Ты должен быть зарегистрированным пользователем, чтобы записаться на митап'
     registered: 'Вы участвуете'
+    more_tip: 'Используйте {MORE} что бы отделить первую часть описания митапа'
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'
