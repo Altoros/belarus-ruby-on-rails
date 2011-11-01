@@ -226,5 +226,5 @@ ul.task-list li a { text-decoration: none; }
 .list-table td a { text-decoration: none; color: #c46969; }
 .list-table tbody tr:hover td, .list-table tbody tr:hover td a { color: #850008;}
 
-#ask_send_instructions {font-size:12px; text-align: center;}
+.button_font_small {font-size:12px; text-align: center;}
 
