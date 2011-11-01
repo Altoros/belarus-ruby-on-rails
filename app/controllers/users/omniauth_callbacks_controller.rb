@@ -75,6 +75,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     sign_in user
+    current_user.bind_social_network(@omniauth_data['provider'], @omniauth_data['uid'])
+
     if redirect_url
       redirect_to redirect_url
     else
