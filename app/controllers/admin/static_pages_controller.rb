@@ -33,6 +33,7 @@ class Admin::StaticPagesController < ApplicationController
 
   def create
     @static_page = StaticPage.new(params[:static_page])
+    @static_page.permalink = @static_page.permalink.to_slug.normalize! :transliterations => :russian
 
     respond_to do |format|
       if @static_page.save
@@ -55,6 +56,7 @@ class Admin::StaticPagesController < ApplicationController
     end
 
     respond_to do |format|
+      params[:static_page][:permalink] = params[:static_page][:permalink].to_slug.normalize! :transliterations => :russian
       if @static_page.update_attributes(params[:static_page])
         format.html { redirect_to static_page_path(:permalink => @static_page.permalink), :notice => t('static_pages.page_successfully_updated') }
       else
