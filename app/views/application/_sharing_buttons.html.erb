@@ -6,12 +6,13 @@
        <%= "addthis:description='#{@share[:description]}'" if @share[:description]%>
      <% end %>
 >
-<a class="addthis_button_facebook"></a>
-<a class="addthis_button_twitter"></a>
-<a class="addthis_button_google"></a>
-<a class="addthis_button_linkedin"></a>
-<a class="addthis_button_vk"></a>
-<a class="addthis_button_compact"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_google"></a>
+    <a class="addthis_button_linkedin"></a>
+    <a class="addthis_button_vk"></a>
+    <a class="addthis_button_compact"></a>
 </div>
-<%= javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e8c408719719351" %>
+
+<%= javascript_tag "LazyLoad.loadOnce('http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e8c408719719351')" %>
 <!-- AddThis Button END -->

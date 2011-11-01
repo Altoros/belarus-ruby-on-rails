@@ -37,7 +37,7 @@ describe MeetupWidget do
         end
 
         it 'attending a meetup' do
-          trigger(:register, :meetup).first.should include('You are participant !!!')
+          trigger(:register, :meetup).first.should include('you-participate.png')
         end
       end
     end
