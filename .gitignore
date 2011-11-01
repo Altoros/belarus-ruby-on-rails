@@ -11,4 +11,5 @@ public/system/*
 public/files/
 public/images/
 public/pub/
+app/assets/javascripts/i18n/translations.js
 
