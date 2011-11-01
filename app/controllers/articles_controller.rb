@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.includes(:comments, :user => :profile).internal.find(params[:id])
-    @share = { :title => @article.title }
+    @share = { :url => article_url(@article), :title => @article.title }
 
 # Could be used to avoid from duplicate link for SEO purpose
 =begin

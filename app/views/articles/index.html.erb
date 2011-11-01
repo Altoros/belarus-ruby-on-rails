@@ -13,6 +13,8 @@
       <span class="comments"><%= article.comments.size %></span>
     </div>
     <p><%= raw article.content.include?('{MORE}') ? article.content.gsub(/(.*?)(\s*<p>\s*)?\{MORE\}.*/m, '\1') : article.content %></p>
+      <% @share = { :title => article.title } %>
+      <%= render :partial => "sharing_buttons", :locals => { :share => { :url => article_url(article), :title => article.title } } %>
       <%= link_to t('articles.show'), article %>
       <% if can? :manage, article %>
         <%= link_to t('articles.edit'), edit_admin_article_path(article) %>

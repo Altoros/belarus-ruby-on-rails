@@ -1,9 +1,9 @@
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style"
-     <% if @share %>
-       <%= "addthis:url='#{h(@share[:url]).gsub(/'/, '&#039;')}'" if @share[:url]%>
-       <%= "addthis:title='#{h(@share[:title]).gsub(/'/, '&#039;')}'" if @share[:title]%>
-       <%= "addthis:description='#{h(@share[:description]).gsub(/'/, '&#039;')}'" if @share[:description]%>
+    <% if share %>
+        <%= "addthis:url='#{share[:url]}'" if share[:url] %>
+        <%= "addthis:title='#{ h(share[:title]).gsub(/'/, '&#039;') }'" if share[:title] %>
+        <%= "addthis:description='#{ h(share[:description]).gsub(/'/, '&#039;') }'" if share[:description] %>
      <% end %>
 >
     <a class="addthis_button_facebook"></a>
