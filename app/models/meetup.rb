@@ -6,6 +6,7 @@ class Meetup < ActiveRecord::Base
   validates :topic, :presence => true
   validates :topic, :length => {:maximum => 255}
   validates :description, :presence => true
+  validates :description, :length => {:maximum => 500}
   validates :place, :presence => true
   validates :place, :length => {:maximum => 255}
   validates :date_and_time, :presence => true
