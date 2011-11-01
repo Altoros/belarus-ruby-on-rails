@@ -9,7 +9,10 @@
                 </td>
             </tr>
             <tr>
-                <td><%= f.label :content, t('articles.content') %></td>
+                <td>
+                  <%= f.label :content, t('articles.content') %>
+                  <span class='i-warn-message'><%= t('articles.more_tip') %></span>
+                </td>
                 <td></td>
             </tr>
             <tr>
@@ -36,5 +39,3 @@
         </table>
     <% end %>
 </div>
-
-<%= t('articles.more_tip') %>
