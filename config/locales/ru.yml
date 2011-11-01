@@ -163,6 +163,7 @@ ru:
         password_confirmation: 'Подтвердите пароль'
         current_password: 'Текущий пароль'
         created_at: 'Создан'
+        remember_me: 'Запомнить меня'
       message:
         recipient_group: 'Адресаты'
         subject: 'Тема'

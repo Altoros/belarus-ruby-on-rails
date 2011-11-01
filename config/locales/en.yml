@@ -159,6 +159,7 @@ en:
         password_confirmation: 'Password confirmation'
         current_password: 'Current password'
         created_at: 'Created at'
+        remember_me: 'Remember me'
       message:
         recipient_group: 'Recipient group'
         subject: 'Subject'
