@@ -27,6 +27,10 @@
         <td><%= f.label :password %></td>
         <td><div class="field"><%= f.password_field :password %></div></td>
       </tr>
+      <tr>
+        <td><%= f.label :remember_me %></td>
+        <td><div class="field"><%= f.check_box :remember_me %></div></td>
+      </tr>
     </table>
     <div class="login">
       <button type="submit"><span><span><%= t('users.login') %></span></span></button>
