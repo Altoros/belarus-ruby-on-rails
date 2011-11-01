@@ -12,7 +12,7 @@
       <span class="author"><%= article.user.profile.full_name%></span>
       <span class="comments"><%= article.comments.size %></span>
     </div>
-    <p><%= raw truncate_html(article.content, :length => 300, :separator => ' ', :omission => '...') %></p>
+    <p><%= raw truncate(article.content, :length => 0, :separator => '{MORE}', :omission => ' ') %></p>
       <%= link_to t('articles.show'), article %>
       <% if can? :manage, article %>
         <%= link_to t('articles.edit'), edit_admin_article_path(article) %>
