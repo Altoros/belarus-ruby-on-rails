@@ -11,7 +11,7 @@
   <div>
         <p><%= raw @article.content.gsub(/\{MORE\}/, '') %></p>
   </div>
-  <%= render :partial => "sharing_buttons" %>
+  <%= render :partial => "sharing_buttons", :locals => { :share => @share } %>
 
   <%= render "comments/index" %>
 </div>

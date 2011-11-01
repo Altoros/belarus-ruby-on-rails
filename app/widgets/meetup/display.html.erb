@@ -19,5 +19,5 @@
     <% end %>
   <% end %>
 
-  <%= render :file => "app/views/application/_sharing_buttons.html.erb" %>
+  <%= render :file => "app/views/application/_sharing_buttons.html.erb", :locals => { :share => @share } %>
 </div>
