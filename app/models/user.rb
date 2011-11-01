@@ -24,6 +24,9 @@ class User < ActiveRecord::Base
   scope :filter, lambda{ |*filters|
     includes(:profile).joins(:profile).merge(Profile.filter(filters))
   }
+  scope :filtered_to_csv, lambda{ |*filters|
+    includes(:profile => :experience).joins(:profile).merge(Profile.filter(filters))
+  }
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -117,12 +120,13 @@ class User < ActiveRecord::Base
     headers = [ I18n.t('activerecord.attributes.profile.first_name'),
                 I18n.t('activerecord.attributes.profile.last_name'),
                 I18n.t('activerecord.attributes.user.email'),
+                I18n.t('activerecord.attributes.experience.level'),
                 I18n.t('activerecord.attributes.user.created_at') ]
 
     CSV.generate(:col_sep => "\t") do |tsv|
       tsv << headers
       users.each do |user|
-        tsv << [user.profile.first_name, user.profile.last_name, user.email, I18n.l(user.created_at, :format => :short)]
+        tsv << [user.profile.first_name, user.profile.last_name, user.email, user.profile.experience.level, I18n.l(user.created_at, :format => :short)]
       end
     end
   end

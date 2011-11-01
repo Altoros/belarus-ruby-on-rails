@@ -39,6 +39,7 @@ describe Admin::UsersController do
 
     context 'downloaded CSV file' do
       before(:each) do
+        require 'iconv'
         @meetup = Factory(:meetup)
         @exp = Factory(:experience)
         @first_user = Factory(:user, :profile => Factory(:profile, :subscribed => true, :experience => @exp))
@@ -51,16 +52,18 @@ describe Admin::UsersController do
         post 'index', { :format => 'csv' }
         response.header['Content-Disposition'].should include('attachment')
         response.header['Content-Disposition'].should include('csv')
-        response.body.should include(@first_user.email)
-        response.body.should include(@second_user.email)
+        csv = Iconv.conv('UTF-8', 'UTF-16', response.body)
+        csv.should include(@first_user.email)
+        csv.should include(@second_user.email)
       end
 
       it 'should contain only participants of meetup for selected filter' do
         post 'index', { :format => 'csv', :filters => ["#{ @meetup.id}"] }
         response.header['Content-Disposition'].should include('attachment')
         response.header['Content-Disposition'].should include('csv')
-        response.body.should include(@first_user.email)
-        response.body.should_not include(@second_user.email)
+        csv = Iconv.conv('UTF-8', 'UTF-16', response.body)
+        csv.should include(@first_user.email)
+        csv.should_not include(@second_user.email)
       end
     end
   end
