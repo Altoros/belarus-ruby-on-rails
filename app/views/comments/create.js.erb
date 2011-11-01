@@ -1,5 +1,5 @@
 <% unless @comment.new_record? %>
-    $("#comments").prepend("<%= escape_javascript(render "comments/show", :comment => @comment) %>");
+    $("#comments").append("<%= escape_javascript(render "comments/show", :comment => @comment) %>");
     var comment_div = $("#<%= dom_id @comment %>");
     comment_div.hide().slideToggle("slow");
     comment_notify(I18n.t('articles.comment_added'));
