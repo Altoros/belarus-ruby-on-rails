@@ -5,13 +5,13 @@
   <% @articles.each do |article| %>
   <div class="item">
     <h2>
-      <%= link_to article.title, article %>
+      <%= link_to article.title, article.rss_link, :target => :_blank %>
     </h2>
     <div class="iteminfo">
       <span class="date"><%= l(article.created_at, :format => :long)%></span>
     </div>
     <p><%= article.content.html_safe %></p>
-        <%= link_to t('articles.show'), article %>
+        <%= link_to t('articles.show'), article.rss_link, :target => :_blank %>
         <% if can? :manage, article %>
         <%= link_to t('articles.delete'), admin_aggregated_article_path(article.id),
                       :confirm => t('common.are_you_sure'), :method => :delete %>
