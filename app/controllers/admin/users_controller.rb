@@ -26,8 +26,9 @@ class Admin::UsersController < ApplicationController
   protected
 
   def export_csv(filters)
+    require 'iconv'
     filename = I18n.l(Time.now, :format => :short) + "- Users.csv"
-    content = User.to_csv(User.filter(filters))
+    content = Iconv.conv("UTF-16", "UTF-8", User.to_csv(User.filter(filters)))
     send_data content, :filename => filename
   end
 end
