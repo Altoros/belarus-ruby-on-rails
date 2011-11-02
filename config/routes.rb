@@ -16,7 +16,7 @@ BelarusRubyOnRails::Application.routes.draw do
       post 'sign_in', :to => "devise/sessions#create", :as => 'login'
       delete 'sign_out', :to => "devise/sessions#destroy", :as => 'logout'
       get 'auth/:provider', :to => 'omniauth#passthru'
-      get 'reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
+      get ':id/reset_password', :to => 'users#reset_password', :as => 'user_reset_password'
     end
   end
 
