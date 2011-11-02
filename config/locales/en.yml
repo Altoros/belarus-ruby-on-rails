@@ -74,6 +74,7 @@ en:
     register_at: 'Register to meetup'
     signed_in_to_attend: 'You need to be signed in to attempt to meetup'
     registered: 'You are participant !!!'
+    no_active_meetups: 'No active meetups at this moment'
   articles:
     article_successfully_created: 'Article was successfully created'
     article_successfully_updated: 'Article was successfully updated'

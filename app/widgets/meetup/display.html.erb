@@ -6,7 +6,12 @@
       <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
     </div>
 
-    <p><%= @meetup.description %></p>
+    <% if @meetup.description.size < Meetup::SHORT_DESCRIPTION_LENGTH %>
+        <p><%= @meetup.description %></p>
+    <% else %>
+        <p><%= truncate strip_tags(@meetup.description), :length => Meetup::SHORT_DESCRIPTION_LENGTH, :separator => '.', :omission => '.' %></p>
+        <p><%= link_to t('general.more_information'), meetup_path %></p>
+    <% end %>
 
     <% if @current_user %>
       <% if @is_participant %>
@@ -18,6 +23,5 @@
       <%= t('meetup.signed_in_to_attend') %> <%= link_to t('users.login'), login_path %>
     <% end %>
   <% end %>
-
   <%= render :file => "app/views/application/_sharing_buttons.html.erb" %>
 </div>

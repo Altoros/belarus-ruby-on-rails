@@ -6,7 +6,6 @@ class Meetup < ActiveRecord::Base
   validates :topic, :presence => true
   validates :topic, :length => {:maximum => 255}
   validates :description, :presence => true
-  validates :description, :length => {:maximum => 500}
   validates :place, :presence => true
   validates :place, :length => {:maximum => 255}
   validates :date_and_time, :presence => true
@@ -14,6 +13,8 @@ class Meetup < ActiveRecord::Base
 
   scope :active, lambda { where('date_and_time > ? AND cancelled = ?', Time.new, false) }
   scope :recent, order('date_and_time')
+
+  SHORT_DESCRIPTION_LENGTH = 300
 
   def participant?(user)
     self.participants.where('user_id = ?', user.id).present? if user

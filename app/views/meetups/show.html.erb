@@ -1,0 +1,18 @@
+<div class="item">
+  <% if @meetup %>
+      <h2>
+        <%= @meetup.topic %>
+      </h2>
+
+      <div class="iteminfo">
+        <span class="date"><%= l(@meetup.date_and_time, :format => :long) %></span>
+        <span><%= @meetup.place %></span>
+      </div>
+      <div>
+            <p><%= raw @meetup.description %></p>
+      </div>
+      <%= render :partial => "sharing_buttons", :locals => { :share => @share } %>
+  <% else %>
+      <p><%= t 'meetup.no_active_meetups' %></p>
+  <% end %>
+</div>

@@ -7,6 +7,7 @@ BelarusRubyOnRails::Application.routes.draw do
   resources :profiles do
     delete 'avatar' => 'profiles#delete_avatar', :on => :member
   end
+  resource :meetup, :only => :show
 
   get 'page/:permalink', :to => 'static_pages#show', :as => 'static_page'
 
