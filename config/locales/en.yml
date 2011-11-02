@@ -22,6 +22,8 @@ en:
       make_admin: 'Make admin'
       ban: 'Ban'
       unban: 'Unban'
+      reset_password: 'Reset user password'
+      reset_password_notice: 'Instructions about password resetting  were sent to user email'
     messages:
       title: 'Send mail to users'
       invalid_user_group: ' contains not valid user group'

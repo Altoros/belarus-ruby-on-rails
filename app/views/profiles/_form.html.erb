@@ -6,6 +6,13 @@
         </tr>
         <%= render 'profiles/name', :f => f %>
         <%= render 'profiles/level', :f => f %>
+        <tr>
+          <th colspan="2" class="title"><%= t('profile.password') %></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= link_to t('admin.users.reset_password'), user_reset_password_path(:id => @profile.user.id) %></td>
+        </tr>
         <%= render 'profiles/subscription', :user => @profile.user, :f => f %>
         <tr>
           <td></td>

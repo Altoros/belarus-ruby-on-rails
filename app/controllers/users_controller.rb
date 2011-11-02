@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :only => [:reset_password]
 
   def reset_password
-    if user_signed_in?
-      current_user.send_reset_password_instructions
-      flash[:notice] = t('devise.passwords.send_instructions')
+    user = User.find(params[:id])
+    if user_signed_in? && can?(:reset_password, User) && user
+      user.send_reset_password_instructions
+      flash[:notice] = t('admin.users.reset_password_notice')
     end
 
-    redirect_to root_path
+    redirect_to get_stored_location
   end
 
   def new

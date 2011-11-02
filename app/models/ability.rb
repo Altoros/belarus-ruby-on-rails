@@ -13,6 +13,7 @@ class Ability
       can :manage, :all if user.is_admin?
       can :admin, :dashboard if user.is_admin?
       can :manage, StaticPage if user.is_admin?
+      can :reset_password, User if user.is_admin?
 
       # user
       can :read, Article do |article|
