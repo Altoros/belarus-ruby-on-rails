@@ -28,12 +28,3 @@
   </div>
 
 <% end %>
-
-<% if can? :create, Article %>
-  <br /><br />
-  <%= link_to(
-    content_tag(:span, content_tag(:span, t('articles.new_article'))),
-    new_admin_article_path,
-    :class => :button
-  ) %>
-<% end %>
