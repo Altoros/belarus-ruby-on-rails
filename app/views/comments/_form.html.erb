@@ -2,12 +2,12 @@
   <div class="upic">
     <%= image_tag userpic_url(current_user, 50) %>
   </div>
-    <div>
-      <%= form_for [comment.article, comment], :remote => true do |f| %>
-      <div><%= f.text_area :body %></div>
+    <div class='forms'>
+      <%= form_for [comment.article, comment], :format => :json, :remote => true do |f| %>
+      <div class='inner_wrapper'><%= f.text_area :body %></div>
       <div>
         <%= content_tag :button, :type => :submit, :name => :commit do %>
-          <span><span><%= t('articles.leave_a_comment') %></span></span>
+          <%= button_inner_html comment.id ? t('articles.comment_edit') : t('articles.leave_a_comment') %>
         <% end %>
       </div>
       <% end %>

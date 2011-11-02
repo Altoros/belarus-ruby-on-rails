@@ -174,9 +174,9 @@ div.comments h3 span { position:relative; bottom:6px; font:bold 14px/26px Arial,
 
 .to_comment { position:relative; min-height:100px; padding:20px 0 20px 65px; margin:10px 0 0 20px; border:1px solid #c7c7c7; border-width:1px 0; background:#efefef;}
 .to_comment .upic { position:absolute; top:20px; left:7px;}
-.to_comment textarea { overflow:auto; width:554px; max-width:554px; height:90px; max-height:90px; margin-bottom:20px; }
+.to_comment textarea { overflow:auto; width: 99%; max-width: 99%; height:90px; max-height:90px; }
 .comment .to_comment {margin-left:-15px;}
-.comment .to_comment textarea {width:504px; max-width:504px;}
+.comment .to_comment textarea {width: 99%; max-width: 99%;}
 a.close { margin-left:20px; color:#881e24; font-size:14px; text-decoration:none;}
 a.close:hover {text-decoration:underline;}
 
@@ -228,3 +228,5 @@ ul.task-list li a { text-decoration: none; }
 
 .button_font_small {font-size:12px; text-align: center;}
 
+.to_comment button { margin-top: 15px; }
+.to_comment .inner_wrapper { width: 97%; }

@@ -1,11 +1,11 @@
-<%= div_for comment do %>
+<%= div_for comment, :class => 'comment_wrapper' do %>
   <div class="comment">
     <b><%= comment.user.profile.full_name %></b>
-    <!-- <%= distance_of_time_in_words_to_now(comment.created_at) %> ago wrote: -->
     <% if can? :delete, comment %>
         <%= link_to_if(can?(:update, comment), t('articles.edit'), edit_article_comment_path(comment.article, comment),
-      :remote => true, :title => "click for edit") %>
-        <%= link_to t('articles.delete'), article_comment_path(comment.article, comment), :method => :delete, :confirm => t('common.are_you_sure'), :remote => true %>
+                    :remote => true, :class => 'comment-edit-link', :title => t('articles.edit')) %>
+        <%= link_to t('articles.delete'), article_comment_path(comment.article, comment),:method => :delete,
+                    :confirm => t('common.are_you_sure'), :remote => true, :class => 'comment-delete-link' %>
     <% end %>
 
     <div class="upic">
