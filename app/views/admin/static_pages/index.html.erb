@@ -1,5 +1,7 @@
 <h1><%= t('static_pages.list') %></h1>
 
+<%= link_to button_inner_html(t('static_pages.new')), new_admin_static_page_path, :class => 'button' %>
+
 <% if @static_pages.empty? %>
     <%= t('static_pages.no_pages') %>
 <% else %>
@@ -21,4 +23,4 @@
 
 <% end %>
 
-<%= link_to button_inner_html(t('static_pages.new')), new_admin_static_page_path, :class => 'button' %>
+
