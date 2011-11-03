@@ -87,6 +87,7 @@ ru:
     comment_updated: 'Комментарий был успешно изменён'
     comment_length_warning: 'Длина комментария  должна быть не менее 5-ти символов!'
     comment_deleted: "Комментарий был успешно удалён"
+    comment_answer: 'Ответить'
     login_to_comment: 'Пожалуйста %{href} чтобы оставлять комментарии'
     log_in_href: 'войдите'
     unable_save: 'Не удалось сохранить статью'

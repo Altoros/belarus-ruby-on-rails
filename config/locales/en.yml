@@ -87,6 +87,7 @@ en:
     comment_updated: 'The comment was updated successfully'
     comment_length_warning: 'The length of the comment should be at least 5 symbols!'
     comment_deleted: "The comment was successfully deleted"
+    comment_answer: 'Answer'
     login_to_comment: 'Please %{href} to post comments'
     log_in_href: 'login'
     unable_save: 'Unable to save article'

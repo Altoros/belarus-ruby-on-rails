@@ -230,3 +230,8 @@ ul.task-list li a { text-decoration: none; }
 
 .to_comment button { margin-top: 15px; }
 .to_comment .inner_wrapper { width: 97%; }
+
+.comment.nested_comment { padding: 15px 0; }
+.comment .to_comment .upic { left: 10px; }
+.comment .to_comment .forms { right: -5px;  }
+
