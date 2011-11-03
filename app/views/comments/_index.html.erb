@@ -4,7 +4,7 @@
     <span><%= @article.comments.size %></span></h3>
   <div id="comments_block">
     <% if can? :create, Comment %>
-      <div>
+      <div id="new-article-comment-wrapper">
            <%= render "comments/form", :comment => @article.comments.build %>
            <div id="comment_notice"></div>
       </div>
@@ -15,7 +15,7 @@
     <% if can? :read, Comment %>
       <div id="comments">
           <%= render :partial => "comments/show",
-                     :collection => @article.comments.includes(:user => :profile),
+                     :collection => @article.comments.top_level.includes(:parent, :children, :user => :profile),
                      :as => 'comment' %>
       </div>
     <% end %>

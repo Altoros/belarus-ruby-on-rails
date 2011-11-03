@@ -3,11 +3,18 @@
     <%= image_tag userpic_url(current_user, 50) %>
   </div>
     <div class='forms'>
-      <%= form_for [comment.article, comment], :format => :json, :remote => true do |f| %>
-      <div class='inner_wrapper'><%= f.text_area :body %></div>
+      <%= form_for shallow_comment ? comment : [comment.article, comment],
+                   :format => :json, :remote => true do |f| %>
+      <% if comment.parent %>
+        <%= hidden_field_tag :parent_id, comment.parent.id %>
+      <% end %>
+      <div class='inner_wrapper'><%= f.text_area :body,  :id => comment.parent ? 'nested_comment_body' : 'comment_body' %></div>
       <div>
-        <%= content_tag :button, :type => :submit, :name => :commit do %>
-          <%= button_inner_html comment.id ? t('articles.comment_edit') : t('articles.leave_a_comment') %>
+        <%= content_tag :button, :type => :submit, :name => :commit, :id => ('nested_comment_submit' if comment.parent) do %>
+          <%= button_inner_html shallow_comment ? t('articles.comment_edit') : t('articles.leave_a_comment') %>
+        <% end %>
+        <% if comment.parent %>
+            <%= link_to button_inner_html(t('articles.comment_cancel')), '#', :class => 'button cancel-comment-link' %>
         <% end %>
       </div>
       <% end %>
