@@ -4,6 +4,8 @@ class Comment < ActiveRecord::Base
   belongs_to :article
   belongs_to :user
 
+  acts_as_tree :order => "created_at"
+
   attr_protected :article_id, :user_id
 
   def deliver

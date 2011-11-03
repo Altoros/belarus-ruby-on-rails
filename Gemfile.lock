@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts_as_tree (0.1.1)
     addressable (2.2.6)
     apotomo (1.1.4)
       cells (>= 3.6.7)
@@ -265,6 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tree
   apotomo
   babosa
   cancan

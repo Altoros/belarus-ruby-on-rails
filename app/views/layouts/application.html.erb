@@ -42,8 +42,8 @@
         </div>
         <div class="right">
           <%= render_widget :meetup %>
-          <%= render :partial => "facebook_block" %>
-          <%= render :partial => "vkontakte_block" %>
+          <%= render :partial => "facebook_block" unless Rails.env == 'test' %>
+          <%= render :partial => "vkontakte_block" unless Rails.env == 'test' %>
           <%= render :partial => "twitter_block" %>
         </div>
         <div class="cl_all"></div>

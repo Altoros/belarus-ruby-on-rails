@@ -45,6 +45,8 @@ gem 'babosa'
 
 gem 'truncate_html'
 
+gem 'acts_as_tree'
+
 gem 'feedzirra'
 
 group :test do

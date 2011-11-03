@@ -89,12 +89,34 @@ describe CommentsController do
         Comment.exists?(@comment).should be_false
       end
 
+      it 'should delete nested comment' do
+        nested_comment = Factory(:comment)
+        @comment.children << nested_comment
+        xhr :get, :destroy, { :id => @comment }
+        json = parseResponseJSON
+
+        json['comment_div_id'].should_not be_nil
+        Comment.exists?(@comment).should be_false
+        Comment.exists?(nested_comment).should be_false
+      end
+
       it "should have no access to remove foreign comment" do
         @stranger_user = Factory(:user, :email => "user2@test.com")
         @stranger_comment = Factory(:comment, :article_id => Factory(:article).id, :user => @stranger_user)
         xhr :get, :destroy, { :id => @stranger_comment }
 
         response.status.should eq(403)
+      end
+    end
+
+    describe '#new' do
+      it 'should contain form for nested comment' do
+        xhr :get, :new, { :comment_id => @comment, :format => :json }
+        json = parseResponseJSON
+
+        json['form_html'].should_not be_nil
+        json['form_html'].should have_selector('form')
+        json['form_html'].should have_selector('input#parent_id')
       end
     end
 
@@ -108,6 +130,19 @@ describe CommentsController do
         json['comment_html'].should have_content(new_comment_body)
       end
 
+      it 'can create nested comment' do
+        xhr :post, :create, { :comment => { :body => new_comment_body },
+                              :article_id => @comment.article,
+                              :parent_id => @comment,
+                              :format => :json }
+        json = parseResponseJSON
+
+        json['create_status'].should be_true
+        json['comment_html'].should_not be_nil
+        json['comment_html'].should have_content(new_comment_body)
+
+        @comment.children.size.should be_present
+      end
 
       it "can't create a comment with invalid comment body" do
         xhr :post, :create, :comment => { :body => '**' }, :article_id => @comment.article
