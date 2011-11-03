@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111101105251) do
+ActiveRecord::Schema.define(:version => 20111102122943) do
 
   create_table "aggregator_configurations", :force => true do |t|
     t.string "source"
@@ -44,6 +44,11 @@ ActiveRecord::Schema.define(:version => 20111101105251) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "comment_relationships", :force => true do |t|
+    t.integer "parent_comment_id"
+    t.integer "child_comment_id"
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "article_id"

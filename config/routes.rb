@@ -1,7 +1,10 @@
 BelarusRubyOnRails::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
-    resources :comments
+    resources :comments, :only => [ :create, :edit, :update, :destroy ], :shallow => true do
+      resource :comments, :only => :new
+    end
   end
+
   resources :aggregated_articles, :only => [:index, :show], :path => '/news/'
   resources :profiles
   resources :profiles do
