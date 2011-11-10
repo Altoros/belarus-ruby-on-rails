@@ -51,7 +51,7 @@ a.logo { float:left; margin-top:24px;}
 .left .item {padding:20px 0 30px; border-top:1px solid #e0e0e0;}
 .item a { color:#000;}
 .left .item:first-child {padding:10px 0 30px; border-top:none;}
-.iteminfo { margin:8px 0; font-size:12px;line-height:20px; color:#737373;}
+.iteminfo { margin:8px 0; font-size:12px;line-height:20px; color:#737373; }
 .iteminfo * {display:inline-block; *display:ilnine; padding-left:20px; margin-right:20px; background-position:0 4px; background-repeat:no-repeat; zoom:1;}
 .iteminfo .date {background-image:url(ico_calendar.png);}
 .iteminfo .author {background-image:url(ico_user.png);}
@@ -235,3 +235,7 @@ ul.task-list li a { text-decoration: none; }
 .comment .to_comment .upic { left: 10px; }
 .comment .to_comment .forms { right: -5px;  }
 
+.service_links a { color: #850008; }
+.item .iteminfo { float: left; }
+.item .addthis_toolbox { float: right; }
+.participate .addthis_toolbox { margin:  15px auto 0; width: 125px; }

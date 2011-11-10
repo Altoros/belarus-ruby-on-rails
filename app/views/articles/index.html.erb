@@ -8,18 +8,22 @@
         <%= link_to article.title, article %>
       </h2>
       <div class="iteminfo">
-      <span class="date"><%= l(article.created_at, :format => :long)%></span>
-      <span class="author"><%= article.user.profile.full_name%></span>
-      <span class="comments"><%= article.comments.size %></span>
-    </div>
-    <p><%= raw article.content.include?('{MORE}') ? article.content.gsub(/(.*?)(\s*<p>\s*)?\{MORE\}.*/m, '\1') : article.content %></p>
+        <span class="date"><%= l(article.created_at, :format => :long)%></span>
+        <span class="author"><%= article.user.profile.full_name%></span>
+        <span class="comments"><%= article.comments.size %></span>
+      </div>
       <%= render :partial => "sharing_buttons", :locals => { :share => { :url => article_url(article), :title => article.title } } %>
-      <%= link_to t('articles.show'), article %>
-      <% if can? :manage, article %>
-        <%= link_to t('articles.edit'), edit_admin_article_path(article) %>
-        <%= link_to t('articles.delete'), admin_article_path(article),
-                      :confirm => t('common.are_you_sure'), :method => :delete %>
-      <% end %>
+      <div class='cl_all'></div>
+
+      <p><%= raw article.content.include?('{MORE}') ? article.content.gsub(/(.*?)(\s*<p>\s*)?\{MORE\}.*/m, '\1') : article.content %></p>
+      <div class='service_links'>
+          <%= link_to t('articles.show'), article %>
+          <% if can? :manage, article %>
+            <%= link_to t('articles.edit'), edit_admin_article_path(article) %>
+            <%= link_to t('articles.delete'), admin_article_path(article),
+                          :confirm => t('common.are_you_sure'), :method => :delete %>
+          <% end %>
+      </div>
     </div>
   <% end %>
 

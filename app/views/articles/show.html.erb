@@ -8,10 +8,13 @@
     <span class="author"><%= @article.user.profile.full_name %></span>
     <span class="comments"><%= @article.comments.size %></span>
   </div>
+  <%= render :partial => "sharing_buttons", :locals => { :share => @share } %>
+  <div class='cl_all'></div>
+
   <div>
         <p><%= raw @article.content.gsub(/\{MORE\}/, '') %></p>
   </div>
-  <%= render :partial => "sharing_buttons", :locals => { :share => @share } %>
+
 
   <%= render "comments/index" %>
 </div>
