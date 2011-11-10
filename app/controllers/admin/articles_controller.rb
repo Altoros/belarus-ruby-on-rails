@@ -57,7 +57,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to edit_admin_article_path(@article), :notice => t('articles.article_successfully_updated') }
+        format.html { redirect_to admin_articles_path, :notice => t('articles.article_successfully_updated') }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
