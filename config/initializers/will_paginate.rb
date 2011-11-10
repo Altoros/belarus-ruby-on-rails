@@ -25,7 +25,7 @@ class PaginationListLinkRenderer < WillPaginate::ActionView::LinkRenderer
       unless page == current_page
         link(tag(:span, page), page)
       else
-        link(tag(:span, page), page, :class => 'act')
+        tag(:span, tag(:span, page), :class => 'act')
       end
     end
 
@@ -42,8 +42,6 @@ class PaginationListLinkRenderer < WillPaginate::ActionView::LinkRenderer
     def previous_or_next_page(page, text, classname)
       if page
         link(text, page, :class => classname)
-      else
-        tag(:span, '', :class => classname)
       end
     end
 
