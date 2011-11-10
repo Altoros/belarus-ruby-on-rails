@@ -95,7 +95,7 @@ describe Admin::ArticlesController do
 
         it "redirects to the article" do
           @article.reload
-          response.should redirect_to(edit_admin_article_path(@article))
+          response.should redirect_to(admin_articles_path)
         end
       end
 
