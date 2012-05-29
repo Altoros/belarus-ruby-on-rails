@@ -55,6 +55,7 @@ a.logo { float:left; margin-top:24px;}
 .iteminfo * {display:inline-block; *display:ilnine; padding-left:20px; margin-right:20px; background-position:0 4px; background-repeat:no-repeat; zoom:1;}
 .iteminfo .date {background-image:url(ico_calendar.png);}
 .iteminfo .author {background-image:url(ico_user.png);}
+.iteminfo a {padding:0;color:#737373;}
 .iteminfo span.comments {background-image:url(ico_message.png);}
 
 .pagination { padding:0 0 40px 0; font-weight:bold; font-size:1px;}

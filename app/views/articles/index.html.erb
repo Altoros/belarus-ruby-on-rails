@@ -10,7 +10,9 @@
       <div class="iteminfo">
         <span class="date"><%= l(article.created_at, :format => :long)%></span>
         <span class="author"><%= article.user.profile.full_name%></span>
-        <span class="comments"><%= article.comments.size %></span>
+        <%= link_to article_path(article, :anchor => "comments_block") do %>
+            <span class="comments"><%= article.comments.size %></span>
+        <% end %>
       </div>
       <%= render :partial => "sharing_buttons", :locals => { :share => { :url => article_url(article), :title => article.title } } %>
       <div class='cl_all'></div>

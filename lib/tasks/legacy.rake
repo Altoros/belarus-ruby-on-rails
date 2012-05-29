@@ -1,6 +1,32 @@
 namespace :legacy do
   desc "Import the legacy data."
   task :import => :environment do
+    class Legacy < ActiveRecord::Base
+      config = YAML::load(File.open('config/database.yml'))
+      establish_connection config['legacy']
+    end
+
+    class LegacyArticle < Legacy
+      set_table_name 'rug_content'
+    end
+
+    class LegacyRedirection < Legacy
+      set_table_name 'rug_redirection'
+    end
+
+    class LegacyUser < Legacy
+      set_table_name 'rug_users'
+    end
+
+    class LegacyRecords < Legacy
+      set_table_name 'rug_facileforms_records'
+    end
+
+    class LegacySubrecords < Legacy
+      set_table_name 'rug_facileforms_subrecords'
+      set_inheritance_column :ruby_type
+    end
+
     #Remove existing users and profiles
     User.delete_all
     Profile.delete_all
@@ -209,30 +235,4 @@ namespace :legacy do
     puts
 
   end
-end
-
-class Legacy < ActiveRecord::Base
-  config = YAML::load(File.open('config/database.yml'))
-  establish_connection config['legacy']
-end
-
-class LegacyArticle < Legacy
-  set_table_name 'rug_content'
-end
-
-class LegacyRedirection < Legacy
-  set_table_name 'rug_redirection'
-end
-
-class LegacyUser < Legacy
-  set_table_name 'rug_users'
-end
-
-class LegacyRecords < Legacy
-  set_table_name 'rug_facileforms_records'
-end
-
-class LegacySubrecords < Legacy
-  set_table_name 'rug_facileforms_subrecords'
-  set_inheritance_column :ruby_type
 end
