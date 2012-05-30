@@ -2,7 +2,7 @@ module ProfilesHelper
   def provider_link(provider, displayed_user_id)
     link  = if provider.profile_link
               if provider.provider_name == :google_apps
-                provider.profile_link
+                mail_to(provider.profile_link, '',  :class => "provider provider_#{provider.provider_name}")
               else
                 link_to('', provider.profile_link, :target => '_blank', :class => "provider provider_#{provider.provider_name}")
               end
