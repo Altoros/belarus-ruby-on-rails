@@ -123,5 +123,6 @@ BelarusRubyOnRails::Application.routes.draw do
   match ':controller(/:action(/:id(.:format)))'
 
   get ':id', :to => 'articles#show'
+  get 'download_ics/:id', :to => 'meetuped_articles#download_ics', :as => :download_ics
 
 end

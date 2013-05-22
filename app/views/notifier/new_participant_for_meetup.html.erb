@@ -1,1 +1,2 @@
 <%= @meetup.letter_body.html_safe %>
+<%= link_to t('meetup.download_ics'), download_ics_path(@meetup, :only_path => false), {:target => "_blank"} %>

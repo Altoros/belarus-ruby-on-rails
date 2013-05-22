@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221133739) do
+ActiveRecord::Schema.define(:version => 20130521095025) do
 
   create_table "aggregator_configurations", :force => true do |t|
     t.string "source"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20130221133739) do
     t.text     "decline_email_body"
     t.string   "accept_email_subject"
     t.text     "accept_email_body"
+    t.datetime "finish_date_and_time"
   end
 
   create_table "participants", :force => true do |t|

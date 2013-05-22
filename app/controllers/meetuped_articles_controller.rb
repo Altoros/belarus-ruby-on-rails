@@ -26,4 +26,10 @@ class MeetupedArticlesController < ApplicationController
     end
   end
 
+  def download_ics
+    meetup = Meetup.find(params[:id])
+
+    send_data meetup.export_to_ics, :filename => 'meetup.ics'
+  end
+
 end
