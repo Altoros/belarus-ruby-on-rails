@@ -30,3 +30,7 @@ end
 every 1.day, :at => '4:30 am' do
   command "cd /home/deploy/belarus-on-rails/current && bundle exec backup perform --trigger my_backup -c ~/Backup/config.rb"
 end
+
+every :reboot do
+  rake "sunspot:solr:start"
+end
