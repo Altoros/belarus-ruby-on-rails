@@ -1,0 +1,25 @@
+<h1><%= t('videos.list_of_videos') %></h1>
+
+<%= link_to button_inner_html(t('videos.fetch_videos')), fetch_admin_videos_path, :class => :button %>
+
+<% if @videos.empty? %>
+  <div class="sep">
+    <%= t('videos.no_videos') %>
+  </div>
+<% else %>
+  <table class='list-table'>
+    <tr>
+      <th><%= t('videos.title') %></th>
+      <th></th>
+    </tr>
+
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= link_to video.title, edit_admin_video_path(video), :title => t('videos.editing_video') %></td>
+        <td><%= link_to t('videos.delete'), admin_video_path(video), confirm: t('common.are_you_sure'), method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<%= will_paginate @videos %>

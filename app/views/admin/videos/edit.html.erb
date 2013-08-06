@@ -1,0 +1,26 @@
+<div class="forms">
+  <h1><%= t('videos.update_page') %></h1>
+
+  <%= simple_nested_form_for [:admin, @video] do |f| %>
+  <table class="loginTBL">
+    <tr>
+      <td><%= f.label :title, t('videos.title') %></td>
+      <td>
+        <div class="field"><%= f.text_field :title, :class => 'video_title' %></div>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :description, t('meetup.description') %></td>
+      <td>
+        <div class="field"><%= f.text_area :description, :class => 'video_title' %></div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="save">
+        <button type="submit"><span><span><%= t('articles.update') %></span></span></button>
+      </td>
+    </tr>
+  </table>
+  <% end %>
+</div>

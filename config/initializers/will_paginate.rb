@@ -1,6 +1,7 @@
 require 'will_paginate'
 require 'will_paginate/view_helpers'
 require 'will_paginate/view_helpers/link_renderer'
+require 'will_paginate/array'
 
 module WillPaginate
   module ActionView

@@ -1,0 +1,23 @@
+<% if @videos.empty? %>
+  <%= t('videos.no_videos') %>
+<% else %>
+  <% @videos.each do |video| %>
+    <div class="item fetched-video">
+      <h3>
+        <%= link_to video.title, video_path(video) %>
+      </h3>
+      <div class="iteminfo">
+        <span class="date"><%= l(video.published_at, :format => :long) %></span>
+
+        <div class='cl_all'></div>
+        <iframe class='video-frame' src="<%= video.content %>"></iframe>
+      </div>
+
+    </div>
+  <% end %>
+
+  <div class="pages">
+    <%= will_paginate @videos %>
+  </div>
+
+<% end %>

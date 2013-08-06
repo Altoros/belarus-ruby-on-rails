@@ -79,6 +79,7 @@ gem 'sunspot_solr'
 gem 'backup'
 
 gem 'icalendar2'
+gem 'youtube_it'
 
 group :test do
   gem 'cucumber-rails', :require => false

@@ -1,0 +1,15 @@
+<div class="item fetched-video">
+  <h3>
+    <%=  @video.title %>
+  </h3>
+  <div class="iteminfo">
+    <span class="date"><%= l(@video.published_at, :format => :long) %></span>
+
+    <div class='cl_all'></div>
+    <iframe class='video-frame' src="<%= @video.content %>"></iframe>
+    <div class='description'>
+      <%= @video.description %>
+    </div>
+  </div>
+
+</div>
