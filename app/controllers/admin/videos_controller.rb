@@ -16,13 +16,14 @@ class Admin::VideosController < ApplicationController
     fetched_videos = client.videos_by(:user => SOCIAL_CONFIG['youtube']['username']).videos
 
     @videos = Video.screening(fetched_videos).paginate(
-      :per_page => 5,
+      :per_page => 10,
       :page => params[:page]
     )
   end
 
   def create
-    Video.create(params[:fetched_video])
+    Video.add_videos(params[:fetched_videos]) if params[:fetched_videos]
+
     redirect_to admin_videos_path
   end
 

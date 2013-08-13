@@ -275,3 +275,7 @@ table.styled th {font-weight:bold;}
 .fetched-video .description {font-size: 14px; margin-top: 10px;}
 .video_title {width: 360px !important;}
 .sep {margin-top: 30px;}
+.add-item { float: left; margin-right: 10px; margin-top: 3px;}
+.spoiler { font-weight: bold; font-size: 14px; }
+#add-videos-btn { overflow:visible; height:31px; width: auto; font-size:16px; font-weight:bold; text-shadow: #1f0002 0px -1px 1px; cursor:pointer; color: #850000; }
+

@@ -1,20 +1,32 @@
 <% if @videos.empty? %>
   <%= t('videos.no_videos') %>
 <% else %>
-  <% @videos.each do |video| %>
-    <div class="item fetched-video">
-      <h3>
-        <%= video.title %>
-      </h3>
-      <div class="iteminfo">
-        <span class="date"><%= l(video.published_at, :format => :long) %></span>
 
-        <div class='cl_all'></div>
-        <iframe class='video-frame' src="<%= video.media_content.first.url %>"></iframe>
-        <%= link_to button_inner_html(t('videos.save_video')), admin_videos_path(:fetched_video => {:title => video.title, :description => video.description, :content => video.media_content.first.url, :published_at => video.published_at}), :method => :post, :class => [:button, :right] %>
+  <%= form_tag admin_videos_path,  :method => :post do %>
+
+    <% @videos.each do |video| %>
+      <div class="item fetched-video">
+        <span class="add-item">
+          <%= check_box_tag "fetched_videos[]", { :title => video.title, :description => video.description, :content => video.media_content.first.url, :published_at => "#{video.published_at}" } %>
+        </span>
+
+        <h3>
+          <%= video.title %>
+        </h3>
+        <div class="iteminfo">
+          <span class="date"><%= l(video.published_at, :format => :long) %></span>
+
+          <div class='cl_all'></div>
+          <div class='video'>
+            <%= link_to ' + ', '#', :class => 'spoiler left' %>
+            <iframe class='video-frame' src="<%= video.media_content.first.url %>"></iframe>
+          </div>
+       </div>
+
       </div>
+    <% end %>
 
-    </div>
+    <%= submit_tag t('videos.save_video'), :class => "right", :id => "add-videos-btn" %>
   <% end %>
 
   <div class="pages">
