@@ -7,7 +7,7 @@
         <%= link_to video.title, video_path(video) %>
       </h3>
       <div class="iteminfo">
-        <span class="date"><%= l(video.published_at, :format => :long) %></span>
+        <span class="date"><%= l(video.created_at, :format => :long) %></span>
 
         <div class='cl_all'></div>
         <iframe class='video-frame' src="<%= video.content %>"></iframe>
