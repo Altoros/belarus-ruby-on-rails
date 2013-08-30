@@ -9,9 +9,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 levels = if I18n.locale.to_s == 'ru'
-           ['Что такое Ruby on Rails?', 'Новичок', 'Средний', 'Эксперт']
+           ['Что такое Ruby?', 'Новичок', 'Средний', 'Эксперт']
          else
-           ['What is Ruby on Rails?', 'Beginner', 'Intermediate', 'Expert']
+           ['What is Ruby?', 'Beginner', 'Intermediate', 'Expert']
          end
 Experience.delete_all
 levels.each do |level|
@@ -20,11 +20,11 @@ end
 
 twitter_block_settings = if I18n.locale.to_s == 'ru'
                           {:title => 'Что пишут о',
-                          :subject => 'Belarus Ruby on Rails',
+                          :subject => 'Belarus Ruby',
                           :footer_text => 'Присоединиться к обсуждению'}
                         else
                           {:title => 'What is written about',
-                          :subject => 'Belarus Ruby on Rails',
+                          :subject => 'Belarus Ruby',
                           :footer_text => 'Join the conversation'}
                         end
 TwitterBlock.delete_all
@@ -37,9 +37,9 @@ TwitterBlock.create(
 
 StaticPage.delete_all
 content_about = if I18n.locale.to_s == 'ru'
-                  '<p>Белорусская Ruby on Rails User Group - сообщество Rails-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby on Rails в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby on Rails User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
+                  '<p>Белорусская Ruby User Group - сообщество Ruby-девелоперов в Беларуси, созданное для обмена идеями и опытом. Мы также заинтересованы в развитии Ruby в нашей стране и помогаем друг другу построить успешную IT-карьеру.</p><p>Если Вы тоже желаете участвовать в развитии Belarus Ruby User Group, присылайте свои идеи на адрес:</p><p><a href="mailto:info@brug.by">info@brug.by</a></p>'
                 else
-                  '<p>Belarussian Ruby on Rails User Group is community of Rails-developers in Belarus, was found for exchenging ideas and expirience. We are also interested in developing Ruby on Rails in our country and help each other to build successfull IT-career.</p><p>If you would like take part in developing Belarus Ruby on Rails User Group, please send your ideas to: <a href="mailto:info@belarusrubyonrails.org">info@belarusrubyonrails.org</a></p>'
+                  '<p>Belarussian Ruby User Group is community of Ruby-developers in Belarus, was found for exchenging ideas and expirience. We are also interested in developing Ruby in our country and help each other to build successfull IT-career.</p><p>If you would like take part in developing Belarus Ruby User Group, please send your ideas to: <a href="mailto:info@brug.by">info@brug.by</a></p>'
                 end
 
 title_about = if I18n.locale.to_s == 'ru'

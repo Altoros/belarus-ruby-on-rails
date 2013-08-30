@@ -58,7 +58,7 @@ BelarusRubyOnRails::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'belarusrubyonrails.org' }
+  config.action_mailer.default_url_options = { :host => 'brug.by' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -67,7 +67,7 @@ BelarusRubyOnRails::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => 'mail.altoros.com',
     :port => 587,
-    :domain => 'belarusrubyonrails.org',
+    :domain => 'brug.by',
     :user_name => 'byror',
     :password => 'NgDa6(8!as',
     :authentication => :login,

@@ -2,7 +2,7 @@
 class Notifier < ActionMailer::Base
   helper :application
   layout "email"
-  default :from => "Белорусское сообщество Ruby On Rails <info@belarusrubyonrails.org>",
+  default :from => "Белорусское сообщество Ruby <info@brug.by>",
           :charset => "utf-8",
           :content_type => "text/html"
 
@@ -25,13 +25,13 @@ class Notifier < ActionMailer::Base
 
   def new_participant_for_meetup_for_admin(meetup, participant)
     @participant = participant
-    mail :to => "info@belarusrubyonrails.org", :subject => "#{meetup.topic} - новый участник мероприятия", :content_type => "text/plain"
+    mail :to => "info@brug.by", :subject => "#{meetup.topic} - новый участник мероприятия", :content_type => "text/plain"
   end
 
   def removed_participant_for_meetup_for_admin(meetup, participant)
     @meetup = meetup
     @participant = participant
-    mail :to => "info@belarusrubyonrails.org", :subject => "#{@meetup.topic} - удален участник мероприятия", :content_type => "text/plain"
+    mail :to => "info@brug.by", :subject => "#{@meetup.topic} - удален участник мероприятия", :content_type => "text/plain"
   end
 
   def accepted_participant_for_meetup(meetup, participant)
@@ -50,6 +50,6 @@ class Notifier < ActionMailer::Base
 
   def user_unsubscribed(user)
     @user = user
-    mail :to => "info@belarusrubyonrails.org", :subject => "Пользователь отписался от рассылок", :content_type => "text/plain"
+    mail :to => "info@brug.by", :subject => "Пользователь отписался от рассылок", :content_type => "text/plain"
   end
 end

@@ -1,6 +1,6 @@
-# Belarus Ruby and Rails User Group
+# Belarus Ruby User Group
 
-Belarusian Ruby on Rails User Group - Rails-developer community, created for the exchange of ideas and experiences. We are also interested in the development of Ruby on Rails in our country and help each other to build a successful IT-career.
+Belarusian Ruby User Group - Ruby-developer community, created for the exchange of ideas and experiences. We are also interested in the development of Ruby in our country and help each other to build a successful IT-career.
 
 ## Development
 

@@ -32,7 +32,7 @@ BelarusRubyOnRails::Application.configure do
   # ActionMailer Config
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   config.action_mailer.default :charset => 'utf-8',
-                               :from => 'no-reply@belarusrubyonrails.org'
+                               :from => 'no-reply@brug.by'
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
