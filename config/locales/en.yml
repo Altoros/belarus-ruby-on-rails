@@ -187,7 +187,7 @@ en:
     altoros: 'Altoros Development'
     more_information: 'More information'
     partners: 'Partners'
-    site_name: 'Belarus Ruby on Rails User Group'
+    site_name: 'Belarus Ruby User Group'
     error_page: "Page you requested doesn't exists"
     please_check_email: "Please check %{email}"
   menu:

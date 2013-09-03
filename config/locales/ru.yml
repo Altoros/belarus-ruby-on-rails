@@ -187,7 +187,7 @@ ru:
     altoros: 'ООО Альторос Девелопмент'
     more_information: 'Подробнее'
     partners: 'Партнёры'
-    site_name: 'Belarus Ruby on Rails User Group'
+    site_name: 'Belarus Ruby User Group'
     error_page: 'Запрошенная страница не существует'
     please_check_email: "Проверьте пожалуйста %{email}"
   menu:
