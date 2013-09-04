@@ -30,14 +30,14 @@ ol li span {font-weight:normal;}
 .wrapper > .block {margin-top:25px;}
 .header {min-width:950px;height:163px;background:url(bg_header.gif) 0 0 repeat-x; border-bottom:1px solid #c1c1c1;}
 .block {position:relative; overflow:hidden; width:950px; margin:0 auto;}
-.logo_row {height:105px; border-bottom:1px solid #d3d3d3;}
-a.logo { float:left; margin-top:24px;}
+.logo_row {height:120px; border-bottom:1px solid #d3d3d3;}
+a.logo { float:left; margin-top:14px;}
 .sublinks { float:right; margin-top:34px; font-size:12px; line-height:22px; color:#737373;}
 .sublinks span {display:inline-block; *display:inline; padding-left:13px; margin-left:10px; color:#737373; zoom:1;}
 .sublinks a {color:#737373;}
 .sublinks .user {display:inline-block; *display:inline; padding-left:18px;background: url(ico_user.png) 0 4px no-repeat; zoom:1;}
 .menu_row {height:56px; border-top:1px solid #fff;}
-.menu_row ul { float:left; margin-top:20px;}
+.menu_row ul { float:left; margin-top:10px;}
 .menu_row ul li {display:inline-block; *display:inline; margin-right:30px; font-size:15px; color:#000; zoom:1;}
 .menu_row ul li a {color:#850008;}
 
