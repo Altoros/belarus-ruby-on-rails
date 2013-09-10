@@ -92,6 +92,12 @@
       </td>
     </tr>
     <tr>
+      <td><%= f.label :status, t('meetup.status') %></td>
+      <td>
+        <div class="field"><%= f.select :status, [[ t('meetup.status_open'), true], [ t('meetup.status_close'), false]] %></div>
+      </td>
+    </tr>
+    <tr>
       <td></td>
       <td class="save">
         <%= content_tag :button, :type => :submit, :name => :commit do %>

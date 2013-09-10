@@ -122,6 +122,10 @@ ru:
     premoderation: 'Премодерация'
     registration_closed: 'Регистрация на мероприятие закрыта'
     download_ics: 'Скачать ics файл для календаря'
+    status: "Регистрация"
+    status_open: "Открыта"
+    status_close: "Закрыта"
+    closed: "Регистрация закрыта."
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'

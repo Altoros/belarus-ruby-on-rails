@@ -4,7 +4,7 @@ include Icalendar2
 class Meetup < ActiveRecord::Base
   attr_accessible :topic, :description, :place, :date_and_time, :questions_attributes, :letter_subject, :letter_body,
                   :url, :premoderation, :decline_email_subject, :decline_email_body, :accept_email_subject, :accept_email_body,
-                  :finish_date_and_time
+                  :finish_date_and_time, :status
 
   has_many :participants
   has_many :questions

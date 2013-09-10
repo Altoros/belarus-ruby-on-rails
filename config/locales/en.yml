@@ -122,6 +122,10 @@ en:
     premoderation: 'Premoderation'
     registration_closed: 'Registration to event is closed'
     download_ics: 'Download ics file for your clalendar'
+    status: "Meetup registration status"
+    status_open: "Open"
+    status_close: "Close"
+    closed: "Registration is closed."
   articles:
     article_successfully_created: 'Article was successfully created'
     article_successfully_updated: 'Article was successfully updated'

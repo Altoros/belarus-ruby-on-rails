@@ -6,24 +6,28 @@
         <table>
           <tbody>
            <tr>
-             <th><%= t('meetup.topic') %>:</th>
-             <td><%= meetup.topic %><td>
+              <th><%= t('meetup.topic') %>:</th>
+              <td><%= meetup.topic %><td>
            </tr>
            <tr>
-             <th><%= t('meetup.description') %>:</th>
-             <td><%= meetup.description %></td>
+              <th><%= t('meetup.description') %>:</th>
+              <td><%= meetup.description %></td>
            </tr>
            <tr>
-             <th><%= t('meetup.place') %>:</th>
-             <td><%= meetup.place %></td>
+              <th><%= t('meetup.place') %>:</th>
+              <td><%= meetup.place %></td>
            </tr>
            <tr>
-             <th><%= t('meetup.date') %>:</th>
-             <td><%= l(meetup.date_and_time.to_date, :format => :long) %></td>
+              <th><%= t('meetup.date') %>:</th>
+              <td><%= l(meetup.date_and_time.to_date, :format => :long) %></td>
            </tr>
            <tr>
-             <th><%= t('meetup.time') %>:</th>
-             <td><%= meetup.date_and_time.to_s(:time) %></td>
+              <th><%= t('meetup.time') %>:</th>
+              <td><%= meetup.date_and_time.to_s(:time) %></td>
+           </tr>
+           <tr>
+              <th><%= t('meetup.status') %>:</th>
+              <td><%=  meetup.status ? t('meetup.status_open') : t('meetup.status_close') %></td>
            </tr>
           </tbody>
         </table>

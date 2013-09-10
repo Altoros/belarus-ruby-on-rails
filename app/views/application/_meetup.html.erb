@@ -11,8 +11,11 @@
     <% unless meetup.url.blank? %>
         <p><%= link_to t('meetup.more_info'), meetup.url %></p>
     <% end %>
-
-    <%= render :partial => "application/participate_button", :locals => { :meetup => meetup } %>
+    <% if meetup.status %>
+      <%= render :partial => "application/participate_button", :locals => { :meetup => meetup } %>
+    <% else %>
+      <span><%= t('meetup.closed') %></span>
+    <% end %>
   </div>
 
   <%= render :file => "app/views/application/_sharing_buttons.html.erb", :locals => { :share => { :url => meetup.url, :title => meetup.topic, :description => meetup.description } } %>
