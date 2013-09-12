@@ -278,4 +278,6 @@ table.styled th {font-weight:bold;}
 .add-item { float: left; margin-right: 10px; margin-top: 3px;}
 .spoiler { font-weight: bold; font-size: 14px; }
 #add-videos-btn { overflow:visible; height:31px; width: auto; font-size:16px; font-weight:bold; text-shadow: #1f0002 0px -1px 1px; cursor:pointer; color: #850000; }
+.mp-closed { display: block; }
+.mp-pass { margin-top: 10px; display: block; }
 

@@ -126,6 +126,7 @@ ru:
     status_open: "Открыта"
     status_close: "Закрыта"
     closed: "Регистрация закрыта."
+    pass: "К сожалению, вы не успели стать участником."
   articles:
     article_successfully_created: 'Статья была успешно сохранена'
     article_successfully_updated: 'Статья была успешно обновлена'
