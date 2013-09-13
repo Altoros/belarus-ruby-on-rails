@@ -64,7 +64,6 @@ BelarusRubyOnRails::Application.routes.draw do
     resources :meetups
     put 'meetups/:id/cancel' => 'meetups#cancel', :as => 'meetup_cancel'
     post 'tryout_meetup_message', :to => 'meetups#tryout_message', :as => 'tryout_meetup_message'
-    resources :twitter_blocks
     resources :videos do
       collection do
         get 'fetch'
