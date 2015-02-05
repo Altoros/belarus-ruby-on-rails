@@ -46,7 +46,7 @@ class Meetup < ActiveRecord::Base
     calendar.version '2.0'
     calendar.event do
       dtstart     meetup.date_and_time.strftime("%Y%m%dT%H%M%S")
-      dtend       meetup.date_and_time.strftime("%Y%m%dT%H%M%S")
+      dtend       meetup.finish_date_and_time.strftime("%Y%m%dT%H%M%S")
       summary     meetup.topic
       description meetup.description
     end
