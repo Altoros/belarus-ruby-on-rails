@@ -13,6 +13,7 @@ set :use_sudo, false
 set :user, "beljug"
 set :scm, :git
 set :repository, "git@github.com:Altoros/belarus-ruby-on-rails.git"
+set :ssh_options, { :forward_agent => true }
 set :deploy_via, :remote_cache
 set :whenever_command, "bundle exec whenever"
 
