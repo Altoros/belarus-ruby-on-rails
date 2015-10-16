@@ -65,12 +65,13 @@ BelarusRubyOnRails::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
     :address => 'mail.altoros.com',
     :port => 587,
     :domain => 'brug.by',
     :user_name => 'byror',
     :password => 'NgDa6(8!as',
-    :authentication => :login,
-    :enable_starttls_auto => false
+    :authentication => :login
+
   }
 end
