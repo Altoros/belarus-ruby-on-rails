@@ -28,6 +28,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
+gem "recaptcha", '~>0.4.0'
 
 
 gem 'nested_form'
@@ -45,8 +46,8 @@ gem 'writeexcel'
 gem 'rspec-rails', :groups => [:development, :test]
 group :development do
   gem 'debugger'
-  gem 'capistrano'
   gem 'rvm-capistrano'
+  gem 'capistrano'
   gem 'mailcatcher'
   gem 'thin'
   gem 'therubyracer'

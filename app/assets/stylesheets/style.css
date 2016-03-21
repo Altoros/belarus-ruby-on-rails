@@ -109,7 +109,8 @@ a.logo { float:left; margin-top:24px;}
 .loginTBL td div.profile_image a:hover {text-decoration:underline;}
 .loginTBL td.save a { margin-left:20px; font-size:15px; text-decoration:underline;}
 .loginTBL td.save a:hover {text-decoration:none;}
-
+.loginTBL .g-recaptcha { transform:scale(0.75);-webkit-transform:scale(0.75);transform-origin:0 0;-webkit-transform-origin:0 0; }
+.loginTBL .captcha-error { position: relative; top: 20px; left: 228px; }
 
 .forms {position:relative;}
 .forms h2 { margin-bottom:20px; color:#c0c0c0;font:bold 24px Arial, Helvetica, sans-serif;}

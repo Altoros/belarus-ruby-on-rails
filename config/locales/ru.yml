@@ -286,6 +286,8 @@ ru:
           attributes:
             email:
               blank: 'не может быть пустой'
+            registration_recaptcha_passed:
+              blank: 'Проверка не пройдена'
         meetup:
           attributes:
             topic:
