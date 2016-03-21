@@ -25,6 +25,21 @@
         <%= render 'profiles/level', :f => ff %>
         <%= render 'profiles/locale', :f => ff %>
       <% end %>
+
+      <%- if Recaptcha.configured? %>
+        <tr>
+          <td></td>
+          <td>
+            <div class="field <%= 'error' if resource.errors[:registration_recaptcha_passed].present? %>">
+              <%- if resource.errors[:registration_recaptcha_passed] %>
+                <span class="msg captcha-error"><%= resource.errors[:registration_recaptcha_passed].first %></span>
+              <% end %>
+              <%= recaptcha_tags hl: locale %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+
       <tr>
         <td></td>
         <td class="save">
