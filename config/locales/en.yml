@@ -282,6 +282,8 @@ en:
           attributes:
             email:
               blank: "can't be blank"
+            registration_recaptcha_passed:
+              blank: 'Сheck not passed'
         meetup:
           attributes:
             topic:

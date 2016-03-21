@@ -16,10 +16,13 @@ class User < ActiveRecord::Base
   attr_accessible :id, :email, :password, :password_confirmation, :remember_me, :profile_attributes, :created_at
   accepts_nested_attributes_for :profile
 
+  attr_accessor :registration_recaptcha_passed
+
   validates_presence_of :email
   validates_uniqueness_of :email, :case_sensitive => false
   validates_associated :profile
   validates :profile, :presence => true
+  validates :registration_recaptcha_passed, presence: true, on: :create, if: ->() { Recaptcha.configured? }
 
   scope :admin, where('is_admin = ?', true)
   scope :not_admin, where('is_admin = ?', false)
