@@ -32,7 +32,8 @@ task :symlink_config_files do
       "#{shared_path}/ckeditor_assets" => "#{release_path}/public/ckeditor_assets",
       "#{shared_path}/config/database.yml" => "#{release_path}/config/database.yml",
       "#{shared_path}/config/social_config.yml" => "#{release_path}/config/social_config.yml",
-      "#{shared_path}/config/recaptcha_config.yml" => "#{release_path}/config/recaptcha_config.yml"
+      "#{shared_path}/config/recaptcha_config.yml" => "#{release_path}/config/recaptcha_config.yml",
+      "#{shared_path}/config/mailer.yml" => "#{release_path}/config/mailer.yml"
   }
   run symlinks.map { |from, to| "ln -nfs #{from} #{to}" }.join(" && ")
   run "chmod -R g+rw #{release_path}/public"

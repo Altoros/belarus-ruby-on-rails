@@ -61,17 +61,27 @@ BelarusRubyOnRails::Application.configure do
   config.action_mailer.default_url_options = { :host => 'brug.by' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
+
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => 'mail.altoros.com',
-    :port => 587,
-    :domain => 'brug.by',
-    :user_name => 'byror',
-    :password => 'NgDa6(8!as',
-    :authentication => :login
 
-  }
+  config_file_path = "#{Rails.root}/config/mailer.yml"
+
+  if File.exists?(config_file_path)
+    # Load config for mailer server
+    mailer_config = YAML.load_file(config_file_path)[Rails.env]
+
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => mailer_config[:address],
+      :port => 587,
+      :domain => 'brug.by',
+      :user_name => mailer_config[:user_name],
+      :password => mailer_config[:password],
+      :authentication => :login
+    }
+  end
+
 end
