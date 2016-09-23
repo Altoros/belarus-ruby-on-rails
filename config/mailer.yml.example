@@ -1,0 +1,4 @@
+production:
+  address: 'addr'
+  user_name: 'username'
+  password: 'pass'
