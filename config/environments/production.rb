@@ -75,11 +75,11 @@ BelarusRubyOnRails::Application.configure do
 
     config.action_mailer.smtp_settings = {
       :enable_starttls_auto => true,
-      :address => mailer_config[:address],
+      :address => mailer_config['address'],
       :port => 587,
       :domain => 'brug.by',
-      :user_name => mailer_config[:user_name],
-      :password => mailer_config[:password],
+      :user_name => mailer_config['user_name'],
+      :password => mailer_config['password'],
       :authentication => :login
     }
   end
