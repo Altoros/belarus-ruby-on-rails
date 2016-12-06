@@ -64,10 +64,22 @@ BelarusRubyOnRails::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.smtp_settings = {
-    :address => 'localhost',
-    :port => 25,
-    :domain => 'belarusjug.org',
-    :enable_starttls_auto => false
-  }
+
+  config_file_path = "#{Rails.root}/config/mailer.yml"
+
+  if File.exists?(config_file_path)
+    # Load config for mailer server
+    mailer_config = YAML.load_file(config_file_path)[Rails.env]
+
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => mailer_config['address'],
+      :port => 587,
+      :domain => 'belarusjug.org',
+      :user_name => mailer_config['user_name'],
+      :password => mailer_config['password'],
+      :authentication => :login
+    }
+  end
+
 end
