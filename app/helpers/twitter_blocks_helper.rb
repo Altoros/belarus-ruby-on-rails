@@ -5,7 +5,7 @@ module TwitterBlocksHelper
 
   def twitter_blocks
     html = ''
-    TwitterBlock.find(:all).each do |block|
+    TwitterBlock.all.each do |block|
       html << '<div id="twtr-search-widget-' + block.id.to_s + '">' + block.widget + '</div>'
     end
 

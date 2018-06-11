@@ -1,11 +1,9 @@
-require Rails.root.join('lib', 'devise', 'encryptors', 'md5')
-
 class User < ActiveRecord::Base
-  has_many :user_tokens, :dependent => :delete_all
+  has_many :user_tokens, dependent: :delete_all
   has_many :articles
   has_many :comments
-  has_many :participants, :dependent => :delete_all
-  has_one :profile, :dependent => :destroy
+  has_many :participants, dependent: :delete_all
+  has_one :profile, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -13,25 +11,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          :encryptable
 
-  attr_accessible :id, :email, :password, :password_confirmation, :remember_me, :profile_attributes, :created_at
   accepts_nested_attributes_for :profile
 
   attr_accessor :registration_recaptcha_passed
 
   validates_presence_of :email
-  validates_uniqueness_of :email, :case_sensitive => false
+  validates_uniqueness_of :email, case_sensitive: false
   validates_associated :profile
-  validates :profile, :presence => true
+  validates :profile, presence: true
   validates :registration_recaptcha_passed, presence: true, on: :create, if: ->() { Recaptcha.configured? }
 
-  scope :admin, where('is_admin = ?', true)
-  scope :not_admin, where('is_admin = ?', false)
-  scope :banned, where('banned = ?', true)
-  scope :filter, lambda{ |*filters|
-    includes(:profile => :experience).joins(:profile).merge(Profile.filter(filters))
-  }
+  scope :admin, ->{ where('is_admin = ?', true) }
+  scope :not_admin, ->{ where('is_admin = ?', false) }
+  scope :banned, ->{ where('banned = ?', true) }
+  scope :filter, -> (*filters) { includes(:profile => :experience).joins(:profile).merge(Profile.filter(filters)) }
 
-  searchable(:include => [:profile, :participants]) do
+  searchable(include: [:profile, :participants]) do
     text :email
     text :first_name do
       self.profile.first_name
@@ -39,17 +34,17 @@ class User < ActiveRecord::Base
     text :last_name do
       self.profile.last_name
     end
-    string :meetup_id, :multiple => true do
+    string :meetup_id, multiple: true do
       self.participants.collect(&:meetup_id)
     end
-    time :created_at, :trie => true
-    time :created_participant_at, :multiple => true, :trie => true do
+    time :created_at, trie: true
+    time :created_participant_at, multiple: true, trie: true do
       self.participants.collect(&:created_at)
     end
     time :created_last_participant_at do
       self.participants.last.try(:created_at)
     end
-    string :accepted, :multiple => true do
+    string :accepted, multiple: true do
       self.participants.map{|x| "#{x.meetup_id}_#{x.accepted}"}
     end
   end
@@ -57,7 +52,7 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session[:omniauth]
-        user.user_tokens.build(:provider => data['provider'], :uid => data['uid'])
+        user.user_tokens.build(provider: data['provider'], uid: data['uid'])
       end
     end
   end

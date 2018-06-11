@@ -47,6 +47,5 @@ BelarusRubyOnRails::Application.configure do
 
   config.i18n.default_locale = :en
 
-  # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  config.eager_load = false
 end

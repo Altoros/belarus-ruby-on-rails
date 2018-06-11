@@ -10,8 +10,8 @@ class Message
     values.delete_if(&:blank?) if values.present?
     model.errors.add attribute, I18n.t('admin.messages.invalid_user_group')  if values && values != (values & filters)
   end
-  validates :subject, :presence=> true
-  validates :body, :presence => true
+  validates :subject, presence: true
+  validates :body, presence: true
 
   class << self
     def deliver(recipient_group, subject, body, reversed, accepted)

@@ -1,5 +1,4 @@
 class Video < ActiveRecord::Base
-  attr_accessible :title, :description, :content, :published_at
   validates_presence_of :title, :published_at, :content
 
   class << self

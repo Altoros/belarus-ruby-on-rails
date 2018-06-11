@@ -1,25 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '= 3.2.12'
+gem 'rails', '~> 4.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', '0.4.9'
 gem 'whenever', :require => false
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier',     '>= 1.0.3'
-  gem 'turbo-sprockets-rails3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 # Authorization and permissions
-gem 'devise', '~> 1.5.3'
-gem 'cancan'
+gem 'devise', '~> 3.5.5'
+gem 'devise-encryptable'
+gem 'cancancan', '~> 2.1.1'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
@@ -36,16 +36,17 @@ gem 'simple_form'
 
 gem 'will_paginate'
 
-gem 'jquery-rails', "2.3.0"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'ckeditor'
 gem 'paperclip'
 
 gem 'writeexcel'
 
-gem 'rspec-rails', :groups => [:development, :test]
+gem 'rspec-rails', '3.7.0', :groups => [:development, :test]
 group :development do
-  gem 'debugger'
+  gem 'byebug'
   gem 'rvm-capistrano'
   gem 'capistrano'
   gem 'mailcatcher'
@@ -55,26 +56,26 @@ group :development do
   gem 'progress_bar'
 end
 
-gem 'delayed_job', '~> 3.0.3'
-gem 'delayed_job_active_record', '~> 0.3.3'
+gem 'delayed_job', '~> 4.1.4'
+gem 'delayed_job_active_record', '~> 4.1.3'
 gem 'daemons', '~> 1.1.8'
 
-gem 'cells'
+gem 'cells', '4.1.4'
 
 gem 'russian', '~> 0.6.0'
 gem 'i18n-js'
 
-gem 'friendly_id', '~> 4.0.0.beta14'
+gem 'friendly_id', '~> 5.2.1'
 gem 'babosa'
 
 gem 'truncate_html'
 
 gem 'acts_as_tree'
 
-gem 'feedzirra'
+gem 'feedjira'
 gem 'text'
 
-gem 'sunspot_rails'
+gem 'sunspot_rails', '~> 2.3.0'
 gem 'sunspot_solr'
 
 gem 'backup'
@@ -88,9 +89,8 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
+  gem 'guard-rspec', '~> 4.7.3'
   gem 'guard-cucumber'
-  gem 'rspec-apotomo'
   gem 'shoulda'
   gem 'spreadsheet'
 end

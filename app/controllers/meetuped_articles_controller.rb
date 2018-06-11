@@ -3,11 +3,9 @@ class MeetupedArticlesController < ApplicationController
   # GET /meetuped_articles
   # GET /meetuped_articles.json
   def index
-    @articles = Article.meetuped.paginate(
+    @articles = Article.meetuped.order('created_at DESC').paginate(
       :per_page => 5,
-      :page => params[:page],
-      :order => 'created_at DESC'
-    )
+      :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

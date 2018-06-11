@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_filter :export_i18n_messages
   before_filter :set_current_meetup
   before_filter :set_locale
 
@@ -16,7 +15,7 @@ class ApplicationController < ActionController::Base
     else
       store_location
       respond_to do |format|
-        format.html { redirect_to login_path }
+        format.html { redirect_to root_path }
         format.js   { render :js => "window.location='#{ login_path }'" }
       end
     end
@@ -39,7 +38,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def export_i18n_messages
-    SimplesIdeias::I18n.export! if Rails.env.development?
+    I18n.export! if Rails.env.development?
   end
 
   def after_sign_in_path_for(resource_or_scope)

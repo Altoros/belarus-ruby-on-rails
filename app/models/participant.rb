@@ -6,10 +6,10 @@ class Participant < ActiveRecord::Base
 
   accepts_nested_attributes_for :quizzes
 
-  delegate :email, :to => :user
+  delegate :email, to: :user
 
   validates :meetup_id, :user_id, :presence => true
-  validates :user_id, :uniqueness => { :scope => :meetup_id }
+  validates :user_id, uniqueness: { scope: :meetup_id }
   validates_associated :quizzes
 
   scope :participants_on, lambda { |meetup_ids|

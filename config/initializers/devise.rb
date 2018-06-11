@@ -97,10 +97,6 @@ Devise.setup do |config|
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
-  # If true, uses the password salt as remember token. This should be turned
-  # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
-
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
   # config.cookie_options = {}
@@ -152,13 +148,6 @@ Devise.setup do |config|
   # change their passwords.
   config.reset_password_within = 2.hours
 
-  # ==> Configuration for :encryptable
-  # Allow you to use another encryption algorithm besides bcrypt (default). You can use
-  # :sha1, :sha512 or encryptors from others authentication tools as :clearance_sha1,
-  # :authlogic_sha512 (then you should set stretches above to 20 for default behavior)
-  # and :restful_authentication_sha1 (then you should set stretches to 10, and copy
-  # REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :md5
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key

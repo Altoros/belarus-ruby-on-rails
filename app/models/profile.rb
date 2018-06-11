@@ -4,31 +4,21 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :experience
 
-  attr_accessible :first_name,
-                  :last_name,
-                  :subscribed,
-                  :experience_id,
-                  :subscribed_for_comments,
-                  :avatar,
-                  :locale,
-                  :user_attributes
   has_attached_file :avatar, :styles => { :medium => "98x98#", :thumb => "50x50#" },
                     :path => ":rails_root/public/system/:attachment/#{Rails.env}/:id/:style/:filename",
                     :url => "/system/:attachment/#{Rails.env}/:id/:style/:filename"
 
-  validates :first_name, :presence => true,
-            :length => { :maximum => 255 }
-  validates :last_name, :presence => true,
-            :length => { :maximum => 255 }
-  validates :experience_id, :presence => true
-  validates_attachment_content_type :avatar, { :content_type =>
-                                      ['image/png', 'image/gif', 'image/x-png', 'image/jpeg', 'image/jpg'],
-                                      :message => I18n.t('profile.wrong_image_type')}
+  validates :first_name, presence: true, length: { maximum: 255 }
+  validates :last_name, presence: true, length: { maximum: 255 }
+  validates :experience_id, presence: true
+  validates_attachment_content_type :avatar, {
+      content_type: ['image/png', 'image/gif', 'image/x-png', 'image/jpeg', 'image/jpg'],
+      message: I18n.t('profile.wrong_image_type')}
 
   accepts_nested_attributes_for :user
 
-  scope :subscribed, where('profiles.subscribed = ?', true)
-  scope :subscribed_for_comments, where('profiles.subscribed_for_comments = ?', true)
+  scope :subscribed, -> { where('profiles.subscribed = ?', true) }
+  scope :subscribed_for_comments, -> { where('profiles.subscribed_for_comments = ?', true) }
   scope :participants_on, lambda { |meetup_ids|
     joins('INNER JOIN participants ON participants.user_id = profiles.user_id')
       .where('participants.meetup_id' => meetup_ids)
