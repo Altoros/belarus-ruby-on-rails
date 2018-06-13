@@ -1,5 +1,5 @@
 class AddWidgetsToTwitterBlocks < ActiveRecord::Migration
   def change
-    add_column :twitter_blocks, :widget, :string, null: false, default: ''
+    add_column :twitter_blocks, :widget, :text, :null => false, :default => ''
   end
 end
