@@ -1,5 +1,5 @@
 class Participant < ActiveRecord::Base
-  attr_accessible :user, :meetup, :quizzes_attributes, :accepted, :meetup_id, :user_id, :created_at
+  #attr_accessible :user, :meetup, :quizzes_attributes, :accepted, :meetup_id, :user_id, :created_at
   belongs_to :user
   belongs_to :meetup
   has_many :quizzes

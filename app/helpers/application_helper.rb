@@ -1,7 +1,12 @@
 module ApplicationHelper
   ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
     unless html_tag =~ /^<label/
-      %{<div class="field error">#{html_tag}<span class="msg">#{instance.object.class.human_attribute_name(instance.method_name)} #{instance.error_message.first}</span></div>}.html_safe
+      # FIXME instance does not expose method_name anymore. There must be a better way to handle errors.
+      method_name = instance.instance_variable_get(:@method_name)
+      field_name = instance.object.class.human_attribute_name(method_name)
+      error_message = instance.error_message.first
+
+      %{<div class="field error">#{html_tag}<span class="msg">#{field_name} #{error_message}</span></div>}.html_safe
     else
       %{#{html_tag}}.html_safe
     end

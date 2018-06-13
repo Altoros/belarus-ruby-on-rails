@@ -11,11 +11,11 @@ To run application on your local:
     rails s
     rake jobs:work
 
-You might need to install java:
+You might need to install java and unzip (which is necessary to run solr):
 
     apt-get update
     apt-get upgrade
-    apt-get install python-software-properties
+    apt-get install python-software-properties unzip
     add-apt-repository ppa:ferramroberto/java
     apt-get update
     apt-get install sun-java6-jre sun-java6-plugin
