@@ -46,7 +46,7 @@ gem 'writeexcel'
 
 gem 'rspec-rails', '3.7.0', :groups => [:development, :test]
 group :development do
-  gem 'byebug'
+  gem 'pry-byebug'
   gem 'rvm-capistrano'
   gem 'capistrano'
   gem 'mailcatcher'

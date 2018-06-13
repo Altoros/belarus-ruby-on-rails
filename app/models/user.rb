@@ -92,7 +92,7 @@ class User < ActiveRecord::Base
 
   def self.build_via_social_network(omniauth, user_attributes = nil)
     if omniauth.info.email
-      user = User.find_or_initialize_by_email(:email => omniauth.info.email)
+      user = User.find_or_initialize_by(:email => omniauth.info.email)
     else
       user = User.new
     end

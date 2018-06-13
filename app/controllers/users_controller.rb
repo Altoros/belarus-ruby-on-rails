@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     omniauth_data = session["devise.omniauth"]
 
-    @user = User.build_via_social_network(omniauth_data, params[:user])
+    @user = User.build_via_social_network(omniauth_data, user_params)
 
     respond_to do |format|
       if @user.valid?
@@ -52,5 +52,14 @@ class UsersController < ApplicationController
     end
 
     redirect_to(root_path, :notice => notice) and return
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :email,
+      profile_attributes: %i(first_name last_name experience_id subscribed subscribed_for_comments locale)
+    )
   end
 end
